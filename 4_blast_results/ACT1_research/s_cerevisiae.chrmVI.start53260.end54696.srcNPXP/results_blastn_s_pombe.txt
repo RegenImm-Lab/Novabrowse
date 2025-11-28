@@ -1,0 +1,232 @@
+BLASTN 2.15.0+
+
+
+Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb
+Miller (2000), "A greedy algorithm for aligning DNA sequences", J
+Comput Biol 2000; 7(1-2):203-14.
+
+
+
+Database: 1_subject_sequences\s_pombe\GCF_000002945.2\rna.fna
+           12,413 sequences; 16,398,369 total letters
+
+
+
+Query= 850503|NM_001179926.1|chromosome VI|N/A|1|51349|52971|1623|540|No description available
+
+Length=1623
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 25708694312
+
+
+Query= 850502|NM_001179925.1|chromosome VI|FET5|1|49138|51006|1869|622|No description available
+
+Length=1869
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 29666353136
+
+
+Query= 1466401|NM_001184549.1|chromosome VI|N/A|1|48733|48924|192|63|No description available
+
+Length=192
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 2741298110
+
+
+Query= 850501|NM_001179924.1|chromosome VI|LAM5|-1|45719|47743|2025|674|No description available
+
+Length=2025
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 32176088000
+
+
+Query= 850500|NM_001179923.1|chromosome VI|OTU1|-1|44654|45559|906|301|No description available
+
+Length=906
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 14200603074
+
+
+Query= 850504|NM_001179927.1|chromosome VI|ACT1|-1|53259|54695|1128|375|No description available
+
+Length=1128
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 17774904528
+
+
+Query= 850505|NM_001179928.1|chromosome VI|YPT1|-1|55365|55985|621|206|No description available
+
+Length=621
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 9611972829
+
+
+Query= 850506|NM_001179929.1|chromosome VI|TUB2|1|56335|57708|1374|457|No description available
+
+Length=1374
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 21735616950
+
+
+Query= 850507|NM_001179930.1|chromosome VI|RPO41|1|58781|62836|4056|1351|No description available
+
+Length=4056
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 64784792930
+
+
+Query= 851306|NM_001180280.1|chromosome VI|CDC13|-1|62243|65017|2775|924|No description available
+
+Length=2775
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 44242121000
+
+
+Query= 856364|NM_001179102.1|chromosome VI|SPO11|-1|62960|64156|1197|398|No description available
+
+Length=1197
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 18885836061
+
+
+  Database: 1_subject_sequences\s_pombe\GCF_000002945.2\rna.fna
+    Posted date:  Nov 28, 2025  9:03 PM
+  Number of letters in database: 16,398,369
+  Number of sequences in database:  12,413
+
+
+
+Matrix: blastn matrix 1 -2
+Gap Penalties: Existence: 0, Extension: 2.5

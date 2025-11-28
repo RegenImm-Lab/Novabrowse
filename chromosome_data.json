@@ -1,0 +1,251 @@
+{
+    "s_cerevisiae": {
+        "assembly_id": "GCF_000146045.2",
+        "chromosomes": [
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001133.9",
+                        "length": 230218,
+                        "name": "I"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001134.8",
+                        "length": 813184,
+                        "name": "II"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001135.5",
+                        "length": 316620,
+                        "name": "III"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001136.10",
+                        "length": 1531933,
+                        "name": "IV"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001137.3",
+                        "length": 576874,
+                        "name": "V"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001138.5",
+                        "length": 270161,
+                        "name": "VI"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001139.9",
+                        "length": 1090940,
+                        "name": "VII"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001140.6",
+                        "length": 562643,
+                        "name": "VIII"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001141.2",
+                        "length": 439888,
+                        "name": "IX"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001142.9",
+                        "length": 745751,
+                        "name": "X"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001143.9",
+                        "length": 666816,
+                        "name": "XI"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001144.5",
+                        "length": 1078177,
+                        "name": "XII"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001145.3",
+                        "length": 924431,
+                        "name": "XIII"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001146.8",
+                        "length": 784333,
+                        "name": "XIV"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001147.6",
+                        "length": 1091291,
+                        "name": "XV"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001148.4",
+                        "length": 948066,
+                        "name": "XVI"
+                    }
+                ]
+            }
+        ]
+    },
+    "s_pombe": {
+        "assembly_id": "GCF_000002945.2",
+        "chromosomes": [
+            {
+                "parts": [
+                    {
+                        "accession": "NC_003424.3",
+                        "length": 5579133,
+                        "name": "I"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_003423.3",
+                        "length": 4539804,
+                        "name": "II"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_003421.2",
+                        "length": 2452883,
+                        "name": "III"
+                    }
+                ]
+            }
+        ]
+    },
+    "c_albicans": {
+        "assembly_id": "GCF_000182965.3",
+        "chromosomes": [
+            {
+                "parts": [
+                    {
+                        "accession": "NC_032089.1",
+                        "length": 3188341,
+                        "name": "1"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_032090.1",
+                        "length": 2231883,
+                        "name": "2"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_032091.1",
+                        "length": 1799298,
+                        "name": "3"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_032092.1",
+                        "length": 1603259,
+                        "name": "4"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_032093.1",
+                        "length": 1190845,
+                        "name": "5"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_032094.1",
+                        "length": 1033292,
+                        "name": "6"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_032095.1",
+                        "length": 949511,
+                        "name": "7"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,318 @@
+BLASTN 2.15.0+
+
+
+Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb
+Miller (2000), "A greedy algorithm for aligning DNA sequences", J
+Comput Biol 2000; 7(1-2):203-14.
+
+
+
+Database: 1_subject_sequences\c_albicans\GCF_000182965.3\rna.fna
+           6,119 sequences; 8,971,703 total letters
+
+
+
+Query= 850503|NM_001179926.1|chromosome VI|N/A|1|51349|52971|1623|540|No description available
+
+Length=1623
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 14110930353
+
+
+Query= 850502|NM_001179925.1|chromosome VI|FET5|1|49138|51006|1869|622|No description available
+
+Length=1869
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 16281842715
+
+
+Query= 1466401|NM_001184549.1|chromosome VI|N/A|1|48733|48924|192|63|No description available
+
+Length=192
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 1512187884
+
+
+Query= 850501|NM_001179924.1|chromosome VI|LAM5|-1|45719|47743|2025|674|No description available
+
+Length=2025
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 17658518847
+
+
+Query= 850500|NM_001179923.1|chromosome VI|OTU1|-1|44654|45559|906|301|No description available
+
+Length=906
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 7797742978
+
+
+Query= 850504|NM_001179927.1|chromosome VI|ACT1|-1|53259|54695|1128|375|No description available
+
+Length=1128
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_019475182.1 Candida albicans SC5314 actin (ACT1), partial mRNA     1308    0.0  
+
+
+>XM_019475182.1 Candida albicans SC5314 actin (ACT1), partial 
+mRNA
+Length=1131
+
+ Score = 1308 bits (708),  Expect = 0.0
+ Identities = 982/1119 (88%), Gaps = 0/1119 (0%)
+ Strand=Plus/Plus
+
+Query  10    GAGGTTGCTGCTTTGGTTATTGATAACGGTTCTGGTATGTGTAAAGCCGGTTTTGCCGGT  69
+             || ||||||||||| ||||| |||||||||||||||||||||||||||||||||||||||
+Sbjct  13    GAAGTTGCTGCTTTAGTTATCGATAACGGTTCTGGTATGTGTAAAGCCGGTTTTGCCGGT  72
+
+Query  70    GACGACGCTCCTCGTGCTGTCTTCCCATCTATCGTCGGTAGACCAAGACACCAAGGTATC  129
+             |||||||||||  | ||||| ||||||||| | || |||||||||||||| |||||||||
+Sbjct  73    GACGACGCTCCAAGAGCTGTTTTCCCATCTCTTGTTGGTAGACCAAGACATCAAGGTATC  132
+
+Query  130   ATGGTCGGTATGGGTCAAAAAGACTCCTACGTTGGTGATGAAGCTCAATCCAAGAGAGGT  189
+             ||||| ||||||||||||||||| || || |||||||||||||| |||||||| ||||||
+Sbjct  133   ATGGTTGGTATGGGTCAAAAAGATTCTTATGTTGGTGATGAAGCCCAATCCAAAAGAGGT  192
+
+Query  190   ATCTTGACTTTACGTTACCCAATTGAACACGGTATTGTCACCAACTGGGACGATATGGAA  249
+             || ||||| ||  | |||||||||||||||||||||||  ||||||||||||||||||||
+Sbjct  193   ATTTTGACCTTGAGATACCCAATTGAACACGGTATTGTTTCCAACTGGGACGATATGGAA  252
+
+Query  250   AAGATCTGGCATCATACCTTCTACAACGAATTGAGAGTTGCCCCAGAAGAACACCCTGTT  309
+             || ||||||||||| || || ||||| |||||||||||||| ||||||||||| || |||
+Sbjct  253   AAAATCTGGCATCACACTTTTTACAATGAATTGAGAGTTGCTCCAGAAGAACATCCAGTT  312
+
+Query  310   CTTTTGACTGAAGCTCCAATGAACCCTAAATCAAACAGAGAAAAGATGACTCAAATTATG  369
+              | ||||| |||||||||||||| || ||||| |||||||||||||||||||||||||||
+Sbjct  313   TTGTTGACCGAAGCTCCAATGAATCCAAAATCCAACAGAGAAAAGATGACTCAAATTATG  372
+
+Query  370   TTTGAAACTTTCAACGTTCCAGCCTTCTACGTTTCCATCCAAGCCGTTTTGTCCTTGTAC  429
+             ||||||||||| || |||||||| |||||||||||||| ||||| |||||||| ||||||
+Sbjct  373   TTTGAAACTTTTAATGTTCCAGCTTTCTACGTTTCCATTCAAGCTGTTTTGTCTTTGTAC  432
+
+Query  430   TCTTCCGGTAGAACTACTGGTATTGTTTTGGATTCCGGTGATGGTGTTACTCACGTCGTT  489
+             ||||| |||||||| || ||||||||||||||||| |||||||||||||||||||| |||
+Sbjct  433   TCTTCTGGTAGAACCACCGGTATTGTTTTGGATTCTGGTGATGGTGTTACTCACGTTGTT  492
+
+Query  490   CCAATTTACGCTGGTTTCTCTCTACCTCACGCCATTTTGAGAATCGATTTGGCCGGTAGA  549
+             ||||||||||||||||||||| |||| || |  ||||| ||||| |||||||| ||||||
+Sbjct  493   CCAATTTACGCTGGTTTCTCTTTACCACATGGTATTTTAAGAATTGATTTGGCTGGTAGA  552
+
+Query  550   GATTTGACTGACTACTTGATGAAGATCTTGAGTGAACGTGGTTACTCTTTCTCCACCACT  609
+             || |||||  || | |||   ||||| |||  |||||||||||||  |||| | || | |
+Sbjct  553   GACTTGACCAACCATTTGTCCAAGATTTTGTCTGAACGTGGTTACAGTTTCACTACTAGT  612
+
+Query  610   GCTGAAAGAGAAATTGTCCGTGACATCAAGGAAAAACTATGTTACGTCGCCTTGGACTTC  669
+             |||||||||||||||||| | ||||| || |||| | | |||||||| || ||||| |||
+Sbjct  613   GCTGAAAGAGAAATTGTCAGAGACATTAAAGAAAGATTGTGTTACGTTGCTTTGGATTTC  672
+
+Query  670   GAACAAGAAATGCAAACCGCTGCTCAATCTTCTTCAATTGAAAAATCCTACGAACTTCCA  729
+             |||||||||||||||||  || ||||||||||| | ||||||||||| || ||| | |||
+Sbjct  673   GAACAAGAAATGCAAACTTCTTCTCAATCTTCTGCCATTGAAAAATCTTATGAATTACCA  732
+
+Query  730   GATGGTCAAGTCATCACTATTGGTAACGAAAGATTCAGAGCCCCAGAAGCTTTGTTCCAT  789
+             ||||||||||| ||||||||||||||||||||||||||||| |||||||||||||||   
+Sbjct  733   GATGGTCAAGTTATCACTATTGGTAACGAAAGATTCAGAGCTCCAGAAGCTTTGTTCAGA  792
+
+Query  790   CCTTCTGTTTTGGGTTTGGAATCTGCCGGTATTGACCAAACTACTTACAACTCCATCATG  849
+             ||  ||| ||| ||||||||| |||| |||||||||||||| |||| |||||||||||||
+Sbjct  793   CCAGCTGATTTAGGTTTGGAAGCTGCTGGTATTGACCAAACCACTTTCAACTCCATCATG  852
+
+Query  850   AAGTGTGATGTCGATGTCCGTAAGGAATTATACGGTAACATCGTTATGTCCGGTGGTACC  909
+             ||||||||  | |||||  | || ||||||||||||||||| |||||||| |||||||| 
+Sbjct  853   AAGTGTGACATGGATGTTAGAAAAGAATTATACGGTAACATTGTTATGTCTGGTGGTACT  912
+
+Query  910   ACCATGTTCCCAGGTATTGCCGAAAGAATGCAAAAGGAAATCACCGCTTTGGCTCCATCT  969
+             |||||||||||||||||||| ||| | |||||||||||||| || |||||||||||||||
+Sbjct  913   ACCATGTTCCCAGGTATTGCTGAACGTATGCAAAAGGAAATTACTGCTTTGGCTCCATCT  972
+
+Query  970   TCCATGAAGGTCAAGATCATTGCTCCTCCAGAAAGAAAGTACTCCGTCTGGATTGGTGGT  1029
+             || ||||| || ||||| |||||||| ||||||||||| ||||| |||||||||||||||
+Sbjct  973   TCTATGAAAGTTAAGATTATTGCTCCACCAGAAAGAAAATACTCTGTCTGGATTGGTGGT  1032
+
+Query  1030  TCTATCTTGGCTTCTTTGACTACCTTCCAACAAATGTGGATCTCAAAACAAGAATACGAC  1089
+             |||||||||||||| ||| |||| ||||||||||||||||| ||||||||||||||||||
+Sbjct  1033  TCTATCTTGGCTTCATTGTCTACTTTCCAACAAATGTGGATTTCAAAACAAGAATACGAC  1092
+
+Query  1090  GAAAGTGGTCCATCTATCGTTCACCACAAGTGTTTCTAA  1128
+             |||  ||||||||| || ||||||||||| |||||||||
+Sbjct  1093  GAATCTGGTCCATCCATTGTTCACCACAAATGTTTCTAA  1131
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 9742631088
+
+
+Query= 850505|NM_001179928.1|chromosome VI|YPT1|-1|55365|55985|621|206|No description available
+
+Length=621
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 5280917668
+
+
+Query= 850506|NM_001179929.1|chromosome VI|TUB2|1|56335|57708|1374|457|No description available
+
+Length=1374
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 11913543450
+
+
+Query= 850507|NM_001179930.1|chromosome VI|RPO41|1|58781|62836|4056|1351|No description available
+
+Length=4056
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 35548292568
+
+
+Query= 851306|NM_001180280.1|chromosome VI|CDC13|-1|62243|65017|2775|924|No description available
+
+Length=2775
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 24251502000
+
+
+Query= 856364|NM_001179102.1|chromosome VI|SPO11|-1|62960|64156|1197|398|No description available
+
+Length=1197
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H
+    1.33    0.621     1.12 
+
+Gapped
+Lambda      K        H
+    1.28    0.460    0.850 
+
+Effective search space used: 10351545531
+
+
+  Database: 1_subject_sequences\c_albicans\GCF_000182965.3\rna.fna
+    Posted date:  Nov 28, 2025  9:03 PM
+  Number of letters in database: 8,971,703
+  Number of sequences in database:  6,119
+
+
+
+Matrix: blastn matrix 1 -2
+Gap Penalties: Existence: 0, Extension: 2.5
