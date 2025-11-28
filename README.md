@@ -50,10 +50,10 @@ NCBI requires an email address for Entrez API access. This is used to identify y
 
    **Option A: Clone with Git**
    ```bash
-   git clone https://github.com/yourusername/novabrowse.git
+   git clone https://github.com/RegenImm-Lab/Novabrowse.git
    ```
 
-   **Option B: [Download ZIP](https://github.com/yourusername/novabrowse/archive/refs/heads/main.zip)** and extract it
+   **Option B: [Download ZIP](https://github.com/RegenImm-Lab/Novabrowse/archive/refs/heads/main.zip)** and extract it
 
 2. **Install Python dependencies**
    
@@ -160,7 +160,7 @@ This file is used for mapping genes onto chromosomes.
 
 ### 4. Configure Novabrowse
 
-Open `novabrowse_0.1.ipynb`. This is the main notebook that:
+Open `novabrowse_1.0.ipynb`. This is the main notebook that:
 1. Downloads query species sequences for your specified genomic region
 2. Runs BLAST searches against your subject species
 3. Generates interactive HTML result files
@@ -282,7 +282,7 @@ Example output files:
 - `Novabrowse_ACT1_synteny_s_cerevisiae_tblastn_best_matches.html` - tblastn results
 
 <br>
-<img src="images/sample_file.png" alt="Sample Novabrowse output">
+
 
 ### 10. There are lot of other permutations of settings we should demonstrate, need to think about what would be most effective. Also how to add the tool functionality descriptions
 
