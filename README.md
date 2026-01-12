@@ -1,15 +1,41 @@
 # Novabrowse
 
-Description adding later
+**An interactive BLAST results interpretation tool for high-resolution synteny analysis, chromosomal rearrangement detection, orthologs identification and gene signal discovery.**
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
+## Core Capabilities
+
+- **Multi-species synteny analysis** - Compare gene order conservation across multiple species simultaneously with interactive ribbon plots connecting orthologous genes across chromosomes
+- **Gene signal discovery** - Identify unannotated genes in genomic regions through distance-based HSP clustering, revealing gene units missed by standard annotation pipelines
+- **Coverage visualization** - View alignment coverage as identity-color-coded bars positioned along query sequences, showing both extent and quality of matches
+
 ## Features
 
-- **Automated gene retrieval** from NCBI using Entrez API
-- **Multi-species BLAST searches** (blastn, tblastn, tblastx)
-- **More coming later...**
+#### **BLAST Integration**
+- **Multiple BLAST algorithms** - Support for BLASTn, tBLASTn, and tBLASTx searches with independent configuration per subject species
+- **Automated NCBI retrieval** - Direct integration with NCBI E-utilities API for automatic gene sequence downloads from specified genomic regions
+- **Custom sequence support** - Incorporate user-provided sequences (e.g., from nanopore sequencing) alongside or instead of NCBI data
+- **Flexible filtering** - Configure E-value thresholds and bit score cutoffs independently for each subject species to account for database size differences
+
+#### **Interactive Visualization**
+- **High-resolution chromosomal maps** - Interactive chromosome visualizations showing precise gene positions with support for both single chromosomes and multi-arm configurations
+- **Dynamic filtering system** - Filter by gene names, conservation levels, genomic coordinates, or match quality with real-time statistical updates
+- **Isoform management** - Automatic consolidation of transcript isoforms with expandable views showing all variants and their alignment statistics
+- **Coordinate-based highlighting** - Focus analysis on specific genomic regions through visual highlighting or selective display of genes within defined coordinate ranges
+
+#### **Analysis Features**
+- **Transcriptome and genome searches** - Search against both annotated transcriptomes (using GTF files) or raw genomes (with automatic HSP clustering)
+- **Multi-arm chromosome support** - Proper coordinate transformation for chromosomes represented as separate p and q arms in assemblies
+- **Alignment quality metrics** - Track coverage percentage, identity (both total and local), bit scores, E-values, and HSP counts
+- **Publication-ready export** - Generate SVG files containing complete table structure, chromosome maps, and active ribbon visualizations for direct use in publications or further editing
+
+#### **User Experience**
+- **All-in-one HTML output** - Self-contained interactive HTML files with embedded JavaScript for dynamic filtering and visualization without requiring server-side processing
+- **Batch processing** - Process multiple genomic regions and species within single execution runs
+- **Column customization** - Toggle visibility and reorder data columns including coordinates, lengths, alignment statistics, and chromosome visualizations
+- **Drag-and-drop organization** - Reorder subject species columns to facilitate comparative analysis
 
 ## Prerequisites
 
@@ -213,7 +239,7 @@ You can enable multiple types at once - a separate result file will be generated
 ```python
 blast_settings = {
     'blast_type': ['tblastn', 'blastn'],  # Two result files will be generated
-    'blast_options': '-evalue 1e-10 -outfmt 0 -num_threads 48'
+    'blast_options': '-outfmt 0 -num_threads 48'
 }
 ```
 
@@ -280,6 +306,11 @@ species_to_orgn = {
 Example output files:
 - `Novabrowse_ACT1_synteny_s_cerevisiae_blastn_best_matches.html` - blastn results
 - `Novabrowse_ACT1_synteny_s_cerevisiae_tblastn_best_matches.html` - tblastn results
+
+Example how the tblastn output file should look:
+
+<img src="images/sample_file.png" alt="How to download from NCBI" style="margin-left: 20px;">
+
 
 <br>
 
