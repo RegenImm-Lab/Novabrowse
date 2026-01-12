@@ -1,4 +1,4 @@
-# Novabrowse
+# <img src="images/novabrowse_logo.svg" alt="Novabrowse Logo" width="400">
 
 **An interactive BLAST results interpretation tool for multi-species high-resolution synteny analysis, chromosomal rearrangement investigation, orthologs identification and gene signal discovery.**
 
