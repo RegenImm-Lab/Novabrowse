@@ -2,9 +2,6 @@
 
 **An interactive BLAST results interpretation tool for multi-species high-resolution synteny analysis, chromosomal rearrangement investigation, orthologs identification and gene signal discovery.**
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-
 ## Table of Contents
 
 - [Core Capabilities](#core-capabilities)
