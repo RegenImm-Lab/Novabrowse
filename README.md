@@ -1,6 +1,6 @@
 # Novabrowse
 
-**An interactive BLAST results interpretation tool for high-resolution synteny analysis, chromosomal rearrangement detection, orthologs identification and gene signal discovery.**
+**An interactive BLAST results interpretation tool for multi-species high-resolution synteny analysis, chromosomal rearrangement investigation, orthologs identification and gene signal discovery.**
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
@@ -319,6 +319,70 @@ Example how the tblastn output file should look:
 
 
 <br><br><br><br>
+
+## Documentation
+
+### Interactive Controls Reference
+
+The Novabrowse HTML output includes numerous interactive buttons organized into functional categories. Below is a complete reference for all available controls:
+
+#### Download
+- **Save as SVG** - Exports the current table view, including visible columns, chromosome visualizations, and active ribbons, as a vector SVG file ready for publication or editing in vector graphics software
+
+#### View Controls
+- **Ribbon plot** - Displays curved ribbons connecting homologous genes across species chromosomes, providing visual synteny relationships. Useful for quickly identifying conserved genomic neighborhoods
+- **Ribbon settings** - Opens configuration panel to customize ribbon appearance (color, opacity, style) and enable selective display for specific genes
+- **Normalize chromosomes** - When enabled, scales all chromosome visualizations to equal height for easier cross-species comparison. When disabled, chromosomes are sized proportionally to their actual lengths
+- **Chrm height = Table height** - Controls chromosome column behavior. When active, chromosome visualizations scroll with the table. When inactive, chromosomes use sticky positioning and remain visible during scrolling
+- **Equalize 1st row** - Adjusts species header widths to match the widest column, creating uniform spacing across the first row
+- **Equalize 3rd row** - Standardizes data column widths within each species to match the widest column in that section
+- **Color legend** - Toggles visibility of the match percentage color scale reference (shows identity percentage color coding from 0% to 120%+)
+- **Matches** - Displays match count statistics in species headers (e.g., "Matches: 9" showing how many query genes have hits)
+- **Score & E-value** - Shows BLAST filtering parameters in species headers (minimum score and maximum E-value thresholds used)
+- **abc/123** - Controls visibility of alphabetical/numerical sorting buttons in the query species column
+- **ID** - Toggles display of NCBI gene IDs in parentheses next to gene names (e.g., "foxp3 (12345)")
+- **Transcripts** - Shows/hides transcript isoform counts and expandable transcript details for each gene match
+- **Title wrap** - Enables text wrapping in species header cells to prevent horizontal overflow of long species names
+
+#### Filters
+- **Filter** (Gene name filter) - Activates filtering based on comma-separated gene names entered in the text box. Displays only matching genes and their homologs across all species
+- **Gene filter** - Toggles visibility of the gene name text input box (useful for saving screen space when not actively filtering by gene names)
+- **Chrm filter** - Shows/hides the coordinate range inputs and chromosome selection dropdowns used for position-based filtering
+- **At least 1 match** - Displays only genes that have at least one homolog identified in any of the visible subject species (hides genes with no matches anywhere)
+- **Full conservation** - Shows only genes with matches detected in every visible subject species, identifying universally conserved genes
+- **True coordinates** - For multi-arm chromosomes (p/q arms), switches between cumulative positions (combined arms) and true per-arm coordinates. Useful for accurately identifying positions on specific chromosome arms
+- **Hide 2nd match genes** - Removes secondary/paralog matches from the table, keeping only the highest-scoring match per gene per species. Simplifies view when focusing on primary orthologs
+- **Filter** (Span filter) - Restricts table to show only query species genes falling within the specified start/end coordinate range
+- **Highlight** - Applies yellow background highlighting to genes within the specified coordinate range across all species, allowing visual focus without hiding other genes
+- **Keep** - More restrictive than Highlight - displays only genes that have matches on the selected chromosomes within the defined coordinate span. Removes entire chromosomes not selected via checkboxes
+
+#### Species Controls
+Species toggle buttons allow you to show or hide individual subject species columns. Drag-and-drop functionality enables reordering of species columns for customized comparative analysis.
+
+#### Column Visibility Toggles
+- **#** - Row numbering for easy reference and navigation through large gene lists
+- **Gene (query)** - Query species gene names with NCBI links. Hiding this column removes the source gene identifiers
+- **Gene (subject)** - Subject species gene names and IDs. Toggle to focus on other metrics when gene names are not needed
+- **Start** - Genomic start coordinates for each gene. Useful for precise location mapping
+- **End** - Genomic end coordinates for each gene. Combined with Start, defines exact gene boundaries
+- **Chrm #** - Chromosome assignments (e.g., "I", "2", "X"). Essential for identifying which chromosome each match is located on
+- **DNA Length (%)** - Ratio of subject DNA length to query DNA length as percentage. Values >100% indicate the subject gene is longer than query
+- **mRNA length (%)** - Ratio of subject mRNA/transcript length to query length. Helps identify size differences between orthologs
+- **Best Total Identity (%)** - Highest identity percentage across all aligned segments for this gene pair. Measures overall sequence similarity
+- **Best Local Identity (%)** - Highest identity percentage within a single HSP (local alignment). Can be higher than total identity for highly conserved domains
+- **Coverage** - Visual bars showing which portions of the query sequence align to the subject, color-coded by identity percentage. Critical for identifying partial vs complete matches
+- **# HSPs** - Number of High-scoring Segment Pairs (alignment segments) detected. Multiple HSPs may indicate exon structure or domain conservation
+- **Query Length** - Length of the query protein/transcript in amino acids or nucleotides. Provides scale reference for coverage interpretation
+- **Score** - BLAST bit score indicating alignment strength. Database-size independent metric for comparing match quality
+- **E-value** - Expect value indicating statistical significance. Lower values indicate more significant matches (database-size dependent)
+- **Chrm** - Chromosome visualization columns showing gene positions on scaled chromosome maps with ribbon connections
+
+#### Table Sorting
+- **123** - Sorts genes by their genomic coordinates (numerical position order). Maintains genes in chromosomal order as they appear in the genome
+- **abc** - Sorts genes alphabetically by name. Useful for finding specific genes quickly or grouping gene families
+
+#### Gene Selection
+Click gene names in the Query Species column to add or remove them from the filter text box for quick multi-gene selection. Use the checkbox beside each gene name to control its ribbon visibility - checked genes display their synteny ribbons, while unchecked genes hide their connections. The master checkbox in the header selects/deselects all genes simultaneously.
 
 ## Troubleshooting
 
