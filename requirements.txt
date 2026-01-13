@@ -5,9 +5,7 @@
 biopython>=1.80
 
 # Web automation (for testing)
-selenium>=4.0.0
 
 # Image processing and comparison
-cairosvg>=2.5.0
 Pillow>=9.0.0
 numpy>=1.21.0
