@@ -4,8 +4,6 @@
 # Core bioinformatics
 biopython>=1.80
 
-# Web automation (for testing)
-
 # Image processing and comparison
 Pillow>=9.0.0
 numpy>=1.21.0
