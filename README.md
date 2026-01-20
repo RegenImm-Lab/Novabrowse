@@ -206,7 +206,7 @@ query_sequences_list = [
     {
         'query_species': 's_cerevisiae',           # Species name (must match ASSEMBLY_MAPPING key)
         'protein_sources': ('NP_','XP_'),          # Filter by protein accession prefix
-        'show_only_best_matches': 'True',          # Show only top hit per subject species
+        'show_only_best_matches': 'True',          # Show only top hit per subject species. Possible values 'True', 'False' or 'Both' (two output files generated)
         'retrieved_sequences': {
             'download_from_NCBI': True,            # Fetch sequences from NCBI
             'query_chromosome': 'VI',              # Chromosome name
