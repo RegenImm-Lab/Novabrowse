@@ -89,27 +89,29 @@ Novabrowse supports both transcriptome and genome analysis. For each subject spe
 
 For this tutorial, we'll use three fungal species from [NCBI](https://www.ncbi.nlm.nih.gov/):
 
-| Species | [NCBI](https://www.ncbi.nlm.nih.gov/) Link |
+| Species | NCBI Link |
 |---------|-----------|
-| *Saccharomyces cerevisiae* | [Download](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/4932/) |
-| *Schizosaccharomyces pombe* | [Download](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/4896/) |
-| *Candida albicans* | [Download](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/5476/) |
+| *Saccharomyces cerevisiae* | [Open](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/4932/) |
+| *Schizosaccharomyces pombe* | [Open](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/4896/) |
+| *Candida albicans* | [Open](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/5476/) |
 
-These example files (GTF annotations and transcripts for all three species, plus the genome for *S. cerevisiae*) are already included in the repository under `1_subject_sequences/`.
+These files (GTF annotations and transcripts for all three species, plus the genome for *S. cerevisiae*) are already included in `1_subject_sequences/`. Below we explain how they were downloaded, which you can follow to add your own species or update the existing files.
 
-**Downloading from [NCBI](https://www.ncbi.nlm.nih.gov/):**
+**How to download from [NCBI](https://www.ncbi.nlm.nih.gov/):**
+
+- The image below shows *S. cerevisiae* as an example. When downloading assemblies from NCBI, you can choose the source (RefSeq or GenBank) based on your specific research needs.
 
 <img src="images/how_to_download.png" alt="How to download from NCBI" style="margin-left: 20px;">
-
-<sub>When downloading assemblies from [NCBI](https://www.ncbi.nlm.nih.gov/), you can choose the source (RefSeq or GenBank) based on your specific research needs. The included examples were downloaded using **RefSeq** ([NCBI](https://www.ncbi.nlm.nih.gov/) Reference Sequence) assemblies, which are curated.</sub>
 
 Place the downloaded files in:
 ```
 1_subject_sequences/<custom_name>/<assembly>/
-├── genomic.gtf      # Required: GTF annotation file
-├── rna.fna          # For transcriptome analysis
-└── genomic.fna      # For genome analysis
+├── genomic.gtf       # Required: GTF annotation file
+├── rna.fna           # For transcriptome analysis (exact filename required)
+└── *_genomic.fna     # For genome analysis (must contain "_genomic" in filename)
 ```
+
+> **Note:** The transcriptome file **must** be named exactly `rna.fna`. Genome files **must** contain `_genomic` in the filename (e.g., `GCF_000146045.2_R64_genomic.fna`).
 
 Example for *S. cerevisiae*:
 ```
