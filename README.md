@@ -209,7 +209,7 @@ query_sequences_list = [
         'show_only_best_matches': 'True',          # 'True', 'False' or 'Both' (two files generated)
         'retrieved_sequences': {
             'download_from_NCBI': True,            # Fetch sequences from NCBI
-            'query_chromosome': 'VI',              # Chromosome name
+            'chromosome': 'VI',                    # Chromosome name
             'start_position': 53260,               # Region start coordinate
             'end_position': 54696,                 # Region end coordinate
             'genes_upstream': 5,                   # Include also 5 genes before the region

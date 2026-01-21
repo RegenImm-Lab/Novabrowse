@@ -3,7 +3,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
 <svg xmlns='http://www.w3.org/2000/svg' width='40.5' height='52.7' viewBox='0 0 40.5 52.7'><path d='M40.5,13.9c0-.2,0-.2,0,0h0Z' fill='%23258eff'/><path d='M31.6.7c-1.3-.4-2.7-.7-4.2-.7h-15.1c-4,0-7.5,3.2-7.9,7.2L0,52.7h14.4l3.7-38.3h4.9c1.7,0,3,1.5,2.9,3.1l-3.4,35.2h14.4s3.5-36.2,3.7-38.8c0,0,0,.2,0,.4.6-6.3-3.3-11.8-8.9-13.7Z' fill='%23258eff'/></svg>
 ">
-    <title>ACT1_research_s_cerevisiae_tblastn_best_matches</title>
+    <title>clr4_gene_discovery_s_pombe_tblastx_all_matches</title>
     </head>
     <body>
     <div id="browserWarning" class="browser_warning">
@@ -138,11 +138,11 @@
                     <button id='toggleFullConservation' class='toggle_button' title='Filter to show only genes with matches in all visible species (full conservation)'>Full conservation</button>
                     <button id='toggleFilterName' class='toggle_button' title='Show or hide the gene name filter text box'>Gene filter</button>
                     <button id='toggleTrueCoordinates' class='toggle_button' title='Toggle between cumulative coordinates and true per-arm coordinates (applies only for multi-arm chromosomes)'>True coordinates</button>
-                    <button id='toggle2ndMatch' class='toggle_button disabled' title='Hide secondary match rows (keeps only the best match per gene per species)'>Hide 2nd match genes</button>
+                    <button id='toggle2ndMatch' class='toggle_button ' title='Hide secondary match rows (keeps only the best match per gene per species)'>Hide 2nd match genes</button>
                 </div>
                 <div class='header_buttons reorder reorder_species'>
-                    <button class='toggle_button species_toggle active no_reorder' data-species="-1">S. cerevisiae (query)</button>
-                    <button class="toggle_button species_toggle active" data-species="0"><svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="1.5" cy="2.5" r="1.5"/><circle cx="7.5" cy="2.5" r="1.5"/><circle cx="7.5" cy="10.5" r="1.5"/><circle cx="1.5" cy="10.5" r="1.5"/></svg> S. pombe</button> <button class="toggle_button species_toggle active" data-species="1"><svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="1.5" cy="2.5" r="1.5"/><circle cx="7.5" cy="2.5" r="1.5"/><circle cx="7.5" cy="10.5" r="1.5"/><circle cx="1.5" cy="10.5" r="1.5"/></svg> C. albicans</button>
+                    <button class='toggle_button species_toggle active no_reorder' data-species="-1">S. pombe (query)</button>
+                    <button class="toggle_button species_toggle active" data-species="0"><svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="1.5" cy="2.5" r="1.5"/><circle cx="7.5" cy="2.5" r="1.5"/><circle cx="7.5" cy="10.5" r="1.5"/><circle cx="1.5" cy="10.5" r="1.5"/></svg> S. cerevisiae (genome)</button> <button class="toggle_button species_toggle active" data-species="1"><svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="1.5" cy="2.5" r="1.5"/><circle cx="7.5" cy="2.5" r="1.5"/><circle cx="7.5" cy="10.5" r="1.5"/><circle cx="1.5" cy="10.5" r="1.5"/></svg> S. cerevisiae (transcriptome)</button>
                 </div>
                 <div class='header_buttons'>
                     <button id='toggleNumber' class='toggle_button active' title='Show or hide row numbers'>#</button>
@@ -166,19 +166,19 @@
         </div>
     </div>
     <table border='1' id='main_table'><thead>
-<tr id='first_row'><th colspan='7'>S. cerevisiae <span class='matches_info'>(Total genes: 11)</span></th><th colspan='14'>S. pombe <span class='matches_info'>(Matches: 9)</span><span class='score_info'><br>Min Score: 0, Max E-value: 1e-10</span></th><th colspan='14'>C. albicans <span class='matches_info'>(Matches: 9)</span><span class='score_info'><br>Min Score: 0, Max E-value: 1e-10</span></th></tr>
+<tr id='first_row'><th colspan='7'>S. pombe <span class='matches_info'>(Total genes: 1)</span></th><th colspan='14'>S. cerevisiae (genome) <span class='matches_info'>(Matches: 1)</span><span class='score_info'><br>Min Score: 0, Max E-value: 1e-10</span></th><th colspan='14'>S. cerevisiae (transcriptome) <span class='matches_info'>(Matches: 1)</span><span class='score_info'><br>Min Score: 0, Max E-value: 1e-10</span></th></tr>
 <tr id='second_row'><th colspan='7'>
             <span class='spanner'>Span:</span> 
-            <input type='number' placeholder='start' class='span_start span_element' value='53260'>
+            <input type='number' placeholder='start' class='span_start span_element' value='453996'>
             : 
-            <input type='number' placeholder='end'  class='span_end span_element' value='54696'>
+            <input type='number' placeholder='end'  class='span_end span_element' value='458410'>
             <button class='toggle_button span_highlight'>Highlight (0/0)</button>
             <button class='toggle_button span_filter' title='Filter to show only genes within the specified span range in the query species'>Filter</button>
         </th><th colspan='14'>
             <span class='spanner'>Span:</span>
             <input type='number' placeholder='start' class='span_start span_element' data-species='0' value='1'>
             :
-            <input type='number' placeholder='end' class='span_end span_element' data-species='0' value='5579133'>
+            <input type='number' placeholder='end' class='span_end span_element' data-species='0' value='745751'>
             <div class='chromosome_checkbox_container' data-species='0'>
                 
                 <button class='dropdown_button'>None</button>
@@ -187,28 +187,25 @@
                         <input type='checkbox' value='all' class='chromosome_checkbox' checked>
                         <span>All chromosomes</span>
                     </label>
-                    <label class='chromosome_checkbox_label' data-has-first-match='True'>
-                                <input type='checkbox' value='NC_003424.3' class='chromosome_checkbox' data-has-first-match='True'>
-                                <span>I</span>
+                    <label class='chromosome_checkbox_label' data-has-first-match='False'>
+                                <input type='checkbox' value='NC_001140.6' class='chromosome_checkbox' data-has-first-match='False'>
+                                <span>VIII</span>
                             </label><label class='chromosome_checkbox_label' data-has-first-match='True'>
-                                <input type='checkbox' value='NC_003423.3' class='chromosome_checkbox' data-has-first-match='True'>
-                                <span>II</span>
-                            </label><label class='chromosome_checkbox_label' data-has-first-match='True'>
-                                <input type='checkbox' value='NC_003421.2' class='chromosome_checkbox' data-has-first-match='True'>
-                                <span>III</span>
+                                <input type='checkbox' value='NC_001142.9' class='chromosome_checkbox' data-has-first-match='True'>
+                                <span>X</span>
                             </label>
                 </div>
             
             </div>
             <button class='toggle_button span_highlight' data-species='0' title='0 source gene matches (matched genes from 1st column)
-    0 unique S. pombe matches (on selected chromosome)
-    0 total S. pombe matches (same genes can match multiple times)'>Highlight (0/0) (0/0) (0/0)</button>
+    0 unique S. cerevisiae (genome) matches (on selected chromosome)
+    0 total S. cerevisiae (genome) matches (same genes can match multiple times)'>Highlight (0/0) (0/0) (0/0)</button>
             <button data-species='0' class='toggle_button span_keep' title='Keep only genes that have matches on selected chromosomes within the specified span range'>Keep</button>
         </th><th colspan='14'>
             <span class='spanner'>Span:</span>
             <input type='number' placeholder='start' class='span_start span_element' data-species='1' value='1'>
             :
-            <input type='number' placeholder='end' class='span_end span_element' data-species='1' value='3188341'>
+            <input type='number' placeholder='end' class='span_end span_element' data-species='1' value='745751'>
             <div class='chromosome_checkbox_container' data-species='1'>
                 
                 <button class='dropdown_button'>None</button>
@@ -217,93 +214,104 @@
                         <input type='checkbox' value='all' class='chromosome_checkbox' checked>
                         <span>All chromosomes</span>
                     </label>
-                    <label class='chromosome_checkbox_label' data-has-first-match='True'>
-                                <input type='checkbox' value='NC_032089.1' class='chromosome_checkbox' data-has-first-match='True'>
-                                <span>1</span>
+                    <label class='chromosome_checkbox_label' data-has-first-match='False'>
+                                <input type='checkbox' value='NC_001140.6' class='chromosome_checkbox' data-has-first-match='False'>
+                                <span>VIII</span>
                             </label><label class='chromosome_checkbox_label' data-has-first-match='True'>
-                                <input type='checkbox' value='NC_032090.1' class='chromosome_checkbox' data-has-first-match='True'>
-                                <span>2</span>
-                            </label><label class='chromosome_checkbox_label' data-has-first-match='True'>
-                                <input type='checkbox' value='NC_032094.1' class='chromosome_checkbox' data-has-first-match='True'>
-                                <span>6</span>
+                                <input type='checkbox' value='NC_001142.9' class='chromosome_checkbox' data-has-first-match='True'>
+                                <span>X</span>
                             </label>
                 </div>
             
             </div>
             <button class='toggle_button span_highlight' data-species='1' title='0 source gene matches (matched genes from 1st column)
-    0 unique C. albicans matches (on selected chromosome)
-    0 total C. albicans matches (same genes can match multiple times)'>Highlight (0/0) (0/0) (0/0)</button>
+    0 unique S. cerevisiae (transcriptome) matches (on selected chromosome)
+    0 total S. cerevisiae (transcriptome) matches (same genes can match multiple times)'>Highlight (0/0) (0/0) (0/0)</button>
             <button data-species='1' class='toggle_button span_keep' title='Keep only genes that have matches on selected chromosomes within the specified span range'>Keep</button>
-        </th><tr id='title_row'><th class='number_column'>#</th><th class='first_gene_id_column query_species'><div class='boss_th'><div class='th_holder'><button class='master_ribbon_setting ribbon_setting_button toggle_button'><svg viewBox='826 826 12 12'><path fill='#2C3A49' d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><div class='master_checkbox_container'><input type='checkbox' class='gene_checkbox master_checkbox' id='master_checkbox' checked></div>Gene</div><div class='abc_123'><button class='transcript_toggle order123 active' title='Sort table by query species genes genomic positions numerically'>123</button><button class='transcript_toggle orderAbc' title='Sort table by query species gene names alphabetically'>abc</button></div></div></th><th class='detailed_column start_column'>Start</th><th class='detailed_column end_column'>End</th><th class='detailed_column dna_length_column'>DNA Length</th><th class='detailed_column mrna_length_column'>Longest mRNA (peptide)</th><th class='chrm_column'>Chrm</th><th class='present_column'>Present (genes)</th><th class='detailed_column gene_id_column'><div class='boss_th'><div><span class='gene_id_th'>Gene</span><span class='gene_id_info'>(ID)</span></div><div class='transcripts_info'><span>[transcripts]</span></div></th><th class='detailed_column start_column'>Start</th><th class='detailed_column end_column'>End</th><th class='detailed_column chr_num_column'>Chrm #</th><th class='detailed_column dna_length_column'>DNA Length (%)</th><th class='detailed_column mrna_length_column'>mRNA length (%)</th><th class='detailed_column total_identity_column'>Best Total Identity (%)</th><th class='detailed_column local_identity_column'>Best Local Identity (%)</th><th class='detailed_column coverage_column'>Coverage</th><th class='detailed_column hsps_colum'># HSPs</th><th class='detailed_column query_length_column'>Query Length</th><th class='detailed_column score_column'>Score</th><th class='detailed_column evalue_column'>E-value</th><th class='chrm_column'>Chrm</th><th class='present_column'>Present (genes)</th><th class='detailed_column gene_id_column'><div class='boss_th'><div><span class='gene_id_th'>Gene</span><span class='gene_id_info'>(ID)</span></div><div class='transcripts_info'><span>[transcripts]</span></div></th><th class='detailed_column start_column'>Start</th><th class='detailed_column end_column'>End</th><th class='detailed_column chr_num_column'>Chrm #</th><th class='detailed_column dna_length_column'>DNA Length (%)</th><th class='detailed_column mrna_length_column'>mRNA length (%)</th><th class='detailed_column total_identity_column'>Best Total Identity (%)</th><th class='detailed_column local_identity_column'>Best Local Identity (%)</th><th class='detailed_column coverage_column'>Coverage</th><th class='detailed_column hsps_colum'># HSPs</th><th class='detailed_column query_length_column'>Query Length</th><th class='detailed_column score_column'>Score</th><th class='detailed_column evalue_column'>E-value</th><th class='chrm_column'>Chrm</th></tr></thead><tbody>
-<tr data-gene-name='OTU1'><td class='number_column' rowspan='1'>1</td><td rowspan='1' class='cell_species_-1_850500 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='850500' data-gene-name='OTU1'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='850500' data-gene-name='OTU1' checked><a href='https://www.ncbi.nlm.nih.gov/gene/850500' target='_blank'>OTU1</a></div></td><td class='detailed_column start_column' rowspan='1'>44655</td><td class='detailed_column end_column' rowspan='1'>45560</td><td class='detailed_column dna_length_column' rowspan='1'>905</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm chrm_column query_species' rowspan='999999'><div class='chromo_trigger is_sticky'><div class='chromosomes'></div></div></td><td class='present_column cluster_guide_850500_0'>true (1)</td><td class='detailed_column gene_id_column cell_species_0_90818455'>
+        </th><tr id='title_row'><th class='number_column'>#</th><th class='first_gene_id_column query_species'><div class='boss_th'><div class='th_holder'><button class='master_ribbon_setting ribbon_setting_button toggle_button'><svg viewBox='826 826 12 12'><path fill='#2C3A49' d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><div class='master_checkbox_container'><input type='checkbox' class='gene_checkbox master_checkbox' id='master_checkbox' checked></div>Gene</div><div class='abc_123'><button class='transcript_toggle order123 active' title='Sort table by query species genes genomic positions numerically'>123</button><button class='transcript_toggle orderAbc' title='Sort table by query species gene names alphabetically'>abc</button></div></div></th><th class='detailed_column start_column'>Start</th><th class='detailed_column end_column'>End</th><th class='detailed_column dna_length_column'>DNA Length</th><th class='detailed_column mrna_length_column'>Longest mRNA (peptide)</th><th class='chrm_column'>Chrm</th><th class='present_column'>Present (genes)</th><th class='detailed_column gene_id_column'><div class='boss_th'><div><span class='gene_id_th'>Gene</span><span class='gene_id_info'>(ID)</span></div></th><th class='detailed_column start_column'>Start</th><th class='detailed_column end_column'>End</th><th class='detailed_column chr_num_column'>Chrm #</th><th class='detailed_column dna_length_column'>DNA Length (%)</th><th class='detailed_column mrna_length_column'>mRNA length (%)</th><th class='detailed_column total_identity_column'>Best Total Identity (%)</th><th class='detailed_column local_identity_column'>Best Local Identity (%)</th><th class='detailed_column coverage_column'>Coverage</th><th class='detailed_column hsps_colum'># HSPs</th><th class='detailed_column query_length_column'>Query Length</th><th class='detailed_column score_column'>Score</th><th class='detailed_column evalue_column'>E-value</th><th class='chrm_column'>Chrm</th><th class='present_column'>Present (genes)</th><th class='detailed_column gene_id_column'><div class='boss_th'><div><span class='gene_id_th'>Gene</span><span class='gene_id_info'>(ID)</span></div><div class='transcripts_info'><span>[transcripts]</span></div></th><th class='detailed_column start_column'>Start</th><th class='detailed_column end_column'>End</th><th class='detailed_column chr_num_column'>Chrm #</th><th class='detailed_column dna_length_column'>DNA Length (%)</th><th class='detailed_column mrna_length_column'>mRNA length (%)</th><th class='detailed_column total_identity_column'>Best Total Identity (%)</th><th class='detailed_column local_identity_column'>Best Local Identity (%)</th><th class='detailed_column coverage_column'>Coverage</th><th class='detailed_column hsps_colum'># HSPs</th><th class='detailed_column query_length_column'>Query Length</th><th class='detailed_column score_column'>Score</th><th class='detailed_column evalue_column'>E-value</th><th class='chrm_column'>Chrm</th></tr></thead><tbody>
+<tr data-gene-name='clr4_custom'><td class='number_column' rowspan='2'>1</td><td rowspan='2' class='cell_species_-1_2540825_custom first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='2540825_custom' data-gene-name='clr4_custom'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='2540825_custom' data-gene-name='clr4_custom' checked><a href='https://www.ncbi.nlm.nih.gov/gene/2540825' target='_blank'>clr4_custom</a></div></td><td class='detailed_column start_column' rowspan='2'>453996</td><td class='detailed_column end_column' rowspan='2'>458410</td><td class='detailed_column dna_length_column' rowspan='2'>4414</td><td class='detailed_column mrna_length_column'>4415 (490)</td><td class='chrm chrm_column query_species' rowspan='999999'><div class='chromo_trigger is_sticky'><div class='chromosomes'></div></div></td><td class='present_column cluster_guide_2540825_custom_0'>true (2)</td><td class='detailed_column gene_id_column cell_species_0_2'>
                                 <div class="boss_td">
                                     <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/90818455' target='_blank'>otu1</span></a><span class='gene_id_info'>(90818455)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_1_0' 
-                                                onclick='toggleTranscripts(1, 0)' 
-                                                class='transcript_toggle' 
-                                                data-row='1' 
-                                                data-species='0'>
-                                            (1)
-                                        </button>
+                                        <span class='gene_link'>Gene_2</span><span class='gene_id_info'>(2)</span> 
                                     </div>
                                 </div>
-                                <span id='transcript_toggle_1_0' class='transcript_span'><div class='percent_column_text_neutral'>NM_001430995.1</div></span>
-                                </td><td class='detailed_column start_column'>3073093</td><td class='detailed_column end_column'>3074167</td><td class='detailed_column chr_num_column'>
-                            I
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #00bc53'></div><div class='percent_column_text'>1074/905 (118.7%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #dcbaff'></div>
-                                <div class='percent_column_text'>1075/301 (357.1%)</div>
-                                <span id='mrna_length_toggle_1_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #dcbaff'></div><div class='percent_column_text'>1075/301 (357.1%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #00cf5c'></div>
-                                <div class='percent_column_text'>101/100 (101.0%)</div>
-                                <span id='total_identity_toggle_1_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #00cf5c'></div><div class='percent_column_text'>101/100 (101.0%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 30.1%; background: #ffc8b9'></div>
-                                <div class='percent_column_text'>101/335 (30.1%)</div>
-                                <span id='local_identity_toggle_1_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 30.1%; background: #ffc8b9'></div><div class='percent_column_text'>101/335 (30.1%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
+                                </td><td class='detailed_column start_column'>348848</td><td class='detailed_column end_column'>349279</td><td class='detailed_column chr_num_column'>
+                            VIII
+                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 9.8%; background: #ffd7d2'></div><div class='percent_column_text'>431/4414 (9.8%)</div></td><td class='detailed_column mrna_length_column'><div>-</div></td><td class='detailed_column total_identity_column'><div>-</div></td><td class='detailed_column local_identity_column'><div>-</div></td><td class='detailed_column coverage_column percent_column'>
                             <div class="coverage_container">
-                <div class="percentage_box" style="width: 99.3%; left: 0.3%; background: #ffc8b9;" 
-                        data-start="1" 
-                        data-end="299" 
-                        data-identity="101/335 (30%)" 
-                        data-similarity="159/335 (47%)" 
-                        data-score="120.0" 
-                        data-evalue="5e-32"></div>
-                <div class="percent_column_text">299/301 (99.3%)</div>
+                <div class="percentage_box" style="width: 3.7%; left: 30.3%; background: #ffc8b8;" 
+                        data-start="1339" 
+                        data-end="1500" 
+                        data-identity="17/54 (31%)" 
+                        data-similarity="25/54 (46%)" 
+                        data-score="31.3" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.7%; left: 39.7%; background: #ffc4b2;" 
+                        data-start="1753" 
+                        data-end="1827" 
+                        data-identity="9/25 (36%)" 
+                        data-similarity="16/25 (64%)" 
+                        data-score="28.1" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.4%; left: 35.1%; background: #FFBAA1;" 
+                        data-start="1549" 
+                        data-end="1608" 
+                        data-identity="10/20 (50%)" 
+                        data-similarity="13/20 (65%)" 
+                        data-score="32.7" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.3%; left: 37.6%; background: #ffbca4;" 
+                        data-start="1660" 
+                        data-end="1716" 
+                        data-identity="9/19 (47%)" 
+                        data-similarity="14/19 (74%)" 
+                        data-score="27.6" 
+                        data-evalue="2e-11"></div>
+                <div class="percent_column_text">354/4415 (8.0%)</div>
             </div>
                             <span id='coverage_toggle_1_0' class='transcript_span'>
                                 <div class="coverage_container">
-                <div class="percentage_box" style="width: 99.3%; left: 0.3%; background: #ffc8b9;" 
-                        data-start="1" 
-                        data-end="299" 
-                        data-identity="101/335 (30%)" 
-                        data-similarity="159/335 (47%)" 
-                        data-score="120.0" 
-                        data-evalue="5e-32"></div>
-                <div class="percent_column_text">299/301 (99.3%)</div>
+                <div class="percentage_box" style="width: 3.7%; left: 30.3%; background: #ffc8b8;" 
+                        data-start="1339" 
+                        data-end="1500" 
+                        data-identity="17/54 (31%)" 
+                        data-similarity="25/54 (46%)" 
+                        data-score="31.3" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.7%; left: 39.7%; background: #ffc4b2;" 
+                        data-start="1753" 
+                        data-end="1827" 
+                        data-identity="9/25 (36%)" 
+                        data-similarity="16/25 (64%)" 
+                        data-score="28.1" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.4%; left: 35.1%; background: #FFBAA1;" 
+                        data-start="1549" 
+                        data-end="1608" 
+                        data-identity="10/20 (50%)" 
+                        data-similarity="13/20 (65%)" 
+                        data-score="32.7" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.3%; left: 37.6%; background: #ffbca4;" 
+                        data-start="1660" 
+                        data-end="1716" 
+                        data-identity="9/19 (47%)" 
+                        data-similarity="14/19 (74%)" 
+                        data-score="27.6" 
+                        data-evalue="2e-11"></div>
+                <div class="percent_column_text">354/4415 (8.0%)</div>
             </div>
                             </span>
                         </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_1_0' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
+                            <div>4</div>
+                            <span id='hsp_count_toggle_1_0' class='transcript_span'><div class='percent_column_text_neutral'>4</div></span>
                             </td><td class='detailed_column query_length_column'>
-                            <div>301</div>
-                            <span id='query_length_toggle_1_0' class='transcript_span'><div class='percent_column_text_neutral'>301</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>120</div>
-                                <span id='score_toggle_1_0' class='transcript_span'><div class='percent_column_text_neutral'>120</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>5.00e-32</div>
-                                <span id='evalue_toggle_1_0' class='transcript_span'><div class='percent_column_text_neutral'>5.00e-32</div></span>
-                                </td><td class='chrm chrm_column' rowspan='999999'><div class='chromo_trigger is_sticky'><div class='chromosomes'></div></div></td><td class='present_column cluster_guide_850500_1'>true (1)</td><td class='detailed_column gene_id_column cell_species_1_3636848'>
+                            <div>4415</div>
+                            <span id='query_length_toggle_1_0' class='transcript_span'><div class='percent_column_text_neutral'>4415</div></span>
+                            </td><td class='detailed_column score_column'><div>-</div></td><td class='detailed_column evalue_column'><div>-</div></td><td class='chrm chrm_column' rowspan='999999'><div class='chromo_trigger is_sticky'><div class='chromosomes'></div></div></td><td class='present_column cluster_guide_2540825_custom_1'>true (2)</td><td class='detailed_column gene_id_column cell_species_1_853271'>
                                 <div class="boss_td">
                                     <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/3636848' target='_blank'>Unknown</span></a><span class='gene_id_info'>(3636848)</span> 
+                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/853271' target='_blank'>SET2</span></a><span class='gene_id_info'>(853271)</span> 
                                     </div>
                                     <div class='transcripts_info'>
                                         <button id='toggle_1_1' 
@@ -315,1127 +323,232 @@
                                         </button>
                                     </div>
                                 </div>
-                                <span id='transcript_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>XM_716339.2</div></span>
-                                </td><td class='detailed_column start_column'>518168</td><td class='detailed_column end_column'>519169</td><td class='detailed_column chr_num_column'>
-                            1
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #00c557'></div><div class='percent_column_text'>1001/905 (110.6%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #dcbaff'></div>
-                                <div class='percent_column_text'>1002/301 (332.9%)</div>
-                                <span id='mrna_length_toggle_1_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #dcbaff'></div><div class='percent_column_text'>1002/301 (332.9%)</div></div></span>
+                                <span id='transcript_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>NM_001181601.2</div></span>
+                                </td><td class='detailed_column start_column'>102227</td><td class='detailed_column end_column'>104428</td><td class='detailed_column chr_num_column'>
+                            X
+                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 49.9%; background: #ffbaa1'></div><div class='percent_column_text'>2201/4414 (49.9%)</div></td><td class='detailed_column mrna_length_column percent_column'>
+                                <div class='percentage_box' style='width: 49.9%; background: #ffbaa1'></div>
+                                <div class='percent_column_text'>2202/4415 (49.9%)</div>
+                                <span id='mrna_length_toggle_1_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 49.9%; background: #ffbaa1'></div><div class='percent_column_text'>2202/4415 (49.9%)</div></div></span>
                                 </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 99.0%; background: #a4feca'></div>
-                                <div class='percent_column_text'>99/100 (99.0%)</div>
-                                <span id='total_identity_toggle_1_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 99.0%; background: #a4feca'></div><div class='percent_column_text'>99/100 (99.0%)</div></div></span>
+                                <div class='percentage_box' style='width: 0.6%; background: #ffdede'></div>
+                                <div class='percent_column_text'>28/4415 (0.6%)</div>
+                                <span id='total_identity_toggle_1_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 0.6%; background: #ffdede'></div><div class='percent_column_text'>28/4415 (0.6%)</div></div></span>
                                 </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 31.8%; background: #ffc7b7'></div>
-                                <div class='percent_column_text'>99/311 (31.8%)</div>
-                                <span id='local_identity_toggle_1_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 31.8%; background: #ffc7b7'></div><div class='percent_column_text'>99/311 (31.8%)</div></div></span>
+                                <div class='percentage_box' style='width: 43.8%; background: #ffbea8'></div>
+                                <div class='percent_column_text'>28/64 (43.8%)</div>
+                                <span id='local_identity_toggle_1_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 43.8%; background: #ffbea8'></div><div class='percent_column_text'>28/64 (43.8%)</div></div></span>
                                 </td><td class='detailed_column coverage_column percent_column'>
                             <div class="coverage_container">
-                <div class="percentage_box" style="width: 95.3%; left: 4.3%; background: #ffc7b7;" 
-                        data-start="13" 
-                        data-end="299" 
-                        data-identity="99/311 (32%)" 
-                        data-similarity="174/311 (56%)" 
-                        data-score="149.0" 
-                        data-evalue="2e-43"></div>
-                <div class="percent_column_text">287/301 (95.3%)</div>
+                <div class="percentage_box" style="width: 4.3%; left: 29.4%; background: #ffbea8;" 
+                        data-start="1297" 
+                        data-end="1488" 
+                        data-identity="28/64 (44%)" 
+                        data-similarity="37/64 (58%)" 
+                        data-score="59.7" 
+                        data-evalue="2e-13"></div>
+<div class="percentage_box" style="width: 1.4%; left: 35.1%; background: #ffd5a1;" 
+                        data-start="1549" 
+                        data-end="1608" 
+                        data-identity="12/20 (60%)" 
+                        data-similarity="15/20 (75%)" 
+                        data-score="34.1" 
+                        data-evalue="2e-13"></div>
+                <div class="percent_column_text">252/4415 (5.7%)</div>
             </div>
                             <span id='coverage_toggle_1_1' class='transcript_span'>
                                 <div class="coverage_container">
-                <div class="percentage_box" style="width: 95.3%; left: 4.3%; background: #ffc7b7;" 
-                        data-start="13" 
-                        data-end="299" 
-                        data-identity="99/311 (32%)" 
-                        data-similarity="174/311 (56%)" 
-                        data-score="149.0" 
-                        data-evalue="2e-43"></div>
-                <div class="percent_column_text">287/301 (95.3%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>301</div>
-                            <span id='query_length_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>301</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>149</div>
-                                <span id='score_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>149</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>2.00e-43</div>
-                                <span id='evalue_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>2.00e-43</div></span>
-                                </td><td class='chrm chrm_column' rowspan='999999'><div class='chromo_trigger is_sticky'><div class='chromosomes'></div></div></td></tr>
-<tr data-gene-name='LAM5'><td class='number_column' rowspan='1'>2</td><td rowspan='1' class='cell_species_-1_850501 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='850501' data-gene-name='LAM5'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='850501' data-gene-name='LAM5' checked><a href='https://www.ncbi.nlm.nih.gov/gene/850501' target='_blank'>LAM5</a></div></td><td class='detailed_column start_column' rowspan='1'>45720</td><td class='detailed_column end_column' rowspan='1'>47744</td><td class='detailed_column dna_length_column' rowspan='1'>2024</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_850501_0'>true (1)</td><td class='detailed_column gene_id_column cell_species_0_2540703'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/2540703' target='_blank'>ltc1</span></a><span class='gene_id_info'>(2540703)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_2_0' 
-                                                onclick='toggleTranscripts(2, 0)' 
-                                                class='transcript_toggle' 
-                                                data-row='2' 
-                                                data-species='0'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_2_0' class='transcript_span'><div class='percent_column_text_neutral'>NM_001022292.3</div></span>
-                                </td><td class='detailed_column start_column'>3295640</td><td class='detailed_column end_column'>3298548</td><td class='detailed_column chr_num_column'>
-                            II
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>2908/2024 (143.7%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div>
-                                <div class='percent_column_text'>2909/674 (431.6%)</div>
-                                <span id='mrna_length_toggle_2_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div><div class='percent_column_text'>2909/674 (431.6%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 21.0%; background: #ffcfc4'></div>
-                                <div class='percent_column_text'>47/224 (21.0%)</div>
-                                <span id='total_identity_toggle_2_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 21.0%; background: #ffcfc4'></div><div class='percent_column_text'>47/224 (21.0%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 40.2%; background: #ffc1ad'></div>
-                                <div class='percent_column_text'>47/117 (40.2%)</div>
-                                <span id='local_identity_toggle_2_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 40.2%; background: #ffc1ad'></div><div class='percent_column_text'>47/117 (40.2%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 27.0%; left: 58.8%; background: #ffc8b9;" 
-                        data-start="396" 
-                        data-end="577" 
-                        data-identity="55/184 (30%)" 
-                        data-similarity="96/184 (52%)" 
-                        data-score="86.7" 
-                        data-evalue="9e-18"></div>
-<div class="percentage_box" style="width: 17.4%; left: 28.0%; background: #ffc1ad;" 
-                        data-start="189" 
-                        data-end="305" 
-                        data-identity="47/117 (40%)" 
-                        data-similarity="78/117 (67%)" 
-                        data-score="125.0" 
-                        data-evalue="4e-30"></div>
-                <div class="percent_column_text">299/674 (44.4%)</div>
-            </div>
-                            <span id='coverage_toggle_2_0' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 27.0%; left: 58.8%; background: #ffc8b9;" 
-                        data-start="396" 
-                        data-end="577" 
-                        data-identity="55/184 (30%)" 
-                        data-similarity="96/184 (52%)" 
-                        data-score="86.7" 
-                        data-evalue="9e-18"></div>
-<div class="percentage_box" style="width: 17.4%; left: 28.0%; background: #ffc1ad;" 
-                        data-start="189" 
-                        data-end="305" 
-                        data-identity="47/117 (40%)" 
-                        data-similarity="78/117 (67%)" 
-                        data-score="125.0" 
-                        data-evalue="4e-30"></div>
-                <div class="percent_column_text">299/674 (44.4%)</div>
+                <div class="percentage_box" style="width: 4.3%; left: 29.4%; background: #ffbea8;" 
+                        data-start="1297" 
+                        data-end="1488" 
+                        data-identity="28/64 (44%)" 
+                        data-similarity="37/64 (58%)" 
+                        data-score="59.7" 
+                        data-evalue="2e-13"></div>
+<div class="percentage_box" style="width: 1.4%; left: 35.1%; background: #ffd5a1;" 
+                        data-start="1549" 
+                        data-end="1608" 
+                        data-identity="12/20 (60%)" 
+                        data-similarity="15/20 (75%)" 
+                        data-score="34.1" 
+                        data-evalue="2e-13"></div>
+                <div class="percent_column_text">252/4415 (5.7%)</div>
             </div>
                             </span>
                         </td><td class='detailed_column hsps_colum'>
                             <div>2</div>
-                            <span id='hsp_count_toggle_2_0' class='transcript_span'><div class='percent_column_text_neutral'>2</div></span>
+                            <span id='hsp_count_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>2</div></span>
                             </td><td class='detailed_column query_length_column'>
-                            <div>674</div>
-                            <span id='query_length_toggle_2_0' class='transcript_span'><div class='percent_column_text_neutral'>674</div></span>
+                            <div>4415</div>
+                            <span id='query_length_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>4415</div></span>
                             </td><td class='detailed_column score_column'>
-                                <div>125</div>
-                                <span id='score_toggle_2_0' class='transcript_span'><div class='percent_column_text_neutral'>125</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>4.00e-30</div>
-                                <span id='evalue_toggle_2_0' class='transcript_span'><div class='percent_column_text_neutral'>4.00e-30</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td><td class='present_column cluster_guide_850501_1'>true (1)</td><td class='detailed_column gene_id_column cell_species_1_3644482'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/3644482' target='_blank'>Unknown</span></a><span class='gene_id_info'>(3644482)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_2_1' 
-                                                onclick='toggleTranscripts(2, 1)' 
-                                                class='transcript_toggle' 
-                                                data-row='2' 
-                                                data-species='1'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_2_1' class='transcript_span'><div class='percent_column_text_neutral'>XM_708776.2</div></span>
-                                </td><td class='detailed_column start_column'>1611003</td><td class='detailed_column end_column'>1614224</td><td class='detailed_column chr_num_column'>
-                            1
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>3221/2024 (159.1%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div>
-                                <div class='percent_column_text'>3222/674 (478.0%)</div>
-                                <span id='mrna_length_toggle_2_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div><div class='percent_column_text'>3222/674 (478.0%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 56.7%; background: #ffcca1'></div>
-                                <div class='percent_column_text'>127/224 (56.7%)</div>
-                                <span id='total_identity_toggle_2_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 56.7%; background: #ffcca1'></div><div class='percent_column_text'>127/224 (56.7%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 30.7%; background: #ffc8b8'></div>
-                                <div class='percent_column_text'>127/414 (30.7%)</div>
-                                <span id='local_identity_toggle_2_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 30.7%; background: #ffc8b8'></div><div class='percent_column_text'>127/414 (30.7%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 56.4%; left: 28.3%; background: #ffc8b8;" 
-                        data-start="191" 
-                        data-end="570" 
-                        data-identity="127/414 (31%)" 
-                        data-similarity="215/414 (52%)" 
-                        data-score="194.0" 
-                        data-evalue="1e-52"></div>
-                <div class="percent_column_text">380/674 (56.4%)</div>
-            </div>
-                            <span id='coverage_toggle_2_1' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 56.4%; left: 28.3%; background: #ffc8b8;" 
-                        data-start="191" 
-                        data-end="570" 
-                        data-identity="127/414 (31%)" 
-                        data-similarity="215/414 (52%)" 
-                        data-score="194.0" 
-                        data-evalue="1e-52"></div>
-                <div class="percent_column_text">380/674 (56.4%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_2_1' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>674</div>
-                            <span id='query_length_toggle_2_1' class='transcript_span'><div class='percent_column_text_neutral'>674</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>194</div>
-                                <span id='score_toggle_2_1' class='transcript_span'><div class='percent_column_text_neutral'>194</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>1.00e-52</div>
-                                <span id='evalue_toggle_2_1' class='transcript_span'><div class='percent_column_text_neutral'>1.00e-52</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td></tr>
-<tr data-gene-name='N/A'><td class='number_column' rowspan='1'>3</td><td rowspan='1' class='cell_species_-1_1466401 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='1466401' data-gene-name='N/A'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='1466401' data-gene-name='N/A' checked><a href='https://www.ncbi.nlm.nih.gov/gene/1466401' target='_blank'>N/A</a></div></td><td class='detailed_column start_column' rowspan='1'>48734</td><td class='detailed_column end_column' rowspan='1'>48925</td><td class='detailed_column dna_length_column' rowspan='1'>191</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_1466401_0 none_cell'>none</td><td class='detailed_column gene_id_column cell_species_0_none none_cell'>none</td><td class='detailed_column start_column none_cell'></td><td class='detailed_column end_column none_cell'></td><td class='detailed_column chr_num_column none_cell'></td><td class='detailed_column dna_length_column none_cell'></td><td class='detailed_column mrna_length_column none_cell'></td><td class='detailed_column total_identity_column none_cell'></td><td class='detailed_column local_identity_column none_cell'></td><td class='detailed_column coverage_column none_cell'></td><td class='detailed_column hsps_colum none_cell'></td><td class='detailed_column query_length_column none_cell'></td><td class='detailed_column score_column none_cell'></td><td class='detailed_column evalue_column none_cell'></td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_1466401_1 none_cell'>none</td><td class='detailed_column gene_id_column cell_species_1_none none_cell'>none</td><td class='detailed_column start_column none_cell'></td><td class='detailed_column end_column none_cell'></td><td class='detailed_column chr_num_column none_cell'></td><td class='detailed_column dna_length_column none_cell'></td><td class='detailed_column mrna_length_column none_cell'></td><td class='detailed_column total_identity_column none_cell'></td><td class='detailed_column local_identity_column none_cell'></td><td class='detailed_column coverage_column none_cell'></td><td class='detailed_column hsps_colum none_cell'></td><td class='detailed_column query_length_column none_cell'></td><td class='detailed_column score_column none_cell'></td><td class='detailed_column evalue_column none_cell'></td><td class='chrm_faker chrm_column' style='display: none;'></td></tr>
-<tr data-gene-name='FET5'><td class='number_column' rowspan='1'>4</td><td rowspan='1' class='cell_species_-1_850502 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='850502' data-gene-name='FET5'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='850502' data-gene-name='FET5' checked><a href='https://www.ncbi.nlm.nih.gov/gene/850502' target='_blank'>FET5</a></div></td><td class='detailed_column start_column' rowspan='1'>49139</td><td class='detailed_column end_column' rowspan='1'>51007</td><td class='detailed_column dna_length_column' rowspan='1'>1868</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_850502_0'>true (1)</td><td class='detailed_column gene_id_column cell_species_0_2541558'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/2541558' target='_blank'>fio1</span></a><span class='gene_id_info'>(2541558)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_4_0' 
-                                                onclick='toggleTranscripts(4, 0)' 
-                                                class='transcript_toggle' 
-                                                data-row='4' 
-                                                data-species='0'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_4_0' class='transcript_span'><div class='percent_column_text_neutral'>NM_001019923.3</div></span>
-                                </td><td class='detailed_column start_column'>4235072</td><td class='detailed_column end_column'>4237874</td><td class='detailed_column chr_num_column'>
-                            I
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>2802/1868 (150.0%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div>
-                                <div class='percent_column_text'>2803/622 (450.6%)</div>
-                                <span id='mrna_length_toggle_4_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div><div class='percent_column_text'>2803/622 (450.6%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #00cc5b'></div>
-                                <div class='percent_column_text'>215/207 (103.9%)</div>
-                                <span id='total_identity_toggle_4_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #00cc5b'></div><div class='percent_column_text'>215/207 (103.9%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 38.1%; background: #ffc2af'></div>
-                                <div class='percent_column_text'>215/565 (38.1%)</div>
-                                <span id='local_identity_toggle_4_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 38.1%; background: #ffc2af'></div><div class='percent_column_text'>215/565 (38.1%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 90.2%; left: 5.3%; background: #ffc2af;" 
-                        data-start="33" 
-                        data-end="593" 
-                        data-identity="215/565 (38%)" 
-                        data-similarity="321/565 (57%)" 
-                        data-score="388.0" 
-                        data-evalue="3e-124"></div>
-                <div class="percent_column_text">561/622 (90.2%)</div>
-            </div>
-                            <span id='coverage_toggle_4_0' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 90.2%; left: 5.3%; background: #ffc2af;" 
-                        data-start="33" 
-                        data-end="593" 
-                        data-identity="215/565 (38%)" 
-                        data-similarity="321/565 (57%)" 
-                        data-score="388.0" 
-                        data-evalue="3e-124"></div>
-                <div class="percent_column_text">561/622 (90.2%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_4_0' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>622</div>
-                            <span id='query_length_toggle_4_0' class='transcript_span'><div class='percent_column_text_neutral'>622</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>388</div>
-                                <span id='score_toggle_4_0' class='transcript_span'><div class='percent_column_text_neutral'>388</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>3.00e-124</div>
-                                <span id='evalue_toggle_4_0' class='transcript_span'><div class='percent_column_text_neutral'>3.00e-124</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td><td class='present_column cluster_guide_850502_1'>true (1)</td><td class='detailed_column gene_id_column cell_species_1_3647153'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/3647153' target='_blank'>FET3</span></a><span class='gene_id_info'>(3647153)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_4_1' 
-                                                onclick='toggleTranscripts(4, 1)' 
-                                                class='transcript_toggle' 
-                                                data-row='4' 
-                                                data-species='1'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_4_1' class='transcript_span'><div class='percent_column_text_neutral'>XM_706173.2</div></span>
-                                </td><td class='detailed_column start_column'>80175</td><td class='detailed_column end_column'>82049</td><td class='detailed_column chr_num_column'>
-                            6
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #00d05c'></div><div class='percent_column_text'>1874/1868 (100.3%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>1875/622 (301.4%)</div>
-                                <span id='mrna_length_toggle_4_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>1875/622 (301.4%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div>
-                                <div class='percent_column_text'>308/207 (148.8%)</div>
-                                <span id='total_identity_toggle_4_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>308/207 (148.8%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 52.2%; background: #ffbfa1'></div>
-                                <div class='percent_column_text'>308/590 (52.2%)</div>
-                                <span id='local_identity_toggle_4_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 52.2%; background: #ffbfa1'></div><div class='percent_column_text'>308/590 (52.2%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 94.9%; left: 3.1%; background: #ffbfa1;" 
-                        data-start="19" 
-                        data-end="608" 
-                        data-identity="308/590 (52%)" 
-                        data-similarity="410/590 (69%)" 
-                        data-score="615.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">590/622 (94.9%)</div>
-            </div>
-                            <span id='coverage_toggle_4_1' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 94.9%; left: 3.1%; background: #ffbfa1;" 
-                        data-start="19" 
-                        data-end="608" 
-                        data-identity="308/590 (52%)" 
-                        data-similarity="410/590 (69%)" 
-                        data-score="615.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">590/622 (94.9%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_4_1' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>622</div>
-                            <span id='query_length_toggle_4_1' class='transcript_span'><div class='percent_column_text_neutral'>622</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>615</div>
-                                <span id='score_toggle_4_1' class='transcript_span'><div class='percent_column_text_neutral'>615</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>0.0</div>
-                                <span id='evalue_toggle_4_1' class='transcript_span'><div class='percent_column_text_neutral'>0.0</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td></tr>
-<tr data-gene-name='N/A'><td class='number_column' rowspan='1'>5</td><td rowspan='1' class='cell_species_-1_850503 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='850503' data-gene-name='N/A'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='850503' data-gene-name='N/A' checked><a href='https://www.ncbi.nlm.nih.gov/gene/850503' target='_blank'>N/A</a></div></td><td class='detailed_column start_column' rowspan='1'>51350</td><td class='detailed_column end_column' rowspan='1'>52972</td><td class='detailed_column dna_length_column' rowspan='1'>1622</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_850503_0'>true (1)</td><td class='detailed_column gene_id_column cell_species_0_2538732'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/2538732' target='_blank'>ght1</span></a><span class='gene_id_info'>(2538732)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_5_0' 
-                                                onclick='toggleTranscripts(5, 0)' 
-                                                class='transcript_toggle' 
-                                                data-row='5' 
-                                                data-species='0'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_5_0' class='transcript_span'><div class='percent_column_text_neutral'>NM_001022741.3</div></span>
-                                </td><td class='detailed_column start_column'>232288</td><td class='detailed_column end_column'>235195</td><td class='detailed_column chr_num_column'>
-                            III
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>2907/1622 (179.2%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #dbb8ff'></div>
-                                <div class='percent_column_text'>2908/540 (538.5%)</div>
-                                <span id='mrna_length_toggle_5_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #dbb8ff'></div><div class='percent_column_text'>2908/540 (538.5%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 70.6%; background: #fff1a1'></div>
-                                <div class='percent_column_text'>127/180 (70.6%)</div>
-                                <span id='total_identity_toggle_5_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 70.6%; background: #fff1a1'></div><div class='percent_column_text'>127/180 (70.6%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 22.3%; background: #ffcec3'></div>
-                                <div class='percent_column_text'>127/570 (22.3%)</div>
-                                <span id='local_identity_toggle_5_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 22.3%; background: #ffcec3'></div><div class='percent_column_text'>127/570 (22.3%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 95.7%; left: 3.3%; background: #ffcec3;" 
-                        data-start="18" 
-                        data-end="534" 
-                        data-identity="127/570 (22%)" 
-                        data-similarity="234/570 (41%)" 
-                        data-score="115.0" 
-                        data-evalue="3e-27"></div>
-                <div class="percent_column_text">517/540 (95.7%)</div>
-            </div>
-                            <span id='coverage_toggle_5_0' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 95.7%; left: 3.3%; background: #ffcec3;" 
-                        data-start="18" 
-                        data-end="534" 
-                        data-identity="127/570 (22%)" 
-                        data-similarity="234/570 (41%)" 
-                        data-score="115.0" 
-                        data-evalue="3e-27"></div>
-                <div class="percent_column_text">517/540 (95.7%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_5_0' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>540</div>
-                            <span id='query_length_toggle_5_0' class='transcript_span'><div class='percent_column_text_neutral'>540</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>115</div>
-                                <span id='score_toggle_5_0' class='transcript_span'><div class='percent_column_text_neutral'>115</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>3.00e-27</div>
-                                <span id='evalue_toggle_5_0' class='transcript_span'><div class='percent_column_text_neutral'>3.00e-27</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td><td class='present_column cluster_guide_850503_1'>true (1)</td><td class='detailed_column gene_id_column cell_species_1_3644579'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/3644579' target='_blank'>HGT2</span></a><span class='gene_id_info'>(3644579)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_5_1' 
-                                                onclick='toggleTranscripts(5, 1)' 
-                                                class='transcript_toggle' 
-                                                data-row='5' 
-                                                data-species='1'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_5_1' class='transcript_span'><div class='percent_column_text_neutral'>XM_708669.2</div></span>
-                                </td><td class='detailed_column start_column'>434412</td><td class='detailed_column end_column'>436049</td><td class='detailed_column chr_num_column'>
-                            1
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #00cf5c'></div><div class='percent_column_text'>1637/1622 (100.9%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>1638/540 (303.3%)</div>
-                                <span id='mrna_length_toggle_5_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>1638/540 (303.3%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 76.7%; background: #f8fea3'></div>
-                                <div class='percent_column_text'>138/180 (76.7%)</div>
-                                <span id='total_identity_toggle_5_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 76.7%; background: #f8fea3'></div><div class='percent_column_text'>138/180 (76.7%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 28.3%; background: #ffcabb'></div>
-                                <div class='percent_column_text'>138/488 (28.3%)</div>
-                                <span id='local_identity_toggle_5_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 28.3%; background: #ffcabb'></div><div class='percent_column_text'>138/488 (28.3%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 89.1%; left: 2.0%; background: #ffcabc;" 
-                        data-start="11" 
-                        data-end="491" 
-                        data-identity="138/488 (28%)" 
-                        data-similarity="224/488 (46%)" 
-                        data-score="187.0" 
-                        data-evalue="2e-53"></div>
-                <div class="percent_column_text">481/540 (89.1%)</div>
-            </div>
-                            <span id='coverage_toggle_5_1' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 89.1%; left: 2.0%; background: #ffcabc;" 
-                        data-start="11" 
-                        data-end="491" 
-                        data-identity="138/488 (28%)" 
-                        data-similarity="224/488 (46%)" 
-                        data-score="187.0" 
-                        data-evalue="2e-53"></div>
-                <div class="percent_column_text">481/540 (89.1%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_5_1' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>540</div>
-                            <span id='query_length_toggle_5_1' class='transcript_span'><div class='percent_column_text_neutral'>540</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>187</div>
-                                <span id='score_toggle_5_1' class='transcript_span'><div class='percent_column_text_neutral'>187</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>2.00e-53</div>
-                                <span id='evalue_toggle_5_1' class='transcript_span'><div class='percent_column_text_neutral'>2.00e-53</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td></tr>
-<tr data-gene-name='ACT1'><td class='number_column' rowspan='1'>6</td><td rowspan='1' class='cell_species_-1_850504 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='850504' data-gene-name='ACT1'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='850504' data-gene-name='ACT1' checked><a href='https://www.ncbi.nlm.nih.gov/gene/850504' target='_blank'>ACT1</a></div></td><td class='detailed_column start_column' rowspan='1'>53260</td><td class='detailed_column end_column' rowspan='1'>54696</td><td class='detailed_column dna_length_column' rowspan='1'>1436</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_850504_0'>true (1)</td><td class='detailed_column gene_id_column cell_species_0_2540051'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/2540051' target='_blank'>act1</span></a><span class='gene_id_info'>(2540051)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_6_0' 
-                                                onclick='toggleTranscripts(6, 0)' 
-                                                class='transcript_toggle' 
-                                                data-row='6' 
-                                                data-species='0'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_6_0' class='transcript_span'><div class='percent_column_text_neutral'>NM_001021513.3</div></span>
-                                </td><td class='detailed_column start_column'>1475485</td><td class='detailed_column end_column'>1477333</td><td class='detailed_column chr_num_column'>
-                            II
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>1848/1436 (128.7%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div>
-                                <div class='percent_column_text'>1849/375 (493.1%)</div>
-                                <span id='mrna_length_toggle_6_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div><div class='percent_column_text'>1849/375 (493.1%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>336/125 (268.8%)</div>
-                                <span id='total_identity_toggle_6_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>336/125 (268.8%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 89.6%; background: #c8feba'></div>
-                                <div class='percent_column_text'>336/375 (89.6%)</div>
-                                <span id='local_identity_toggle_6_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 89.6%; background: #c8feba'></div><div class='percent_column_text'>336/375 (89.6%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 100.0%; left: 0.3%; background: #c6feba;" 
-                        data-start="1" 
-                        data-end="375" 
-                        data-identity="336/375 (90%)" 
-                        data-similarity="360/375 (96%)" 
-                        data-score="723.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">375/375 (100.0%)</div>
-            </div>
-                            <span id='coverage_toggle_6_0' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 100.0%; left: 0.3%; background: #c6feba;" 
-                        data-start="1" 
-                        data-end="375" 
-                        data-identity="336/375 (90%)" 
-                        data-similarity="360/375 (96%)" 
-                        data-score="723.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">375/375 (100.0%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_6_0' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>375</div>
-                            <span id='query_length_toggle_6_0' class='transcript_span'><div class='percent_column_text_neutral'>375</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>723</div>
-                                <span id='score_toggle_6_0' class='transcript_span'><div class='percent_column_text_neutral'>723</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>0.0</div>
-                                <span id='evalue_toggle_6_0' class='transcript_span'><div class='percent_column_text_neutral'>0.0</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td><td class='present_column cluster_guide_850504_1'>true (1)</td><td class='detailed_column gene_id_column cell_species_1_3636195'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/3636195' target='_blank'>ACT1</span></a><span class='gene_id_info'>(3636195)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_6_1' 
-                                                onclick='toggleTranscripts(6, 1)' 
-                                                class='transcript_toggle' 
-                                                data-row='6' 
-                                                data-species='1'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_6_1' class='transcript_span'><div class='percent_column_text_neutral'>XM_019475182.1</div></span>
-                                </td><td class='detailed_column start_column'>3011259</td><td class='detailed_column end_column'>3013047</td><td class='detailed_column chr_num_column'>
-                            1
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>1788/1436 (124.5%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>1131/375 (301.6%)</div>
-                                <span id='mrna_length_toggle_6_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>1131/375 (301.6%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>353/125 (282.4%)</div>
-                                <span id='total_identity_toggle_6_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>353/125 (282.4%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 94.9%; background: #b4fec3'></div>
-                                <div class='percent_column_text'>353/372 (94.9%)</div>
-                                <span id='local_identity_toggle_6_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 94.9%; background: #b4fec3'></div><div class='percent_column_text'>353/372 (94.9%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 99.2%; left: 1.1%; background: #b3fec3;" 
-                        data-start="4" 
-                        data-end="375" 
-                        data-identity="353/372 (95%)" 
-                        data-similarity="368/372 (99%)" 
-                        data-score="746.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">372/375 (99.2%)</div>
-            </div>
-                            <span id='coverage_toggle_6_1' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 99.2%; left: 1.1%; background: #b3fec3;" 
-                        data-start="4" 
-                        data-end="375" 
-                        data-identity="353/372 (95%)" 
-                        data-similarity="368/372 (99%)" 
-                        data-score="746.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">372/375 (99.2%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_6_1' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>375</div>
-                            <span id='query_length_toggle_6_1' class='transcript_span'><div class='percent_column_text_neutral'>375</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>746</div>
-                                <span id='score_toggle_6_1' class='transcript_span'><div class='percent_column_text_neutral'>746</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>0.0</div>
-                                <span id='evalue_toggle_6_1' class='transcript_span'><div class='percent_column_text_neutral'>0.0</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td></tr>
-<tr data-gene-name='YPT1'><td class='number_column' rowspan='1'>7</td><td rowspan='1' class='cell_species_-1_850505 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='850505' data-gene-name='YPT1'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='850505' data-gene-name='YPT1' checked><a href='https://www.ncbi.nlm.nih.gov/gene/850505' target='_blank'>YPT1</a></div></td><td class='detailed_column start_column' rowspan='1'>55366</td><td class='detailed_column end_column' rowspan='1'>55986</td><td class='detailed_column dna_length_column' rowspan='1'>620</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_850505_0'>true (1)</td><td class='detailed_column gene_id_column cell_species_0_2539784'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/2539784' target='_blank'>ypt1</span></a><span class='gene_id_info'>(2539784)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_7_0' 
-                                                onclick='toggleTranscripts(7, 0)' 
-                                                class='transcript_toggle' 
-                                                data-row='7' 
-                                                data-species='0'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_7_0' class='transcript_span'><div class='percent_column_text_neutral'>NM_001022124.3</div></span>
-                                </td><td class='detailed_column start_column'>2932965</td><td class='detailed_column end_column'>2934291</td><td class='detailed_column chr_num_column'>
-                            II
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>1326/620 (213.9%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div>
-                                <div class='percent_column_text'>886/206 (430.1%)</div>
-                                <span id='mrna_length_toggle_7_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #dcb9ff'></div><div class='percent_column_text'>886/206 (430.1%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>150/68 (220.6%)</div>
-                                <span id='total_identity_toggle_7_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>150/68 (220.6%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 72.5%; background: #fff7a1'></div>
-                                <div class='percent_column_text'>150/207 (72.5%)</div>
-                                <span id='local_identity_toggle_7_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 72.5%; background: #fff7a1'></div><div class='percent_column_text'>150/207 (72.5%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 100.0%; left: 0.5%; background: #fff5a1;" 
-                        data-start="1" 
-                        data-end="206" 
-                        data-identity="150/207 (72%)" 
-                        data-similarity="169/207 (82%)" 
-                        data-score="302.0" 
-                        data-evalue="1e-104"></div>
-                <div class="percent_column_text">206/206 (100.0%)</div>
-            </div>
-                            <span id='coverage_toggle_7_0' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 100.0%; left: 0.5%; background: #fff5a1;" 
-                        data-start="1" 
-                        data-end="206" 
-                        data-identity="150/207 (72%)" 
-                        data-similarity="169/207 (82%)" 
-                        data-score="302.0" 
-                        data-evalue="1e-104"></div>
-                <div class="percent_column_text">206/206 (100.0%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_7_0' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>206</div>
-                            <span id='query_length_toggle_7_0' class='transcript_span'><div class='percent_column_text_neutral'>206</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>302</div>
-                                <span id='score_toggle_7_0' class='transcript_span'><div class='percent_column_text_neutral'>302</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>1.00e-104</div>
-                                <span id='evalue_toggle_7_0' class='transcript_span'><div class='percent_column_text_neutral'>1.00e-104</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td><td class='present_column cluster_guide_850505_1'>true (1)</td><td class='detailed_column gene_id_column cell_species_1_3636915'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/3636915' target='_blank'>YPT1</span></a><span class='gene_id_info'>(3636915)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_7_1' 
-                                                onclick='toggleTranscripts(7, 1)' 
-                                                class='transcript_toggle' 
-                                                data-row='7' 
-                                                data-species='1'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_7_1' class='transcript_span'><div class='percent_column_text_neutral'>XM_716457.2</div></span>
-                                </td><td class='detailed_column start_column'>738229</td><td class='detailed_column end_column'>738852</td><td class='detailed_column chr_num_column'>
-                            1
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #00d05c'></div><div class='percent_column_text'>623/620 (100.5%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>624/206 (302.9%)</div>
-                                <span id='mrna_length_toggle_7_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>624/206 (302.9%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>158/68 (232.4%)</div>
-                                <span id='total_identity_toggle_7_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>158/68 (232.4%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 76.3%; background: #fafea3'></div>
-                                <div class='percent_column_text'>158/207 (76.3%)</div>
-                                <span id='local_identity_toggle_7_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 76.3%; background: #fafea3'></div><div class='percent_column_text'>158/207 (76.3%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 100.0%; left: 0.5%; background: #fbfea2;" 
-                        data-start="1" 
-                        data-end="206" 
-                        data-identity="158/207 (76%)" 
-                        data-similarity="173/207 (84%)" 
-                        data-score="322.0" 
-                        data-evalue="4e-114"></div>
-                <div class="percent_column_text">206/206 (100.0%)</div>
-            </div>
-                            <span id='coverage_toggle_7_1' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 100.0%; left: 0.5%; background: #fbfea2;" 
-                        data-start="1" 
-                        data-end="206" 
-                        data-identity="158/207 (76%)" 
-                        data-similarity="173/207 (84%)" 
-                        data-score="322.0" 
-                        data-evalue="4e-114"></div>
-                <div class="percent_column_text">206/206 (100.0%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_7_1' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>206</div>
-                            <span id='query_length_toggle_7_1' class='transcript_span'><div class='percent_column_text_neutral'>206</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>322</div>
-                                <span id='score_toggle_7_1' class='transcript_span'><div class='percent_column_text_neutral'>322</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>4.00e-114</div>
-                                <span id='evalue_toggle_7_1' class='transcript_span'><div class='percent_column_text_neutral'>4.00e-114</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td></tr>
-<tr data-gene-name='TUB2'><td class='number_column' rowspan='1'>8</td><td rowspan='1' class='cell_species_-1_850506 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='850506' data-gene-name='TUB2'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='850506' data-gene-name='TUB2' checked><a href='https://www.ncbi.nlm.nih.gov/gene/850506' target='_blank'>TUB2</a></div></td><td class='detailed_column start_column' rowspan='1'>56336</td><td class='detailed_column end_column' rowspan='1'>57709</td><td class='detailed_column dna_length_column' rowspan='1'>1373</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_850506_0'>true (1)</td><td class='detailed_column gene_id_column cell_species_0_2540582'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/2540582' target='_blank'>nda3</span></a><span class='gene_id_info'>(2540582)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_8_0' 
-                                                onclick='toggleTranscripts(8, 0)' 
-                                                class='transcript_toggle' 
-                                                data-row='8' 
-                                                data-species='0'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_8_0' class='transcript_span'><div class='percent_column_text_neutral'>NM_001022572.3</div></span>
-                                </td><td class='detailed_column start_column'>3964092</td><td class='detailed_column end_column'>3965973</td><td class='detailed_column chr_num_column'>
-                            II
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>1881/1373 (137.0%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #dcbaff'></div>
-                                <div class='percent_column_text'>1580/457 (345.7%)</div>
-                                <span id='mrna_length_toggle_8_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #dcbaff'></div><div class='percent_column_text'>1580/457 (345.7%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>331/152 (217.8%)</div>
-                                <span id='total_identity_toggle_8_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>331/152 (217.8%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 77.3%; background: #f6fea5'></div>
-                                <div class='percent_column_text'>331/428 (77.3%)</div>
-                                <span id='local_identity_toggle_8_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 77.3%; background: #f6fea5'></div><div class='percent_column_text'>331/428 (77.3%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 93.7%; left: 0.2%; background: #f7fea4;" 
-                        data-start="1" 
-                        data-end="428" 
-                        data-identity="331/428 (77%)" 
-                        data-similarity="382/428 (89%)" 
-                        data-score="683.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">428/457 (93.7%)</div>
-            </div>
-                            <span id='coverage_toggle_8_0' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 93.7%; left: 0.2%; background: #f7fea4;" 
-                        data-start="1" 
-                        data-end="428" 
-                        data-identity="331/428 (77%)" 
-                        data-similarity="382/428 (89%)" 
-                        data-score="683.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">428/457 (93.7%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_8_0' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>457</div>
-                            <span id='query_length_toggle_8_0' class='transcript_span'><div class='percent_column_text_neutral'>457</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>683</div>
-                                <span id='score_toggle_8_0' class='transcript_span'><div class='percent_column_text_neutral'>683</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>0.0</div>
-                                <span id='evalue_toggle_8_0' class='transcript_span'><div class='percent_column_text_neutral'>0.0</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td><td class='present_column cluster_guide_850506_1'>true (1)</td><td class='detailed_column gene_id_column cell_species_1_3639329'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/3639329' target='_blank'>TUB2</span></a><span class='gene_id_info'>(3639329)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_8_1' 
-                                                onclick='toggleTranscripts(8, 1)' 
-                                                class='transcript_toggle' 
-                                                data-row='8' 
-                                                data-species='1'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_8_1' class='transcript_span'><div class='percent_column_text_neutral'>XM_019475058.1</div></span>
-                                </td><td class='detailed_column start_column'>123869</td><td class='detailed_column end_column'>125597</td><td class='detailed_column chr_num_column'>
-                            1
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>1728/1373 (125.9%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>1350/457 (295.4%)</div>
-                                <span id='mrna_length_toggle_8_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>1350/457 (295.4%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>378/152 (248.7%)</div>
-                                <span id='total_identity_toggle_8_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>378/152 (248.7%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 88.1%; background: #cdfeb7'></div>
-                                <div class='percent_column_text'>378/429 (88.1%)</div>
-                                <span id='local_identity_toggle_8_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 88.1%; background: #cdfeb7'></div><div class='percent_column_text'>378/429 (88.1%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 93.9%; left: 0.2%; background: #cefeb7;" 
-                        data-start="1" 
-                        data-end="429" 
-                        data-identity="378/429 (88%)" 
-                        data-similarity="414/429 (97%)" 
-                        data-score="771.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">429/457 (93.9%)</div>
-            </div>
-                            <span id='coverage_toggle_8_1' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 93.9%; left: 0.2%; background: #cefeb7;" 
-                        data-start="1" 
-                        data-end="429" 
-                        data-identity="378/429 (88%)" 
-                        data-similarity="414/429 (97%)" 
-                        data-score="771.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">429/457 (93.9%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_8_1' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>457</div>
-                            <span id='query_length_toggle_8_1' class='transcript_span'><div class='percent_column_text_neutral'>457</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>771</div>
-                                <span id='score_toggle_8_1' class='transcript_span'><div class='percent_column_text_neutral'>771</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>0.0</div>
-                                <span id='evalue_toggle_8_1' class='transcript_span'><div class='percent_column_text_neutral'>0.0</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td></tr>
-<tr data-gene-name='RPO41'><td class='number_column' rowspan='1'>9</td><td rowspan='1' class='cell_species_-1_850507 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='850507' data-gene-name='RPO41'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='850507' data-gene-name='RPO41' checked><a href='https://www.ncbi.nlm.nih.gov/gene/850507' target='_blank'>RPO41</a></div></td><td class='detailed_column start_column' rowspan='1'>58782</td><td class='detailed_column end_column' rowspan='1'>62837</td><td class='detailed_column dna_length_column' rowspan='1'>4055</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_850507_0'>true (1)</td><td class='detailed_column gene_id_column cell_species_0_2542687'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/2542687' target='_blank'>rpo41</span></a><span class='gene_id_info'>(2542687)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_9_0' 
-                                                onclick='toggleTranscripts(9, 0)' 
-                                                class='transcript_toggle' 
-                                                data-row='9' 
-                                                data-species='0'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_9_0' class='transcript_span'><div class='percent_column_text_neutral'>NM_001019888.3</div></span>
-                                </td><td class='detailed_column start_column'>4147667</td><td class='detailed_column end_column'>4151509</td><td class='detailed_column chr_num_column'>
-                            I
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 94.7%; background: #b4fec2'></div><div class='percent_column_text'>3842/4055 (94.7%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>3843/1351 (284.5%)</div>
-                                <span id='mrna_length_toggle_9_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>3843/1351 (284.5%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 87.3%; background: #d0feb6'></div>
-                                <div class='percent_column_text'>393/450 (87.3%)</div>
-                                <span id='total_identity_toggle_9_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 87.3%; background: #d0feb6'></div><div class='percent_column_text'>393/450 (87.3%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 44.3%; background: #ffbea8'></div>
-                                <div class='percent_column_text'>393/888 (44.3%)</div>
-                                <span id='local_identity_toggle_9_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 44.3%; background: #ffbea8'></div><div class='percent_column_text'>393/888 (44.3%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 64.8%; left: 29.2%; background: #ffbea8;" 
-                        data-start="395" 
-                        data-end="1269" 
-                        data-identity="393/888 (44%)" 
-                        data-similarity="547/888 (62%)" 
-                        data-score="758.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">875/1351 (64.8%)</div>
-            </div>
-                            <span id='coverage_toggle_9_0' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 64.8%; left: 29.2%; background: #ffbea8;" 
-                        data-start="395" 
-                        data-end="1269" 
-                        data-identity="393/888 (44%)" 
-                        data-similarity="547/888 (62%)" 
-                        data-score="758.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">875/1351 (64.8%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_9_0' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>1351</div>
-                            <span id='query_length_toggle_9_0' class='transcript_span'><div class='percent_column_text_neutral'>1351</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>758</div>
-                                <span id='score_toggle_9_0' class='transcript_span'><div class='percent_column_text_neutral'>758</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>0.0</div>
-                                <span id='evalue_toggle_9_0' class='transcript_span'><div class='percent_column_text_neutral'>0.0</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td><td class='present_column cluster_guide_850507_1'>true (1)</td><td class='detailed_column gene_id_column cell_species_1_3639378'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/3639378' target='_blank'>RPO41</span></a><span class='gene_id_info'>(3639378)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_9_1' 
-                                                onclick='toggleTranscripts(9, 1)' 
-                                                class='transcript_toggle' 
-                                                data-row='9' 
-                                                data-species='1'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_9_1' class='transcript_span'><div class='percent_column_text_neutral'>XM_713910.2</div></span>
-                                </td><td class='detailed_column start_column'>107125</td><td class='detailed_column end_column'>111027</td><td class='detailed_column chr_num_column'>
-                            1
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 96.2%; background: #affec5'></div><div class='percent_column_text'>3902/4055 (96.2%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>3903/1351 (288.9%)</div>
-                                <span id='mrna_length_toggle_9_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>3903/1351 (288.9%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div>
-                                <div class='percent_column_text'>550/450 (122.2%)</div>
-                                <span id='total_identity_toggle_9_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbcff'></div><div class='percent_column_text'>550/450 (122.2%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 44.0%; background: #ffbea8'></div>
-                                <div class='percent_column_text'>550/1251 (44.0%)</div>
-                                <span id='local_identity_toggle_9_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 44.0%; background: #ffbea8'></div><div class='percent_column_text'>550/1251 (44.0%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 91.9%; left: 8.1%; background: #ffbea8;" 
-                        data-start="110" 
-                        data-end="1351" 
-                        data-identity="550/1251 (44%)" 
-                        data-similarity="783/1251 (63%)" 
-                        data-score="1019.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">1242/1351 (91.9%)</div>
-            </div>
-                            <span id='coverage_toggle_9_1' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 91.9%; left: 8.1%; background: #ffbea8;" 
-                        data-start="110" 
-                        data-end="1351" 
-                        data-identity="550/1251 (44%)" 
-                        data-similarity="783/1251 (63%)" 
-                        data-score="1019.0" 
-                        data-evalue="0.0"></div>
-                <div class="percent_column_text">1242/1351 (91.9%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_9_1' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>1351</div>
-                            <span id='query_length_toggle_9_1' class='transcript_span'><div class='percent_column_text_neutral'>1351</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>1019</div>
-                                <span id='score_toggle_9_1' class='transcript_span'><div class='percent_column_text_neutral'>1019</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>0.0</div>
-                                <span id='evalue_toggle_9_1' class='transcript_span'><div class='percent_column_text_neutral'>0.0</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td></tr>
-<tr data-gene-name='CDC13'><td class='number_column' rowspan='1'>10</td><td rowspan='1' class='cell_species_-1_851306 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='851306' data-gene-name='CDC13'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='851306' data-gene-name='CDC13' checked><a href='https://www.ncbi.nlm.nih.gov/gene/851306' target='_blank'>CDC13</a></div></td><td class='detailed_column start_column' rowspan='1'>62244</td><td class='detailed_column end_column' rowspan='1'>65018</td><td class='detailed_column dna_length_column' rowspan='1'>2774</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_851306_0 none_cell'>none</td><td class='detailed_column gene_id_column cell_species_0_none none_cell'>none</td><td class='detailed_column start_column none_cell'></td><td class='detailed_column end_column none_cell'></td><td class='detailed_column chr_num_column none_cell'></td><td class='detailed_column dna_length_column none_cell'></td><td class='detailed_column mrna_length_column none_cell'></td><td class='detailed_column total_identity_column none_cell'></td><td class='detailed_column local_identity_column none_cell'></td><td class='detailed_column coverage_column none_cell'></td><td class='detailed_column hsps_colum none_cell'></td><td class='detailed_column query_length_column none_cell'></td><td class='detailed_column score_column none_cell'></td><td class='detailed_column evalue_column none_cell'></td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_851306_1 none_cell'>none</td><td class='detailed_column gene_id_column cell_species_1_none none_cell'>none</td><td class='detailed_column start_column none_cell'></td><td class='detailed_column end_column none_cell'></td><td class='detailed_column chr_num_column none_cell'></td><td class='detailed_column dna_length_column none_cell'></td><td class='detailed_column mrna_length_column none_cell'></td><td class='detailed_column total_identity_column none_cell'></td><td class='detailed_column local_identity_column none_cell'></td><td class='detailed_column coverage_column none_cell'></td><td class='detailed_column hsps_colum none_cell'></td><td class='detailed_column query_length_column none_cell'></td><td class='detailed_column score_column none_cell'></td><td class='detailed_column evalue_column none_cell'></td><td class='chrm_faker chrm_column' style='display: none;'></td></tr>
-<tr data-gene-name='SPO11'><td class='number_column' rowspan='1'>11</td><td rowspan='1' class='cell_species_-1_856364 first_gene_id_column'><div class='main_gene_container'><button class='ribbon_setting_button toggle_button' data-gene-id='856364' data-gene-name='SPO11'><svg viewBox='826 826 12 12'><path d='M836.259,830.816v0.002l-0.39-1.004l0.001,0.001l1.159-1.271l-1.564-1.567l-1.235,1.132v0.001l-1.047-0.446 h0.002l-0.072-1.661h-2.215l-0.072,1.661l-1.046,0.445l-1.234-1.132l-1.567,1.567l1.163,1.271v0l-0.389,1.003v-0.001l-1.748,0.08 v2.215l1.814,0.087v-0.001l0.399,0.903h-0.001l-1.239,1.364l1.567,1.565l1.399-1.269v-0.001l0.859,0.349l0.094,1.895h2.215 l0.094-1.895h-0.003l0.864-0.35l-0.003,0.002l1.4,1.269l1.564-1.565l-1.237-1.364l0.4-0.902l1.812-0.087v-2.215L836.259,830.816 L836.259,830.816z M833.302,833.186l-1.297,0.537l-1.297-0.537l-0.537-1.297l0.537-1.296l1.297-0.538l1.297,0.538l0.536,1.296 L833.302,833.186L833.302,833.186z'/></svg></button><input type='checkbox' class='gene_checkbox' data-gene-id='856364' data-gene-name='SPO11' checked><a href='https://www.ncbi.nlm.nih.gov/gene/856364' target='_blank'>SPO11</a></div></td><td class='detailed_column start_column' rowspan='1'>62961</td><td class='detailed_column end_column' rowspan='1'>64157</td><td class='detailed_column dna_length_column' rowspan='1'>1196</td><td class='detailed_column mrna_length_column'> ()</td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column cluster_guide_856364_0'>true (1)</td><td class='detailed_column gene_id_column cell_species_0_2542150'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/2542150' target='_blank'>rec12</span></a><span class='gene_id_info'>(2542150)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_11_0' 
-                                                onclick='toggleTranscripts(11, 0)' 
-                                                class='transcript_toggle' 
-                                                data-row='11' 
-                                                data-species='0'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_11_0' class='transcript_span'><div class='percent_column_text_neutral'>NM_001018912.1</div></span>
-                                </td><td class='detailed_column start_column'>1772925</td><td class='detailed_column end_column'>1774203</td><td class='detailed_column chr_num_column'>
-                            I
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 100.0%; background: #00c959'></div><div class='percent_column_text'>1278/1196 (106.9%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>1038/398 (260.8%)</div>
-                                <span id='mrna_length_toggle_11_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>1038/398 (260.8%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 64.4%; background: #ffe1a1'></div>
-                                <div class='percent_column_text'>85/132 (64.4%)</div>
-                                <span id='total_identity_toggle_11_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 64.4%; background: #ffe1a1'></div><div class='percent_column_text'>85/132 (64.4%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 29.7%; background: #ffc9ba'></div>
-                                <div class='percent_column_text'>85/286 (29.7%)</div>
-                                <span id='local_identity_toggle_11_0' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 29.7%; background: #ffc9ba'></div><div class='percent_column_text'>85/286 (29.7%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 70.9%; left: 27.4%; background: #ffc8b9;" 
-                        data-start="109" 
-                        data-end="390" 
-                        data-identity="85/286 (30%)" 
-                        data-similarity="134/286 (47%)" 
-                        data-score="87.0" 
-                        data-evalue="3e-19"></div>
-                <div class="percent_column_text">282/398 (70.9%)</div>
-            </div>
-                            <span id='coverage_toggle_11_0' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 70.9%; left: 27.4%; background: #ffc8b9;" 
-                        data-start="109" 
-                        data-end="390" 
-                        data-identity="85/286 (30%)" 
-                        data-similarity="134/286 (47%)" 
-                        data-score="87.0" 
-                        data-evalue="3e-19"></div>
-                <div class="percent_column_text">282/398 (70.9%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_11_0' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>398</div>
-                            <span id='query_length_toggle_11_0' class='transcript_span'><div class='percent_column_text_neutral'>398</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>87</div>
-                                <span id='score_toggle_11_0' class='transcript_span'><div class='percent_column_text_neutral'>87</div></span>
-                                </td><td class='detailed_column evalue_column'>
-                                <div>3.00e-19</div>
-                                <span id='evalue_toggle_11_0' class='transcript_span'><div class='percent_column_text_neutral'>3.00e-19</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td><td class='present_column cluster_guide_856364_1'>true (1)</td><td class='detailed_column gene_id_column cell_species_1_3643873'>
-                                <div class="boss_td">
-                                    <div>
-                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/3643873' target='_blank'>SPO11</span></a><span class='gene_id_info'>(3643873)</span> 
-                                    </div>
-                                    <div class='transcripts_info'>
-                                        <button id='toggle_11_1' 
-                                                onclick='toggleTranscripts(11, 1)' 
-                                                class='transcript_toggle' 
-                                                data-row='11' 
-                                                data-species='1'>
-                                            (1)
-                                        </button>
-                                    </div>
-                                </div>
-                                <span id='transcript_toggle_11_1' class='transcript_span'><div class='percent_column_text_neutral'>XM_709343.2</div></span>
-                                </td><td class='detailed_column start_column'>1791402</td><td class='detailed_column end_column'>1792331</td><td class='detailed_column chr_num_column'>
-                            2
-                            </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 77.7%; background: #f4fea5'></div><div class='percent_column_text'>929/1196 (77.7%)</div></td><td class='detailed_column mrna_length_column percent_column'>
-                                <div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div>
-                                <div class='percent_column_text'>930/398 (233.7%)</div>
-                                <span id='mrna_length_toggle_11_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 100.0%; background: #ddbbff'></div><div class='percent_column_text'>930/398 (233.7%)</div></div></span>
-                                </td><td class='detailed_column total_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 62.1%; background: #ffdaa1'></div>
-                                <div class='percent_column_text'>82/132 (62.1%)</div>
-                                <span id='total_identity_toggle_11_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 62.1%; background: #ffdaa1'></div><div class='percent_column_text'>82/132 (62.1%)</div></div></span>
-                                </td><td class='detailed_column local_identity_column percent_column'>
-                                <div class='percentage_box' style='width: 27.5%; background: #ffcabc'></div>
-                                <div class='percent_column_text'>82/298 (27.5%)</div>
-                                <span id='local_identity_toggle_11_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 27.5%; background: #ffcabc'></div><div class='percent_column_text'>82/298 (27.5%)</div></div></span>
-                                </td><td class='detailed_column coverage_column percent_column'>
-                            <div class="coverage_container">
-                <div class="percentage_box" style="width: 72.1%; left: 26.6%; background: #ffcabc;" 
-                        data-start="106" 
-                        data-end="392" 
-                        data-identity="82/298 (28%)" 
-                        data-similarity="134/298 (45%)" 
-                        data-score="68.6" 
-                        data-evalue="2e-13"></div>
-                <div class="percent_column_text">287/398 (72.1%)</div>
-            </div>
-                            <span id='coverage_toggle_11_1' class='transcript_span'>
-                                <div class="coverage_container">
-                <div class="percentage_box" style="width: 72.1%; left: 26.6%; background: #ffcabc;" 
-                        data-start="106" 
-                        data-end="392" 
-                        data-identity="82/298 (28%)" 
-                        data-similarity="134/298 (45%)" 
-                        data-score="68.6" 
-                        data-evalue="2e-13"></div>
-                <div class="percent_column_text">287/398 (72.1%)</div>
-            </div>
-                            </span>
-                        </td><td class='detailed_column hsps_colum'>
-                            <div>1</div>
-                            <span id='hsp_count_toggle_11_1' class='transcript_span'><div class='percent_column_text_neutral'>1</div></span>
-                            </td><td class='detailed_column query_length_column'>
-                            <div>398</div>
-                            <span id='query_length_toggle_11_1' class='transcript_span'><div class='percent_column_text_neutral'>398</div></span>
-                            </td><td class='detailed_column score_column'>
-                                <div>68</div>
-                                <span id='score_toggle_11_1' class='transcript_span'><div class='percent_column_text_neutral'>68</div></span>
+                                <div>59</div>
+                                <span id='score_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>59</div></span>
                                 </td><td class='detailed_column evalue_column'>
                                 <div>2.00e-13</div>
-                                <span id='evalue_toggle_11_1' class='transcript_span'><div class='percent_column_text_neutral'>2.00e-13</div></span>
-                                </td><td class='chrm_faker' style='display: none;'></td></tr>
+                                <span id='evalue_toggle_1_1' class='transcript_span'><div class='percent_column_text_neutral'>2.00e-13</div></span>
+                                </td><td class='chrm chrm_column' rowspan='999999'><div class='chromo_trigger is_sticky'><div class='chromosomes'></div></div></td></tr>
+<tr class='detailed_column second_match_gene' data-gene-name='clr4_custom'><td class='present_column'></td><td class='detailed_column gene_id_column cell_species_0_1'>
+                                                <div class="boss_td">
+                                                    <div>
+                                                        <span class='gene_link'>Gene_1</span><span class='gene_id_info'>(1)</span>
+                                                    </div>
+                                                </div>
+                                                </td><td class='detailed_column start_column'>103817</td><td class='detailed_column end_column'>104119</td><td class='detailed_column chr_num_column'>
+                                X
+                                </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 6.8%; background: #ffd9d6'></div><div class='percent_column_text'>302/4414 (6.8%)</div></td><td class='detailed_column mrna_length_column'><div>-</div></td><td class='detailed_column total_identity_column'><div>-</div></td><td class='detailed_column local_identity_column'><div>-</div></td><td class='detailed_column coverage_column percent_column'>
+                                <div class="coverage_container">
+                <div class="percentage_box" style="width: 4.3%; left: 29.4%; background: #ffbea8;" 
+                        data-start="1297" 
+                        data-end="1488" 
+                        data-identity="28/64 (44%)" 
+                        data-similarity="37/64 (58%)" 
+                        data-score="59.7" 
+                        data-evalue="3e-13"></div>
+<div class="percentage_box" style="width: 1.4%; left: 35.1%; background: #ffd5a1;" 
+                        data-start="1549" 
+                        data-end="1608" 
+                        data-identity="12/20 (60%)" 
+                        data-similarity="15/20 (75%)" 
+                        data-score="34.1" 
+                        data-evalue="3e-13"></div>
+                <div class="percent_column_text">252/4415 (5.7%)</div>
+            </div>
+                                <span id='coverage_toggle_1_0_1' class='transcript_span'><div class="coverage_container">
+                <div class="percentage_box" style="width: 4.3%; left: 29.4%; background: #ffbea8;" 
+                        data-start="1297" 
+                        data-end="1488" 
+                        data-identity="28/64 (44%)" 
+                        data-similarity="37/64 (58%)" 
+                        data-score="59.7" 
+                        data-evalue="3e-13"></div>
+<div class="percentage_box" style="width: 1.4%; left: 35.1%; background: #ffd5a1;" 
+                        data-start="1549" 
+                        data-end="1608" 
+                        data-identity="12/20 (60%)" 
+                        data-similarity="15/20 (75%)" 
+                        data-score="34.1" 
+                        data-evalue="3e-13"></div>
+                <div class="percent_column_text">252/4415 (5.7%)</div>
+            </div></span>
+                                </td><td class='detailed_column hsps_colum'>
+                                <div>2</div>
+                                <span id='hsp_count_toggle_1_0_1' class='transcript_span'><div class='percent_column_text_neutral'>2</div></span>
+                                </td><td class='detailed_column query_length_column'>
+                                <div>4415</div>
+                                <span id='query_length_toggle_1_0_1' class='transcript_span'><div class='percent_column_text_neutral'>4415</div></span>
+                                </td><td class='detailed_column score_column'><div>-</div></td><td class='detailed_column evalue_column'><div>-</div></td><td class='present_column'></td><td class='detailed_column gene_id_column cell_species_1_856519'>
+                                                <div class="boss_td">
+                                                    <div>
+                                                        <span class='gene_link'><a href='https://www.ncbi.nlm.nih.gov/gene/856519' target='_blank'>SET1</a></span><span class='gene_id_info'>(856519)</span>
+                                                    </div>
+                                                    <div class='transcripts_info'>
+                                                        <button id='toggle_1_1_1' 
+                                                                onclick='toggleTranscripts(1, 1, 1)' 
+                                                                class='transcript_toggle' 
+                                                                data-row='1' 
+                                                                data-species='1'>
+                                                            (1)
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <span id='transcript_toggle_1_1_1' class='transcript_span'><div class='percent_column_text_neutral'>NM_001179249.1</div></span>
+                                                </td><td class='detailed_column start_column'>346043</td><td class='detailed_column end_column'>349285</td><td class='detailed_column chr_num_column'>
+                                VIII
+                                </td><td class='detailed_column dna_length_column percent_column'><div class='percentage_box' style='width: 73.4%; background: #fff9a1'></div><div class='percent_column_text'>3242/4414 (73.4%)</div></td><td class='detailed_column mrna_length_column percent_column'>
+                                    <div class='percentage_box' style='width: 73.5%; background: #fff9a1'></div>
+                                    <div class='percent_column_text'>3243/4415 (73.5%)</div>
+                                    <span id='mrna_length_toggle_1_1_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 73.5%; background: #fff9a1'></div><div class='percent_column_text'>3243/4415 (73.5%)</div></div></span>
+                                    </td><td class='detailed_column total_identity_column percent_column'>
+                                    <div class='percentage_box' style='width: 0.2%; background: #ffdede'></div>
+                                    <div class='percent_column_text'>10/4415 (0.2%)</div>
+                                    <span id='total_identity_toggle_1_1_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 0.2%; background: #ffdede'></div><div class='percent_column_text'>10/4415 (0.2%)</div></div></span>
+                                    </td><td class='detailed_column local_identity_column percent_column'>
+                                    <div class='percentage_box' style='width: 50.0%; background: #FFBAA1'></div>
+                                    <div class='percent_column_text'>10/20 (50.0%)</div>
+                                    <span id='local_identity_toggle_1_1_1' class='transcript_span'><div class='transcript_container'><div class='percentage_box' style='width: 50.0%; background: #FFBAA1'></div><div class='percent_column_text'>10/20 (50.0%)</div></div></span>
+                                    </td><td class='detailed_column coverage_column percent_column'>
+                                <div class="coverage_container">
+                <div class="percentage_box" style="width: 3.7%; left: 30.3%; background: #ffc8b8;" 
+                        data-start="1339" 
+                        data-end="1500" 
+                        data-identity="17/54 (31%)" 
+                        data-similarity="25/54 (46%)" 
+                        data-score="31.3" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.7%; left: 39.7%; background: #ffc4b2;" 
+                        data-start="1753" 
+                        data-end="1827" 
+                        data-identity="9/25 (36%)" 
+                        data-similarity="16/25 (64%)" 
+                        data-score="28.1" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.4%; left: 35.1%; background: #FFBAA1;" 
+                        data-start="1549" 
+                        data-end="1608" 
+                        data-identity="10/20 (50%)" 
+                        data-similarity="13/20 (65%)" 
+                        data-score="32.7" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.3%; left: 37.6%; background: #ffbca4;" 
+                        data-start="1660" 
+                        data-end="1716" 
+                        data-identity="9/19 (47%)" 
+                        data-similarity="14/19 (74%)" 
+                        data-score="27.6" 
+                        data-evalue="2e-11"></div>
+                <div class="percent_column_text">354/4415 (8.0%)</div>
+            </div>
+                                <span id='coverage_toggle_1_1_1' class='transcript_span'><div class="coverage_container">
+                <div class="percentage_box" style="width: 3.7%; left: 30.3%; background: #ffc8b8;" 
+                        data-start="1339" 
+                        data-end="1500" 
+                        data-identity="17/54 (31%)" 
+                        data-similarity="25/54 (46%)" 
+                        data-score="31.3" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.7%; left: 39.7%; background: #ffc4b2;" 
+                        data-start="1753" 
+                        data-end="1827" 
+                        data-identity="9/25 (36%)" 
+                        data-similarity="16/25 (64%)" 
+                        data-score="28.1" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.4%; left: 35.1%; background: #FFBAA1;" 
+                        data-start="1549" 
+                        data-end="1608" 
+                        data-identity="10/20 (50%)" 
+                        data-similarity="13/20 (65%)" 
+                        data-score="32.7" 
+                        data-evalue="2e-11"></div>
+<div class="percentage_box" style="width: 1.3%; left: 37.6%; background: #ffbca4;" 
+                        data-start="1660" 
+                        data-end="1716" 
+                        data-identity="9/19 (47%)" 
+                        data-similarity="14/19 (74%)" 
+                        data-score="27.6" 
+                        data-evalue="2e-11"></div>
+                <div class="percent_column_text">354/4415 (8.0%)</div>
+            </div></span>
+                                </td><td class='detailed_column hsps_colum'>
+                                <div>4</div>
+                                <span id='hsp_count_toggle_1_1_1' class='transcript_span'><div class='percent_column_text_neutral'>4</div></span>
+                                </td><td class='detailed_column query_length_column'>
+                                <div>4415</div>
+                                <span id='query_length_toggle_1_1_1' class='transcript_span'><div class='percent_column_text_neutral'>4415</div></span>
+                                </td><td class='detailed_column score_column'>
+                                    <div>32</div>
+                                    <span id='score_toggle_1_1_1' class='transcript_span'><div class='percent_column_text_neutral'>32</div></span>
+                                    </td><td class='detailed_column evalue_column'>
+                                    <div>2.00e-11</div>
+                                    <span id='evalue_toggle_1_1_1' class='transcript_span'><div class='percent_column_text_neutral'>2.00e-11</div></span>
+                                    </td></tr>
 <tr data-gene-name='placeholder' class='placeholder_row'><td class='number_column'></td><td class='gene_id_column'></td><td class='detailed_column start_column'></td><td class='detailed_column end_column'></td><td class='detailed_column dna_length_column'></td><td class='detailed_column mrna_length_column'></td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column'></td><td class='detailed_column gene_id_column'></td><td class='detailed_column start_column'></td><td class='detailed_column end_column'></td><td class='detailed_column chr_num_column'></td><td class='detailed_column dna_length_column'></td><td class='detailed_column mrna_length_column'></td><td class='detailed_column total_identity_column'></td><td class='detailed_column coverage_column'></td><td class='detailed_column hsps_colum'></td><td class='detailed_column query_length_column'></td><td class='detailed_column local_identity_column'></td><td class='detailed_column score_column'></td><td class='detailed_column evalue_column'></td><td class='chrm_faker chrm_column' style='display: none;'></td><td class='present_column'></td><td class='detailed_column gene_id_column'></td><td class='detailed_column start_column'></td><td class='detailed_column end_column'></td><td class='detailed_column chr_num_column'></td><td class='detailed_column dna_length_column'></td><td class='detailed_column mrna_length_column'></td><td class='detailed_column total_identity_column'></td><td class='detailed_column coverage_column'></td><td class='detailed_column hsps_colum'></td><td class='detailed_column query_length_column'></td><td class='detailed_column local_identity_column'></td><td class='detailed_column score_column'></td><td class='detailed_column evalue_column'></td><td class='chrm_faker chrm_column' style='display: none;'></td></tr></tbody></table>
     <script>
-        var geneData = {"850500": {"name": "OTU1", "start": 44655, "end": 45560, "chrm": "chromosome VI", "matches": [{"species": 0, "gene_name": "otu1", "start": 3073093, "end": 3074167, "score": 120.0, "e_value": "5.00e-32", "gene_id": "90818455", "transcript": "NM_001430995.1", "transcript_count": 1, "chrm": "NC_003424.3", "coverage": {"NM_001430995.1": "[[1, 299, '101/335 (30%)', '159/335 (47%)', 120.0, '5e-32']]"}, "ordered_transcripts": null, "query_length": {"NM_001430995.1": 301}}, {"species": 1, "gene_name": "Unknown", "start": 518168, "end": 519169, "score": 149.0, "e_value": "2.00e-43", "gene_id": "3636848", "transcript": "XM_716339.2", "transcript_count": 1, "chrm": "NC_032089.1", "coverage": {"XM_716339.2": "[[13, 299, '99/311 (32%)', '174/311 (56%)', 149.0, '2e-43']]"}, "ordered_transcripts": null, "query_length": {"XM_716339.2": 301}}]}, "850501": {"name": "LAM5", "start": 45720, "end": 47744, "chrm": "chromosome VI", "matches": [{"species": 0, "gene_name": "ltc1", "start": 3295640, "end": 3298548, "score": 125.0, "e_value": "4.00e-30", "gene_id": "2540703", "transcript": "NM_001022292.3", "transcript_count": 1, "chrm": "NC_003423.3", "coverage": {"NM_001022292.3": "[[189, 305, '47/117 (40%)', '78/117 (67%)', 125.0, '4e-30'], [396, 577, '55/184 (30%)', '96/184 (52%)', 86.7, '9e-18']]"}, "ordered_transcripts": null, "query_length": {"NM_001022292.3": 674}}, {"species": 1, "gene_name": "Unknown", "start": 1611003, "end": 1614224, "score": 194.0, "e_value": "1.00e-52", "gene_id": "3644482", "transcript": "XM_708776.2", "transcript_count": 1, "chrm": "NC_032089.1", "coverage": {"XM_708776.2": "[[191, 570, '127/414 (31%)', '215/414 (52%)', 194.0, '1e-52']]"}, "ordered_transcripts": null, "query_length": {"XM_708776.2": 674}}]}, "1466401": {"name": "N/A", "start": 48734, "end": 48925, "chrm": "chromosome VI", "matches": []}, "850502": {"name": "FET5", "start": 49139, "end": 51007, "chrm": "chromosome VI", "matches": [{"species": 0, "gene_name": "fio1", "start": 4235072, "end": 4237874, "score": 388.0, "e_value": "3.00e-124", "gene_id": "2541558", "transcript": "NM_001019923.3", "transcript_count": 1, "chrm": "NC_003424.3", "coverage": {"NM_001019923.3": "[[33, 593, '215/565 (38%)', '321/565 (57%)', 388.0, '3e-124']]"}, "ordered_transcripts": null, "query_length": {"NM_001019923.3": 622}}, {"species": 1, "gene_name": "FET3", "start": 80175, "end": 82049, "score": 615.0, "e_value": "0.0", "gene_id": "3647153", "transcript": "XM_706173.2", "transcript_count": 1, "chrm": "NC_032094.1", "coverage": {"XM_706173.2": "[[19, 608, '308/590 (52%)', '410/590 (69%)', 615.0, '0.0']]"}, "ordered_transcripts": null, "query_length": {"XM_706173.2": 622}}]}, "850503": {"name": "N/A", "start": 51350, "end": 52972, "chrm": "chromosome VI", "matches": [{"species": 0, "gene_name": "ght1", "start": 232288, "end": 235195, "score": 115.0, "e_value": "3.00e-27", "gene_id": "2538732", "transcript": "NM_001022741.3", "transcript_count": 1, "chrm": "NC_003421.2", "coverage": {"NM_001022741.3": "[[18, 534, '127/570 (22%)', '234/570 (41%)', 115.0, '3e-27']]"}, "ordered_transcripts": null, "query_length": {"NM_001022741.3": 540}}, {"species": 1, "gene_name": "HGT2", "start": 434412, "end": 436049, "score": 187.0, "e_value": "2.00e-53", "gene_id": "3644579", "transcript": "XM_708669.2", "transcript_count": 1, "chrm": "NC_032089.1", "coverage": {"XM_708669.2": "[[11, 491, '138/488 (28%)', '224/488 (46%)', 187.0, '2e-53']]"}, "ordered_transcripts": null, "query_length": {"XM_708669.2": 540}}]}, "850504": {"name": "ACT1", "start": 53260, "end": 54696, "chrm": "chromosome VI", "matches": [{"species": 0, "gene_name": "act1", "start": 1475485, "end": 1477333, "score": 723.0, "e_value": "0.0", "gene_id": "2540051", "transcript": "NM_001021513.3", "transcript_count": 1, "chrm": "NC_003423.3", "coverage": {"NM_001021513.3": "[[1, 375, '336/375 (90%)', '360/375 (96%)', 723.0, '0.0']]"}, "ordered_transcripts": null, "query_length": {"NM_001021513.3": 375}}, {"species": 1, "gene_name": "ACT1", "start": 3011259, "end": 3013047, "score": 746.0, "e_value": "0.0", "gene_id": "3636195", "transcript": "XM_019475182.1", "transcript_count": 1, "chrm": "NC_032089.1", "coverage": {"XM_019475182.1": "[[4, 375, '353/372 (95%)', '368/372 (99%)', 746.0, '0.0']]"}, "ordered_transcripts": null, "query_length": {"XM_019475182.1": 375}}]}, "850505": {"name": "YPT1", "start": 55366, "end": 55986, "chrm": "chromosome VI", "matches": [{"species": 0, "gene_name": "ypt1", "start": 2932965, "end": 2934291, "score": 302.0, "e_value": "1.00e-104", "gene_id": "2539784", "transcript": "NM_001022124.3", "transcript_count": 1, "chrm": "NC_003423.3", "coverage": {"NM_001022124.3": "[[1, 206, '150/207 (72%)', '169/207 (82%)', 302.0, '1e-104']]"}, "ordered_transcripts": null, "query_length": {"NM_001022124.3": 206}}, {"species": 1, "gene_name": "YPT1", "start": 738229, "end": 738852, "score": 322.0, "e_value": "4.00e-114", "gene_id": "3636915", "transcript": "XM_716457.2", "transcript_count": 1, "chrm": "NC_032089.1", "coverage": {"XM_716457.2": "[[1, 206, '158/207 (76%)', '173/207 (84%)', 322.0, '4e-114']]"}, "ordered_transcripts": null, "query_length": {"XM_716457.2": 206}}]}, "850506": {"name": "TUB2", "start": 56336, "end": 57709, "chrm": "chromosome VI", "matches": [{"species": 0, "gene_name": "nda3", "start": 3964092, "end": 3965973, "score": 683.0, "e_value": "0.0", "gene_id": "2540582", "transcript": "NM_001022572.3", "transcript_count": 1, "chrm": "NC_003423.3", "coverage": {"NM_001022572.3": "[[1, 428, '331/428 (77%)', '382/428 (89%)', 683.0, '0.0']]"}, "ordered_transcripts": null, "query_length": {"NM_001022572.3": 457}}, {"species": 1, "gene_name": "TUB2", "start": 123869, "end": 125597, "score": 771.0, "e_value": "0.0", "gene_id": "3639329", "transcript": "XM_019475058.1", "transcript_count": 1, "chrm": "NC_032089.1", "coverage": {"XM_019475058.1": "[[1, 429, '378/429 (88%)', '414/429 (97%)', 771.0, '0.0']]"}, "ordered_transcripts": null, "query_length": {"XM_019475058.1": 457}}]}, "850507": {"name": "RPO41", "start": 58782, "end": 62837, "chrm": "chromosome VI", "matches": [{"species": 0, "gene_name": "rpo41", "start": 4147667, "end": 4151509, "score": 758.0, "e_value": "0.0", "gene_id": "2542687", "transcript": "NM_001019888.3", "transcript_count": 1, "chrm": "NC_003424.3", "coverage": {"NM_001019888.3": "[[395, 1269, '393/888 (44%)', '547/888 (62%)', 758.0, '0.0']]"}, "ordered_transcripts": null, "query_length": {"NM_001019888.3": 1351}}, {"species": 1, "gene_name": "RPO41", "start": 107125, "end": 111027, "score": 1019.0, "e_value": "0.0", "gene_id": "3639378", "transcript": "XM_713910.2", "transcript_count": 1, "chrm": "NC_032089.1", "coverage": {"XM_713910.2": "[[110, 1351, '550/1251 (44%)', '783/1251 (63%)', 1019.0, '0.0']]"}, "ordered_transcripts": null, "query_length": {"XM_713910.2": 1351}}]}, "851306": {"name": "CDC13", "start": 62244, "end": 65018, "chrm": "chromosome VI", "matches": []}, "856364": {"name": "SPO11", "start": 62961, "end": 64157, "chrm": "chromosome VI", "matches": [{"species": 0, "gene_name": "rec12", "start": 1772925, "end": 1774203, "score": 87.0, "e_value": "3.00e-19", "gene_id": "2542150", "transcript": "NM_001018912.1", "transcript_count": 1, "chrm": "NC_003424.3", "coverage": {"NM_001018912.1": "[[109, 390, '85/286 (30%)', '134/286 (47%)', 87.0, '3e-19']]"}, "ordered_transcripts": null, "query_length": {"NM_001018912.1": 398}}, {"species": 1, "gene_name": "SPO11", "start": 1791402, "end": 1792331, "score": 68.0, "e_value": "2.00e-13", "gene_id": "3643873", "transcript": "XM_709343.2", "transcript_count": 1, "chrm": "NC_032090.1", "coverage": {"XM_709343.2": "[[106, 392, '82/298 (28%)', '134/298 (45%)', 68.6, '2e-13']]"}, "ordered_transcripts": null, "query_length": {"XM_709343.2": 398}}]}};
-        var chromosomeLengths = {"-1": {"Target chromosome": [["VI", 270161, "NC_001138.5"]]}, "0": {"0": {"NC_003424.3": {"length": 5579133}}, "1": {"NC_003423.3": {"length": 4539804}}, "2": {"NC_003421.2": {"length": 2452883}}}, "1": {"0": {"NC_032089.1": {"length": 3188341}}, "1": {"NC_032090.1": {"length": 2231883}}, "2": {"NC_032091.1": {"length": 1799298}}, "3": {"NC_032092.1": {"length": 1603259}}, "4": {"NC_032093.1": {"length": 1190845}}, "5": {"NC_032094.1": {"length": 1033292}}, "6": {"NC_032095.1": {"length": 949511}}}};
-        var chromosomeNames = {"-1": {"Target chromosome": ["NC_001138.5"]}, "0": {"0": {"NC_003424.3": "I"}, "1": {"NC_003423.3": "II"}, "2": {"NC_003421.2": "III"}}, "1": {"0": {"NC_032089.1": "1"}, "1": {"NC_032090.1": "2"}, "2": {"NC_032091.1": "3"}, "3": {"NC_032092.1": "4"}, "4": {"NC_032093.1": "5"}, "5": {"NC_032094.1": "6"}, "6": {"NC_032095.1": "7"}}};
-        var chromosomesWithFirstMatches = {"0": ["NC_003421.2", "NC_003423.3", "NC_003424.3"], "1": ["NC_032089.1", "NC_032090.1", "NC_032094.1"]};
+        var geneData = {"2540825_custom": {"name": "clr4_custom", "start": 453996, "end": 458410, "chrm": "chromosome II", "matches": [{"species": 0, "gene_name": "Gene_2", "start": 348848, "end": 349279, "score": 9999.0, "e_value": "2.00e-11", "gene_id": "2", "transcript": "2", "transcript_count": 1, "chrm": "NC_001140.6", "coverage": {"2": "[[1339, 1500, '17/54 (31%)', '25/54 (46%)', 31.3, '2e-11', '17/54 (31%)'], [1549, 1608, '10/20 (50%)', '13/20 (65%)', 32.7, '2e-11', '10/20 (50%)'], [1660, 1716, '9/19 (47%)', '14/19 (74%)', 27.6, '2e-11', '9/19 (47%)'], [1753, 1827, '9/25 (36%)', '16/25 (64%)', 28.1, '2e-11', '9/25 (36%)']]"}, "ordered_transcripts": null, "query_length": {"2": 4415}}, {"species": 0, "gene_name": "Gene_1", "start": 103817, "end": 104119, "score": 9999.0, "e_value": "3.00e-13", "gene_id": "1", "transcript": "1", "transcript_count": 1, "chrm": "NC_001142.9", "coverage": {"1": "[[1549, 1608, '12/20 (60%)', '15/20 (75%)', 34.1, '3e-13', '12/20 (60%)'], [1297, 1488, '28/64 (44%)', '37/64 (58%)', 59.7, '3e-13', '28/64 (44%)']]"}, "ordered_transcripts": null, "query_length": {"1": 4415}}, {"species": 1, "gene_name": "SET2", "start": 102227, "end": 104428, "score": 59.0, "e_value": "2.00e-13", "gene_id": "853271", "transcript": "NM_001181601.2", "transcript_count": 1, "chrm": "NC_001142.9", "coverage": {"NM_001181601.2": "[[1297, 1488, '28/64 (44%)', '37/64 (58%)', 59.7, '2e-13'], [1549, 1608, '12/20 (60%)', '15/20 (75%)', 34.1, '2e-13']]"}, "ordered_transcripts": null, "query_length": {"NM_001181601.2": 4415}}, {"species": 1, "gene_name": "SET1", "start": 346043, "end": 349285, "score": 32.0, "e_value": "2.00e-11", "gene_id": "856519", "transcript": "NM_001179249.1", "transcript_count": 1, "chrm": "NC_001140.6", "coverage": {"NM_001179249.1": "[[1549, 1608, '10/20 (50%)', '13/20 (65%)', 32.7, '2e-11'], [1339, 1500, '17/54 (31%)', '25/54 (46%)', 31.3, '2e-11'], [1753, 1827, '9/25 (36%)', '16/25 (64%)', 28.1, '2e-11'], [1660, 1716, '9/19 (47%)', '14/19 (74%)', 27.6, '2e-11']]"}, "ordered_transcripts": null, "query_length": {"NM_001179249.1": 4415}}]}};
+        var chromosomeLengths = {"-1": {"Target chromosome": [["II", 4539804, "NC_003423.3"]]}, "0": {"0": {"NC_001133.9": {"length": 230218}}, "1": {"NC_001134.8": {"length": 813184}}, "2": {"NC_001135.5": {"length": 316620}}, "3": {"NC_001136.10": {"length": 1531933}}, "4": {"NC_001137.3": {"length": 576874}}, "5": {"NC_001138.5": {"length": 270161}}, "6": {"NC_001139.9": {"length": 1090940}}, "7": {"NC_001140.6": {"length": 562643}}, "8": {"NC_001141.2": {"length": 439888}}, "9": {"NC_001142.9": {"length": 745751}}, "10": {"NC_001143.9": {"length": 666816}}, "11": {"NC_001144.5": {"length": 1078177}}, "12": {"NC_001145.3": {"length": 924431}}, "13": {"NC_001146.8": {"length": 784333}}, "14": {"NC_001147.6": {"length": 1091291}}, "15": {"NC_001148.4": {"length": 948066}}}, "1": {"0": {"NC_001133.9": {"length": 230218}}, "1": {"NC_001134.8": {"length": 813184}}, "2": {"NC_001135.5": {"length": 316620}}, "3": {"NC_001136.10": {"length": 1531933}}, "4": {"NC_001137.3": {"length": 576874}}, "5": {"NC_001138.5": {"length": 270161}}, "6": {"NC_001139.9": {"length": 1090940}}, "7": {"NC_001140.6": {"length": 562643}}, "8": {"NC_001141.2": {"length": 439888}}, "9": {"NC_001142.9": {"length": 745751}}, "10": {"NC_001143.9": {"length": 666816}}, "11": {"NC_001144.5": {"length": 1078177}}, "12": {"NC_001145.3": {"length": 924431}}, "13": {"NC_001146.8": {"length": 784333}}, "14": {"NC_001147.6": {"length": 1091291}}, "15": {"NC_001148.4": {"length": 948066}}}};
+        var chromosomeNames = {"-1": {"Target chromosome": ["NC_003423.3"]}, "0": {"0": {"NC_001133.9": "I"}, "1": {"NC_001134.8": "II"}, "2": {"NC_001135.5": "III"}, "3": {"NC_001136.10": "IV"}, "4": {"NC_001137.3": "V"}, "5": {"NC_001138.5": "VI"}, "6": {"NC_001139.9": "VII"}, "7": {"NC_001140.6": "VIII"}, "8": {"NC_001141.2": "IX"}, "9": {"NC_001142.9": "X"}, "10": {"NC_001143.9": "XI"}, "11": {"NC_001144.5": "XII"}, "12": {"NC_001145.3": "XIII"}, "13": {"NC_001146.8": "XIV"}, "14": {"NC_001147.6": "XV"}, "15": {"NC_001148.4": "XVI"}}, "1": {"0": {"NC_001133.9": "I"}, "1": {"NC_001134.8": "II"}, "2": {"NC_001135.5": "III"}, "3": {"NC_001136.10": "IV"}, "4": {"NC_001137.3": "V"}, "5": {"NC_001138.5": "VI"}, "6": {"NC_001139.9": "VII"}, "7": {"NC_001140.6": "VIII"}, "8": {"NC_001141.2": "IX"}, "9": {"NC_001142.9": "X"}, "10": {"NC_001143.9": "XI"}, "11": {"NC_001144.5": "XII"}, "12": {"NC_001145.3": "XIII"}, "13": {"NC_001146.8": "XIV"}, "14": {"NC_001147.6": "XV"}, "15": {"NC_001148.4": "XVI"}}};
+        var chromosomesWithFirstMatches = {"0": ["NC_001142.9"], "1": ["NC_001142.9"], "2": ["NC_001142.9"], "3": ["NC_001142.9"]};
         var allSpeciesAreGenome = false;
     </script>
     <style>
