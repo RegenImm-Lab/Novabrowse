@@ -1,0 +1,3237 @@
+TBLASTN 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: 1_subject_sequences\c_albicans\GCF_000182965.3\rna.fna
+           6,119 sequences; 8,971,703 total letters
+
+
+
+Query= 2542850|NP_594679.1|chromosome I|vrg4|1|4690140|4691827|N/A|345|No description available
+
+Length=345
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_711447.2 Candida albicans SC5314 GDP-mannose transporter (VRG4...  394     1e-137
+
+
+>XM_711447.2 Candida albicans SC5314 GDP-mannose transporter (VRG4), 
+partial mRNA
+Length=1116
+
+ Score = 394 bits (1011),  Expect = 1e-137, Method: Compositional matrix adjust.
+ Identities = 195/308 (63%), Positives = 241/308 (78%), Gaps = 8/308 (3%)
+ Frame = +1
+
+Query  8     RISKSPILPVVSYCMASILMTLTNKYVLSSPGYNMNFLLLTVQSTVCVAAIGILKRLKVI  67
+             RIS S  + + +YC++SILMT+TNKYVLS   +N+NF LL VQS VC+  IG LK L +I
+Sbjct  151   RISNSGPISIAAYCLSSILMTVTNKYVLSGFSFNLNFFLLAVQSIVCIVTIGSLKSLNII  330
+
+Query  68    NYRDFDFREAKFWFPISFLLVAMIYTASKALQFLSVPVYTIFKNLTIIIIAYGEVLWFGG  127
+              YR F+  EAK W PI+FLLVAMIYT+SKALQ+LS+PVYTIFKNLTII+IAYGEV+WFGG
+Sbjct  331   TYRQFNKDEAKKWSPIAFLLVAMIYTSSKALQYLSIPVYTIFKNLTIILIAYGEVIWFGG  510
+
+Query  128   HVTALTLFSFGLMVLSSIVAAWAD-----IQSSSFASQTLNSGYLWMVLNCLTNAAFVLA  182
+              VT + L SF LMVLSS++A + D         +FA   L  GY WM+ NC  +AAFVL 
+Sbjct  511   KVTTMALSSFLLMVLSSVIAYYGDNAAVKSHDDAFA---LYLGYFWMLTNCFASAAFVLI  681
+
+Query  183   MRKRIKLTNFRDFDTMFYNNLLSIPVLVICTLFTEDWSAENIAQNFPPDAKFGVLMAMAI  242
+             MRKRIKLTNF+DFDTM+YNNLLSIP+L+IC+   EDWS+ N++ NFP D +   + AM +
+Sbjct  682   MRKRIKLTNFKDFDTMYYNNLLSIPILLICSFIFEDWSSANVSLNFPADNRVTTITAMIL  861
+
+Query  243   SGVSSVGISYTSAWCVRVTSSTTYSMVGALNKLPLAIAGLVFFDAPITFGSVTAILLGFI  302
+             SG SSVGISY SAWCVRVTSSTTYSMVGALNKLP+A++GL+FF+A + F SV++I +GF 
+Sbjct  862   SGASSVGISYCSAWCVRVTSSTTYSMVGALNKLPIALSGLIFFEAAVNFWSVSSIFVGFG  1041
+
+Query  303   SGVVYAVA  310
+             +G+VYAVA
+Sbjct  1042  AGLVYAVA  1065
+
+
+
+Lambda      K        H        a         alpha
+   0.326    0.135    0.400    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 618169452
+
+
+Query= 2542897|NP_594677.1|chromosome I|cia2|1|4686489|4688885|N/A|179|No description available
+
+Length=179
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_716205.2 Candida albicans SC5314 iron-sulfur cluster assembly ...  159     3e-50
+
+
+>XM_716205.2 Candida albicans SC5314 iron-sulfur cluster assembly 
+protein (CAALFM_C702550CA), partial mRNA
+Length=669
+
+ Score = 159 bits (403),  Expect = 3e-50, Method: Compositional matrix adjust.
+ Identities = 84/152 (55%), Positives = 111/152 (73%), Gaps = 11/152 (7%)
+ Frame = +1
+
+Query  38   TEIESEQTNIKEERDPIDPQEIYDLLAKINDPEHPLTLAQLSVVKLEDIEVVD-------  90
+            T + S++ N  ++ DPID QEI+DL+A I+DPEHPLTLAQL+VV L DI++ +       
+Sbjct  208  TSLSSDEENEDDDFDPIDEQEIFDLIATISDPEHPLTLAQLAVVNLSDIKITNPPNCGGD  387
+
+Query  91   ----NVEGDSYITVHITPTIPHCSMCTLIGLCIRVRLERCLPPRFHVDVKVKKGTHASES  146
+                   G S + + ITPTI HCS+ TLIGL IRVRL+R LP R+ + + +K+GTH  E+
+Sbjct  388  GGDGGGGGISEVLIKITPTITHCSLATLIGLGIRVRLDRSLPSRYRIKILIKEGTHQLEN  567
+
+Query  147  QVNKQLNDKERVAAACENEQLLSVLNGMMATC  178
+            QVNKQLNDKERVAAACEN+QLL+V+  M++TC
+Sbjct  568  QVNKQLNDKERVAAACENDQLLNVILQMLSTC  663
+
+
+
+Lambda      K        H        a         alpha
+   0.313    0.131    0.371    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 235274245
+
+
+Query= 2542894|NP_594678.2|chromosome I|N/A|-1|4686301|4689152|N/A|449|No description available
+
+Length=449
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_708691.2 Candida albicans SC5314 bifunctional fructose-2,6-bis...  176     8e-50
+XM_718346.2 Candida albicans SC5314 Pfk26p (PFK26), partial mRNA      105     1e-24
+
+
+>XM_708691.2 Candida albicans SC5314 bifunctional fructose-2,6-bisphosphate 
+2-phosphatase/6-phosphofructo-2-kinase (CAALFM_C102320CA), 
+partial mRNA
+Length=1632
+
+ Score = 176 bits (445),  Expect = 8e-50, Method: Compositional matrix adjust.
+ Identities = 92/244 (38%), Positives = 144/244 (59%), Gaps = 12/244 (5%)
+ Frame = +1
+
+Query  32    EKFGGVQPYSTESGMLFHAGKLVIIMSGLPARGKSNIAVSIDRYLRWLGFNCRFYSLAKY  91
+             +  GG Q Y TESG LFHAG+++II++G+P RGK++++VS+ RYLRWLG N   + L  Y
+Sbjct  283   DSLGGAQLYLTESGRLFHAGEIIIILAGIPGRGKTHLSVSLTRYLRWLGVNTHSFHLGNY  462
+
+Query  92    I-----DERTREMTSSPVKSAASENHVFSRNDTIERCLADLEIFLLKEKGQVAIYDATNG  146
+                   D+ T ++     +SA +  H   R   +  CL D+  F   + GQVAIYDATN 
+Sbjct  463   RRANAEDDITHDLFVPSPQSAKA--HAL-REKMVNDCLGDILNFFRNDGGQVAIYDATNA  633
+
+Query  147   TRRTRRILYDRFKNCGFKILFIESLCNKEDVINANIQEAIHVSEEFRNWDLEMAEKEYCR  206
+                 R  L+ +F++   +++FIESL   + ++  NI++A   S ++  WD + A K+Y  
+Sbjct  634   IPEYRLELHKKFRDLNIQVIFIESLVTDDSIVMHNIEQAAKSSPDYHKWDYDKAYKDYTE  813
+
+Query  207   RIDILKCHY----ETIDEKDYSFVKMINFAETIIANKSNEGYLLSRILFLLMNMTLARKR  262
+             RI  L  HY     + +E++ S++K INF E I  + SN GYL+++++F LMN  +    
+Sbjct  814   RIKALAPHYIEMGGSEEEEELSYIKFINFGERIELHNSNYGYLINKVVFYLMNGKIKPGS  993
+
+Query  263   IFLV  266
+             ++L 
+Sbjct  994   LYLA  1005
+
+
+ Score = 72.8 bits (177),  Expect = 3e-14, Method: Compositional matrix adjust.
+ Identities = 32/68 (47%), Positives = 47/68 (69%), Gaps = 0/68 (0%)
+ Frame = +1
+
+Query  358   EYNLYLVDPYRYRVKRKESFYDLAVRLEPLILELGREQRDVLLIGSKSIIRVFYGYYMNV  417
+             EY  Y   PY YR  R ES++DLA+++EPLILE+ R   D+L+I  +++++VFYGY M+ 
+Sbjct  1342  EYAQYDHSPYHYRYPRAESYHDLAIKIEPLILEMERMSGDLLIIADETVLQVFYGYLMSC  1521
+
+Query  418   PAKDIPQL  425
+                +IP L
+Sbjct  1522  SCDEIPNL  1545
+
+
+>XM_718346.2 Candida albicans SC5314 Pfk26p (PFK26), partial mRNA
+Length=3444
+
+ Score = 105 bits (263),  Expect = 1e-24, Method: Compositional matrix adjust.
+ Identities = 68/247 (28%), Positives = 129/247 (52%), Gaps = 32/247 (13%)
+ Frame = +1
+
+Query  50    AGKLVIIMSGLPARGKSNIAVSIDRYLRWLGFNCRFYSL----------AKYIDERTREM  99
+               KLVI+M GLPARGKS I   + RYL WL  +CR +++          A   ++   + 
+Sbjct  1663  GSKLVIVMVGLPARGKSYITNKLTRYLNWLQHDCRVFNVGNTRRKDKLNAGPENQPLPDK  1842
+
+Query  100   TSSPVKSAASENHVF------SRNDTIER------CLADLEIFLLKEKGQVAIYDATNGT  147
+              ++P +S +   H        +++ T  R       L  L  +++   G V I+DATN T
+Sbjct  1843  ATTPTESRSPRQHDADFFNPENKDSTALREKWAMDTLDQLLDYVISGSGSVGIFDATNST  2022
+
+Query  148   RRTRRILYDRFK---NCGFKILFIESLCNKEDVINANIQEAIHVSEEFRNWDLEMAEKEY  204
+             +  R+ +  R +   N    +L++ES+CN   +I +NI+  +    ++++ D ++A  ++
+Sbjct  2023  KLRRKRVLKRIQQRSNGELPVLYLESVCNDPSIIESNIRLKLS-GPDYKDMDPKLAFNDF  2199
+
+Query  205   CRRIDILKCHYETIDEKD-----YSFVKMINFAETIIANKSNEGYLLSRILFLLMNMTLA  259
+               R+   +  YETIDE++     + +VKMI+  + +++    +G+L S+ ++ L+N  L 
+Sbjct  2200  VGRLHNYEKAYETIDEEEEKIPGFQYVKMIDVGKKVVSFNI-KGFLASQTIYFLLNFNLC  2376
+
+Query  260   RKRIFLV  266
+              ++I++ 
+Sbjct  2377  ERQIWIT  2397
+
+
+
+Lambda      K        H        a         alpha
+   0.322    0.138    0.398    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 862054000
+
+
+Query= 2542853|NP_001342918.1|chromosome I|cog1|-1|4681469|4685669|N/A|701|No description available
+
+Length=701
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.323    0.137    0.395    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1447802496
+
+
+Query= 2542849|NP_594675.1|chromosome I|klp8|1|4681264|4683243|N/A|511|No description available
+
+Length=511
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_708668.2 Candida albicans SC5314 uncharacterized protein (CAAL...  143     1e-37
+XM_711241.1 Candida albicans SC5314 Kip4p (KIP4), partial mRNA        122     4e-30
+XM_711501.1 Candida albicans SC5314 tubulin-dependent ATPase (KIP...  119     7e-29
+XM_707979.2 Candida albicans SC5314 Kip1p (KIP1), partial mRNA        90.9    1e-19
+XM_709178.2 Candida albicans SC5314 Kar3p (KAR3), partial mRNA        88.2    6e-19
+XM_709300.2 Candida albicans SC5314 Kip2p (KIP2), partial mRNA        80.9    1e-16
+
+
+>XM_708668.2 Candida albicans SC5314 uncharacterized protein (CAALFM_C102100WA), 
+partial mRNA
+Length=1617
+
+ Score = 143 bits (361),  Expect = 1e-37, Method: Compositional matrix adjust.
+ Identities = 129/404 (32%), Positives = 203/404 (50%), Gaps = 63/404 (16%)
+ Frame = +1
+
+Query  5     NVRVIVRVRPKSLREL-SKSAE------DLLSV---DSHNKTVTITPPKHGLKHSRHKNR  54
+             N++V VRVRP   REL +K AE       L+S+   D H   V +T PK     ++ KN 
+Sbjct  10    NIKVSVRVRPLLPRELKAKKAEGEATPVSLVSMPPSDPH--KVLLTNPK-----AQSKNN  168
+
+Query  55    V---NGPRTFAFDECFAPSAPESKNLSGQEDVYESTGPLLVKSILEGFNSCFITYGQKGT  111
+             +   N P++F FDEC      +  N       YE TGP L+    EG+N C + YGQ G+
+Sbjct  169   ISIDNKPKSFLFDECIWSFNSKDLNYIDNHKYYEKTGPQLLSHFFEGYNVCLLAYGQTGS  348
+
+Query  112   GKTYSVVGLRGQ-PGIIPHISESIFEEIDKLKKKSPNTTITVSISL--AEIIEETPYDLL  168
+             GKTY+++G + + PGIIP + + I ++++     S N  I   +     EI  E   DLL
+Sbjct  349   GKTYTMMGDKNELPGIIPLLIKDILKQME----ISVNEKINCELKFLYIEIYNEQVKDLL  516
+
+Query  169   -------QPNVNSSHTPGETVFVQKDSLTGYHLHGLSEFEVGSAQEIDAFLRLAAKN---  218
+                      N NS+H   +   V++  +TG ++  + E+ +   +    FL+L AK    
+Sbjct  517   TGDTKNGNGNGNSTHA-SQKCKVREHPVTGPYVENVKEYNI---ENYTQFLKLLAKGNSS  684
+
+Query  219   ---IRTELSDISGVRKGHSVFSLVVQQRII--------DPKTRHSLKKASR-----LQII  262
+                  T ++D S   + H++ +L ++Q           D    +S+  AS      ++++
+Sbjct  685   RSTASTSMNDKSS--RSHAIITLTLKQTKFEKFSGFSSDSDETNSIGDASEEMVSNIKLV  858
+
+Query  263   DLAS---FSKGsqrnesissfesssnnkslsvlnrvIAALTSKKNDVLIPYKDSVLTTLL  319
+             DLA      K     +     E +  NKSL+VL R I  L+S  +  LIPY++S+LT LL
+Sbjct  859   DLAGSERLQKTKLYGQQERIKEGTLINKSLAVLGRCINLLSSNPSS-LIPYRESILTYLL  1035
+
+Query  320   QDALGGNCRTIMLTCVSPCDFDDTFSALRYSEAARRIKNISNIN  363
+             ++ LGGN +T M+ CVSP D+++T   L Y+   ++IK ++  N
+Sbjct  1036  KENLGGNSKTCMIFCVSPVDYEETHQTLNYANEVKKIKTLAKAN  1167
+
+
+>XM_711241.1 Candida albicans SC5314 Kip4p (KIP4), partial mRNA
+Length=2715
+
+ Score = 122 bits (307),  Expect = 4e-30, Method: Compositional matrix adjust.
+ Identities = 123/424 (29%), Positives = 212/424 (50%), Gaps = 55/424 (13%)
+ Frame = +1
+
+Query  5     NVRVIVRVRPKSLRELSKSAEDLLSVDSHNKTVTITPPKHGLKHSRHKNRVNGPRTFAFD  64
+             N++VI R RP++ +EL K    L+    + +TVT+    +G  ++ H         ++FD
+Sbjct  169   NIKVICRFRPENEKELQKGK--LIVEFPNTQTVTL----YGKDYTTH---------YSFD  303
+
+Query  65    ECFAPSAPESKNLSGQEDVYESTGPLLVKSILEGFNSCFITYGQKGTGKTYSVVGLR---  121
+               F+P A        Q D+Y+ +    V  ++ G+N   + YGQ G+GK+Y+++G     
+Sbjct  304   RVFSPEA-------SQLDIYQFSIAETVDDLINGYNGTVLAYGQTGSGKSYTMLGGPQLL  462
+
+Query  122   --GQPGIIPHISESIFEEIDKLKKKSPNTTITVSISLAEIIEETPYDLLQPNVNSSHTPG  179
+                  GIIP IS  IFE I   +  S     +V +S  EI  E   DL+   VN+     
+Sbjct  463   DPNSKGIIPRISHEIFERISANEAVSSEVEYSVCVSFMEIHMEQIRDLIDV-VNNEFDHK  639
+
+Query  180   ETVFVQKDSLTGYHLHGLSEFEVGSAQEIDAFLR--LAAKNIR-TELSDISGVRKGHSVF  236
+              T+   +D L G ++ GL+   V +  E+   L   L  ++I  T++++ S   + H++F
+Sbjct  640   FTI--HEDKLNGIYVKGLATRLVTNELELLNILSEGLKYRSISSTQMNEESS--RSHTIF  807
+
+Query  237   SLVVQQRIIDPKTRHSLKKASRLQIIDLASFSK-Gsqrnesissfesssnnkslsvlnrv  295
+              + + Q+ ++ +    + K S L ++DLA   K      +  +  E+   N SLS L  V
+Sbjct  808   QVKLTQKHMETE----VIKRSNLFLVDLAGSEKVDKTGAQGQTLEEAKKINSSLSALGNV  975
+
+Query  296   IAALTSKKNDVLIPYKDSVLTTLLQDALGGNCRTIMLTCVSPCDFD--DTFSALRYSEAA  353
+             I ALT  K+   IPY+DS LT +LQ+++GGN RT ++   SP  F+  +T S LR+   A
+Sbjct  976   INALTDGKS-THIPYRDSKLTRILQESIGGNSRTSLIINCSPSSFNELETLSTLRFGTRA  1152
+
+Query  354   RRIKNISNINCKEAYSTNNEGELDDILTTLESDREQLRRHEEHSQKLLKFIEEIRNDYEE  413
+             + IKN +++N + + +            +L++   QL +  + +Q  +K +E+  + Y  
+Sbjct  1153  KSIKNSAHVNTELSTA------------SLKNRITQLEKMNQSNQSYIKQLEDELSSYRS  1296
+
+Query  414   RIHA  417
+               H+
+Sbjct  1297  EPHS  1308
+
+
+>XM_711501.1 Candida albicans SC5314 tubulin-dependent ATPase 
+(KIP3), partial mRNA
+Length=2919
+
+ Score = 119 bits (298),  Expect = 7e-29, Method: Compositional matrix adjust.
+ Identities = 98/328 (30%), Positives = 157/328 (48%), Gaps = 28/328 (9%)
+ Frame = +1
+
+Query  40    TPPKHGLKHSRHKNRVNGPRT----FAFDECFAPSAPESKNLSGQEDVYESTGPLLVKSI  95
+             T P   ++ +   N   G R     F FD  F            Q+ VY +T   L+ S+
+Sbjct  361   TNPLTKMQRNAFPNSFKGSRIREHRFVFDRLFDEDCT-------QDQVYRNTTQPLLDSV  519
+
+Query  96    LEGFNSCFITYGQKGTGKTYSVVGLRGQPGIIPHISESIFEEIDKLKKKSPNTTITVSIS  155
+             L+G+N+    YG  G GKT++++G    PG+I    + ++  I++LK       I +S+S
+Sbjct  520   LDGYNATVFAYGATGCGKTHTILGTPEDPGVIFLTMKELYNRIEELKDTK---IIDISLS  690
+
+Query  156   LAEIIEETPYDLLQPNVNSSHTPGETVFVQKDSLTGYHLHGLSEFEVGSAQEIDAFLRLA  215
+               EI  ET  DLL P      T  + + +++D+     +  LS     S +E+   +   
+Sbjct  691   YLEIYNETIRDLLNP-----MTQCKNLVIREDANNKISVSNLSRHRPNSVEEVMQLILEG  855
+
+Query  216   AKNIRTELSDISGV-RKGHSVFSLVVQQ--RIIDPKTRHSLKKASRLQIIDLASFSKGsq  272
+              KN     ++ +    + H+V  + V Q  R  D    H+    + L IIDLA   + + 
+Sbjct  856   NKNRTCSPTEANATSSRSHAVLQINVIQKDRTGDITEEHTF---ATLSIIDLAGSERAAA  1026
+
+Query  273   rnes-issfesssnnkslsvlnrvIAALTSKKNDVLIPYKDSVLTTLLQDALGGNCRTIM  331
+                      E ++ NKSL  L   I AL   +    +PY+DS LT LL+ +LGGNC+T+M
+Sbjct  1027  TKNRGARLNEGANINKSLLALGNCINALCDPRRRNHVPYRDSKLTRLLKFSLGGNCKTVM  1206
+
+Query  332   LTCVSPCD--FDDTFSALRYSEAARRIK  357
+             + CVSP    +D+T + L+Y++ A+ IK
+Sbjct  1207  IVCVSPSSQHYDETLNTLKYADRAKEIK  1290
+
+
+>XM_707979.2 Candida albicans SC5314 Kip1p (KIP1), partial mRNA
+Length=2736
+
+ Score = 90.9 bits (224),  Expect = 1e-19, Method: Compositional matrix adjust.
+ Identities = 101/407 (25%), Positives = 178/407 (44%), Gaps = 70/407 (17%)
+ Frame = +1
+
+Query  4     ANVRVIVRVRPKSLRELSKSAEDLLSVDSHNKTVTITPPKHGLKHSRHKNR---------  54
+             +N++V+VR R ++ +E++  A+  + V+  N   +IT P   +     +           
+Sbjct  4     SNIQVVVRCRGRNSQEIA--AKSPIVVELTNDNYSITEPYITINQGYTRATATTTTNNTT  177
+
+Query  55    --------------------VNGPRTFAFDECFAPSAPESKNLSGQEDVYESTGPLLVKS  94
+                                  N  RT+ FD+ +   A        Q  +Y      L+  
+Sbjct  178   TTNSNNTAGATPNTSASSLDTNLKRTYKFDQIYGSQAD-------QNLIYSQIAHPLLLD  336
+
+Query  95    ILEGFNSCFITYGQKGTGKTYSVVGLRGQ---------PGIIPHISESIFEEIDKLKKKS  145
+              L G N   + YGQ GTGKTY++ G+             GIIP +   +F+ +      S
+Sbjct  337   FLRGINVTVLAYGQTGTGKTYTMSGMDNNNKLDENSDIAGIIPRLLGELFQNL------S  498
+
+Query  146   PNTT----ITVSISLAEIIEETPYDLLQPNVNSSHTPGETVFVQKDSLTGYHLHGLSEFE  201
+              N T      V IS  EI  E   DLL  N +++           + +    +  L+E+ 
+Sbjct  499   SNATSKNDYMVKISYLEIYNEELIDLLSNNNSNNRKLRIHEKTNANKVKSIGIQNLTEYT  678
+
+Query  202   VGSAQEIDAFLRLAAKNIRTELSDISGVR-KGHSVFSLVVQQRII-------DPKTRHSL  253
+             + +  +   +L++  +  +T  ++++    + H++FS+ + Q+I        +     S+
+Sbjct  679   INNYNQGIKYLKMGLQKKKTSSTNLNETSSRSHTIFSVQLYQKISSSSSSSSENDNEESV  858
+
+Query  254   KKASRLQIIDLASFSKGsqrnesissfesssnnkslsvlnrvIAALTSKKNDVLIPYKDS  313
+              + S++ ++DLA               E+   N+SL  L RVI +L  KK  + IPY++S
+Sbjct  859   YRISKMNLVDLAGSEN--ISRSGSIVKEAGGINQSLLTLGRVINSLNEKK-LLHIPYRES  1029
+
+Query  314   VLTTLLQDALGGNCRTIMLTCVSPCDFD--DTFSALRYSEAARRIKN  358
+              LT +LQD+LGGN +T ++  +SP   +  +T S L Y+  A+ IKN
+Sbjct  1030  KLTHILQDSLGGNTKTTLIATISPAQVNLLETCSTLDYASKAKNIKN  1170
+
+
+>XM_709178.2 Candida albicans SC5314 Kar3p (KAR3), partial mRNA
+Length=2064
+
+ Score = 88.2 bits (217),  Expect = 6e-19, Method: Compositional matrix adjust.
+ Identities = 85/301 (28%), Positives = 142/301 (47%), Gaps = 38/301 (13%)
+ Frame = +1
+
+Query  61    FAFDECFAPSAPESKNLSGQEDVYESTGPLLVKSILEGFNSCFITYGQKGTGKTYSVVGL  120
+             F FD+ F     +S +L     V+E    L ++  L+G N C   YGQ G+GKT+++   
+Sbjct  1210  FLFDKIF--EREQSNDL-----VFEELSQL-IQCSLDGTNVCVFAYGQTGSGKTFTM---  1356
+
+Query  121   RGQP--GIIPHISESIFEEIDKLKKKSPNTTITVSISLAEIIEETPYDLLQPNVNSSHTP  178
+                P  G+IP   + IF +I++LK+K    + TV     EI  E   DLL P ++    P
+Sbjct  1357  -SHPTNGMIPLSLKKIFNDIEELKEKGW--SYTVRGKFIEIYNEAIIDLLNPKID----P  1515
+
+Query  179   GETVFVQKDSLTG-YHLHGLSEFEVGSAQEIDAFLRLAAK---NIRTELSDISGVRKGHS  234
+                  ++ D + G   +  +S  ++ S ++    L  A K      T+ +D S   + HS
+Sbjct  1516  NTKYEIKHDDIAGKTTVTNVSTIDIKSPEQAITILNQANKKRSTAATKSNDHSS--RSHS  1689
+
+Query  235   VFSLVVQQRIIDPKTRHSLKKASR---LQIIDLASFSKGsqrnesissfesssnnkslsv  291
+             +F       IID +  +SL K S    L +IDLA   + +         + +        
+Sbjct  1690  IF-------IIDLQGYNSLTKESSCGTLNLIDLAGSERLNNSRAEGDRLKETQAINKSLS  1848
+
+Query  292   lnrvIAALTSKKNDVLIPYKDSVLTTLLQDALGGNCRTIMLTCVSPC--DFDDTFSALRY  349
+                 +    + K+   +PY++S LT LL+ +LGGN +T+M   +SP   D ++T ++LR+
+Sbjct  1849  CLGDVIHSLNLKDGSHVPYRNSKLTYLLKHSLGGNSKTLMFVNISPLTKDLNETINSLRF  2028
+
+Query  350   S  350
+             +
+Sbjct  2029  A  2031
+
+
+>XM_709300.2 Candida albicans SC5314 Kip2p (KIP2), partial mRNA
+Length=1998
+
+ Score = 80.9 bits (198),  Expect = 1e-16, Method: Compositional matrix adjust.
+ Identities = 89/324 (27%), Positives = 144/324 (44%), Gaps = 44/324 (14%)
+ Frame = +1
+
+Query  53    NRVNGPRTFAFDECFAPSAPESKNLSGQEDVYESTGPLLVKSILEGFNSCFITYGQKGTG  112
+             N  +G R F FD  F    P  + LS  +   +S   ++ K + EG+N     YG  G+G
+Sbjct  310   NTTDGTR-FVFDNVF----PMDRQLSNIQVYNKSCYNVVNKFLEEGYNGTIFAYGMTGSG  474
+
+Query  113   KTYSVVGLRGQPGIIPHISESIFEEIDKLKKKSPNTTI---TVSISLAEIIEETPYDLLQ  169
+             KT+S+ G    PG +      IF++I+       NTT     + IS  EI  E   DLL 
+Sbjct  475   KTFSMKGCENDPGFVELAINDIFQKIND------NTTTKKYKMDISYLEIYNEKIIDLLS  636
+
+Query  170   PNVNSSHT--PGETVFVQKDSLTGYHLHGLSEFEVGSAQEIDAFLRLAAKNIRTELSDIS  227
+              + +S  T    + + ++ D   G  + GL+   + S  ++   ++    N +T  +D +
+Sbjct  637   GSASSPTTSQSNQDLKIRDDVDFGTKVVGLTSANISSKPQLLQLIKYGDTNRKTSATDFN  816
+
+Query  228   G-VRKGHSVFSLVVQQRIIDPKTRHSLKKASRLQIIDLASFSKGsqrnesissfesssnn  286
+                 + HS+  + +Q  +ID  T   LK  S L + DLA   +            S    
+Sbjct  817   ARSSRSHSILQIRLQ--VIDLLTETELK--STLSLCDLAGLERA---------ATSLERR  957
+
+Query  287   kslsvlnrvIAALTSKKNDVL------IPYKDSVLTTLLQDALGGNCRTIMLTCV-----  335
+             K  S +N+ + AL++  N +       IPY+DS LT LLQ AL G+   ++L  +     
+Sbjct  958   KEGSFINKSLLALSNVINKLSSSTLEHIPYRDSKLTRLLQPALSGSSLVLILCTIHMGGN  1137
+
+Query  336   ---SPCDFDDTFSALRYSEAARRI  356
+                S     +T+  LR++  A+ I
+Sbjct  1138  QQNSQQCVAETYKTLRFAARAKDI  1209
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.132    0.368    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1007213877
+
+
+Query= 2542821|NP_594673.1|chromosome I|rki1|1|4675843|4678173|N/A|274|No description available
+
+Length=274
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_716680.2 Candida albicans SC5314 ribose-5-phosphate isomerase ...  273     3e-93
+
+
+>XM_716680.2 Candida albicans SC5314 ribose-5-phosphate isomerase 
+(RKI1), partial mRNA
+Length=723
+
+ Score = 273 bits (699),  Expect = 3e-93, Method: Compositional matrix adjust.
+ Identities = 135/233 (58%), Positives = 175/233 (75%), Gaps = 3/233 (1%)
+ Frame = +1
+
+Query  11   SPIELAKRLACHMAVDENYPENPKVIGIGSGSTVVYVVERLLTKPGVDSVVFIPTGFQSK  70
+            S +E AK+LA + AVDEN+P++ KVIGIGSGSTV+Y  ER+      DS + IPTGFQSK
+Sbjct  13   SKVESAKKLAAYKAVDENFPKDAKVIGIGSGSTVIYAAERIGQLDNKDSFICIPTGFQSK  192
+
+Query  71   QLIVNNGLRLGDPDCYPNVDVSFDGADEVDDNLQCIKGGGACLFQEKLIAFLAKRLVIVA  130
+            QLI++NGLRLG  + YP++D++FDGADEVD  L  IKGGGACLFQEKL+A  AK+ V+VA
+Sbjct  193  QLIIDNGLRLGTIEQYPDIDIAFDGADEVDPQLNLIKGGGACLFQEKLVAASAKKFVVVA  372
+
+Query  131  DSRKNSHVLGEYWKKGVPIEVMPMAYASILPQLV-ELGAIEPKLRMGAPGKAGPVVTDNG  189
+            D RK S  LG+ W++GVPIE++P +Y+ I+ +L  +LGA    LR G   KAGP++TDN 
+Sbjct  373  DYRKKSDKLGQLWRQGVPIEIVPNSYSKIIQELSKKLGAKNVDLRQGGKAKAGPIITDNN  552
+
+Query  190  NFIIDAHFGLIK--NPKELFAKIKLLVGVVEVGLFCDMISAVYFGSKDGSVTV  240
+            NF++DA FG I+  N  +L  +IKLLVGVVE GLF +M +  YFG +DGSV+V
+Sbjct  553  NFLLDADFGEIEIDNVGKLHEQIKLLVGVVETGLFTNMANKAYFGEEDGSVSV  711
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.138    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 452505560
+
+
+Query= 2542904|NP_594672.1|chromosome I|rps1102|1|4674587|4675180|N/A|152|No description available
+
+Length=152
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_019475412.1 Candida albicans SC5314 ribosomal 40S subunit prot...  252     4e-88
+XM_706261.2 Candida albicans SC5314 uncharacterized protein (CAAL...  196     9e-66
+
+
+>XM_019475412.1 Candida albicans SC5314 ribosomal 40S subunit 
+protein S11A (CAALFM_C501540WA), partial mRNA
+Length=468
+
+ Score = 252 bits (643),  Expect = 4e-88, Method: Compositional matrix adjust.
+ Identities = 120/155 (77%), Positives = 131/155 (85%), Gaps = 3/155 (2%)
+ Frame = +1
+
+Query  1    MATELVVQSERAFQKQPHIFQNAKKGAGR---RWYKDVGLGFKTPAEAIYGEYVDKKCPF  57
+            MATEL VQSERAFQKQPHIF N K  A +   RWYKDVGLGFKTP  AI G Y+DKKCPF
+Sbjct  1    MATELTVQSERAFQKQPHIFTNPKAKANKKTKRWYKDVGLGFKTPKAAIEGSYIDKKCPF  180
+
+Query  58   VGQVSIRGRILTGTVVSTKMHRTIIIRREYLHFIPKYNRYEKRHKNLAAHVSPAFRINEG  117
+             G VSIRG+ILTGTVVSTKMHRTIIIRR+YLH++PKYNRYEKRHKN+AAHVSPAFR+ EG
+Sbjct  181  AGTVSIRGKILTGTVVSTKMHRTIIIRRDYLHYVPKYNRYEKRHKNVAAHVSPAFRVEEG  360
+
+Query  118  DVVTVGQCRPLSKTVRFNVLRVVKHTEGPKQFGKF  152
+            DVVTVGQCRP+SKTVRFNVL+V       K+F KF
+Sbjct  361  DVVTVGQCRPISKTVRFNVLKVSAGASRSKKFSKF  465
+
+
+>XM_706261.2 Candida albicans SC5314 uncharacterized protein (CAALFM_C501550CA), 
+partial mRNA
+Length=489
+
+ Score = 196 bits (497),  Expect = 9e-66, Method: Compositional matrix adjust.
+ Identities = 91/116 (78%), Positives = 101/116 (87%), Gaps = 0/116 (0%)
+ Frame = -1
+
+Query  37   LGFKTPAEAIYGEYVDKKCPFVGQVSIRGRILTGTVVSTKMHRTIIIRREYLHFIPKYNR  96
+            LGFKTP  AI G Y+DKKCPF G VSIRG+ILTGTVVSTKMHRTIIIRR+YLH++PKYNR
+Sbjct  489  LGFKTPKAAIEGSYIDKKCPFAGTVSIRGKILTGTVVSTKMHRTIIIRRDYLHYVPKYNR  310
+
+Query  97   YEKRHKNLAAHVSPAFRINEGDVVTVGQCRPLSKTVRFNVLRVVKHTEGPKQFGKF  152
+            YEKRHKN+AAHVSPAFR+ EGDVVTVGQCRP+SKTVRFNVL+V       K+F KF
+Sbjct  309  YEKRHKNVAAHVSPAFRVEEGDVVTVGQCRPISKTVRFNVLKVSAGASRSKKFSKF  142
+
+
+
+Lambda      K        H        a         alpha
+   0.324    0.139    0.419    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 174216630
+
+
+Query= 2542825|NP_594671.1|chromosome I|gwt1|-1|4671422|4673031|N/A|459|No description available
+
+Length=459
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_707720.2 Candida albicans SC5314 glucosaminyl-phosphotidylinos...  212     1e-63
+
+
+>XM_707720.2 Candida albicans SC5314 glucosaminyl-phosphotidylinositol 
+O-acyltransferase (GWT1), partial mRNA
+Length=1458
+
+ Score = 212 bits (539),  Expect = 1e-63, Method: Compositional matrix adjust.
+ Identities = 166/500 (33%), Positives = 254/500 (51%), Gaps = 60/500 (12%)
+ Frame = +1
+
+Query  2     SYKLEKEAFVSNLTGSSSIETCGLLLIGIACNVLWVNMTARNILPKGNLGFLVEFFIFCL  61
+             S K  KE FVS+LTG +  E   +  I ++ + L   +  +++   G+L  + ++ +  L
+Sbjct  10    SLKQLKEQFVSDLTGGTIEEIYAVTSIALS-SYLSFRLLKKSL---GDLALIYDYILNVL  177
+
+Query  62    IPLFVIYVSSKVGVFTLCIASFLPSFVLHVISPINWDVLRRKPGCCLTKKNENTFDR---  118
+               L  I V S    + L     +PS V++++   N+ V   KP     ++N+   D+   
+Sbjct  178   TILASITVYSNSPSY-LHYFIVIPSLVIYLV---NYHV--EKPSSP-HRQNDTKEDKSDE  336
+
+Query  119   ---RIAGVTFYRSQMMLVTVTCILAVDFTLFPRRYAKVETWGTSLMDLGVGSFMFSSGTV  175
+                R   +T YRSQM+++T   ILAVDF +FPRR+AKVETWGTS+MDLGVGSF+FS G +
+Sbjct  337   LLPRKQFITAYRSQMLIITNLAILAVDFPIFPRRFAKVETWGTSMMDLGVGSFVFSMG-L  513
+
+Query  176   AGRKNDIKKPNAFKNVLWNSFI------------LLILGFARMFLTKSINYQEHVSEYGM  223
+             A  +  IK         W S++            +L+LG  R    K ++YQEH +EYG+
+Sbjct  514   ANSRQLIKNHTDNYKFSWKSYLKTIKQNFIKSVPILVLGAIRFVSVKQLDYQEHETEYGI  693
+
+Query  224   HWNFFFTLGFMALGVFFFRRSLKKVSYFNLATFITLLHHCLLVLTPFQKWALSAPR--TN  281
+             HWNFFFTLGF+ + +      L  V  F +   I++ +   L  T   K+ LS+     +
+Sbjct  694   HWNFFFTLGFLPIVLGILDPVLNLVPRFIIGIGISIAYEVALNKTGLLKFILSSENRLES  873
+
+Query  282   ILAQNREGIASLPGYIAIYFYGMYTGSVVLA-----DRPLMYTRAESWKRFQR----LLF  332
+             ++  N+EGI S  GY+ I+  G   GS VL      +  +  ++    K+  +    L F
+Sbjct  874   LITMNKEGIFSFIGYLCIFIIGQSFGSFVLTGYKTKNNLITISKIRISKKQHKKELLLFF  1053
+
+Query  333   PLCILLVLYLVSNFLSVG-------------VSRRLANTPYVANVAFINMFFLTIYILID  379
+              +     LYL   F  +              +SRRLAN PYV  V   N  FL  Y LI+
+Sbjct  1054  SVATTQGLYLACIFYHLAFSLFISNLSFLQPISRRLANFPYVMWVVSYNATFLLCYDLIE  1233
+
+Query  380   AYLFPSSVPYGSRVPKLLEDANNNGLLVFLIANVLTGVVNLSFDTLHSSNAKGLTIMTMY  439
+              +     +P G+    +L+  NNNGL +FL++N+LTG +N+S +TL +SN   + I+  Y
+Sbjct  1234  KF-----IP-GNLTSTVLDSINNNGLFIFLVSNLLTGFINMSINTLETSNKMAVIILIGY  1395
+
+Query  440   LFIICYMAHWLAQHGIRFRL  459
+                   +A +L +  I  +L
+Sbjct  1396  SLTWTLLALYLDKRKIYIKL  1455
+
+
+
+Lambda      K        H        a         alpha
+   0.331    0.143    0.447    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 886269000
+
+
+Query= 2542887|NP_594670.1|chromosome I|sfc2|-1|4669626|4671247|N/A|374|No description available
+
+Length=374
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_705192.2 Candida albicans SC5314 Pzf1p (PZF1), partial mRNA        151     2e-42
+XM_705618.2 Candida albicans SC5314 uncharacterized protein (CAAL...  71.6    6e-14
+XM_712106.2 Candida albicans SC5314 Csr1p (CSR1), partial mRNA        70.5    1e-13
+
+
+>XM_705192.2 Candida albicans SC5314 Pzf1p (PZF1), partial mRNA
+Length=1239
+
+ Score = 151 bits (381),  Expect = 2e-42, Method: Compositional matrix adjust.
+ Identities = 122/365 (33%), Positives = 176/365 (48%), Gaps = 30/365 (8%)
+ Frame = +1
+
+Query  21    KIFHCPYEECGKKYSRPSLLEQHLRTHSNERPFVCDYTGCSKAFYRKSHLKIHKRCHTNV  80
+             K + C YE C K Y+RPSLLEQHLRTHSN+RP+ C    C KAF+RKSHL+ H   H+  
+Sbjct  67    KKYICTYEGCDKAYNRPSLLEQHLRTHSNDRPYKCTVEDCDKAFFRKSHLETHIVSHSEK  246
+
+Query  81    KPFSCHYDGCDAQFYTQQHLERHIEVHRKPKPYACTWEGCDECFSKHQQLRSHISACHTH  140
+             KPF C    C     ++QHL+RH   H   K + CT+E C E F KHQ LR HI + H  
+Sbjct  247   KPFHCSV--CGKGVNSRQHLKRHEITH--TKSFKCTFENCQEAFYKHQSLRHHILSVHEK  414
+
+Query  141   LLPYPCTYQDCELRFATKQKLQNHVNRAHEKIISYSCPHESCVGHEGFEKWSQLQNHIRE  200
+              L    T + C   F    KL  H  + H    +Y C H  C   + F+ WS LQ HI++
+Sbjct  415   TL----TCKQCNKVFTRPSKLAQHKLKHHGGSPAYQCDHPGCF--KNFQTWSVLQFHIKQ  576
+
+Query  201   AHVP-SCSICGRQFKTAAHLRHHVVLHQTTLEERKTYHCPMEGCKKSFTRSSALKKHISV  259
+              H    C  CG+       L  H++ H  +    K + C      K F + + L +H ++
+Sbjct  577   LHPKLKCPKCGKGCVGKKGLSSHMLSHDDST-MIKIWTCDYCDVGK-FAKKNELVEHYNI  750
+
+Query  260   IHEGNMAFHCDSCGTKFGYKHMLQRHLERGT-CKKAHKPYINECGIKHDGIEGVAIHDQK  318
+              H+GN+    D    +   K  L+  L++G+     H+    +  ++ D  +     D+K
+Sbjct  751   FHDGNIP---DDLLKETEVK-KLENLLDQGSKLNNLHELETEKLKVEEDEEDEEDSLDEK  918
+
+Query  319   EKELSSNLVSDVAKKIINEVTG--HGYK--------EAREYSCSFPECNYRFKRLYDMHR  368
+               ++ S+ +S  A++ I   T    G K          ++ +C    C+  F R YD+ R
+Sbjct  919   RSDVRSDSMS--AQRSIKSFTASLEGSKSVSKLILNSGKKINCPKNNCDRMFSREYDLRR  1092
+
+Query  369   HLNSH  373
+             HL  H
+Sbjct  1093  HLKWH  1107
+
+
+>XM_705618.2 Candida albicans SC5314 uncharacterized protein (CAALFM_CR02510WA), 
+partial mRNA
+Length=3303
+
+ Score = 71.6 bits (174),  Expect = 6e-14, Method: Compositional matrix adjust.
+ Identities = 42/119 (35%), Positives = 62/119 (52%), Gaps = 6/119 (5%)
+ Frame = +1
+
+Query  24    HCPYEECGKKYSRPSLLEQHLRTHSNERPFVCDYTGCSKAFYRKSHLKIHKRCHTNVKPF  83
+              CPY  C K +++ + LE H+R+H   +PF C Y  C K F +  +L+ H R HT  KPF
+Sbjct  2749  QCPY--CFKFFTQSTHLEVHIRSHIGYKPFECTY--CHKKFTQGGNLRTHLRLHTGEKPF  2916
+
+Query  84    SCHYDGCDAQFYTQQHLERHIEVHRKPKPYACTWEGCDECFSKHQQLRSHISACHTHLL  142
+             +C    C   F  + +L  H   H   KP+ C  + CD+ F++   L+SH +  H   L
+Sbjct  2917  TCEI--CKRSFNRKGNLAAHKLTHDNLKPFECKLDNCDKSFTQLGNLKSHQNRFHLDKL  3087
+
+
+ Score = 69.3 bits (168),  Expect = 3e-13, Method: Compositional matrix adjust.
+ Identities = 35/83 (42%), Positives = 47/83 (57%), Gaps = 4/83 (5%)
+ Frame = +1
+
+Query  21    KIFHCPYEECGKKYSRPSLLEQHLRTHSNERPFVCDYTGCSKAFYRKSHLKIHKRCHTNV  80
+             K F C Y  C KK+++   L  HLR H+ E+PF C+   C ++F RK +L  HK  H N+
+Sbjct  2824  KPFECTY--CHKKFTQGGNLRTHLRLHTGEKPFTCEI--CKRSFNRKGNLAAHKLTHDNL  2991
+
+Query  81    KPFSCHYDGCDAQFYTQQHLERH  103
+             KPF C  D CD  F    +L+ H
+Sbjct  2992  KPFECKLDNCDKSFTQLGNLKSH  3060
+
+
+ Score = 64.3 bits (155),  Expect = 1e-11, Method: Compositional matrix adjust.
+ Identities = 39/115 (34%), Positives = 57/115 (50%), Gaps = 7/115 (6%)
+ Frame = +1
+
+Query  55    CDYTGCSKAFYRKSHLKIHKRCHTNVKPFSCHYDGCDAQFYTQQHLERHIEVHRKPKPYA  114
+             C Y  C K F + +HL++H R H   KPF C Y  C  +F    +L  H+ +H   KP+ 
+Sbjct  2752  CPY--CFKFFTQSTHLEVHIRSHIGYKPFECTY--CHKKFTQGGNLRTHLRLHTGEKPFT  2919
+
+Query  115   CTWEGCDECFSKHQQLRSHISACHTHLLPYPCTYQDCELRFATKQKLQNHVNRAH  169
+             C  E C   F++   L +H    H +L P+ C   +C+  F     L++H NR H
+Sbjct  2920  C--EICKRSFNRKGNLAAH-KLTHDNLKPFECKLDNCDKSFTQLGNLKSHQNRFH  3075
+
+
+>XM_712106.2 Candida albicans SC5314 Csr1p (CSR1), partial mRNA
+Length=1857
+
+ Score = 70.5 bits (171),  Expect = 1e-13, Method: Compositional matrix adjust.
+ Identities = 42/123 (34%), Positives = 61/123 (50%), Gaps = 8/123 (7%)
+ Frame = +1
+
+Query  16    LRSAKKIFHCPYEEC----GKKYSRPSLLEQHLRTHSNERPFVCDYTGCSKAFYRKSHLK  71
+             + S K  +HC +  C    GK +++   L +H+  H+N +P  CD   C  +F  +S L+
+Sbjct  1399  IGSGKHEYHCCWRGCERHNGKVFTQKQKLIRHIHIHTNFKPCKCDI--CGASFAVESVLQ  1572
+
+Query  72    IHKRCHTNVKPFSCHYDGCDAQFYTQQHLERHIEVHRKPKPYACTWEGCDECFSKHQQLR  131
+              H R H+  KPF C    CD  F T   L  H  VH   +P  C W GC++ FS+   L 
+Sbjct  1573  QHYRVHSGEKPFKCPI--CDKTFATSSSLSIHTRVHTGERPLVCKWPGCNKRFSESSNLA  1746
+
+Query  132   SHI  134
+              H+
+Sbjct  1747  KHM  1755
+
+
+
+Lambda      K        H        a         alpha
+   0.323    0.134    0.445    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 684588558
+
+
+Query= 2542900|NP_001342917.1|chromosome I|jac1|1|4668760|4671380|N/A|225|No description available
+
+Length=225
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.132    0.384    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 339233532
+
+
+Query= 2542899|NP_594668.1|chromosome I|gpn2|-1|4667118|4668752|N/A|315|No description available
+
+Length=315
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_709494.2 Candida albicans SC5314 putative GTPase (CAALFM_C5020...  305     1e-103
+XM_710346.2 Candida albicans SC5314 putative signal sequence-bind...  151     2e-44 
+XM_716213.2 Candida albicans SC5314 GTPase (CAALFM_C702460CA), pa...  80.1    2e-17 
+
+
+>XM_709494.2 Candida albicans SC5314 putative GTPase (CAALFM_C502020CA), 
+partial mRNA
+Length=1059
+
+ Score = 305 bits (782),  Expect = 1e-103, Method: Compositional matrix adjust.
+ Identities = 151/296 (51%), Positives = 207/296 (70%), Gaps = 10/296 (3%)
+ Frame = +1
+
+Query  3    FCQVVVGPPGSGKSTYCFGMYQLLSAIGRSSIIVNLDPANDFIKYPCAIDIRKVLDVEMI  62
+            + Q+V+GPPGSGKSTYC GMYQ +SAIGR   I+NLDPAND + YPC +DIR  + +E I
+Sbjct  4    YGQIVIGPPGSGKSTYCHGMYQFMSAIGRKLCIINLDPANDRLPYPCELDIRDYISLEEI  183
+
+Query  63   QKDYDLGPNGALIYAMEAIEYH-VEWLLKELKK--HRDSYVIFDCPGQVELFTNHNSLQK  119
+             ++ DLGPNG L+YA+E ++   ++  + ++++  +  +Y++FDCPGQVELFT+HNSL +
+Sbjct  184  MEELDLGPNGGLMYALELLDKQGIDLFIGKIEQLINEGNYLLFDCPGQVELFTHHNSLYR  363
+
+Query  120  IIKTLEKELDYRPVSVQLVDAYCCTNPSAYVSALLVCLKGMLQLDMPHVNILSKADLLCT  179
+            I K L +    R   V L+D    T+PS Y+S LL+ L+ MLQLD+PHVN++SK D+L  
+Sbjct  364  IFKKLTQLKRLRLCVVSLIDCIYLTSPSQYISILLLSLRSMLQLDLPHVNVISKIDMLKN  543
+
+Query  180  YGTLPMKLDFFTEVQDLSYLAPLLDRDKRL---QRYSDLNKAICELVEDFNLVSFEVVAV  236
+            YG LP +LD++TE QDL YL P L+++      Q Y  L + I E+VEDF+LVSFEV++V
+Sbjct  544  YGELPFRLDYYTEAQDLQYLTPYLEKESNSVLGQNYVRLTELIGEMVEDFHLVSFEVLSV  723
+
+Query  237  ENKASMLRVLRKIDQAGGYAYGSTEIGGDAVWVNAVRQGGD---PLQGISPQERWI  289
+            ENK SM+ ++  ID+A GY++GS EIGGD VW  A RQ G      Q +   ERWI
+Sbjct  724  ENKKSMISLMSVIDKANGYSFGS-EIGGDTVWSEATRQNGSGNGGYQDVDIHERWI  888
+
+
+>XM_710346.2 Candida albicans SC5314 putative signal sequence-binding 
+GTPase (CAALFM_C406790WA), partial mRNA
+Length=822
+
+ Score = 151 bits (381),  Expect = 2e-44, Method: Compositional matrix adjust.
+ Identities = 81/231 (35%), Positives = 139/231 (60%), Gaps = 14/231 (6%)
+ Frame = +1
+
+Query  6    VVVGPPGSGKSTYCFGMYQLLSAIGRSSIIVNLDPANDFIKYPCAIDIRKVLDVEMIQKD  65
+            +V+GP G GKST+C  M   + +IGR + IVNLDPA +  +Y   ID++ ++ ++ + ++
+Sbjct  19   LVLGPAGVGKSTFCNSMIAYMQSIGRRAHIVNLDPAANPTEYEFTIDVKDLISLQDVMEE  198
+
+Query  66   YDLGPNGALIYAMEAIEYHVEWLLKELKKHRDSYVIFDCPGQVELFTNHNSLQKIIKTLE  125
+             +LGPNG L+Y  E +  +++WL +E+  + D Y+IFDCPGQ+EL+T+   L  I++ L+
+Sbjct  199  MELGPNGGLVYCFEFLLNNLDWLDEEIGDYNDEYLIFDCPGQIELYTHIPVLPTIVRHLQ  378
+
+Query  126  KELDYRPVSVQLVDAYCCTNPSAYVSALLVCLKGMLQLDMPHVNILSKADLLCTYGTLPM  185
+              L++   +  L++A    + S + S  L  +  M+ L++PH+NILSK DL+        
+Sbjct  379  TSLNFNLCATYLLEAPFIIDNSKFFSGALSAMSAMILLELPHINILSKIDLVK-------  537
+
+Query  186  KLDFFTEVQDLSYLAP---LLDR--DKRLQRYSDLNKAICELVEDFNLVSF  231
+              D +++ Q   +L P   LL +  D    +++ L ++I  LV+DF +V F
+Sbjct  538  --DEYSKKQLKKFLNPDPLLLAKQEDYINPKFAKLTQSIANLVDDFGMVQF  684
+
+
+>XM_716213.2 Candida albicans SC5314 GTPase (CAALFM_C702460CA), 
+partial mRNA
+Length=1278
+
+ Score = 80.1 bits (196),  Expect = 2e-17, Method: Compositional matrix adjust.
+ Identities = 63/244 (26%), Positives = 116/244 (48%), Gaps = 20/244 (8%)
+ Frame = +1
+
+Query  2    PFCQVVVGPPGSGKSTYCFGMYQLLSAIGRSSIIVNLDPANDFIKYPCAIDIRKVLDVEM  61
+            P   + +G  GSGK+T+   +   L +      ++NLDPA   I +   IDIR  +  + 
+Sbjct  124  PPTIICIGMAGSGKTTFVQRLNSHLHSKKTPPYLINLDPAVLKIPFGANIDIRDSVKYKK  303
+
+Query  62   IQKDYDLGPNGALIYAMEAIEYHVEWLLKELKKHRD--SYVIFDCPGQVELFTNHNSLQK  119
+            + + Y+LGPNGA++ ++      ++ ++K + K +D  + V+ D PGQ+E F    S   
+Sbjct  304  VMEQYNLGPNGAIVTSLNLFSTKIDQVIKLIDKKQDKINNVVIDTPGQIECFIWSASGSI  483
+
+Query  120  IIKTLEKELDYRPVSVQLVDAYCCTNPSAYVSALLVCLKGMLQLDMPHVNILSKADLLCT  179
+            I ++   E  +  V   +VD    T+P+ ++S +L     + +  +P + + +K D+   
+Sbjct  484  ITESFASE--FPTVIAYIVDTPRNTSPTTFMSNMLYACSILYKTKLPMIVVFNKTDV---  648
+
+Query  180  YGTLPMKLDFFTE-VQDLSYLAPLLDRDKRLQR------YSDLNKAICELVEDFNLVSFE  232
+                  K DF  E + D       + +DK L         S L  ++  ++E+F   + +
+Sbjct  649  -----TKDDFAKEWMTDFESFQMAIQKDKDLNNEQGSGYMSSLINSMSLMLEEF-YSNLD  810
+
+Query  233  VVAV  236
+            VV V
+Sbjct  811  VVGV  822
+
+
+
+Lambda      K        H        a         alpha
+   0.321    0.138    0.419    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 548967825
+
+
+Query= 2542857|NP_594667.2|chromosome I|apl5|1|4664333|4668407|N/A|825|No description available
+
+Length=825
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_714854.2 Candida albicans SC5314 Apl5p (APL5), partial mRNA        364     1e-111
+XM_710682.2 Candida albicans SC5314 Apl4p (APL4), partial mRNA        99.4    7e-22 
+
+
+>XM_714854.2 Candida albicans SC5314 Apl5p (APL5), partial mRNA
+Length=3300
+
+ Score = 364 bits (935),  Expect = 1e-111, Method: Compositional matrix adjust.
+ Identities = 202/511 (40%), Positives = 314/511 (61%), Gaps = 35/511 (7%)
+ Frame = +1
+
+Query  1     MVFERTLIDLIKGIRSHANDE----EAFIATCLLECRKEATSQDADLKSEAILKLAYLEM  56
+             ++FE++L DLIKGIR+H  +       F+   + ECR E T+ D + K+ AILKLAYLEM
+Sbjct  58    ILFEKSLNDLIKGIRAHTKESPESLGNFLDVAIQECRNELTTTDLETKAMAILKLAYLEM  237
+
+Query  57    LGVDISWASFQIVEVMSSSKILQKQKGYLAAVQSFKPDTDVLMLTTNLLKKDLMSSKVPE  116
+              G D+SW +FQI+EVMSSSK  QK+ GYLAA+QSFK + D+L+L TN  KKDL S    +
+Sbjct  238   YGFDMSWCNFQILEVMSSSKFQQKRIGYLAAIQSFKNEQDLLILATNQFKKDLNSHNHVD  417
+
+Query  117   ITLAIDGLSHFSTLGLARDLYRDVLILLNHSVPYVRKRTILLLYRLCLQYPEAISACIPK  176
+             I LA+ G++   T  LA+D+  DVL+ LNHS PY+RK+ IL +Y++ LQYPE++     +
+Sbjct  418   IGLALSGIATIVTPSLAKDINDDVLMKLNHSKPYIRKKAILAMYKIFLQYPESLRLNFNR  597
+
+Query  177   LRERLDDPDTSVVNAAVSVICELARRAPKNYLEFAPDLFHLLTTSSNNWMLIKLIKLFAS  236
+             + E+LDD + +VV+A V+VICE++++ P  ++ + P  F +L  + NNW++I+++KLF S
+Sbjct  598   VIEKLDDSEIAVVSATVNVICEISKKNPNIFINYLPKFFAILEDTKNNWLIIRILKLFQS  777
+
+Query  237   LTPYEPRLVKKLIPSLTDIIENTHAMSLLYECINTIVSGNMLVGHSQCDK-LASLCASKL  295
+             L+  EPR+ KK++P++ D++  T A SL+YECIN IVSG ML   S  DK  A LC ++L
+Sbjct  778   LSKVEPRMKKKILPTIIDLMLRTQASSLIYECINCIVSGQMLSADSSKDKETAKLCINQL  957
+
+Query  296   RGFFEDTDQNLKYIALLCLRKLANTHPSL---VSAQLDIILKCLVDTDTSIRLRALDLVN  352
+             + FF   D NLK++ L+ L       P L   V    +I+L+CL D D  I+ +AL++ N
+Sbjct  958   KLFFLTNDSNLKFVGLIALINTLKIFPILINDVEGISEIVLECLNDRDLIIKRKALEVSN  1137
+
+Query  353   EIVNKENIRTIVKTLMLQLIVSSDESAVEDIRNSTAT-RIIEMTSKSTYMNIADFEWLLT  411
+              +VN++NI  +VK +++QL+   D + ++D+     T +I+++ S++ Y+NI +F W + 
+Sbjct  1138  YLVNEDNITEVVKIMLMQLV--PDNNMIDDMLKLEITLKILQIASQNNYVNIPNFRWYVA  1311
+
+Query  412   VYVDLAN-----IPGIDTGTLLNNQII------------DLCVRVKALRPFSVDIFSQAI  454
+             V  D+ N     + G     L+ + I             +L  +V ++R +   +    +
+Sbjct  1312  VLKDVINLTLLPVEGATNSGLIASHIANEISTEVGKEFKNLATKVPSVRSY---LLQNVV  1482
+
+Query  455   LDPSYVSTTDCSVSEKRTDILPAIIWCLGEY  485
+             L+       D  + +    IL  + W LGEY
+Sbjct  1483  LEL----VQDVRLLDSSALILKDLYWILGEY  1563
+
+
+>XM_710682.2 Candida albicans SC5314 Apl4p (APL4), partial mRNA
+Length=2487
+
+ Score = 99.4 bits (246),  Expect = 7e-22, Method: Compositional matrix adjust.
+ Identities = 95/380 (25%), Positives = 174/380 (46%), Gaps = 38/380 (10%)
+ Frame = +1
+
+Query  15    RSHANDEEAFIATCLLECRKEATSQDADLKSEAILKLAYLEMLGVDISWASFQIVEVMSS  74
+             RS    E A I T   +   + T++  +     I KL YL ++G    +   + +++++S
+Sbjct  61    RSVVQKESAAIRTSFRDPGLDQTTRRIN-----ISKLLYLYIMGEKTHFGQVECLKLLAS  225
+
+Query  75    SKILQKQKGYLAAVQSFKPDTDVLMLTTNLLKKDLMSSKVPEITLAIDGLSHFSTLGLAR  134
+              +   K+ GYLA +     + +VL L TN L  D+       + LA+  L + ++  LAR
+Sbjct  226   PRFADKRLGYLACMLILDENQEVLTLLTNSLDNDMQHPNSFIVGLALCCLGNIASPELAR  405
+
+Query  135   DLYRDVLILLNHSVPYVRKRTILLLYRLCLQYPEAISACIPKLRERLDDPDTSVVNAAVS  194
+             DLY +V  +++    Y++K+  ++  +L  + PE     I K+   +++   S++   + 
+Sbjct  406   DLYTNVETIIDSKNVYLKKKACIVAAKLIEKEPELAEFFITKINSLINEKQPSLLLGTIR  585
+
+Query  195   VICEL---ARRAPKNYLEFAPDLFHLL--TTSSN---------------NWMLIKLIKLF  234
+             +I  L   +  +    ++  P L   L  TT+S                  +L++ +++ 
+Sbjct  586   LIQALYFASEESRSTLIKTIPKLVADLKRTTTSGYQPDYDVTGTTDPFLQVLLLETLRIL  765
+
+Query  235   ASLTPYEPRLVKKLIPSLTDIIEN-----THAMSLLYECINTIVSGNMLVGHSQCDK-LA  288
+                    P+ ++++   LT +  N       A ++LYEC+ TI +        Q D+ L 
+Sbjct  766   GRDEQCPPQYLEQINDILTQVASNLDSGKNAAHAILYECVKTIFA-------IQSDQSLK  924
+
+Query  289   SLCASKLRGFFEDTDQNLKYIALLCLRKLANTHPSLVSAQLDIILKCLVDTDTSIRLRAL  348
+              L  + L  F    D N +Y+AL  L  +    P  V      I+ CL D D SIR RAL
+Sbjct  925   ILGVNILGKFLSTKDNNTRYVALDTLLTVVTIEPMAVQRHRSTIVNCLSDGDISIRRRAL  1104
+
+Query  349   DLVNEIVNKENIRTIVKTLM  368
+             +L   I+N++NIR + + ++
+Sbjct  1105  ELSFGILNEQNIRVLAREIL  1164
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.134    0.383    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1738187935
+
+
+Query= 2542902|NP_001342916.1|chromosome I|irc20|1|4659096|4663842|N/A|1375|No description available
+
+Length=1375
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_716375.2 Candida albicans SC5314 DNA repair protein (RAD16), p...  99.8    2e-21
+XM_714450.2 Candida albicans SC5314 DNA helicase (CAALFM_C200350W...  98.2    6e-21
+XM_708263.2 Candida albicans SC5314 translocase (CAALFM_C400460CA...  96.3    2e-20
+XM_019475126.1 Candida albicans SC5314 chromatin-remodeling ATPas...  83.6    1e-16
+XM_712076.1 Candida albicans SC5314 DNA-dependent ATPase (RDH54),...  68.6    5e-12
+XM_708035.2 Candida albicans SC5314 chromatin-remodeling protein ...  68.2    9e-12
+XM_709141.2 Candida albicans SC5314 DNA-dependent ATPase (CAALFM_...  67.8    1e-11
+XM_708422.2 Candida albicans SC5314 DNA-dependent ATPase (CAALFM_...  67.0    2e-11
+XM_710973.1 Candida albicans SC5314 DNA translocase (ISW2), parti...  66.6    2e-11
+XM_707835.2 Candida albicans SC5314 DNA-binding ATPase (CAALFM_C2...  66.6    3e-11
+
+
+>XM_716375.2 Candida albicans SC5314 DNA repair protein (RAD16), 
+partial mRNA
+Length=2559
+
+ Score = 99.8 bits (247),  Expect = 2e-21, Method: Compositional matrix adjust.
+ Identities = 97/422 (23%), Positives = 176/422 (42%), Gaps = 129/422 (31%)
+ Frame = +1
+
+Query  212   PRLSSELLPFQMRVLEWMKRREEEKFLTSNDLPPLWYHCKSLFDDRMVYVNHVYGYMTFS  271
+             P ++ +LLPFQ+  L W+ ++E+                                     
+Sbjct  700   PGMTIKLLPFQLEGLNWLIKQED-------------------------------------  768
+
+Query  272   KEKTYLLASGDIRGGILADEMGMGKTLEVLGLVLHHQLPISLTDTCTFDQVVGKNVKYSK  331
+                      G+  GGILADEMGMGKT++ +GL +H             D+  G N     
+Sbjct  769   ---------GEFNGGILADEMGMGKTIQTIGLFMH-------------DRSKGPN-----  867
+
+Query  332   ATLIITPSTILDQWLSEIDLHVPS--LKVFHYQGIRKSNGLKSAKIFLDCDIVVTSYSDL  389
+               L+I P+  L QW +EI+ H     LKV  Y G  +SN ++    +   D+++TSYS L
+Sbjct  868   --LVIGPTVALMQWKNEIEKHTEPGMLKVLLYHGSNRSNSIQELSQY---DVILTSYSVL  1032
+
+Query  390   RFELLYTESHSRTLRHEKRHVSPKSPLIDVCWWRICVDEAQMVETSQSNVAQMIYRIPRV  449
+               E +Y +  +   + +   V  KS + ++ ++R+ +DEA  ++   SN ++   ++   
+Sbjct  1033  --ESVYRK-QNYGFKRKNGLVKEKSAIHNIEFYRVILDEAHNIKDRNSNTSRAAGKLNTK  1203
+
+Query  450   NCWTVSGTPVRSEVDDLFGLLFLLRYSPMYLY-------KKQAWMQIIEKKRVREFCDL-  501
+               W ++GTP+++ + +++ L+  ++  P + Y       K + W +  + +R    CDL 
+Sbjct  1204  KRWCLTGTPLQNRIGEMYSLIRYMKLDPFHSYFCTKCDCKSEDW-KFSDGRR----CDLC  1368
+
+Query  502   ---------------------FG-----------------SLVCRHSKQDVEEELKLPPQ  523
+                                  FG                  ++ R +K +  ++L LPP 
+Sbjct  1369  QHPPMLHTNFFNHFMLKNIQKFGIAGLGLEGFNNLRLLLDHVMLRRTKIERADDLGLPP-  1545
+
+Query  524   HRICMTTRLSVVEETN--YQDLLSEAAKSLHFFKDRNLDLCDEESMRRWLVRLRQACCHP  581
+              R+    R    EE    YQ L S++ +  + +    + L +  ++   + R+RQ   HP
+Sbjct  1546  -RVVEIRRDFFNEEEKDLYQSLYSDSKRKFNDYVAEGVVLNNYANIFTLITRMRQLADHP  1722
+
+Query  582   QV  583
+              +
+Sbjct  1723  DL  1728
+
+
+ Score = 88.6 bits (218),  Expect = 5e-18, Method: Compositional matrix adjust.
+ Identities = 61/253 (24%), Positives = 120/253 (47%), Gaps = 43/253 (17%)
+ Frame = +1
+
+Query  1091  ICIICRDIIKQGFITTCGHLYCSFCLEAWLK------HSSSCPMCKTKLNKNNAYYIGES  1144
+             +C +C D  ++   + C H +C  C++ +++      +   CP+C          +IG S
+Sbjct  1783  MCQLCDDEAEEPIESKCHHRFCRMCIQEYMESFMGASNKLECPVC----------HIGLS  1932
+
+Query  1145  RDIYSRQEFVTGFNKRDERLEI-LDDEAYRQ---ISNMELKESFG-----SKIDTISKHL  1195
+              D+              E+  I +D+E + +   ++ ++L    G     +KI+ + + L
+Sbjct  1933  IDL--------------EQPAIEVDEELFTKASIVNRIKLGAHGGEWRSSTKIEALVEEL  2070
+
+Query  1196  LYLKHNELYPKVVVFSQWLDVLDVLHKSFEANGIVFIRFDG----KSKNTCLKRFKEERS  1251
+               L+ +    K +VFSQ+  +LD++    +  G   ++  G    + ++  +K F E   
+Sbjct  2071  YKLRSDRHTIKSIVFSQFTSMLDLIQWRLKRAGFNTVKLLGSMSPQQRDNTIKHFMENTE  2250
+
+Query  1252  LQVLTLHARSQSSGLTLTNATHVFMCEPLLNSGIEMQAISRVHRIGQTRPTFVYYYIVED  1311
+             ++V  +  ++    L L  A+ VF+ +P  N  +E Q++ RVHRIGQ RP  +  + +ED
+Sbjct  2251  VEVFLVSLKAGGVALNLCEASQVFLMDPWWNPSVEWQSMDRVHRIGQKRPIRITRFCIED  2430
+
+Query  1312  TVEGHILNLSLTK  1324
+             ++E  I+ L   K
+Sbjct  2431  SIELKIIELQEKK  2469
+
+
+>XM_714450.2 Candida albicans SC5314 DNA helicase (CAALFM_C200350WA), 
+partial mRNA
+Length=3255
+
+ Score = 98.2 bits (243),  Expect = 6e-21, Method: Compositional matrix adjust.
+ Identities = 104/394 (26%), Positives = 175/394 (44%), Gaps = 80/394 (20%)
+ Frame = +1
+
+Query  231   RREEEKFLTSNDLPPLW------YHCKSLFD------DRMVYVNHVYGYMTFSKEKTYLL  278
+             R+E E   T N   PLW      Y  ++  D      ++  Y N   G ++  K     +
+Sbjct  1195  RKELENLGTMN---PLWRKYKWPYATEATQDPTQNQTEKYFYANMYNGELSLEKP----V  1353
+
+Query  279   ASGDIRGGILADEMGMGKTLEVLGLVLHHQLPISLTDTCTFDQVVGKNVKYSKATLIITP  338
+                 +RGGILADEMG+GKT+  L LV  + +P        F +        S+ TLI+ P
+Sbjct  1354  IKSSLRGGILADEMGLGKTIATLALV--NSVPYD-----NFPEPKSDRPYASQTTLIVVP  1512
+
+Query  339   STILDQWLSEID------LHVPSLKVFHYQGIRKSN------GLKSAKIFLDCDIVVTSY  386
+              ++L QW SE +       HV  L   HY   +++N         ++KI +   +++T+Y
+Sbjct  1513  MSLLFQWKSEFEKCNNNSRHVCRL---HYGEDQETNLAWSLCNPDNSKIPI---VMITTY  1674
+
+Query  387   SDLRFELLYTESHSRTLRHEKRHVSPKSPLIDVCWWRICVDEAQMVETSQSNVAQMIYRI  446
+               +  E  +T    R  R+ K  + PK  L  V ++RI +DE   +    +  A+ +Y +
+Sbjct  1675  GTVLNE--FTRLSKR--RNSKGEL-PKVGLYSVKFFRIILDEGHNIRNRNTKTAKSVYEL  1839
+
+Query  447   PRVNCWTVSGTPVRSEVDDLFGLLFLLRYSPM--YLYKKQAWMQIIEKKRVREFCDLFGS  504
+                  W ++GTP+ + +DDL+ L   L   P   + Y K       E+K++ +  D+  S
+Sbjct  1840  QLSRKWILTGTPIVNRLDDLYSLTKFLELDPWNNFSYWKTFVTLPFEQKKISQTLDVVKS  2019
+
+Query  505   LV-------CRHSKQDVEEELKLPPQHRICMTTRLSVVEETNYQDLLSEAAKSLHFFKDR  557
+             ++        +  K++ +  ++LP +  +    + +  EE  YQ           +FKDR
+Sbjct  2020  ILEPIFLRRTKLQKKNGKPLVELPAKEVVIEQIKFNDDEEKLYQ-----------WFKDR  2166
+
+Query  558   NLDLCDE-----ESMRRW------LVRLRQACCH  580
+                   E     + +RR+      ++RLRQ CCH
+Sbjct  2167  AYASFAEGIKSGQLLRRYTQILTHILRLRQVCCH  2268
+
+
+ Score = 91.3 bits (225),  Expect = 8e-19, Method: Compositional matrix adjust.
+ Identities = 74/283 (26%), Positives = 123/283 (43%), Gaps = 32/283 (11%)
+ Frame = +1
+
+Query  1062  QRKIAHFESRRRYLTNLYEHIVLKAESHQICIICRDI---IKQGFITTCGHLYCSFCL--  1116
+             Q + A+    +  + NLY  I  + E    C IC  +     +  +T C H +C  C+  
+Sbjct  2368  QIRFANDTDVKEKMYNLYGKIKEENE----CSICTQVPIPYSEMVVTPCAHTFCLSCILE  2535
+
+Query  1117  ----EAWLKHSSSCPMCKTKLNKNNAYYIGESRDIYSRQEFVTGFNKRDERLEILDDEAY  1172
+                 +  LK    CP C+  ++K   + I       +   F    +  D   ++   +  
+Sbjct  2536  HLDFQKELKKEKLCPNCRLPISKYQLFRIRNQPTKGNEIRFHIQKDAPDYSFQLYLYDPN  2715
+
+Query  1173  RQISNMELKESFGSKIDTISKHLLYLKHNELYPKVVVFSQWLDVLDVLHKSFEANGIVFI  1232
+             R            SKI  + +HL  L       KV+VFSQ+L  LD++    +     FI
+Sbjct  2716  RS----------SSKIQALVRHLKALHSQSPNLKVIVFSQFLSYLDIIQSELKLASEEFI  2865
+
+Query  1233  --RFDGK----SKNTCLKRFK---EERSLQVLTLHARSQSSGLTLTNATHVFMCEPLLNS  1283
+               +FDG+     +   L+ F    E+  + +L L  ++   GL LT A+  +M +P  + 
+Sbjct  2866  VFKFDGRLNMNDRTKLLESFNQPLEDGKVAILLLSLKAGGVGLNLTTASRAYMMDPWWSP  3045
+
+Query  1284  GIEMQAISRVHRIGQTRPTFVYYYIVEDTVEGHILNLSLTKHE  1326
+              IE QAI R+HRIGQ     V  +I+E+++E  +L +   K +
+Sbjct  3046  SIEDQAIDRIHRIGQNETVKVVRFIMENSIETKMLKIQERKKQ  3174
+
+
+>XM_708263.2 Candida albicans SC5314 translocase (CAALFM_C400460CA), 
+partial mRNA
+Length=3309
+
+ Score = 96.3 bits (238),  Expect = 2e-20, Method: Compositional matrix adjust.
+ Identities = 82/294 (28%), Positives = 124/294 (42%), Gaps = 66/294 (22%)
+ Frame = +1
+
+Query  1087  ESHQICIICRDIIKQG----FITTCGHLYCSFCLEAWLKHSSS-------------CPMC  1129
+             E+   C +C D I           CGH+ C  C   + ++ ++             C  C
+Sbjct  2416  ENTPACPVCFDNIDIESSLLIFGECGHIICKGCCNTFFENCNAGDDDDELPHRIGECKDC  2595
+
+Query  1130  KTKLNKNNA--YYIGE--------------------SRDIYSRQEFVTGFNKRDERLEIL  1167
+             +  + ++N   + I +                       I S Q  +  F KRD   E+ 
+Sbjct  2596  QKTVKEHNMTEFLIFDMLHIQKLEMSQVQKFCSQHYQHKIKSNQTLIREFIKRDNGFEL-  2772
+
+Query  1168  DDEAYRQISNMELKESFGSKIDTISKHLLYLKHNELYPKVVVFSQWLDVLDVLHKSFEAN  1227
+                               +KI    + +L L       KV+VFSQ+  + D++    +  
+Sbjct  2773  -----------------SAKIHKCLEMILELFSKNPGEKVIVFSQFTSLFDLMALVLQNQ  2901
+
+Query  1228  GIVFIRFDGKS----KNTCLKRFKEERSLQVLTLHARSQSSGLTLTNATHVFMCEPLLNS  1283
+              I F+R+DG      KN  +K F +  S  VL L  R+ ++GLTLT A HVF+ +P  N 
+Sbjct  2902  HIEFLRYDGTMSMDVKNNVIKEFYQS-SKNVLLLSLRAGNAGLTLTCANHVFIMDPFWNP  3078
+
+Query  1284  GIEMQAISRVHRIGQTRPTFVYYYIVEDTVEGHILNLS-LTKH---EQLDKLGL  1333
+              +E QA+ R HRIGQTR  FV+  ++  TVE  I+ L  L KH     LD+ G+
+Sbjct  3079  FVEEQAMGRAHRIGQTREVFVHRVLIAGTVENRIMELQELKKHLIESALDERGM  3240
+
+
+ Score = 77.0 bits (188),  Expect = 2e-14, Method: Compositional matrix adjust.
+ Identities = 88/338 (26%), Positives = 152/338 (45%), Gaps = 66/338 (20%)
+ Frame = +1
+
+Query  278   LASGDIRGGILADEMGMGKTLEVLGLVLHHQLPISLTDTCTFDQVVGKNVKYSKATLIIT  337
+             + +   +GGILAD+MG+GKT++ L L++                 V K      + LI+ 
+Sbjct  1315  MEASKAKGGILADDMGLGKTIQTLALMM-----------------VSKG-----SNLIVA  1428
+
+Query  338   PSTILDQWLSEIDLHVPS---LKVFHYQGIRKSNGLKSAKIFLDCDIVVTSYSDLRFEL-  393
+             P ++L QW++EI+    S   L V  Y G  K   +K   +  + DIV+ SY+ L  E  
+Sbjct  1429  PVSLLRQWVAEIESKTKSDVFLSVGIYHGDDKKK-MKDFDLMKEYDIVLVSYTTLVQEWK  1605
+
+Query  394   ------LYTESHSRTL-----RHEKRHVSPKSPLIDVCWWRICVDEAQMVETSQSNVAQM  442
+                   L    H R       R  K +VSP     +  + RI +DEAQ ++  Q+  ++ 
+Sbjct  1606  KHFSEDLKEHQHERNYFPNRSRGGKSYVSPFFSR-ESQFHRIILDEAQAIKNKQALASKA  1782
+
+Query  443   IYRIPRVNCWTVSGTPVRSEVDDLFGLLFLLRYSPMYLYKKQAWMQIIE-----------  491
+             +  +     + ++GTP+++ +++L+ LL  L+  P Y  +++    I+            
+Sbjct  1783  MTYLRAQYRFCLTGTPMQNGIEELYPLLRFLKIQP-YCSEEKFRADILTPIKSKTDLYDE  1959
+
+Query  492   ---KKRVREFCDLFGSLVCRHSKQDVEEE---LKLPPQHRICMTTRLSVVEETNYQDL--  543
+                K+ +++   L  S++ R +K  + +    L LP +H +     L   E   YQ +  
+Sbjct  1960  YDVKESMKKIQVLLKSILLRRTKDSLIDGVPILNLPEKHVLSDYVTLENDELAYYQSIEL  2139
+
+Query  544   -LSEAAKSLHFFKDRNLDLCDEESMRRWLVRLRQACCH  580
+              + +AAK +     +N            L+RLRQACCH
+Sbjct  2140  RVQKAAKKILGEHTKN------APALTLLLRLRQACCH  2235
+
+
+>XM_019475126.1 Candida albicans SC5314 chromatin-remodeling ATPase 
+(CAALFM_C107340WA), partial mRNA
+Length=3054
+
+ Score = 83.6 bits (205),  Expect = 1e-16, Method: Compositional matrix adjust.
+ Identities = 82/335 (24%), Positives = 155/335 (46%), Gaps = 65/335 (19%)
+ Frame = +1
+
+Query  286   GILADEMGMGKTLEVLGLVLHHQLPISLTDTCTFDQVVGKNVKYSKATLIITPSTILDQW  345
+             GILADEMG+GKTL+ +  + + +             + G N  +    L+ITP + LD W
+Sbjct  457   GILADEMGLGKTLQTISFLGYLRF------------IRGINGPH----LVITPKSTLDNW  588
+
+Query  346   LSEIDLHVPSLKVFHYQGIR--KSNGLKSAKIFLDCDIVVTSYSDLRFELLYTESHSRTL  403
+               E +  +P +KV   QG +  ++  +K+  +  D D++V+SY     E++  E      
+Sbjct  589   QREFNRWIPDIKVLVLQGDKDERAELIKNKVMTCDFDVIVSSY-----EIVIRE------  735
+
+Query  404   RHEKRHVSPKSPLIDVCWWRICVDEAQMVETSQSNVAQMIYRIPRVNCWTVSGTPVRSEV  463
+                      K+ L    W  I +DEA  ++  +S ++Q+I      N   ++GTP+++ +
+Sbjct  736   ---------KATLKKFDWQYIIIDEAHRIKNEESLLSQIIRMFHSRNRLLITGTPLQNNL  888
+
+Query  464   DDLFGLLFLLRYSPMYLYKKQA---WMQI-------IEKKRVREFCDLFGSLVCRHSKQD  513
+              +L+ LL  +   P    + ++   W Q         E + V +   +    + R  K D
+Sbjct  889   RELWALLNFI--VPDVFAENESFDEWFQKDSNNENGGEDQVVSQLHKVLKPFLLRRIKAD  1062
+
+Query  514   VEEELKLPPQHRICMTTRLSVVEETNYQDLLSEAAKSLHFFKDRNLDLCDEESMRRWL--  571
+             VE+   L P+  + +  ++S +++  YQ +L +   +++    +      +ES  R L  
+Sbjct  1063  VEK--SLLPKKELNVYVKMSPMQKNLYQKILEKDIDAVNGANGK------KESKTRLLNI  1218
+
+Query  572   -VRLRQACCHPQVGFGNKSAFGGGPMKSINDVLVF  605
+              ++LR+ C HP +  G +     GP  + ++ LV+
+Sbjct  1219  VMQLRKCCNHPYLFEGVEP----GPPYTTDEHLVY  1311
+
+
+>XM_712076.1 Candida albicans SC5314 DNA-dependent ATPase (RDH54), 
+partial mRNA
+Length=2391
+
+ Score = 68.6 bits (166),  Expect = 5e-12, Method: Compositional matrix adjust.
+ Identities = 42/164 (26%), Positives = 77/164 (47%), Gaps = 7/164 (4%)
+ Frame = +1
+
+Query  1168  DDEAYRQISNMELKESFGS-KIDTISKHLLYLKHNELYPKVVVFSQWLDVLDVLHKSFEA  1226
+             DDE +++I   +      S KI+ +   LL +    L  K+V+ S +   LD+L +    
+Sbjct  1492  DDELFKKIVEEKFNLGMASGKINILVPLLLEIA--SLGEKIVLISNYTKTLDLLEQVLRK  1665
+
+Query  1227  NGIVFIRFDGKSKNTC----LKRFKEERSLQVLTLHARSQSSGLTLTNATHVFMCEPLLN  1282
+               + F R DG + N      + +F     + V  L ++S   G+ L  A+ + + +   N
+Sbjct  1666  VSLTFSRLDGSTPNNVRSKLVNQFNTNPDINVFLLSSKSGGMGINLVGASRLILFDNDWN  1845
+
+Query  1283  SGIEMQAISRVHRIGQTRPTFVYYYIVEDTVEGHILNLSLTKHE  1326
+                ++Q++SR+HR GQ +P F+Y       ++  I    L K++
+Sbjct  1846  PATDLQSMSRIHRDGQLKPCFIYRLFTTGCIDEKIFQRQLVKNK  1977
+
+
+>XM_708035.2 Candida albicans SC5314 chromatin-remodeling protein 
+(SWR1), partial mRNA
+Length=4926
+
+ Score = 68.2 bits (165),  Expect = 9e-12, Method: Compositional matrix adjust.
+ Identities = 39/130 (30%), Positives = 65/130 (50%), Gaps = 5/130 (4%)
+ Frame = +1
+
+Query  1206  KVVVFSQWLDVLDVLHKSFEANGIVFIRFDGKSK----NTCLKRFKEERSLQVLTLHARS  1261
+             + ++F+Q   VLD+L +    +G  ++R DG +K        ++F  +  + V  L  RS
+Sbjct  4150  RALIFTQMTKVLDILEQFLNIHGYRYMRLDGATKIEDRQLLTEKFNRDPKIPVFILSTRS  4329
+
+Query  1262  QSSGLTLTNATHVFMCEPLLNSGIEMQAISRVHRIGQTRPTFVYYYIVEDTVEGHILNLS  1321
+                G+ LT A  V   +   N  ++ Q   R HRIGQ R   +Y ++ E T+E +I+  +
+Sbjct  4330  GGLGINLTGADTVIFYDSDWNPAMDKQCQDRCHRIGQVRDVHIYRFVSEYTIESNIIKKA  4509
+
+Query  1322  LTKHEQLDKL  1331
+               K  QLD +
+Sbjct  4510  NQKR-QLDNV  4536
+
+
+>XM_709141.2 Candida albicans SC5314 DNA-dependent ATPase (CAALFM_CR07910CA), 
+partial mRNA
+Length=3168
+
+ Score = 67.8 bits (164),  Expect = 1e-11, Method: Compositional matrix adjust.
+ Identities = 91/407 (22%), Positives = 171/407 (42%), Gaps = 96/407 (24%)
+ Frame = +1
+
+Query  235   EKFLTSNDLPPLWYHCKSLFDDRMVYVNHVYGYMTFSKEKTYLLASGDIRGGILADEMGM  294
+             EKF    D+ P      SLFD +   V  ++   T   +KT         GGI+ DEMG+
+Sbjct  775   EKFKLPGDIYP------SLFDYQKTCVQWLWELYT---QKT---------GGIIGDEMGL  900
+
+Query  295   GKTLEVLGLV--LHHQLPISLTDTCTFDQVVGKNVKYSKATLIITPSTILDQWLSEIDLH  352
+             GKT++++  +  LH+     L D               K  L++ P+T+L+QW++E    
+Sbjct  901   GKTIQIISFLAGLHYS---GLLD---------------KPVLVVVPATVLNQWVNEFHRW  1026
+
+Query  353   VPSLK--VFHYQGIRKSNGLKSAKI-----FLDCDIVVTSYSDLRFELLYTESHSRT---  402
+              P L+  + H  G   +  +  +K+       D D   +S   ++ ++   E   R    
+Sbjct  1027  WPPLRCIILHSIGSGMNGSVSESKLEEYLESTDPDATQSSLHGIKSQINAQEIVDRVMEK  1206
+
+Query  403   ----------LRHEKRHVSPKSPLIDVCWWRICVDEAQMVETSQSNVAQMIYRIPRVNCW  452
+                       LR   +H+ P+       W  + +DE   +     +++    +I  VN  
+Sbjct  1207  GHVLVTTYVGLRIYSKHILPRE------WGYVVLDEGHKIRNPDLDISLTCKKIKTVNRI  1368
+
+Query  453   TVSGTPVRS---EVDDLFGLLFLLRYSPMYLYKKQAWMQI----------IEKKRVREFC  499
+              +SGTP+++   E+  LF  +F  R   + +++++  + I          ++ K   +  
+Sbjct  1369  ILSGTPIQNNLIELWSLFDFVFPGRLGTLPVFQQEFSIPINIGGYANSNNLQVKTAYKCA  1548
+
+Query  500   ----DLFGSLVCRHSKQDVEEELKLPPQHRICMTTRLSVVEETNYQDLL-SEAAKSLHFF  554
+                 DL    + R  K DV ++  LP ++ + +  +L+ +++  Y+  L SE  +S+   
+Sbjct  1549  VVLRDLISPYMLRRLKSDVAQD--LPKKNEMVLFVKLTKIQQELYESFLQSEDLESI---  1713
+
+Query  555   KDRNLDLCDEESMRRWLVRLRQACCHPQVGFGN---KSAFGGGPMKS  598
+                   L  + ++   +  LR+ C HP + + +   K    G P KS
+Sbjct  1714  ------LKGKRNVLMGVDILRKICNHPDLVYRDTLMKRKNYGDPAKS  1836
+
+
+>XM_708422.2 Candida albicans SC5314 DNA-dependent ATPase (CAALFM_CR07600WA), 
+partial mRNA
+Length=3294
+
+ Score = 67.0 bits (162),  Expect = 2e-11, Method: Compositional matrix adjust.
+ Identities = 37/131 (28%), Positives = 66/131 (50%), Gaps = 4/131 (3%)
+ Frame = +1
+
+Query  1206  KVVVFSQWLDVLDVLHKSFEANGIVFIRFDGKS----KNTCLKRFKEERSLQVLTLHARS  1261
+             KV++FS +  VLD+L +        F R DG +    +   +  F ++  + +  +  ++
+Sbjct  2875  KVLIFSLFTQVLDILERVLSIFNYKFARLDGNTPVQERQDLIDLFNQDDKIHIFLISTKA  3054
+
+Query  1262  QSSGLTLTNATHVFMCEPLLNSGIEMQAISRVHRIGQTRPTFVYYYIVEDTVEGHILNLS  1321
+                G+ L  A HV M +   N   + QA  R HR+GQT+   VY  I ++T+E +I +++
+Sbjct  3055  GGVGINLVAANHVIMFDQSFNPHEDKQAEDRAHRVGQTKEVKVYRLISDETIEKNIFSVA  3234
+
+Query  1322  LTKHEQLDKLG  1332
+               K E  +K+ 
+Sbjct  3235  RNKLELDEKIS  3267
+
+
+>XM_710973.1 Candida albicans SC5314 DNA translocase (ISW2), partial 
+mRNA
+Length=3171
+
+ Score = 66.6 bits (161),  Expect = 2e-11, Method: Compositional matrix adjust.
+ Identities = 82/343 (24%), Positives = 144/343 (42%), Gaps = 75/343 (22%)
+ Frame = +1
+
+Query  286   GILADEMGMGKTLEVLGLVLHHQLPISLTDTCTFDQVVGKNVKYSKAT----LIITPSTI  341
+             GILADEMG+GKTL+ +  + +                    ++Y K      ++I P + 
+Sbjct  478   GILADEMGLGKTLQTISFLGY--------------------LRYIKHIDGPFIVIVPKST  597
+
+Query  342   LDQWLSEIDLHVPSLKVFHYQGIRKSNG--LKSAKIFLDCDIVVTSYSDLRFELLYTESH  399
+             LD W  E     P + V   QG ++     +K        D+++TS     FE++  E  
+Sbjct  598   LDNWRREFAKWTPDVNVVVLQGDKEQRASIIKDQLYTAKFDVLITS-----FEMILRE--  756
+
+Query  400   SRTLRHEKRHVSPKSPLIDVCWWRICVDEAQMVETSQSNVAQMIYRIPRVNCWTVSGTPV  459
+                          KS L    W  I VDEA  ++   S+++++I      N   ++GTP+
+Sbjct  757   -------------KSALQKFRWEYIVVDEAHRIKNEDSSLSKIIRLFYSRNRLLITGTPL  897
+
+Query  460   RSEVDDLFGLL-FLL--------RYSPMYLYKKQAWMQIIEKKR-----VREFCDLFGSL  505
+             ++ + +L+ LL FLL        ++   +  +    +   EK+R     V E   L    
+Sbjct  898   QNNLHELWALLNFLLPDVFGDSDQFDEAFDNQNSEELDEEEKQRRQDKAVSELHQLLSPF  1077
+
+Query  506   VCRHSKQDVEEELKLPPQHRICMTTRLSVVEETNYQDLLSEAAKSLHFFKDRNLDLCDEE  565
+             + R  K DVE+   L P+    +   ++ ++   Y+ LL +   ++      N  +   E
+Sbjct  1078  LLRRVKADVEK--SLLPKIETNVYIGMTDMQVEWYKRLLEKDIDAV------NGVVGKRE  1233
+
+Query  566   SMRRWL---VRLRQACCHPQVGFGNKSAFGGGPMKSINDVLVF  605
+                R L   ++LR+ C HP +  G +     GP  + ++ LV+
+Sbjct  1234  GKTRLLNIVMQLRKCCNHPYLFDGAEP----GPPYTTDEHLVY  1350
+
+
+>XM_707835.2 Candida albicans SC5314 DNA-binding ATPase (CAALFM_C204500WA), 
+partial mRNA
+Length=5748
+
+ Score = 66.6 bits (161),  Expect = 3e-11, Method: Compositional matrix adjust.
+ Identities = 38/122 (31%), Positives = 63/122 (52%), Gaps = 7/122 (6%)
+ Frame = +1
+
+Query  1206  KVVVFSQWLDVLDVLHKSFEAN---GIVFIRFDG----KSKNTCLKRFKEERSLQVLTLH  1258
+             + ++F Q  D+LD++           + F+R DG    + + + +++F E+ S+ VL L 
+Sbjct  5062  RALIFCQLKDMLDIVENELLRKYLPSVTFMRLDGSTDPRDRQSIVRKFNEDPSIDVLLLT  5241
+
+Query  1259  ARSQSSGLTLTNATHVFMCEPLLNSGIEMQAISRVHRIGQTRPTFVYYYIVEDTVEGHIL  1318
+              +    GL LT A  V   E   N   ++QA+ R HR+GQ +   VY  I +DT+E  I+
+Sbjct  5242  TKVGGLGLNLTGADTVIFVEHDWNPMNDLQAMDRAHRLGQKKVVNVYRLITKDTLEEKIM  5421
+
+Query  1319  NL  1320
+              L
+Sbjct  5422  GL  5427
+
+
+
+Lambda      K        H        a         alpha
+   0.320    0.135    0.396    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 3012464117
+
+
+Query= 2542855|NP_594665.1|chromosome I|spe1|-1|4656534|4658355|N/A|432|No description available
+
+Length=432
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_713901.2 Candida albicans SC5314 ornithine decarboxylase (SPE1...  315     5e-104
+
+
+>XM_713901.2 Candida albicans SC5314 ornithine decarboxylase (SPE1), 
+partial mRNA
+Length=1422
+
+ Score = 315 bits (807),  Expect = 5e-104, Method: Compositional matrix adjust.
+ Identities = 176/421 (42%), Positives = 259/421 (62%), Gaps = 36/421 (9%)
+ Frame = +1
+
+Query  43    IGEAFKNTIEEIERAAVRGEPADSDAFFVADLNGVYRQLLRWHAKLPRVQPFYAVKCNPD  102
+             I  + KN I  I+       P D D+FFV DL  +   + +W   LP VQP+YAVKCN +
+Sbjct  157   IETSIKNHILTIDHENCL--PNDEDSFFVCDLGEIINSVNQWQQILPMVQPYYAVKCNSN  330
+
+Query  103   PKVLALLNKFGTGFDCASKGELEQILGLGV--SPDRIVYANPCKAITYVRYAASKGINLM  160
+             P++L  L++ G  FDCASK E++ +L LG+  + +RI+YANPCK  +++R+AA + +NL 
+Sbjct  331   PQILTTLSELGVNFDCASKNEIDLVLSLGIHQAHERIIYANPCKTNSFIRHAADENVNLT  510
+
+Query  161   TFDNADELYKVKQHHPNSRLLLRISTDDSNSLCRLSLKFGASLDDT-GKLLDIAKSLELN  219
+             T DN  ELYK+ + HP+ ++L+R+ TDDS + C+LS KFG  L+   G++L  AK L L 
+Sbjct  511   TVDNVHELYKLAKFHPHCKILIRLITDDSTAQCQLSTKFGCDLNTAIGEILPKAKELGLQ  690
+
+Query  220   vvgvsfhvgsgsYDPSAFLDAIQRSRQVFDQGLERGFNFDLLDIGGGFMNDSFDGVADLI  279
+             V GV+FHVGSG+ D S+   AI+ SR +FD+ L  GF   LLDIGGGF  ++F  ++ ++
+Sbjct  691   VHGVAFHVGSGAKDFSSIYQAIKDSRILFDEMLSMGFTPKLLDIGGGFERETFPQLSQMV  870
+
+Query  280   RSALDTYFD------PSIRVISEPGRFFVSSSFTLAVNVIAKRKL---------DDEEKV  324
+             + AL+ +F         I+ I+EPGRF V+++FTL  ++IA+R L         D     
+Sbjct  871   KFALEKFFPIEFSQLNEIKFIAEPGRFMVANAFTLITHIIARRDLPTGGNNNNNDMTPSA  1050
+
+Query  325   MYYVNDGVYGSLNCILFDHQHPVARVLKCGSRFVYNDLV--------------GTGQHRC  370
+             M Y+NDGVYG+LNCILFDHQ P   VL   ++  Y   +               T   + 
+Sbjct  1051  MLYINDGVYGNLNCILFDHQTPKVYVLTNENQLFYKQEMMRSLLVNNNNNNNNKTDGFKF  1230
+
+Query  371   FIWGPTCDSLDVIANDAHLPYELNVGDWIYFEDAGAYTVAAASCFNGFKT--SRIVYLDT  428
+              IWGPTCD LD +++ A L   + VGDW++FE+ GAYT  A++ FNG  +  ++ +Y+++
+Sbjct  1231  SIWGPTCDGLDCVSSLAKLSKNVQVGDWLFFENVGAYTSCASTKFNGLSSGETKTLYVNS  1410
+
+Query  429   D  429
+             +
+Sbjct  1411  N  1413
+
+
+
+Lambda      K        H        a         alpha
+   0.322    0.139    0.418    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 820888500
+
+
+Query= 2542115|NP_594681.1|chromosome I|aro1|1|4693722|4698605|N/A|1573|No description available
+
+Length=1573
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_717676.2 Candida albicans SC5314 Aro1p (ARO1), partial mRNA        1500    0.0  
+
+
+>XM_717676.2 Candida albicans SC5314 Aro1p (ARO1), partial mRNA
+Length=4656
+
+ Score = 1500 bits (3883),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 809/1587 (51%), Positives = 1090/1587 (69%), Gaps = 57/1587 (4%)
+ Frame = +1
+
+Query  6     NIITVPILGKDTVRVGFGIHQYICTEILENFKSSTYVVITDSNIA--PLYLEKIESTFNK  63
+             +I  VPILGK+T+ VG+GI  +I  E++ N  SSTYV++TD+N+A  P Y  K+   F  
+Sbjct  4     SIEKVPILGKETIHVGYGIADHIVREVIANLASSTYVIVTDTNMARTPQY-SKLTDDFKT  180
+
+Query  64    SIKDAKAEARLLTYVIPPGESSKCRAMKAEIEDWLLTQSCTRDTILIAMGGGVIGDLVGY  123
+             ++ + + E+RLLTY + PGE++K RA KA +ED+LL Q CTRDT+++A+GGGVIGD++G+
+Sbjct  181   NLSEKRPESRLLTYCVSPGENNKNRATKAAVEDFLLQQGCTRDTVILAVGGGVIGDMIGF  360
+
+Query  124   VAASFMRGIRFIQMPTTLLAMVDSSIGGKTGIDTPLGKNLVGAFWQPLRVYVDMVFLHTL  183
+             VAA+FMRG+R +Q+PTTLLAMVDSS+GGKT IDTPLGKN +GAF QP  V+ D+ FL TL
+Sbjct  361   VAATFMRGVRVVQVPTTLLAMVDSSVGGKTAIDTPLGKNFIGAFHQPEYVFCDVSFLETL  540
+
+Query  184   PPRQVINGLSEIIKTAAMWNENDFQLLENNSAVLLDAL--NKPSVPGEYKFDSIKPLLQK  241
+             P RQ ING++E++KTAA+WNE +F  LEN S   L  +   KP +       SIK  L K
+Sbjct  541   PARQFINGMAEVVKTAAIWNEEEFTRLENFSKKFLSVVTSKKPDL------QSIKAELVK  702
+
+Query  242   IILSSIRTKCEVVTLDEHEGGLRNLLNFGHSIGHAYEAILYPQILHGECVAIGMVKEAEL  301
+              +L S+R K  VV+ DE E GLRNLLNFGH+IGHA EA+L P+ LHGECV+IGM+KEAEL
+Sbjct  703   TVLESVRVKAGVVSSDEKEAGLRNLLNFGHTIGHAIEAVLTPEALHGECVSIGMIKEAEL  882
+
+Query  302   ARYLGILKPNAVGRLTKCLVSYNLPISVNDPK-VKKYASFKH-CPVEKLIEYMAVDKKNQ  359
+             +RYLGIL P AV RL+KCLV+Y LP+S++D + +KK    +H   ++ L++ MA+DKKN 
+Sbjct  883   SRYLGILPPVAVARLSKCLVAYGLPVSIDDKEFLKKVGPKRHYVEIDILLKKMAIDKKND  1062
+
+Query  360   GSKKRIVILKAIGETYEKHATVVSDDDIRFILSRDVKVDEFTKSSWDVVVTPPGSKSISN  419
+             GSK R V+L+ IG+ Y+  A  VS  D+ F+L+ +V V  FT    + ++ PPGSKSISN
+Sbjct  1063  GSKIRCVLLEKIGKCYQLKAHQVSKQDLSFVLTDEVLVHPFTNPPKENIIVPPGSKSISN  1242
+
+Query  420   RALVLAAMGNGTCRLTNMLHSDDTQFMMSALESLGAATFSWEDGGETLVVKGNGGKLAVP  479
+             RAL+LAA+GNGT R+ N+LHSDDT+ M+ A+ SL  A  S ED GET+VVKGNGG L   
+Sbjct  1243  RALILAALGNGTVRVKNLLHSDDTKHMLDAVASLKGAEISTEDNGETIVVKGNGGNLVTS  1422
+
+Query  480   KEELYLGNAGTAARFLTGIAALVS-SKDGAKVVLTGNHRMKVRPIGPLVDALRANGCEIN  538
+              EELYLGNAGTA+RFLT +A+LV  S+    V+LTGN RM+ RPIGPLVDAL +NG EI 
+Sbjct  1423  GEELYLGNAGTASRFLTTVASLVGKSQASDDVILTGNARMQERPIGPLVDALGSNGSEIE  1602
+
+Query  539   YLEKQGSLPLDLSSKNGLKGGIIELAATVSSQYVSSILMCAPYASQPVTLKLVGGKPISQ  598
+             YL KQGSLPL +S+ NGLKGG IELAAT+SSQYVSSILMCAPYA +PVTL LVGGKPISQ
+Sbjct  1603  YLNKQGSLPLKISAGNGLKGGRIELAATISSQYVSSILMCAPYAKEPVTLALVGGKPISQ  1782
+
+Query  599   LYIDMTIAMMASFGVNVTKSTTEENTYNIPCGKYQNPPHYEIESDASSATYPLAIAAITG  658
+             LYIDMT AMM SFG+ VTKSTTEE TY+IP G Y+NP  Y IESDASSATYPLA AA+TG
+Sbjct  1783  LYIDMTCAMMKSFGIEVTKSTTEEYTYHIPKGTYKNPSEYVIESDASSATYPLAFAAMTG  1962
+
+Query  659   TKCTVPNIGSASLQGDARFACDVLRPMGCTVEQTATSTTVQGPPKGTLKPLESIDMETMT  718
+             T CT+PNIGS+SLQGDA+FA DVL+PMGC VEQT TSTTV GPP+G LKPL  +DME MT
+Sbjct  1963  TSCTIPNIGSSSLQGDAKFAVDVLKPMGCKVEQTTTSTTVTGPPRGHLKPLPHVDMEPMT  2142
+
+Query  719   DAFLTasvvaavacnvsEGDPVTRITGIANQRVKECNRIAAMVHELAKFGVRTGELEDGI  778
+             DAFLT    A+V   V++G   T ITGIANQRVKECNRI AMV ELAKFGV   EL DGI
+Sbjct  2143  DAFLT----ASVVAAVAKGGSSTSITGIANQRVKECNRIEAMVTELAKFGVPANELPDGI  2310
+
+Query  779   YIFGKNYKELKKPE---EGIYTYDDHRIAMSFSVLSLICPSRTLIIDKACVEKTWPYWWD  835
+              I G + ++LK PE    G+ +YDDHR+AMSFS+L+ +C    LI++++   KTWP WWD
+Sbjct  2311  EIHGIDIEDLKTPEISKRGVSSYDDHRVAMSFSLLAGLCKEPVLILERSTTGKTWPGWWD  2490
+
+Query  836   VLHQSFGVKLTGATSVASDPLKGSISKNASIILIGMRGAGKTTIGKIIAKQLNFKFldld  895
+             +LH  F ++L G     +       S + SII+IGMRG GK+T+ + +A  L FK LD+D
+Sbjct  2491  ILHSKFKIELDGYEPPFNTDKHVDKSSDKSIIVIGMRGTGKSTLSEWLASFLGFKMLDMD  2670
+
+Query  896   elledyleMPIAEVIFRMGWDAFRLEEHKVLRKFITEHPEGYVAASGGGVIEMDESRNLL  955
+             + LE+ L   I  +I   GW+ FR EE  V ++  T+  +GYV ++GGG++E +++R  L
+Sbjct  2671  KYLEEKLGTGIKSLIKAKGWEYFRQEEAIVAKECFTKFSKGYVLSTGGGIVEGEDARQQL  2850
+
+Query  956   SNFVKEGGIVLHVHRNLEHIKSYLSEDQTRPTYKDQESIDDVYKRRHVWYRECRSHYFIS  1015
+              ++   GGIVLH+HR+L+   ++L+ D TRP Y  +  + +V+ RR  WY EC +++F S
+Sbjct  2851  KSYADNGGIVLHLHRDLDETVTFLAADTTRPAYSSE--VQEVWLRREKWYHECSNYHFYS  3024
+
+Query  1016  PVLSNQVIDEKIQYSMSRFLDVVTGSSQVLQKFKTKKRSTFLTLNYPRIEDALPTLRDVT  1075
+                S +     ++ S   ++ ++TG+ + +       RS  + L  P + + +  L  +T
+Sbjct  3025  SHCSTEDEFNHLRRSFVNYIKLITGAERPVVP---AGRSAAVVLTSPDLNEVVGDLESIT  3195
+
+Query  1076  VGCDAIEVRVDYLKDPKSSNGISSLDFVAEQISLLRCSTTLPIIFTIRTISQGGLFPNDK  1135
+             +G DA+E+RVD  KD       +S +FVA QI+++R    LPII+T+RT+SQGG FP++ 
+Sbjct  3196  IGADAVELRVDLFKD-------TSAEFVAAQIAVIRKHADLPIIYTVRTVSQGGKFPDEN  3354
+
+Query  1136  EEEAKELMLSAMRYGCDFVDVELGWSSETINILYQHKGYTKLIMSWHDLSGTWSWARPHE  1195
+              +E K L+L  +R G  +VD++L   +E I  +   KG+T++I ++ D++G   W    E
+Sbjct  3355  VDELKSLLLLGIRLGVAYVDLQLTAPNELIEEISSKKGFTRVIGTYQDINGELKWNNV-E  3531
+
+Query  1196  WMQKVELASSY-ADVIKLVGMAnnlndnleleeFRTRITNSMDIPLILFNMGRFGQLSRI  1254
+             W  K     S  AD+++LVG AN++ DNL+LE F+ +  N++  PLI FN+G  G+LS++
+Sbjct  3532  WKNKYNQGVSMNADIVRLVGKANSIQDNLDLENFKKQ--NTLK-PLIAFNLGSQGKLSQV  3702
+
+Query  1255  LNKFMTPVTHPLLPSKAAPGQLTVKQLNEARVLIGEILPEKFFLFGKPIKHSRSPILHST  1314
+             LN   TP++H LLP+      LT+ +LN+    IG    +KF++ G PI+HSRSP LH+ 
+Sbjct  3703  LNGTFTPISHKLLPNDEE--FLTIGELNQTYFDIGGFTAKKFWVIGSPIEHSRSPNLHNA  3876
+
+Query  1315  AYELLGLPHTYEAFETDTVDEV-QKVLNLPDFGGANVTIPYKLSVMKFMDELSDEARFFG  1373
+              Y+ L LP+ +  FE   VD V   ++N PDFGG  +T+P KL +MKF  +LSD A   G
+Sbjct  3877  GYKALNLPYQFGRFEATDVDVVYDNLINKPDFGGLAITMPLKLDIMKFATKLSDAAETIG  4056
+
+Query  1374  AVNTIIPIRIGDKLVLRGDNTDWRGIYDTFANALDGVSLR-DTNGLVIGAGGTSRAAIYS  1432
+             AVNT+IPI  G      GDNTDW GI ++F  A  GV  +  +NGLV+GAGGTSRAAIY+
+Sbjct  4057  AVNTLIPIEGG----YFGDNTDWVGISNSFIRA--GVPPKLSSNGLVVGAGGTSRAAIYA  4218
+
+Query  1433  LHRLGVSRIYLLNRTLANSYRVQDVFPPDYNIHIIDSDNIPseelssvtlsavvstIPAD  1492
+             LH++G ++IYL+NRT A    +   FP DYN+ I++++    +   +  +   VS IPAD
+Sbjct  4219  LHQMGCAKIYLVNRTAAKLEELVKSFPKDYNLEIVETEQ---QADKASKVLLAVSCIPAD  4389
+
+Query  1493  IELPEKVASVIKALLANKADGGV-----FLDMAYKPLHTPLMAVASD-LEWKCCNGLEAL  1546
+               L  +V   I+ +L+N ++         L+ +YKP  TP+M +  +  +WK   G+E L
+Sbjct  4390  KPLDGEVLKKIERILSNGSEQSAGFKPTLLEASYKPRVTPIMKLTEEQYKWKVIPGVEML  4569
+
+Query  1547  VRQGLASFHLWTGMTAPFDAVYQKVIE  1573
+             V QG   F L TG TAP++ +++ V+E
+Sbjct  4570  VNQGDRQFKLHTGFTAPYEIIHRAVVE  4650
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.136    0.400    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 3469655700
+
+
+Query= 2542463|NP_001417934.1|chromosome I|hhf1|-1|4698772|4699598|N/A|103|No description available
+
+Length=103
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_708570.1 Candida albicans SC5314 histone (HHF1), partial mRNA      155     3e-51
+XM_705991.1 Candida albicans SC5314 histone (HHF22), partial mRNA     155     3e-51
+
+
+>XM_708570.1 Candida albicans SC5314 histone (HHF1), partial mRNA
+Length=318
+
+ Score = 155 bits (391),  Expect = 3e-51, Method: Compositional matrix adjust.
+ Identities = 76/82 (93%), Positives = 79/82 (96%), Gaps = 0/82 (0%)
+ Frame = +1
+
+Query  22   ILRDNIQGITKPAIRRLARRGGVKRISALVYEETRAVLKLFLENVIRDAVTYTEHAKRKT  81
+            ILRDNIQGITKPAIRRLARRGGVKRISAL+YEE R VLK FLENVIRDAVTYTEHAKRKT
+Sbjct  70   ILRDNIQGITKPAIRRLARRGGVKRISALIYEEVRVVLKQFLENVIRDAVTYTEHAKRKT  249
+
+Query  82   VTSLDVVYSLKRQGRTIYGFGG  103
+            VTSLDVVY+LKRQGRT+YGFGG
+Sbjct  250  VTSLDVVYALKRQGRTLYGFGG  315
+
+
+>XM_705991.1 Candida albicans SC5314 histone (HHF22), partial 
+mRNA
+Length=318
+
+ Score = 155 bits (391),  Expect = 3e-51, Method: Compositional matrix adjust.
+ Identities = 76/82 (93%), Positives = 79/82 (96%), Gaps = 0/82 (0%)
+ Frame = +1
+
+Query  22   ILRDNIQGITKPAIRRLARRGGVKRISALVYEETRAVLKLFLENVIRDAVTYTEHAKRKT  81
+            ILRDNIQGITKPAIRRLARRGGVKRISAL+YEE R VLK FLENVIRDAVTYTEHAKRKT
+Sbjct  70   ILRDNIQGITKPAIRRLARRGGVKRISALIYEEVRVVLKQFLENVIRDAVTYTEHAKRKT  249
+
+Query  82   VTSLDVVYSLKRQGRTIYGFGG  103
+            VTSLDVVY+LKRQGRT+YGFGG
+Sbjct  250  VTSLDVVYALKRQGRTLYGFGG  315
+
+
+
+Lambda      K        H        a         alpha
+   0.323    0.139    0.379    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 73595069
+
+
+Query= 2542467|NP_594683.1|chromosome I|hht1|1|4699731|4700559|N/A|136|No description available
+
+Length=136
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_708572.1 Candida albicans SC5314 Hht21p (HHT21), partial mRNA      235     6e-82
+XM_705990.1 Candida albicans SC5314 histone (HHT2), partial mRNA      235     6e-82
+XM_714794.1 Candida albicans SC5314 Hht1p (HHT1), partial mRNA        232     7e-81
+XM_705552.2 Candida albicans SC5314 centromeric DNA-binding histo...  141     9e-44
+
+
+>XM_708572.1 Candida albicans SC5314 Hht21p (HHT21), partial mRNA
+Length=411
+
+ Score = 235 bits (599),  Expect = 6e-82, Method: Compositional matrix adjust.
+ Identities = 129/136 (95%), Positives = 133/136 (98%), Gaps = 0/136 (0%)
+ Frame = +1
+
+Query  1    MARTKQTARKSTGGKAPRkqlaskaarkaapaTGGVKKPHRYRPGTVALREIRRYQKSTE  60
+            MARTKQTARKSTGGKAPRKQLASKAARK+AP+TGGVKKPHRY+PGTVALREIRR+QKSTE
+Sbjct  1    MARTKQTARKSTGGKAPRKQLASKAARKSAPSTGGVKKPHRYKPGTVALREIRRFQKSTE  180
+
+Query  61   LLIRKLPFQRLVREIAQDFKTDLRFQSSAIGALQEAVEAYLVSLFEDTNLCAIHGKRVTI  120
+            LLIRKLPFQRLVREIAQDFKTDLRFQSSAIGALQEAVEAYLV LFEDTNLCAIH KRVTI
+Sbjct  181  LLIRKLPFQRLVREIAQDFKTDLRFQSSAIGALQEAVEAYLVGLFEDTNLCAIHAKRVTI  360
+
+Query  121  QPKDMQLARRLRGERS  136
+            Q KDMQLARRLRGERS
+Sbjct  361  QKKDMQLARRLRGERS  408
+
+
+>XM_705990.1 Candida albicans SC5314 histone (HHT2), partial mRNA
+Length=411
+
+ Score = 235 bits (599),  Expect = 6e-82, Method: Compositional matrix adjust.
+ Identities = 129/136 (95%), Positives = 133/136 (98%), Gaps = 0/136 (0%)
+ Frame = +1
+
+Query  1    MARTKQTARKSTGGKAPRkqlaskaarkaapaTGGVKKPHRYRPGTVALREIRRYQKSTE  60
+            MARTKQTARKSTGGKAPRKQLASKAARK+AP+TGGVKKPHRY+PGTVALREIRR+QKSTE
+Sbjct  1    MARTKQTARKSTGGKAPRKQLASKAARKSAPSTGGVKKPHRYKPGTVALREIRRFQKSTE  180
+
+Query  61   LLIRKLPFQRLVREIAQDFKTDLRFQSSAIGALQEAVEAYLVSLFEDTNLCAIHGKRVTI  120
+            LLIRKLPFQRLVREIAQDFKTDLRFQSSAIGALQEAVEAYLV LFEDTNLCAIH KRVTI
+Sbjct  181  LLIRKLPFQRLVREIAQDFKTDLRFQSSAIGALQEAVEAYLVGLFEDTNLCAIHAKRVTI  360
+
+Query  121  QPKDMQLARRLRGERS  136
+            Q KDMQLARRLRGERS
+Sbjct  361  QKKDMQLARRLRGERS  408
+
+
+>XM_714794.1 Candida albicans SC5314 Hht1p (HHT1), partial mRNA
+Length=411
+
+ Score = 232 bits (592),  Expect = 7e-81, Method: Compositional matrix adjust.
+ Identities = 127/136 (93%), Positives = 132/136 (97%), Gaps = 0/136 (0%)
+ Frame = +1
+
+Query  1    MARTKQTARKSTGGKAPRkqlaskaarkaapaTGGVKKPHRYRPGTVALREIRRYQKSTE  60
+            MARTKQTARKSTGGKAPRKQLASKAARK+AP +GGVKKPHRY+PGTVALREIRR+QKSTE
+Sbjct  1    MARTKQTARKSTGGKAPRKQLASKAARKSAPVSGGVKKPHRYKPGTVALREIRRFQKSTE  180
+
+Query  61   LLIRKLPFQRLVREIAQDFKTDLRFQSSAIGALQEAVEAYLVSLFEDTNLCAIHGKRVTI  120
+            LLIRKLPFQRLVREIAQDFK+DLRFQSSAIGALQEAVEAYLV LFEDTNLCAIH KRVTI
+Sbjct  181  LLIRKLPFQRLVREIAQDFKSDLRFQSSAIGALQEAVEAYLVGLFEDTNLCAIHAKRVTI  360
+
+Query  121  QPKDMQLARRLRGERS  136
+            Q KDMQLARRLRGERS
+Sbjct  361  QKKDMQLARRLRGERS  408
+
+
+>XM_705552.2 Candida albicans SC5314 centromeric DNA-binding histone 
+H3-like protein (CSE4), partial mRNA
+Length=636
+
+ Score = 141 bits (355),  Expect = 9e-44, Method: Compositional matrix adjust.
+ Identities = 73/102 (72%), Positives = 85/102 (83%), Gaps = 5/102 (5%)
+ Frame = +1
+
+Query  36   VKKPHRYRPGTVALREIRRYQKSTELLIRKLPFQRLVREIAQDF---KTDLRFQSSAIGA  92
+            VKK  RYRPGT ALREIR+YQKST+LLIRKLPF RLVREI+ DF      LR+QS+AI A
+Sbjct  322  VKK--RYRPGTKALREIRQYQKSTDLLIRKLPFARLVREISLDFVGPSYGLRWQSNAILA  495
+
+Query  93   LQEAVEAYLVSLFEDTNLCAIHGKRVTIQPKDMQLARRLRGE  134
+            LQEA+E++L+ L EDTNLCAIH KRVTI  KD+QLARR+RG+
+Sbjct  496  LQEALESFLIHLLEDTNLCAIHAKRVTIMQKDIQLARRIRGQ  621
+
+
+
+Lambda      K        H        a         alpha
+   0.321    0.134    0.374    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 140058632
+
+
+Query= 2542331|NP_594684.1|chromosome I|alg9|1|4702267|4704742|N/A|577|No description available
+
+Length=577
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_708793.2 Candida albicans SC5314 dolichyl-P-Man:Man(6)GlcNAc(2...  251     9e-77
+
+
+>XM_708793.2 Candida albicans SC5314 dolichyl-P-Man:Man(6)GlcNAc(2)-PP-dolichol 
+alpha-1,2-mannosyltransferase (ALG9), partial 
+mRNA
+Length=1683
+
+ Score = 251 bits (642),  Expect = 9e-77, Method: Compositional matrix adjust.
+ Identities = 178/531 (34%), Positives = 271/531 (51%), Gaps = 32/531 (6%)
+ Frame = +1
+
+Query  28    SASFRVIDDCDEVYNYWEPLHYLLYGYGLQTWEYSPEYAIRSWFYIALHAVPGFLARGLG  87
+             S  + +I DCDE +NYWEPL+ LL  +G QTWEYSPEY IRS+ Y+  + + G + +   
+Sbjct  61    SGLYMIIADCDETFNYWEPLNLLLRNFGKQTWEYSPEYKIRSYAYLIPYFILGKVCQLFD  240
+
+Query  88    LSRLHVFYFIRGV-LACFSAFCETNLILAVARNFNRAVALHLTSVLFVNSGMWSASTSFL  146
+                  VF+ IR + +  F+ +CE  L  ++ R ++ ++A     +  +  GM  A  + L
+Sbjct  241   FQPATVFFIIRTLGIVGFTCYCEWKLFCSL-RRYSASIANWFLLLNTIAPGMSHAGVALL  417
+
+Query  147   PSSFAMNMVTLALSAQLSPPSTKRTVKVVSFIT-------IGAVIGWPFSAALSIPFILL  199
+             PSS AM    LA S  L    +K   +  + I        IG ++GWPF+ AL +P    
+Sbjct  418   PSSLAMQTTMLANSFILEAIKSKNHQEKQTSILRATFWYFIGGILGWPFALALGLPVGFY  597
+
+Query  200   ELVDLKGRFRHLFCRWFKAIFVALLITGICITVDSLFYHRIQFVAWNIVKYNVLAKDGRG  259
+              +              F+ + V L +    + +DS FY ++ F+  NIV YNV   +G G
+Sbjct  598   TIYQSVVIGNLPLTALFRVLSVLLTVVVPIMIIDSFFYQKVLFIPINIVLYNVFGGEGEG  777
+
+Query  260   PDIYGTEPWWYYFANLSLQHNIVLWFAMACGPLVLLAAFTNWINLDSFLDLSSVIS-PFY  318
+             P+I+G EP+ YY  NL L  N +        PL ++  F N I L      SS +S    
+Sbjct  778   PEIFGVEPFSYYIMNLLLNFNAIF-------PLAVIGVFWNPI-LTHVKAFSSFVSLQLV  933
+
+Query  319   IWLFIFIIQPHKEERFMYPIYPVLCLAAAIGLDMSLKLMIQILSSINETVRSKFPVRFVV  378
+             IW  IF  QPHKEERF+YP+Y ++ L AAI L    KL I + +   + +   F + F++
+Sbjct  934   IWFGIFFAQPHKEERFLYPVYSLITLLAAILLS---KLTIGLKNFALKPIYRVFQLGFIL  1104
+
+Query  379   LCVYAIIGCLSIARILAIQNYNAPMIIYPAISFLETDNNVTT---NVCVGKEWYRYPSTF  435
+               V  ++  L I  +  ++NY AP+  +  ++ LE          NVC+GKEWY +P++F
+Sbjct  1105  SIV--VVSSLRILNL--VENYGAPLQTFNTVAQLEDLGQSLQSPINVCMGKEWYHFPASF  1272
+
+Query  436   FLPDNSRLKFVKSEFDGILPGEFVESNSTWWNREGYYQIPEHMNEFNNEEPTRYTSLESC  495
+             FLPD+ RL+FV S FDG+LPG+F E  +     +    IP++MN  N  E  +   LE C
+Sbjct  1273  FLPDSYRLRFVDSGFDGLLPGDFFELTNV---IDSTTFIPKNMNNKNQFEKDKVIDLEHC  1443
+
+Query  496   DFLIDLEFDHSKATVNEPIYSKSDGWIPVMVYPFID-TKQTPFMGRAFAVP  545
+              + +D    +S   +  P  S +  W  +     +D  ++   +G+   VP
+Sbjct  1444  HYYVDNSQLNSYPQLVYPNLSTTGKWEVITCNKMLDPNEKHSTIGKLLYVP  1596
+
+
+
+Lambda      K        H        a         alpha
+   0.328    0.141    0.454    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1161264284
+
+
+Query= 2542388|NP_594685.1|chromosome I|pmo25|-1|4704487|4705940|N/A|329|No description available
+
+Length=329
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_715827.1 Candida albicans SC5314 Hym1p (HYM1), partial mRNA        234     1e-75
+
+
+>XM_715827.1 Candida albicans SC5314 Hym1p (HYM1), partial mRNA
+Length=1014
+
+ Score = 234 bits (597),  Expect = 1e-75, Method: Compositional matrix adjust.
+ Identities = 128/332 (39%), Positives = 208/332 (63%), Gaps = 3/332 (1%)
+ Frame = +1
+
+Query  1    MSFLFNKRPKSTQDVVRCLCDNLPKLEIN--NDKKKSFEEVSKCLQNLRVSLCGTAEVEP  58
+            M+FLF + PK+  ++VR L D + KL+    ++ KK  +E ++ L+N++V L G  EVEP
+Sbjct  1    MAFLFKRNPKTPPELVRALNDQVLKLDYASPDNAKKYQDECARYLKNMKVILHGDDEVEP  180
+
+Query  59   DADLVSDLSFQIYQSNLPFLLVRYLPKLEFESKKDTGLIFSALLRRHVASRYPTVDYML-  117
+              D ++ L+ +IY ++  + LV  L KL+F+S+KD  ++F  LLRR +A++ PTVDY++ 
+Sbjct  181  QPDQITQLAQEIYSTDCLYYLVVNLRKLDFDSRKDVVILFLTLLRRTMANKSPTVDYLVH  360
+
+Query  118  AHPQIFPVLVSYYRYQEVAFTAGSILRECSRHEALNEVLLNSRDFWTFFSLIQassfdma  177
+            + P+I  +L+      E+    G ILR+C + E +N  +L S  F+ FF  +Q  +F++A
+Sbjct  361  SKPEIITMLIKGPENLEIGLICGQILRDCIKFEVINRFVLYSPSFYNFFKYVQIPTFEIA  540
+
+Query  178  sdafsTFKSILLNHKSQVAEFISYHFDEFFKQYTVLLKSENYVTKRQSLKLLGEILLNRA  237
+            +DA  T   +L  H+  V+EF+  ++D F      L+ S+NYVTKRQS+KLL E++  R+
+Sbjct  541  TDAMMTLHELLTTHRKLVSEFLGNNYDVFITAINKLITSKNYVTKRQSVKLLNELVSQRS  720
+
+Query  238  NRSVMTRYISSAENLKLMMILLRDKSKNIQFEAFHVFKLFVANPEKSEEVIEILRRNKSK  297
+            N+  ++++   A NLKL M+LL DK KN+Q E FH  K FVANP++S++V +IL +NK+ 
+Sbjct  721  NQQFLSKFFDDANNLKLTMLLLSDKLKNLQLEGFHTLKFFVANPKRSQKVTDILIKNKAN  900
+
+Query  298  LISYLSAFHTDRKNDEQFNDERAFVIKQIERL  329
+             I +   F     +D    +ER + + +I+ L
+Sbjct  901  FIEFFKTFDIASFHDSNIIEERDYTLGEIKNL  996
+
+
+
+Lambda      K        H        a         alpha
+   0.323    0.136    0.386    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 583125823
+
+
+Query= 2542195|NP_594686.1|chromosome I|klp3|1|4706777|4709251|N/A|554|No description available
+
+Length=554
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_711241.1 Candida albicans SC5314 Kip4p (KIP4), partial mRNA        380     1e-122
+XM_707979.2 Candida albicans SC5314 Kip1p (KIP1), partial mRNA        215     4e-61 
+XM_711501.1 Candida albicans SC5314 tubulin-dependent ATPase (KIP...  198     4e-55 
+XM_709178.2 Candida albicans SC5314 Kar3p (KAR3), partial mRNA        195     6e-55 
+XM_708668.2 Candida albicans SC5314 uncharacterized protein (CAAL...  178     9e-50 
+XM_709300.2 Candida albicans SC5314 Kip2p (KIP2), partial mRNA        173     2e-47 
+
+
+>XM_711241.1 Candida albicans SC5314 Kip4p (KIP4), partial mRNA
+Length=2715
+
+ Score = 380 bits (977),  Expect = 1e-122, Method: Compositional matrix adjust.
+ Identities = 197/353 (56%), Positives = 257/353 (73%), Gaps = 10/353 (3%)
+ Frame = +1
+
+Query  1     MTSIKVVCRIRPTNQLEQDLGGNNVIYPLNDSTVHIETSDYSGNFVFDRVFHPSSTQNDI  60
+             + +IKV+CR RP N+ E   G   V +P N  TV +   DY+ ++ FDRVF P ++Q DI
+Sbjct  163   INNIKVICRFRPENEKELQKGKLIVEFP-NTQTVTLYGKDYTTHYSFDRVFSPEASQLDI  339
+
+Query  61    FSYSIESTVDDLFLGYNGTVLAYGQTGSGKTYTMMGIENNFEK--EGMTPRMLRRIFDKI  118
+             + +SI  TVDDL  GYNGTVLAYGQTGSGK+YTM+G     +   +G+ PR+   IF++I
+Sbjct  340   YQFSIAETVDDLINGYNGTVLAYGQTGSGKSYTMLGGPQLLDPNSKGIIPRISHEIFERI  519
+
+Query  119   RDS---PSTTEYEVKVSYMEIYMEKIHDLL----SEKNDRLTVHEDKLQGVYVQGLKTIY  171
+               +    S  EY V VS+MEI+ME+I DL+    +E + + T+HEDKL G+YV+GL T  
+Sbjct  520   SANEAVSSEVEYSVCVSFMEIHMEQIRDLIDVVNNEFDHKFTIHEDKLNGIYVKGLATRL  699
+
+Query  172   VSSETEALDILNKGMGSRAVASTSMNAQSSRSHSIFVLEVVQTDTESGETRRGRLFLVDL  231
+             V++E E L+IL++G+  R+++ST MN +SSRSH+IF +++ Q   E+   +R  LFLVDL
+Sbjct  700   VTNELELLNILSEGLKYRSISSTQMNEESSRSHTIFQVKLTQKHMETEVIKRSNLFLVDL  879
+
+Query  232   AGSESVGKSGAVGQTLEEAKKINRSLSTLGMVINSLTDSKLSHVPYRDSKLTRILKESLG  291
+             AGSE V K+GA GQTLEEAKKIN SLS LG VIN+LTD K +H+PYRDSKLTRIL+ES+G
+Sbjct  880   AGSEKVDKTGAQGQTLEEAKKINSSLSALGNVINALTDGKSTHIPYRDSKLTRILQESIG  1059
+
+Query  292   GNSRTTLIINCSPDSYNATETLSTLRFGHRAKSIKNKAVVNSELSVDEMKRQL  344
+             GNSRT+LIINCSP S+N  ETLSTLRFG RAKSIKN A VN+ELS   +K ++
+Sbjct  1060  GNSRTSLIINCSPSSFNELETLSTLRFGTRAKSIKNSAHVNTELSTASLKNRI  1218
+
+
+>XM_707979.2 Candida albicans SC5314 Kip1p (KIP1), partial mRNA
+Length=2736
+
+ Score = 215 bits (547),  Expect = 4e-61, Method: Compositional matrix adjust.
+ Identities = 127/312 (41%), Positives = 193/312 (62%), Gaps = 28/312 (9%)
+ Frame = +1
+
+Query  45    FVFDRVFHPSSTQNDIFSYSIESTVDDLFLGYNGTVLAYGQTGSGKTYTMMGIENNFEKE  104
+             + FD+++   + QN I+S      + D   G N TVLAYGQTG+GKTYTM G++NN + +
+Sbjct  256   YKFDQIYGSQADQNLIYSQIAHPLLLDFLRGINVTVLAYGQTGTGKTYTMSGMDNNNKLD  435
+
+Query  105   ------GMTPRMLRRIFDKIR-DSPSTTEYEVKVSYMEIYMEKIHDLLSEKND---RLTV  154
+                   G+ PR+L  +F  +  ++ S  +Y VK+SY+EIY E++ DLLS  N    +L +
+Sbjct  436   ENSDIAGIIPRLLGELFQNLSSNATSKNDYMVKISYLEIYNEELIDLLSNNNSNNRKLRI  615
+
+Query  155   HE----DKLQGVYVQGLKTIYVSSETEALDILNKGMGSRAVASTSMNAQSSRSHSIFVLE  210
+             HE    +K++ + +Q L    +++  + +  L  G+  +  +ST++N  SSRSH+IF ++
+Sbjct  616   HEKTNANKVKSIGIQNLTEYTINNYNQGIKYLKMGLQKKKTSSTNLNETSSRSHTIFSVQ  795
+
+Query  211   VVQ-----------TDTESGETRRGRLFLVDLAGSESVGKSGAVGQTLEEAKKINRSLST  259
+             + Q            D E    R  ++ LVDLAGSE++ +SG++   ++EA  IN+SL T
+Sbjct  796   LYQKISSSSSSSSENDNEESVYRISKMNLVDLAGSENISRSGSI---VKEAGGINQSLLT  966
+
+Query  260   LGMVINSLTDSKLSHVPYRDSKLTRILKESLGGNSRTTLIINCSPDSYNATETLSTLRFG  319
+             LG VINSL + KL H+PYR+SKLT IL++SLGGN++TTLI   SP   N  ET STL + 
+Sbjct  967   LGRVINSLNEKKLLHIPYRESKLTHILQDSLGGNTKTTLIATISPAQVNLLETCSTLDYA  1146
+
+Query  320   HRAKSIKNKAVV  331
+              +AK+IKN  ++
+Sbjct  1147  SKAKNIKNAPMI  1182
+
+
+>XM_711501.1 Candida albicans SC5314 tubulin-dependent ATPase 
+(KIP3), partial mRNA
+Length=2919
+
+ Score = 198 bits (504),  Expect = 4e-55, Method: Compositional matrix adjust.
+ Identities = 114/295 (39%), Positives = 170/295 (58%), Gaps = 11/295 (4%)
+ Frame = +1
+
+Query  45    FVFDRVFHPSSTQNDIFSYSIESTVDDLFLGYNGTVLAYGQTGSGKTYTMMGIENNFEKE  104
+             FVFDR+F    TQ+ ++  + +  +D +  GYN TV AYG TG GKT+T++G     E  
+Sbjct  436   FVFDRLFDEDCTQDQVYRNTTQPLLDSVLDGYNATVFAYGATGCGKTHTILGTP---EDP  606
+
+Query  105   GMTPRMLRRIFDKIRDSPSTTEYEVKVSYMEIYMEKIHDLLSE--KNDRLTVHEDKLQGV  162
+             G+    ++ ++++I +   T   ++ +SY+EIY E I DLL+   +   L + ED    +
+Sbjct  607   GVIFLTMKELYNRIEELKDTKIIDISLSYLEIYNETIRDLLNPMTQCKNLVIREDANNKI  786
+
+Query  163   YVQGLKTIYVSSETEALDILNKGMGSRAVASTSMNAQSSRSHSIFVLEVVQTDTESGETR  222
+              V  L     +S  E + ++ +G  +R  + T  NA SSRSH++  + V+Q D  +G+  
+Sbjct  787   SVSNLSRHRPNSVEEVMQLILEGNKNRTCSPTEANATSSRSHAVLQINVIQKD-RTGDIT  963
+
+Query  223   RGRLF----LVDLAGSESVGKSGAVGQTLEEAKKINRSLSTLGMVINSLTDSKL-SHVPY  277
+                 F    ++DLAGSE    +   G  L E   IN+SL  LG  IN+L D +  +HVPY
+Sbjct  964   EEHTFATLSIIDLAGSERAAATKNRGARLNEGANINKSLLALGNCINALCDPRRRNHVPY  1143
+
+Query  278   RDSKLTRILKESLGGNSRTTLIINCSPDSYNATETLSTLRFGHRAKSIKNKAVVN  332
+             RDSKLTR+LK SLGGN +T +I+  SP S +  ETL+TL++  RAK IK K + N
+Sbjct  1144  RDSKLTRLLKFSLGGNCKTVMIVCVSPSSQHYDETLNTLKYADRAKEIKTKLIRN  1308
+
+
+>XM_709178.2 Candida albicans SC5314 Kar3p (KAR3), partial mRNA
+Length=2064
+
+ Score = 195 bits (495),  Expect = 6e-55, Method: Compositional matrix adjust.
+ Identities = 118/286 (41%), Positives = 171/286 (60%), Gaps = 17/286 (6%)
+ Frame = +1
+
+Query  45    FVFDRVFHPSSTQNDIF---SYSIESTVDDLFLGYNGTVLAYGQTGSGKTYTMMGIENNF  101
+             F+FD++F    + + +F   S  I+ ++D    G N  V AYGQTGSGKT+TM    N  
+Sbjct  1210  FLFDKIFEREQSNDLVFEELSQLIQCSLD----GTNVCVFAYGQTGSGKTFTMSHPTN--  1371
+
+Query  102   EKEGMTPRMLRRIFDKIRD-SPSTTEYEVKVSYMEIYMEKIHDLLSEK---NDRLTVHED  157
+                GM P  L++IF+ I +       Y V+  ++EIY E I DLL+ K   N +  +  D
+Sbjct  1372  ---GMIPLSLKKIFNDIEELKEKGWSYTVRGKFIEIYNEAIIDLLNPKIDPNTKYEIKHD  1542
+
+Query  158   KLQG-VYVQGLKTIYVSSETEALDILNKGMGSRAVASTSMNAQSSRSHSIFVLEVVQTDT  216
+              + G   V  + TI + S  +A+ ILN+    R+ A+T  N  SSRSHSIF++++   ++
+Sbjct  1543  DIAGKTTVTNVSTIDIKSPEQAITILNQANKKRSTAATKSNDHSSRSHSIFIIDLQGYNS  1722
+
+Query  217   ESGETRRGRLFLVDLAGSESVGKSGAVGQTLEEAKKINRSLSTLGMVINSLTDSKLSHVP  276
+              + E+  G L L+DLAGSE +  S A G  L+E + IN+SLS LG VI+SL     SHVP
+Sbjct  1723  LTKESSCGTLNLIDLAGSERLNNSRAEGDRLKETQAINKSLSCLGDVIHSLNLKDGSHVP  1902
+
+Query  277   YRDSKLTRILKESLGGNSRTTLIINCSPDSYNATETLSTLRFGHRA  322
+             YR+SKLT +LK SLGGNS+T + +N SP + +  ET+++LRF  + 
+Sbjct  1903  YRNSKLTYLLKHSLGGNSKTLMFVNISPLTKDLNETINSLRFATKV  2040
+
+
+>XM_708668.2 Candida albicans SC5314 uncharacterized protein (CAALFM_C102100WA), 
+partial mRNA
+Length=1617
+
+ Score = 178 bits (451),  Expect = 9e-50, Method: Compositional matrix adjust.
+ Identities = 120/310 (39%), Positives = 168/310 (54%), Gaps = 41/310 (13%)
+ Frame = +1
+
+Query  72    LFLGYNGTVLAYGQTGSGKTYTMMGIENNFEKEGMTPRMLRRIFDKIRDSPS-TTEYEVK  130
+              F GYN  +LAYGQTGSGKTYTMMG +N  E  G+ P +++ I  ++  S +     E+K
+Sbjct  298   FFEGYNVCLLAYGQTGSGKTYTMMGDKN--ELPGIIPLLIKDILKQMEISVNEKINCELK  471
+
+Query  131   VSYMEIYMEKIHDLLS-------------EKNDRLTVHEDKLQGVYVQGLKTIYVSSETE  177
+               Y+EIY E++ DLL+               + +  V E  + G YV+ +K   + + T+
+Sbjct  472   FLYIEIYNEQVKDLLTGDTKNGNGNGNSTHASQKCKVREHPVTGPYVENVKEYNIENYTQ  651
+
+Query  178   ALDILNKGMGSRAVASTSMNAQSSRSHSIFVLEVVQTDTE-----------------SGE  220
+              L +L KG  SR+ ASTSMN +SSRSH+I  L + QT  E                 + E
+Sbjct  652   FLKLLAKGNSSRSTASTSMNDKSSRSHAIITLTLKQTKFEKFSGFSSDSDETNSIGDASE  831
+
+Query  221   TRRGRLFLVDLAGSESVGKSGAVGQT--LEEAKKINRSLSTLGMVINSLTDSKLSHVPYR  278
+                  + LVDLAGSE + K+   GQ   ++E   IN+SL+ LG  IN L+ +  S +PYR
+Sbjct  832   EMVSNIKLVDLAGSERLQKTKLYGQQERIKEGTLINKSLAVLGRCINLLSSNPSSLIPYR  1011
+
+Query  279   DSKLTRILKESLGGNSRTTLIINCSPDSYNATETLSTLRFGHRAKSIKNKAVVN----SE  334
+             +S LT +LKE+LGGNS+T +I   SP  Y   ET  TL + +  K IK  A  N    S 
+Sbjct  1012  ESILTYLLKENLGGNSKTCMIFCVSPVDY--EETHQTLNYANEVKKIKTLAKANKTKLSN  1185
+
+Query  335   LSVDEMKRQL  344
+             + +D  + QL
+Sbjct  1186  VPIDWQQLQL  1215
+
+
+>XM_709300.2 Candida albicans SC5314 Kip2p (KIP2), partial mRNA
+Length=1998
+
+ Score = 173 bits (439),  Expect = 2e-47, Method: Compositional matrix adjust.
+ Identities = 121/308 (39%), Positives = 169/308 (55%), Gaps = 28/308 (9%)
+ Frame = +1
+
+Query  45    FVFDRVFHPSSTQNDIFSYSIES-TVDDLFL--GYNGTVLAYGQTGSGKTYTMMGIENNF  101
+             FVFD VF      ++I  Y+     V + FL  GYNGT+ AYG TGSGKT++M G EN+ 
+Sbjct  331   FVFDNVFPMDRQLSNIQVYNKSCYNVVNKFLEEGYNGTIFAYGMTGSGKTFSMKGCEND-  507
+
+Query  102   EKEGMTPRMLRRIFDKIRDSPSTTEYEVKVSYMEIYMEKIHDLLS---------EKNDRL  152
+                G     +  IF KI D+ +T +Y++ +SY+EIY EKI DLLS         + N  L
+Sbjct  508   --PGFVELAINDIFQKINDNTTTKKYKMDISYLEIYNEKIIDLLSGSASSPTTSQSNQDL  681
+
+Query  153   TVHEDKLQGVYVQGLKTIYVSSETEALDILNKGMGSRAVASTSMNAQSSRSHSIFVLEVV  212
+              + +D   G  V GL +  +SS+ + L ++  G  +R  ++T  NA+SSRSHSI  + + 
+Sbjct  682   KIRDDVDFGTKVVGLTSANISSKPQLLQLIKYGDTNRKTSATDFNARSSRSHSILQIRLQ  861
+
+Query  213   QTDTESGETRRGRLFLVDLAGSESVGKSGAVGQTLEEAKKINRSLSTLGMVINSLTDSKL  272
+               D  +    +  L L DLAG E    S    +  +E   IN+SL  L  VIN L+ S L
+Sbjct  862   VIDLLTETELKSTLSLCDLAGLERAATSL---ERRKEGSFINKSLLALSNVINKLSSSTL  1032
+
+Query  273   SHVPYRDSKLTRILKESLGGNSRTTLI--INCSPDSYNA----TETLSTLRFGHRAKSIK  326
+              H+PYRDSKLTR+L+ +L G+S   ++  I+   +  N+     ET  TLRF  RAK I 
+Sbjct  1033  EHIPYRDSKLTRLLQPALSGSSLVLILCTIHMGGNQQNSQQCVAETYKTLRFAARAKDI-  1209
+
+Query  327   NKAVVNSE  334
+                V+N E
+Sbjct  1210  ---VINVE  1224
+
+
+
+Lambda      K        H        a         alpha
+   0.312    0.128    0.349    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1105851258
+
+
+Query= 2542119|NP_594687.1|chromosome I|mak1|1|4709708|4715260|N/A|1639|No description available
+
+Length=1639
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_711910.2 Candida albicans SC5314 Nik1p (NIK1), partial mRNA        170     5e-43
+XM_715924.2 Candida albicans SC5314 Chk1p (CHK1), partial mRNA        154     7e-38
+XM_712853.1 Candida albicans SC5314 Sln1p (SLN1), partial mRNA        71.6    1e-12
+XM_711716.1 Candida albicans SC5314 kinase-regulated stress-respo...  65.9    3e-11
+
+
+>XM_711910.2 Candida albicans SC5314 Nik1p (NIK1), partial mRNA
+Length=3246
+
+ Score = 170 bits (430),  Expect = 5e-43, Method: Compositional matrix adjust.
+ Identities = 113/295 (38%), Positives = 163/295 (55%), Gaps = 17/295 (6%)
+ Frame = +1
+
+Query  931   AEIRFRSTDGHY-RWHLVKSVCVNNSADTSTNLWLGTCTDIHDHKMLEEKLQESNI--EA  987
+             A+I   +TDG + R+  V+++   ++  T  N  +           L E LQ +    EA
+Sbjct  1327  AQITAAATDGDFTRFITVEALGEMDALKTKINQMVFN---------LRESLQRNTAAREA  1479
+
+Query  988   QRIVRS-KMQYLSNMSHEIRTPLIGITGMVSFLLETQMSAEQLSYARIIQQSAKSLLTVI  1046
+               +  S K ++L+NMSHEIRTPL GI GM    L+T+++  Q     I+   A SLLT+I
+Sbjct  1480  AELANSAKSEFLANMSHEIRTPLNGIIGMTQLSLDTELTQYQREMLSIVHNLANSLLTII  1659
+
+Query  1047  NDILDLSKVRAGMMKLTSQRFSVRAMMEDANETLGTLAFSKGIELNYTVDIDVPDIVFGD  1106
+             +DILD+SK+ A  M +    FS+R  +  A +TL   A  K ++L Y  D   PD + GD
+Sbjct  1660  DDILDISKIEANRMTVEQIDFSLRGTVFGALKTLAVKAIEKNLDLTYQCDSSFPDNLIGD  1839
+
+Query  1107  NMRMRQVALNVIGNAIKFTNVGEVFTRCSVEKID-YSTNTVVLKWECI-DTGQGFNRDDQ  1164
+             + R+RQV LN+ GNAIKFT  G+V    SV+K D    ++ +L   C+ DTG G  +D  
+Sbjct  1840  SFRLRQVILNLAGNAIKFTKEGKV--SVSVKKSDKMVLDSKLLLEVCVSDTGIGIEKDKL  2013
+
+Query  1165  LQMFKPFSQVESSTLPRHGGSGLGLVISKELVELHNGSMSCQSRRGVGTRFMWTA  1219
+               +F  F Q + ST  + GG+GLGL ISK+L+ L  G +   S  G G+ F +T 
+Sbjct  2014  GLIFDTFCQADGSTTRKFGGTGLGLSISKQLIHLMGGEIWVTSEYGSGSNFYFTV  2178
+
+
+ Score = 84.7 bits (208),  Expect = 8e-17, Method: Compositional matrix adjust.
+ Identities = 54/155 (35%), Positives = 90/155 (58%), Gaps = 16/155 (10%)
+ Frame = +1
+
+Query  1487  AMEQKADAETLRYNLAKSGFSVLLAEDNIINIKVISRYLERIGVKFKVTMDGLQCVEEWK  1546
+             ++ Q +D E++RY        +LLAEDN++N K+  R LE+ G   +V  +GL+  E  K
+Sbjct  2587  SISQNSD-ESVRYK-------ILLAEDNLVNQKLAVRILEKQGHLVEVVENGLEAYEAIK  2742
+
+Query  1547  REKPNFYSLILMDLQMPVMDGYQACNEIRKYE-----LENDYPKVPIVALSANALPHVVL  1601
+             R K   Y ++LMD+QMPVM G++A  +IR++E     +++   + PI+AL+A+A+     
+Sbjct  2743  RNK---YDVVLMDVQMPVMGGFEATEKIRQWEKKSNPIDSLTFRTPIIALTAHAMLGDRE  2913
+
+Query  1602  SCKDSGFDSYLAKPITLQHLSLIISGILNYTNQSK  1636
+                  G D Y++KP+  + L   I+  ++  NQ K
+Sbjct  2914  KSLAKGMDDYVSKPLKPKLLMQTINKCIHNINQLK  3018
+
+
+>XM_715924.2 Candida albicans SC5314 Chk1p (CHK1), partial mRNA
+Length=7416
+
+ Score = 154 bits (389),  Expect = 7e-38, Method: Compositional matrix adjust.
+ Identities = 87/237 (37%), Positives = 129/237 (54%), Gaps = 2/237 (1%)
+ Frame = +1
+
+Query  979   KLQESNIEAQRIVRSKMQYLSNMSHEIRTPLIGITGMVSFLLETQMSAEQLSYARIIQQS  1038
+             +++ + + A+     K  +L+NMSHEIRTP   +     FLL+T++ + Q  Y   IQ S
+Sbjct  5947  QMELAKMAAEDATDEKASFLANMSHEIRTPFNSLLSFAIFLLDTKLDSTQREYVEAIQSS  6126
+
+Query  1039  AKSLLTVINDILDLSKVRAGMMKLTSQRFSVRAMMEDANETLGTLAFSKGIELNYTVDID  1098
+             A   L +I+ IL  SK+  G   L +  FS+   +E A +  G    +  IEL +  +  
+Sbjct  6127  AMITLNIIDGILAFSKIEHGSFTLENAPFSLNDCIETAIQVSGETILNDQIELVFCNNCP  6306
+
+Query  1099  VPDIVFGDNMRMRQVALNVIGNAIKFTNVGEVFTRCSVEKIDYSTNTVVLKWECIDTGQG  1158
+               + V GD  R RQ+ +N++GNAIKFT  G V   C   KI      + +  E  D+G G
+Sbjct  6307  EIEFVVGDLTRFRQIVINLVGNAIKFTTKGHVLISCDSRKITDDRFEINVSVE--DSGIG  6480
+
+Query  1159  FNRDDQLQMFKPFSQVESSTLPRHGGSGLGLVISKELVELHNGSMSCQSRRGVGTRF  1215
+              ++  Q ++F  FSQV+ S    +GGSGLGL ISK+L EL  G++  +S  G+GT F
+Sbjct  6481  ISKKSQNKVFGAFSQVDGSARREYGGSGLGLAISKKLTELMGGTIRFESEEGIGTTF  6651
+
+
+ Score = 68.2 bits (165),  Expect = 1e-11, Method: Compositional matrix adjust.
+ Identities = 43/130 (33%), Positives = 70/130 (54%), Gaps = 4/130 (3%)
+ Frame = +1
+
+Query  1508  VLLAEDNIINIKVISRYLERIGVKFKVTMDGLQCVEEWKR--EKPNFYSLILMDLQMPVM  1565
+             +LLAEDN++N KV  ++L+++G K     DG+  +++ K   EK   Y +ILMD+QMP  
+Sbjct  7021  ILLAEDNLLNYKVCLKHLDKLGYKADHAKDGVVVLDKCKELLEKDEKYDVILMDIQMPRK  7200
+
+Query  1566  DGYQACNEIRK-YELENDYPKVP-IVALSANALPHVVLSCKDSGFDSYLAKPITLQHLSL  1623
+             DG  A  +++  +  +     +P IVAL+AN        C + G   ++ KPI    L  
+Sbjct  7201  DGITATRDLKTLFHTQKKESWLPVIVALTANVAGDDKKRCLEEGMFDFITKPILPDELRR  7380
+
+Query  1624  IISGILNYTN  1633
+             I++ +    N
+Sbjct  7381  ILTKVGETVN  7410
+
+
+>XM_712853.1 Candida albicans SC5314 Sln1p (SLN1), partial mRNA
+Length=4122
+
+ Score = 71.6 bits (174),  Expect = 1e-12, Method: Compositional matrix adjust.
+ Identities = 46/125 (37%), Positives = 73/125 (58%), Gaps = 7/125 (6%)
+ Frame = +1
+
+Query  1504  SGFSVLLAEDNIINIKVISRYLERIGV-KFKVTMDGLQCVEEWKR--EKPNFYSLILMDL  1560
+             S   VL+AEDN++N +VISR L++ G+    +  +G + ++  K   E    + LI MD+
+Sbjct  3724  SHLRVLVAEDNLVNQEVISRMLKQEGITNLTMACNGAKAIDFVKESIENNENFDLIFMDV  3903
+
+Query  1561  QMPVMDGYQACNEIRKYELENDYPKVPIVALSANALPHVVLSCKDSGFDSYLAKPITLQH  1620
+             QMP +DG +A   IRK  L+  Y K PI+AL+A A    V  C +SG   ++ KPI+  +
+Sbjct  3904  QMPEVDGLKATKMIRK-NLQ--YNK-PIIALTAFADESNVKECLNSGMSGFITKPISKTN  4071
+
+Query  1621  LSLII  1625
+             +  ++
+Sbjct  4072  IKKVL  4086
+
+
+>XM_711716.1 Candida albicans SC5314 kinase-regulated stress-responsive 
+transcription factor (SKN7), partial mRNA
+Length=1680
+
+ Score = 65.9 bits (159),  Expect = 3e-11, Method: Compositional matrix adjust.
+ Identities = 40/121 (33%), Positives = 64/121 (53%), Gaps = 8/121 (7%)
+ Frame = +1
+
+Query  1506  FSVLLAEDNIINIKVISRYLERIGVKFKVTMDGLQCVEEWKREKPNFYSLILMDLQMPVM  1565
+             F VLL ED+ + I++  ++L + G    V  DGL  +   +  K   Y L+LMD+ MP +
+Sbjct  1270  FHVLLVEDDNVCIQLCRKFLVKYGCLVTVVTDGLNAISTVEHTK---YDLVLMDIVMPNL  1440
+
+Query  1566  DGYQACNEIRKYELENDYPKVPIVALSANALPHVVLSCKDSGFDSYLAKPITLQHLSLII  1625
+             DG  A + IR ++      K PI+A++ N   + +++   +G    LAKP T   L  I+
+Sbjct  1441  DGATATSVIRSFDT-----KTPIIAMTGNIEDNDLVTYLQNGMSDILAKPFTKDDLYAIL  1605
+
+Query  1626  S  1626
+             S
+Sbjct  1606  S  1608
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.132    0.386    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 3625436160
+
+
+Query= 2542159|NP_594688.1|chromosome I|mug51|1|4716549|4717759|N/A|306|No description available
+
+Length=306
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_709755.2 Candida albicans SC5314 uncharacterized protein (CAAL...  64.7    3e-12
+
+
+>XM_709755.2 Candida albicans SC5314 uncharacterized protein (CAALFM_C207020CA), 
+partial mRNA
+Length=1185
+
+ Score = 64.7 bits (156),  Expect = 3e-12, Method: Compositional matrix adjust.
+ Identities = 46/147 (31%), Positives = 73/147 (50%), Gaps = 18/147 (12%)
+ Frame = +1
+
+Query  172   KLHKLLIENPLP---SYTSEELKFNWEERRLLISMGFLILAGT-------DSYGISLPNL  221
+             K  K L E+P     SY+++   F  EE   L++ GF+ LA         + Y IS P  
+Sbjct  739   KFMKYLKEHPTALYISYSADNGGFTAEEITYLVNSGFVTLASNHLIEIEINVYSISYPGC  918
+
+Query  222   GIFTHILRNSRNDLSNYLKKRPYREVIESSLYNR----NVSVACKKKN--EAFFGWKFR-  274
+             G +  ++ + R+ L   L K  ++E++E  + ++    N +   K  N    F+G+    
+Sbjct  919   GAYLKLVNSGRSWLVKVLGKNKHKELLEDQIISKWEGVNATGESKMNNFRSPFYGYDLNW  1098
+
+Query  275   -LCDAIGAGLVDSFMTTCGRAFRLTKK  300
+              L DA+GAG+V+ F T  GR +RLT K
+Sbjct  1099  VLADALGAGVVEVFNTPVGRGWRLTGK  1179
+
+
+
+Lambda      K        H        a         alpha
+   0.323    0.138    0.404    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 527009112
+
+
+Query= 2542624|NP_594689.1|chromosome I|N/A|-1|4717676|4718422|N/A|178|No description available
+
+Length=178
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.132    0.376    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 232797674
+
+
+Query= 2542410|NP_594690.1|chromosome I|sec18|-1|4718512|4721134|N/A|792|No description available
+
+Length=792
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_717106.2 Candida albicans SC5314 AAA family ATPase (SEC18), pa...  634     0.0  
+XM_708852.1 Candida albicans SC5314 AAA family ATPase (CDC48), pa...  171     9e-45
+XM_715437.2 Candida albicans SC5314 putative AAA family ATPase (R...  157     4e-40
+XM_710783.2 Candida albicans SC5314 proteasome regulatory particl...  148     6e-39
+XM_712252.1 Candida albicans SC5314 proteasome regulatory particl...  146     3e-38
+XM_716210.2 Candida albicans SC5314 AAA family ATPase peroxin 1 (...  150     1e-37
+XM_711177.1 Candida albicans SC5314 AAA family ATPase (CAALFM_CR0...  149     1e-37
+XM_716765.2 Candida albicans SC5314 uncharacterized protein (CAAL...  149     2e-37
+XM_709347.2 Candida albicans SC5314 proteasome regulatory particl...  137     3e-35
+XM_709839.1 Candida albicans SC5314 AAA family ATPase peroxin 6 (...  140     8e-35
+XM_714412.2 Candida albicans SC5314 m-AAA protease subunit (CAALF...  133     1e-32
+XM_715435.2 Candida albicans SC5314 uncharacterized protein (CAAL...  122     2e-32
+XM_716653.2 Candida albicans SC5314 AAA family ATPase (AFG3), par...  132     4e-32
+XM_712719.2 Candida albicans SC5314 proteasome regulatory particl...  127     6e-32
+XM_710784.2 Candida albicans SC5314 uncharacterized protein (CAAL...  118     8e-31
+XM_710241.2 Candida albicans SC5314 proteasome regulatory particl...  122     2e-30
+XM_710339.2 Candida albicans SC5314 proteasome regulatory particl...  122     3e-30
+XM_711467.2 Candida albicans SC5314 i-AAA protease (YME1), partia...  122     2e-29
+XM_715551.2 Candida albicans SC5314 AAA family ATPase (VPS4), par...  98.2    4e-22
+XM_710045.2 Candida albicans SC5314 uncharacterized protein (CAAL...  88.2    4e-19
+XM_714227.2 Candida albicans SC5314 putative AAA family ATPase (Y...  74.7    3e-14
+
+
+>XM_717106.2 Candida albicans SC5314 AAA family ATPase (SEC18), 
+partial mRNA
+Length=2391
+
+ Score = 634 bits (1634),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 343/790 (43%), Positives = 496/790 (63%), Gaps = 50/790 (6%)
+ Frame = +1
+
+Query  29    SHNSAGPTPNMSPFEQKP---PLPTHMDVRRPSGPFRIVKATSTEDALTNCIIVSPMDFK  85
+             +HN   P P   P  Q+P   PL   + V    G          +  + NC+ V+  DF+
+Sbjct  70    THNRPIPHPQSPPLPQRPLSEPLKKQLLVDNSPG---------NDVVIANCVAVNAQDFQ  222
+
+Query  86    ----QQYIIVDNSRVFSTKPVPGFPQGCLGASQPHREWASWSLNQQVHVADYDPY-GPHG  140
+                 +  +I+D   V+S         G +G +   R W  WSL Q V+V +Y+ +     
+Sbjct  223   NIPDRAPVILDGVFVYSIAKDDRVRPGTIGLAGNMRTWGKWSLGQPVNVENYNIFHNGQQ  402
+
+Query  141   APYLHSMTLEVDFQNRNRTTNEPFDGEEMAKLFCSSYQSQVFSPGQKIVFDFRSYNIKAT  200
+               YL ++ L +DF+ + R    P + +E+  LF  +Y++Q+  P Q I  ++     +  
+Sbjct  403   QQYLGAIDLLIDFRAKARANLNPINHDELVALFLKNYENQILQPTQVIYMEYTGIYFQIR  582
+
+Query  201   VRTISCVDLLIGENQDA-ENTADTSKRGLLTSQTEIQFFKAAHSALRLKASMTRPAS---  256
+             V  +  +D+   +   + +++ D + +G+L   T++ F+    S + L    T+P +   
+Sbjct  583   VNNVQIIDVNTKDQLPSFKDSDDINTKGILIKSTDVGFYPYEGSIINL----TKPKTLKQ  750
+
+Query  257   --------------NAILQPGFKFEDMGIGGLDSEFSAIFRRAFASRLFPPGMVEKLGIN  302
+                             I+ P FK ED+GIGGLD+EF  IFRRAF SR+ PP + EKL   
+Sbjct  751   RMFGGSTPHRTSRRKQIINPDFKLEDLGIGGLDAEFQDIFRRAFNSRILPPELAEKLDYK  930
+
+Query  303   HVKGILLYGPPGTGKTLIARQIGKMLNAREPKIVNGPEILNKYVGQSEENVRKLFADAER  362
+             H KG+LLYGPPGTGKTLIAR++ KMLN +EPKIVNGPE+L+KYVG SEEN+R LF DAE 
+Sbjct  931   HCKGLLLYGPPGTGKTLIARKLSKMLNGKEPKIVNGPEMLSKYVGASEENIRNLFKDAEA  1110
+
+Query  363   EYRDRGEESGLHIIIFDELDAICKKRGSSGGD-TGVGDQVVNQLLAKMDGVDQLNNILVI  421
+             EY+ +GE+S LH+IIFDELD++ K+RGS   D TGVGD VVNQLL+KMDGVDQLNNILVI
+Sbjct  1111  EYKLKGEDSDLHVIIFDELDSVFKQRGSGKSDGTGVGDNVVNQLLSKMDGVDQLNNILVI  1290
+
+Query  422   GMTNRKDMIDEALLRPGRLEVHMEISLPDEHGRLQILKIHTSRMASNGILENDVDMEELA  481
+             GMTNR D+ID ALLRPGR E+ +EISLPDE GR  I  IHT ++  NGIL +DV+ +EL+
+Sbjct  1291  GMTNRLDLIDTALLRPGRFEIQIEISLPDEKGRKDIFLIHTKKLTENGILSSDVNFDELS  1470
+
+Query  482   SLTKNFSGAEIAGLIKSASSFAFYRHIKVGTTAAVS-GNLENIKVNRNDFLNALSEVRPA  540
+             +LTKNF+GAEI GL  SA S+A  RH K G  A +   ++  +K+ R+DFL AL+++RPA
+Sbjct  1471  TLTKNFTGAEIEGLCNSAKSYAISRHTKKGALAQIDPESIAKMKITRDDFLLALNDIRPA  1650
+
+Query  541   YGVSEEELESRVQGGIINFGKHIEEIITEGKLFVQQVKNSERTRLVSVLLSGPIASGKTA  600
+             +G  EE+L  + Q GII F + I  I  +G+  +  V++SE   L S+LL GP   GKT+
+Sbjct  1651  FGTDEEDLSQQAQHGIIQFNQTIRNIFEKGQSIIDVVRSSETEHLRSILLYGPPGVGKTS  1830
+
+Query  601   LAATIALGSEFPFVKLVSAESMVGMNENARVAHVNRVFEDSYKSPLSvivvdeieriidw  660
+             +A T+AL S+FPF+K++SAE++VGM E  ++  ++ VF D +KSPL+V+V+D+IE II++
+Sbjct  1831  IATTLALNSDFPFIKMLSAETLVGMGELRKIQEIDNVFRDVHKSPLNVLVIDKIENIINY  2010
+
+Query  661   vPIGPRFSNTLLQTLMVLFKKQPPKGHRLLILATTSERTMLSRMDMTQSFDAEIAVPNVS  720
+              PIGPRFSN +LQ LMV   K+PPKG RLLI+ TTS+  +   M++  SF+  IAVP + 
+Sbjct  2011  NPIGPRFSNDILQVLMVYLTKKPPKGRRLLIIGTTSQYQVFKHMNLIDSFNDAIAVPPIK  2190
+
+Query  721   NVTELDRIIQSIDSFADSNVRADTLQRLQNFTGTDAVNVGVAK---ILMIAETAKQDVD-  776
+             ++ E+ +++  +  F + + R + L +L  +     +N+G+     +LM+++ ++  VD 
+Sbjct  2191  HIEEVGKVLDKL-GFMNKSEREEILSQLSRYD----INIGIKSLIDVLMVSKYSRDTVDE  2355
+
+Query  777   VVSCFVEAMA  786
+             VV+  VE M+
+Sbjct  2356  VVNNIVEKMS  2385
+
+
+>XM_708852.1 Candida albicans SC5314 AAA family ATPase (CDC48), 
+partial mRNA
+Length=2481
+
+ Score = 171 bits (433),  Expect = 9e-45, Method: Compositional matrix adjust.
+ Identities = 96/240 (40%), Positives = 141/240 (59%), Gaps = 15/240 (6%)
+ Frame = +1
+
+Query  271   IGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNA  330
+             IGGLD+      +      +  P   +K G+   KG+L +GPPGTGKTL+A+ +   ++A
+Sbjct  1468  IGGLDN-IKNELKETVEYPVLHPDQYQKFGLAPTKGVLFFGPPGTGKTLLAKAVATEVSA  1644
+
+Query  331   REPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKKRGS  390
+                  V GPE+L+ + G+SE N+R +F        D+   +   ++  DELD+I K RG 
+Sbjct  1645  NFIS-VKGPELLSMWYGESESNIRDIF--------DKARAAAPTVVFLDELDSIAKARGG  1797
+
+Query  391   SGGDTG-VGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISLP  449
+             S GD G   D+VVNQLL +MDG++   N+ VIG TNR D ID ALLRPGRL+  + + LP
+Sbjct  1798  SHGDAGGASDRVVNQLLTEMDGMNAKKNVFVIGATNRPDQIDPALLRPGRLDQLIYVPLP  1977
+
+Query  450   DEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIKSASSFAFYRHIK  509
+             DE  RL IL+        N  LE  +D+ E+A +T  FSGA+++ +++ ++ FA    I+
+Sbjct  1978  DEPARLSILQAQL----RNTPLEPGLDLNEIAKITHGFSGADLSYIVQRSAKFAIKDSIE  2145
+
+
+ Score = 170 bits (431),  Expect = 2e-44, Method: Compositional matrix adjust.
+ Identities = 125/358 (35%), Positives = 185/358 (52%), Gaps = 25/358 (7%)
+ Frame = +1
+
+Query  271   IGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNA  330
+             IGG   + + I R      L  P + + +GI   KGIL+YGPPGTGKT++AR +     A
+Sbjct  649   IGGCKKQMAQI-RELVELPLRHPQLFKSIGIKPPKGILMYGPPGTGKTIMARAVANETGA  825
+
+Query  331   REPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKKRGS  390
+                 ++NGPEI++K  G+SE N+RK F +AE+        +   II  DE+D+I  KR  
+Sbjct  826   FF-FLINGPEIMSKMAGESESNLRKAFEEAEK--------NSPSIIFIDEIDSIAPKRDK  978
+
+Query  391   SGGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISLPD  450
+             + G+  V  +VV+QLL  MDG+   +N++VI  TNR + ID AL R GR +  ++I +PD
+Sbjct  979   TNGE--VERRVVSQLLTLMDGMKARSNVVVIAATNRPNSIDPALRRFGRFDREVDIGVPD  1152
+
+Query  451   EHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIKSASSFAFYRH---  507
+               GRL+IL+IHT  M     L +DVD+E +AS T  F GA+IA L   A+          
+Sbjct  1153  AEGRLEILRIHTKNMK----LADDVDLEAIASETHGFVGADIASLCSEAAMQQIREKMDL  1320
+
+Query  508   IKVGTTAAVSGNLENIKVNRNDFLNALSEVRPAYGVSEEELES-----RVQGGIINFGKH  562
+             I +      +  L ++ V +++F  AL    P+  + E  +E+        GG+ N    
+Sbjct  1321  IDLEEETIDTEVLNSLGVTQDNFRFALGNSNPS-ALRETVVENVNVTWDDIGGLDNIKNE  1497
+
+Query  563   IEEIITEGKLFVQQVKNSERTRLVSVLLSGPIASGKTALAATIALGSEFPFVKLVSAE  620
+             ++E +    L   Q +         VL  GP  +GKT LA  +A      F+ +   E
+Sbjct  1498  LKETVEYPVLHPDQYQKFGLAPTKGVLFFGPPGTGKTLLAKAVATEVSANFISVKGPE  1671
+
+
+>XM_715437.2 Candida albicans SC5314 putative AAA family ATPase 
+(RIX7), partial mRNA
+Length=2484
+
+ Score = 157 bits (396),  Expect = 4e-40, Method: Compositional matrix adjust.
+ Identities = 102/260 (39%), Positives = 151/260 (58%), Gaps = 26/260 (10%)
+ Frame = +1
+
+Query  293   PGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNAREPKIVNGPEILNKYVGQSEEN  352
+             P +  K+GI    G+L++GPPG GKTL+A+ +     A    I  GPE+LNKYVG+SE+ 
+Sbjct  1633  PELYLKVGIAAPAGVLMWGPPGCGKTLLAKAVANESRANFISI-KGPELLNKYVGESEKA  1809
+
+Query  353   VRKLFADAEREYRDRGEESGLHIIIFDELDAICKKRGSSGGDTGVGDQVVNQLLAKMDGV  412
+             VR++F         R   S   II FDELDA+  +R +S  ++    +VVN LL ++DG+
+Sbjct  1810  VRQVF--------QRARASTPCIIFFDELDALVPRRDTSMSESS--SRVVNTLLTELDGL  1959
+
+Query  413   DQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISLPDEHGRLQILKIHTSRMASNGILE  472
+             +    + VIG TNR DMID A+LRPGRL+  + I LP    RL+ILK  T    +N  L 
+Sbjct  1960  NDRKGVFVIGATNRPDMIDPAMLRPGRLDKTLYIELPTPEERLEILK--TLVRTNNSPLH  2133
+
+Query  473   NDVDMEELASLTK--NFSGAEIAGLIKSASSFA----FYRHIKVGTTAAVSGNLE-----  521
+              +VD+  ++   +  NFSGA+++ L+K A  +A    F+++ K+    + SG  E     
+Sbjct  2134  RNVDLNAISRDPRCGNFSGADLSSLVKEAGVWALKKRFFQNQKIQELDS-SGFYEDSIGE  2310
+
+Query  522   -NIKVNRNDFLNALSEVRPA  540
+              +I +   DF +ALS +RP+
+Sbjct  2311  DDISITAEDFDHALSSIRPS  2370
+
+
+ Score = 104 bits (260),  Expect = 2e-23, Method: Compositional matrix adjust.
+ Identities = 77/243 (32%), Positives = 124/243 (51%), Gaps = 23/243 (9%)
+ Frame = +1
+
+Query  271   IGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNA  330
+             +GG++S  + +        +  P +    G+   +G+LLYGPPG GKT IA  +   L  
+Sbjct  583   LGGVESVTTQLLE-IIGLPILHPEIYSSTGVEPPRGVLLYGPPGCGKTTIANALAGELKV  759
+
+Query  331   REPKI-VNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKKRG  389
+               P I ++ P +++   G+SE+ +R++F +A+        +    +I  DE+DAI  KR 
+Sbjct  760   --PFINISAPSVVSGMSGESEKKLREIFEEAK--------QIAPCLIFMDEIDAITPKR-  906
+
+Query  390   SSGGDTGVGDQVVNQLLAKMDGVDQLNN----ILVIGMTNRKDMIDEALLRPGRLEVHME  445
+               G    +  ++V QLL  MD +         ++VIG TNR D +D AL R GR +  + 
+Sbjct  907   DGGAQREMEKRIVAQLLTLMDELTLEKTGGKPVVVIGATNRPDSLDSALRRAGRFDREIC  1086
+
+Query  446   ISLPDEHGRLQILKIHTSRMASNGILEN--DVDMEELASLTKNFSGAEIAGLIKSASSFA  503
+             +++P+E  R+ ILK     M  N  LEN    +  EL+ LT  + GA++  L+ +A   A
+Sbjct  1087  LNVPNEEQRISILKA----MTKNIKLENGEHFNYRELSKLTPGYVGADLKSLVTAAGISA  1254
+
+Query  504   FYR  506
+               R
+Sbjct  1255  IKR  1263
+
+
+>XM_710783.2 Candida albicans SC5314 proteasome regulatory particle 
+base subunit (RPT1), partial mRNA
+Length=1335
+
+ Score = 148 bits (374),  Expect = 6e-39, Method: Compositional matrix adjust.
+ Identities = 101/279 (36%), Positives = 143/279 (51%), Gaps = 33/279 (12%)
+ Frame = +1
+
+Query  261   QPGFKFEDMGIGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLI  320
+             +P   + D  +GG   +   + R      L  P    KLGI+  KGILLYGPPGTGKTL 
+Sbjct  538   KPDVTYSD--VGGCKEQIEKL-REVVELPLLSPERFVKLGIDPPKGILLYGPPGTGKTLC  708
+
+Query  321   ARQIGKMLNAREPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDE  380
+             AR +    +A   +++ G E++ KYVG+    VR+LF  A  +           II FDE
+Sbjct  709   ARAVANRTDATFIRVI-GSELVQKYVGEGARMVRELFEMARTKK--------ACIIFFDE  861
+
+Query  381   LDAICKKR--GSSGGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPG  438
+             +DAI   R    +GGD  V  + + +L+ ++DG D   NI V+  TNR + +D ALLRPG
+Sbjct  862   VDAIGGARFDDGAGGDNEV-QRTMLELITQLDGFDPRGNIKVMFATNRPNTLDPALLRPG  1038
+
+Query  439   RLEVHMEISLPDEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIKS  498
+             R++  +E SLPD  GR  I +IH+  M+    +E D+  E ++ L  N +GAE+  +   
+Sbjct  1039  RIDRKVEFSLPDLEGRANIFRIHSKTMS----VEKDIRWELISRLCPNATGAELRSVCTE  1206
+
+Query  499   ASSFAFYRHIKVGTTAAVSGNLENIKVNRNDFLNALSEV  537
+             A  FA     KV               N  DFL A+ +V
+Sbjct  1207  AGMFAIRARRKVA--------------NEKDFLKAVDKV  1281
+
+
+>XM_712252.1 Candida albicans SC5314 proteasome regulatory particle 
+base subunit (RPT4), partial mRNA
+Length=1287
+
+ Score = 146 bits (368),  Expect = 3e-38, Method: Compositional matrix adjust.
+ Identities = 93/238 (39%), Positives = 132/238 (55%), Gaps = 19/238 (8%)
+ Frame = +1
+
+Query  270   GIGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLN  329
+             GIGGL  +   + R      L  P +  ++GI   KG+LLYGPPGTGKTL+A+ +   + 
+Sbjct  517   GIGGLTEQIREL-REVIELPLKNPELFTRVGIKPPKGVLLYGPPGTGKTLLAKAVAATIG  693
+
+Query  330   AREPKIVNGPE--ILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKK  387
+             A     +  P   I++KY+G+S   +R++FA A+        E    II  DE+DAI  +
+Sbjct  694   A---NFIFSPASAIVDKYIGESARLIREMFAYAK--------EHEPCIIFMDEVDAIGGR  840
+
+Query  388   RGSSGGDTGVGDQ-VVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEI  446
+             R S G       Q  + +LL +MDG D L    +I  TNR D +D ALLR GRL+  +EI
+Sbjct  841   RFSEGTSADREIQRTLMELLNQMDGFDTLGQTKIIMATNRPDTLDPALLRAGRLDRKIEI  1020
+
+Query  447   SLPDEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIKSASSFAF  504
+              LP+E GRL+I KIHTS++A  G    + D E    ++  F+GA+I  ++  A  FA 
+Sbjct  1021  GLPNEAGRLEIFKIHTSKVAKQG----EFDFEAAVKMSDGFNGADIRNVVTEAGFFAI  1182
+
+
+>XM_716210.2 Candida albicans SC5314 AAA family ATPase peroxin 
+1 (PEX1), partial mRNA
+Length=3273
+
+ Score = 150 bits (378),  Expect = 1e-37, Method: Compositional matrix adjust.
+ Identities = 86/190 (45%), Positives = 118/190 (62%), Gaps = 15/190 (8%)
+ Frame = +1
+
+Query  306   GILLYGPPGTGKTLIARQIGKMLNAREPKIVNGPEILNKYVGQSEENVRKLFADAEREYR  365
+             GILLYG PG GKTL+A  I          I  GPEILNKY+G SE++VR+LF        
+Sbjct  2308  GILLYGYPGCGKTLLASAIAGQCGLNFISI-KGPEILNKYIGASEQSVRELF--------  2460
+
+Query  366   DRGEESGLHIIIFDELDAICKKRGSSGGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMTN  425
+             +R + +   I+ FDE D+I  KRG     TGV D+VVNQ+L +MDG + L+ + V+  T+
+Sbjct  2461  ERAQAAKPCILFFDEFDSIAPKRGHDS--TGVTDRVVNQMLTQMDGAEGLDGVYVLAATS  2634
+
+Query  426   RKDMIDEALLRPGRLEVHMEISLPDEHGRLQILKIHTSRMASNGILENDVDMEELASLTK  485
+             R D+ID ALLRPGRL+  +   +P+   RL IL+  T++M     L +DV++ E+A  T 
+Sbjct  2635  RPDLIDSALLRPGRLDKSVICDMPNYEDRLDILQSITTKMD----LSDDVNLHEIAEKTT  2802
+
+Query  486   NFSGAEIAGL  495
+              FSGA++ GL
+Sbjct  2803  GFSGADMQGL  2832
+
+
+>XM_711177.1 Candida albicans SC5314 AAA family ATPase (CAALFM_CR08590WA), 
+partial mRNA
+Length=2301
+
+ Score = 149 bits (375),  Expect = 1e-37, Method: Compositional matrix adjust.
+ Identities = 117/368 (32%), Positives = 177/368 (48%), Gaps = 27/368 (7%)
+ Frame = +1
+
+Query  271   IGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNA  330
+             +GGL  +   + +      L  P +    GI+  +GILL+GPPGTGKT++ R +   +  
+Sbjct  691   VGGLSKQIE-LLKSTIELPLNNPTLFSDFGISPPRGILLHGPPGTGKTMLLRCVANSITE  867
+
+Query  331   REPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKKRGS  390
+                  +NGP I++KY+G++E  +R +F +A++            II  DE+D+I   R S
+Sbjct  868   AHVLTINGPSIVSKYLGETENAIRDIFNEAKKFQP--------SIIFMDEIDSIAPSRTS  1023
+
+Query  391   SGGDTG-VGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISLP  449
+                D+G    +VV QLL  MDG+     I+VIG TNR + ID AL RPGR +  +EI +P
+Sbjct  1024  D--DSGETESRVVAQLLTVMDGMGDNGRIVVIGATNRPNSIDSALRRPGRFDQEVEIGIP  1197
+
+Query  450   DEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIKSASSFAFYRHIK  509
+             D   R +IL    ++M S        ++  +AS T  + GA++  L + +   A  R + 
+Sbjct  1198  DVEAREEILTKQFAKMNSEKCQITKEEIASIASKTHGYVGADLTALCRESVMKAINRGLT  1377
+
+Query  510   VGTTAAVSGNLENIKVNRNDFLNALSEVRPAYGVSEEELE-SRVQ----GGIINFGKHIE  564
+             VG           IKV  +D  +AL E+RP+  + E  LE  +V     GG     + + 
+Sbjct  1378  VGIPQTA------IKVTVDDVYHALPEIRPS-AMREIFLEMPKVHWSDIGGQEELKRKLI  1536
+
+Query  565   EIITEGKLFVQQVKNSERTRLVSVLLSGPIASGKTALAATIALGSEFPFVKLVSAE---S  621
+             E++          KN   +    VLL GP    KT  A  +A  S   F+ +   E    
+Sbjct  1537  EVVQLPLEASDSFKNLGVSSPKGVLLYGPPGCSKTLTAKALATESGLNFLAVKGPEIFNK  1716
+
+Query  622   MVGMNENA  629
+              VG +E A
+Sbjct  1717  YVGESERA  1740
+
+
+ Score = 140 bits (354),  Expect = 4e-35, Method: Compositional matrix adjust.
+ Identities = 96/257 (37%), Positives = 138/257 (54%), Gaps = 33/257 (13%)
+ Frame = +1
+
+Query  297   EKLGINHVKGILLYGPPGTGKTLIARQIGKMLNAREPKI----VNGPEILNKYVGQSEEN  352
+             + LG++  KG+LLYGPPG  KTL A+ +     A E  +    V GPEI NKYVG+SE  
+Sbjct  1576  KNLGVSSPKGVLLYGPPGCSKTLTAKAL-----ATESGLNFLAVKGPEIFNKYVGESERA  1740
+
+Query  353   VRKLFADAEREYRDRGEESGLHIIIFDELDAICKKRGSSGGDTGVGDQVVNQLLAKMDGV  412
+             +R++F  A          +   II FDE+DAI   R      T   + V+  LL ++DGV
+Sbjct  1741  IREIFRKAR--------AASPSIIFFDEIDAIAGDRDGDSSTTAALN-VLTSLLNEIDGV  1893
+
+Query  413   DQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISLPDEHGRLQILKIHTSRMASNGILE  472
+             ++L  ++++G TN+   ID ALLRPGRL+ H+ ++ PD   RLQIL+   SR  +    +
+Sbjct  1894  EELKGVVIVGATNKPTEIDPALLRPGRLDRHIYVAPPDYDARLQILQ-KCSRKFNLQSGD  2070
+
+Query  473   NDVDMEELASLTKNFSGAEIAGLIKSASSFAFYRHIKVGTTAAVSGNLENIKVNRNDFLN  532
+               VD+++LA LT   SGAE+  L + A              AA+  N E   V    F +
+Sbjct  2071  ESVDLQKLAELTDGCSGAEVTLLCQEAG------------LAAIMENKEATTVTNKHFEH  2214
+
+Query  533   ALSEVRPAYGVSEEELE  549
+             AL  +  + G++ E LE
+Sbjct  2215  ALKGI--SRGITPEMLE  2259
+
+
+>XM_716765.2 Candida albicans SC5314 uncharacterized protein (CAALFM_C504640CA), 
+partial mRNA
+Length=3945
+
+ Score = 149 bits (377),  Expect = 2e-37, Method: Compositional matrix adjust.
+ Identities = 98/275 (36%), Positives = 144/275 (52%), Gaps = 20/275 (7%)
+ Frame = +1
+
+Query  271   IGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNA  330
+             +GGLD+  + + +   A  L  P + +   I   +G+L +GPPGTGKTL+AR +    + 
+Sbjct  1204  VGGLDNYINQL-KEMVALPLLYPELYQNFAITPPRGVLFHGPPGTGKTLMARALAASCST  1380
+
+Query  331   REPKIV----NGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICK  386
+              E KI      G + L+K+VG++E  +R LF +A+ +           II FDE+D +  
+Sbjct  1381  SERKITFFMRKGADCLSKWVGEAERQLRLLFEEAKNQQPS--------IIFFDEIDGLAP  1536
+
+Query  387   KRGSSGGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEI  446
+              R S      +   +V+ LLA MDG+D    ++VIG TNR D ID AL RPGR +     
+Sbjct  1537  VRSSK--QEQIHASIVSTLLALMDGMDNRGQVIVIGATNRPDAIDPALRRPGRFDREFYF  1710
+
+Query  447   SLPDEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIKSASSFAFYR  506
+              LPD   R +ILKIHT +   N  L  D+ +E LA LTK + GA++  L   A+  +  R
+Sbjct  1711  PLPDLGSRKEILKIHTRKW--NPELP-DLFLERLAQLTKGYGGADLRALCTEAALNSIQR  1881
+
+Query  507   HIK--VGTTAAVSGNLENIKVNRNDFLNALSEVRP  539
+                   GT   +  N   +KV   DF+ A+ ++ P
+Sbjct  1882  KYPQIYGTNEKLKVNPSKVKVIAKDFMKAIEKIVP  1986
+
+
+>XM_709347.2 Candida albicans SC5314 proteasome regulatory particle 
+base subunit (RPT6), partial mRNA
+Length=1206
+
+ Score = 137 bits (344),  Expect = 3e-35, Method: Compositional matrix adjust.
+ Identities = 86/236 (36%), Positives = 129/236 (55%), Gaps = 17/236 (7%)
+ Frame = +1
+
+Query  271   IGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNA  330
+             +GGLD +   I +      +  P + E LGI   KG++LYGPPGTGKTL+AR +      
+Sbjct  436   VGGLDKQIKEI-KEVIELPVKHPELFESLGIAQPKGVILYGPPGTGKTLLARAVAHHTEC  612
+
+Query  331   REPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKKR--  388
+             +  + V+G E++ KY+G+    VR+LF  A         E    II  DE+D+I   R  
+Sbjct  613   KFIR-VSGSELVQKYIGEGSRMVRELFVMAR--------EHAPSIIFMDEIDSIGSSRVE  765
+
+Query  389   GSSGGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISL  448
+             GSSGGD+ V  + + +LL ++DG +   +I +I  TNR D++D ALLRPGR++  +E   
+Sbjct  766   GSSGGDSEV-QRTMLELLNQLDGFESSKDIKIIMATNRLDILDPALLRPGRIDRKIEFPA  942
+
+Query  449   PDEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIKSASSFAF  504
+             P    R  ILKIH+  M     L   +++ ++A      SGA++ G+   A  +A 
+Sbjct  943   PTVAARTDILKIHSRSMN----LTRGINLRKIAEKMNGCSGADVKGVCTEAGMYAL  1098
+
+
+>XM_709839.1 Candida albicans SC5314 AAA family ATPase peroxin 
+6 (PEX6), partial mRNA
+Length=3474
+
+ Score = 140 bits (354),  Expect = 8e-35, Method: Compositional matrix adjust.
+ Identities = 92/249 (37%), Positives = 141/249 (57%), Gaps = 21/249 (8%)
+ Frame = +1
+
+Query  262   PGFKFEDMGIGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIA  321
+             P  K+ED  IGGLD     I        L  P +    G+    GIL YGPPGTGKTL+A
+Sbjct  2428  PNVKWED--IGGLDLVKDEILD-TIDMPLKHPELFNN-GLKKRSGILFYGPPGTGKTLLA  2595
+
+Query  322   RQIGKMLNAREPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDEL  381
+             + I    +      V GPE+LN Y+G+SE NVR++F         R  ++   +I FDEL
+Sbjct  2596  KAIATNFSLNFFS-VKGPELLNMYIGESEANVRRVFQ--------RARDAKPCVIFFDEL  2748
+
+Query  382   DAICKKRGSSGGDTGVGDQVVNQLLAKMDGVDQL--NNILVIGMTNRKDMIDEALLRPGR  439
+             D++  KRG+ G   GV D++V+QLLA++DG+     + + V+G TNR D++DEALLRPGR
+Sbjct  2749  DSVAPKRGNQGDSGGVMDRIVSQLLAELDGMSSEGGDGVFVVGATNRPDLLDEALLRPGR  2928
+
+Query  440   LEVHMEISLPD-EHGRLQILKIHTSRMASNGILENDVDMEELAS-LTKNFSGAEIAGLIK  497
+              +  + + + D +  + +IL+  T +      L+++V++E++A+  +  F+GA+   L  
+Sbjct  2929  FDKMLYLGISDTDEKQTKILEALTRKFK----LDDNVNLEQVAAKCSFTFTGADFYALCS  3096
+
+Query  498   SASSFAFYR  506
+              +   A  R
+Sbjct  3097  DSMLNAMTR  3123
+
+
+>XM_714412.2 Candida albicans SC5314 m-AAA protease subunit (CAALFM_C200700WA), 
+partial mRNA
+Length=2541
+
+ Score = 133 bits (335),  Expect = 1e-32, Method: Compositional matrix adjust.
+ Identities = 90/251 (36%), Positives = 130/251 (52%), Gaps = 36/251 (14%)
+ Frame = +1
+
+Query  286   FASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNAREPKI----VNGPEI  341
+             F   L  P   EKLG    +G +L GPPGTGKTL+A+       A E  +    V+G E 
+Sbjct  1162  FVKFLQNPEKYEKLGAKIPRGAILSGPPGTGKTLLAKA-----TAGEAGVPFYSVSGSEF  1326
+
+Query  342   LNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKKRGSSGGDTGVGDQ-  400
+             +  +VG     VR LF  A         E+   I+  DE+DAI K+R S G  TG  D+ 
+Sbjct  1327  VEMFVGVGASRVRDLFKTAR--------ENAPSIVFVDEIDAIGKQR-SKGNATGANDER  1479
+
+Query  401   --VVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISLPDEHGRLQIL  458
+                +NQLL +MDG D  ++++V+  TNR D++D AL+RPGR + H+ I  P+  GR +I 
+Sbjct  1480  ETTLNQLLVEMDGFDTSDHVVVLAGTNRPDILDRALMRPGRFDRHVHIDNPELLGRKEIF  1659
+
+Query  459   KIHTSRMASNGILENDVDME---ELASLTKNFSGAEIAGLIKSA--------SSFAFYRH  507
+              +H  ++     L+ D+D +    LA+LT  FSGA+IA +   A        + F   RH
+Sbjct  1660  DVHLQKIT----LQKDIDPDLSGRLAALTPGFSGADIANVCNEAALIAARYNAEFVTLRH  1827
+
+Query  508   IKVGTTAAVSG  518
+              ++     + G
+Sbjct  1828  FELAIERVIGG  1860
+
+
+>XM_715435.2 Candida albicans SC5314 uncharacterized protein (CAALFM_C502130WA), 
+partial mRNA
+Length=579
+
+ Score = 122 bits (307),  Expect = 2e-32, Method: Compositional matrix adjust.
+ Identities = 67/149 (45%), Positives = 93/149 (62%), Gaps = 11/149 (7%)
+ Frame = -2
+
+Query  293  PGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNAREPKIVNGPEILNKYVGQSEEN  352
+            P +  K+GI    G+L++GPPG GKTL+A+ +     A    I  GPE+LNKYVG+SE+ 
+Sbjct  428  PELYLKVGIAAPAGVLMWGPPGCGKTLLAKAVANESRANFISI-KGPELLNKYVGESEKA  252
+
+Query  353  VRKLFADAEREYRDRGEESGLHIIIFDELDAICKKRGSSGGDTGVGDQVVNQLLAKMDGV  412
+            VR++F         R   S   II FDELDA+  +R +S  ++    +VVN LL ++DG+
+Sbjct  251  VRQVF--------QRARASTPCIIFFDELDALVPRRDTSMSESS--SRVVNTLLTELDGL  102
+
+Query  413  DQLNNILVIGMTNRKDMIDEALLRPGRLE  441
+            +    + VIG TNR DMID A+LRPGRL+
+Sbjct  101  NDRKGVFVIGATNRPDMIDPAMLRPGRLD  15
+
+
+>XM_716653.2 Candida albicans SC5314 AAA family ATPase (AFG3), 
+partial mRNA
+Length=2388
+
+ Score = 132 bits (331),  Expect = 4e-32, Method: Compositional matrix adjust.
+ Identities = 95/263 (36%), Positives = 133/263 (51%), Gaps = 40/263 (15%)
+ Frame = +1
+
+Query  265   KFEDMGIGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQI  324
+             KF+D  + G D     I    F   L  P   EKLG    +G +L GPPGTGKTL+A+  
+Sbjct  853   KFKD--VAGCDESKEEIME--FVKFLQDPHKYEKLGAKIPRGAILSGPPGTGKTLLAKAT  1020
+
+Query  325   GKMLNAREPKI-VNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDA  383
+                  A  P + V+G E +  +VG     VR LF  A         E    II  DE+DA
+Sbjct  1021  AG--EAGVPFLSVSGSEFVEMFVGVGASRVRDLFKTAR--------EMAPAIIFVDEIDA  1170
+
+Query  384   ICKKRGSSGGDTGVGDQ---VVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRL  440
+             I K+RG+  G  G  D+    +NQLL +MDG D  ++++V+  TNR D++D+ALLRPGR 
+Sbjct  1171  IGKERGN--GRMGGNDERENTLNQLLVEMDGFDTTDHVVVLAGTNRPDILDKALLRPGRF  1344
+
+Query  441   EVHMEISLPDEHGRLQILKIHTSRMASNGIL-----ENDVDMEE---------------L  480
+             + H+ I +PD  GR QI K+H +++    +      + DVD  +               L
+Sbjct  1345  DRHISIDVPDVEGRKQIFKVHLNKLKLKSVQDIDAKQKDVDFSKYQQLKNEEIEKLAGRL  1524
+
+Query  481   ASLTKNFSGAEIAGLIKSASSFA  503
+             A+LT  F+GA+IA      +  A
+Sbjct  1525  AALTPGFAGADIANCCNEGALIA  1593
+
+
+>XM_712719.2 Candida albicans SC5314 proteasome regulatory particle 
+base subunit (RPT2), partial mRNA
+Length=1326
+
+ Score = 127 bits (320),  Expect = 6e-32, Method: Compositional matrix adjust.
+ Identities = 82/236 (35%), Positives = 134/236 (57%), Gaps = 17/236 (7%)
+ Frame = +1
+
+Query  271   IGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNA  330
+             IGGL+S+   I + +    L  P + E++GI   KG++LYG PGTGKTL+A+ +    +A
+Sbjct  562   IGGLESQIQEI-KESVELPLTHPELYEEMGIKPPKGVILYGAPGTGKTLLAKAVANQTSA  738
+
+Query  331   REPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKKR--  388
+                +IV G E++ KY+G      R++F  A         +    I+  DE+DAI  KR  
+Sbjct  739   TFLRIV-GSELIQKYLGDGPRLCRQIFQIAA--------DHAPSIVFIDEIDAIGTKRYE  891
+
+Query  389   GSSGGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISL  448
+              +SGG+  +  + + +LL ++DG D   +I VI  TN+ + +D AL+RPGR++  +    
+Sbjct  892   STSGGEREI-QRTMLELLNQLDGFDDRGDIKVIMATNKIESLDPALIRPGRIDRKILFEN  1068
+
+Query  449   PDEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIKSASSFAF  504
+             PD + + +IL IHTS+M+    L +DV+++E+ +   + SGA+I  +   A   A 
+Sbjct  1069  PDANTKKKILTIHTSKMS----LADDVNLDEIVTGKDDLSGADIKAICTEAGLLAL  1224
+
+
+>XM_710784.2 Candida albicans SC5314 uncharacterized protein (CAALFM_C105250WA), 
+partial mRNA
+Length=615
+
+ Score = 118 bits (295),  Expect = 8e-31, Method: Compositional matrix adjust.
+ Identities = 78/196 (40%), Positives = 108/196 (55%), Gaps = 15/196 (8%)
+ Frame = -2
+
+Query  261  QPGFKFEDMGIGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLI  320
+            +P   + D  +GG   +   + R      L  P    KLGI+  KGILLYGPPGTGKTL 
+Sbjct  557  KPDVTYSD--VGGCKEQIEKL-REVVELPLLSPERFVKLGIDPPKGILLYGPPGTGKTLC  387
+
+Query  321  ARQIGKMLNAREPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDE  380
+            AR +    +A   +++ G E++ KYVG+    VR+LF  A  +           II FDE
+Sbjct  386  ARAVANRTDATFIRVI-GSELVQKYVGEGARMVRELFEMARTKK--------ACIIFFDE  234
+
+Query  381  LDAICKKR--GSSGGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPG  438
+            +DAI   R    +GGD  V  + + +L+ ++DG D   NI V+  TNR + +D ALLRPG
+Sbjct  233  VDAIGGARFDDGAGGDNEV-QRTMLELITQLDGFDPRGNIKVMFATNRPNTLDPALLRPG  57
+
+Query  439  RLEVHMEISLPDEHGR  454
+            R++  +E SLPD  GR
+Sbjct  56   RIDRKVEFSLPDLEGR  9
+
+
+>XM_710241.2 Candida albicans SC5314 proteasome regulatory particle 
+base subunit (PR26), partial mRNA
+Length=1236
+
+ Score = 122 bits (306),  Expect = 2e-30, Method: Compositional matrix adjust.
+ Identities = 88/250 (35%), Positives = 131/250 (52%), Gaps = 20/250 (8%)
+ Frame = +1
+
+Query  261   QPGFKFEDMGIGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVKGILLYGPPGTGKTLI  320
+             +P   + D  +GGLD +   I + A    L    +  ++GI+  +G+LLYGPPGTGKT++
+Sbjct  445   KPDVTYAD--VGGLDMQKQEI-KEAVELPLTQGDLYSQIGIDPPRGVLLYGPPGTGKTML  615
+
+Query  321   ARQIGKMLNAREPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDE  380
+              + +     A   +I NG E + KY+G+    VR +F  A         E+   II  DE
+Sbjct  616   VKAVANSTTASFIRI-NGSEFVQKYLGEGPRMVRDVFRLAR--------ENSPAIIFIDE  768
+
+Query  381   LDAICKKR--GSSGGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPG  438
+             +DAI  KR    +G D  V  +++ +LL +MDG DQ + + VI  TNR D +D ALLRPG
+Sbjct  769   IDAIATKRFDAQTGADREV-QRILLELLNQMDGFDQTSTVKVIMATNRADTLDPALLRPG  945
+
+Query  439   RLEVHMEI-SLPDEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIK  497
+             RL+  +E  SL D   R  I     S+M+    L  + D++ L       SGA IA +++
+Sbjct  946   RLDRKIEFPSLKDRRERRLIFSTIASKMS----LAPEADLDSLIIRNDPLSGAVIAAIMQ  1113
+
+Query  498   SASSFAFYRH  507
+              A   A  ++
+Sbjct  1114  EAGLRAVRKN  1143
+
+
+>XM_710339.2 Candida albicans SC5314 proteasome regulatory particle 
+base subunit (RPT5), partial mRNA
+Length=1293
+
+ Score = 122 bits (307),  Expect = 3e-30, Method: Compositional matrix adjust.
+ Identities = 92/273 (34%), Positives = 132/273 (48%), Gaps = 36/273 (13%)
+ Frame = +1
+
+Query  271   IGGLDSEFSAIFRRAFASRLFPPGMVEK---LGINHVKGILLYGPPGTGKTLIARQIGKM  327
+             IGGLD +   +      + + P    +K   LGI   KG L+YGPPGTGKTL+AR     
+Sbjct  532   IGGLDKQIEELIE----AVVLPMKQADKFKNLGIKPPKGALMYGPPGTGKTLLARACAAQ  699
+
+Query  328   LNAREPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKK  387
+               A   K+   P+++  ++G   + VR  FA A+        E    II  DELDAI  K
+Sbjct  700   SGATFLKLA-APQLVQMFIGDGAKLVRDAFALAK--------EKAPTIIFIDELDAIGTK  852
+
+Query  388   RGSS--GGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHME  445
+             R  S   GD  V   ++ +LL ++DG    + + V+  TNR D +D ALLR GRL+  +E
+Sbjct  853   RFDSDKSGDREVQRTML-ELLNQLDGFGSDDRVKVLAATNRVDTLDPALLRSGRLDRKIE  1029
+
+Query  446   ISLPDEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSGAEIAGLIKSASSFAFY  505
+               LP E  R  +LKIH  ++  +    N V+  ELA  T  F+GA++  +   A   A  
+Sbjct  1030  FPLPSEEARESVLKIHARKLHCDN---NSVNWRELARSTDEFNGAQLKAVTVEAGMIALR  1200
+
+Query  506   RHIKVGTTAAVSGNLENIKVNRNDFLNALSEVR  538
+                 +              +   DF+ A+SEV+
+Sbjct  1201  NGKSI--------------IKHEDFVEAISEVQ  1257
+
+
+>XM_711467.2 Candida albicans SC5314 i-AAA protease (YME1), partial 
+mRNA
+Length=2064
+
+ Score = 122 bits (307),  Expect = 2e-29, Method: Compositional matrix adjust.
+ Identities = 83/215 (39%), Positives = 112/215 (52%), Gaps = 23/215 (11%)
+ Frame = +1
+
+Query  293   PGMVEKLGINHVKGILLYGPPGTGKTLIARQIGKMLNAREPKI----VNGPEILNKYVGQ  348
+             P     LG    KG+LL GPPGTGKTL+AR       A E  +    ++G E    YVG 
+Sbjct  739   PSKFTGLGGKLPKGVLLTGPPGTGKTLLARA-----TAGEAGVPFFFMSGSEFDELYVGV  903
+
+Query  349   SEENVRKLFADAEREYRDRGEESGLHIIIFDELDAICKKRGSSGGDTGVGDQVVNQLLAK  408
+               + +R+LF+ A    RD+       II  DELDAI  KR     D     Q +NQLL +
+Sbjct  904   GAKRIRELFSQA----RDKAPA----IIFIDELDAIGGKRNPK--DQAYAKQTLNQLLVE  1053
+
+Query  409   MDGVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISLPDEHGRLQILKIHTSRMASN  468
+             +DG  Q   I++IG TN  + +D+AL RPGR +  + + LPD  GR+ ILK H   + + 
+Sbjct  1054  LDGFSQTEGIIIIGATNFPESLDKALTRPGRFDKEVIVDLPDVRGRIDILKHHMQNVET-  1230
+
+Query  469   GILENDVDMEELASLTKNFSGAEIAGLIKSASSFA  503
+                 +DVD   +A  T   SGAE+  L+  A+  A
+Sbjct  1231  ---ADDVDPSIIARGTPGLSGAELMNLVNQAAVHA  1326
+
+
+>XM_715551.2 Candida albicans SC5314 AAA family ATPase (VPS4), 
+partial mRNA
+Length=1320
+
+ Score = 98.2 bits (243),  Expect = 4e-22, Method: Compositional matrix adjust.
+ Identities = 78/250 (31%), Positives = 130/250 (52%), Gaps = 29/250 (12%)
+ Frame = +1
+
+Query  256   SNAIL--QPGFKFEDMGIGGLDSEFSAIFRRAFASRLFPPGMVEKLGINHVK---GILLY  310
+             + AIL  +P  K+ D  I GLD+   A+         FP     +L + + K   GILLY
+Sbjct  364   AGAILLEKPNVKWSD--IAGLDAAKEALKEAVILPVKFP-----QLFVGNRKPTSGILLY  522
+
+Query  311   GPPGTGKTLIARQIGKMLNAREPKIVNGPEILNKYVGQSEENVRKLFADAEREYRDRGEE  370
+             GPPGTGK+ +A+ +    N+     V+  ++++K++G+SE  V++LF  A         E
+Sbjct  523   GPPGTGKSYLAKAVATEANSTFFS-VSSSDLVSKWMGESERLVKQLFTMA--------RE  675
+
+Query  371   SGLHIIIFDELDAICKKRGSSGGDTGVGDQVVNQLLAKMDGV-DQLNNILVIGMTNRKDM  429
+             +   II  DE+DA+C  RG   G++    ++  +LL +M+GV +    +LV+G TN    
+Sbjct  676   NKPSIIFIDEVDALCGPRGE--GESEASRRIKTELLVQMNGVGNDSQGVLVLGATNIPWQ  849
+
+Query  430   IDEALLRPGRLEVHMEISLPDEHGRLQILKIHTSRMASNGILENDVDMEELASLTKNFSG  489
+             +D A+ R  R E  + I+LPD   R ++ +I+   +          D   LA +T  +SG
+Sbjct  850   LDAAVRR--RFERRIYIALPDVEARTRMFEINIGDVPCECTPH---DYRTLAEMTDGYSG  1014
+
+Query  490   AEIAGLIKSA  499
+              ++A +++ A
+Sbjct  1015  HDVAVVVRDA  1044
+
+
+>XM_710045.2 Candida albicans SC5314 uncharacterized protein (CAALFM_CR03640CA), 
+partial mRNA
+Length=1110
+
+ Score = 88.2 bits (217),  Expect = 4e-19, Method: Compositional matrix adjust.
+ Identities = 65/206 (32%), Positives = 106/206 (51%), Gaps = 18/206 (9%)
+ Frame = +1
+
+Query  305  KGILLYGPPGTGKTLIARQIGKMLNAREPKIVNGPEILNKYVGQSEENVRKLFADAEREY  364
+            KG+L YGPPG GKT++A+ I K   A    ++    I++K+ G+S +    +F+ A +  
+Sbjct  403  KGVLFYGPPGCGKTMLAKAIAKESGAFFL-LIRMSSIMDKWYGESNKITDAIFSLANKLQ  579
+
+Query  365  RDRGEESGLHIIIFDELDAICKKRGSSGGDTGVGDQVVNQLLAKMDGVDQLNNILVIGMT  424
+                      II  DE+D+  + R S+  D  V   +  + +   DG+     I+V+G T
+Sbjct  580  P--------CIIFIDEIDSFLRDRSSN--DHEVSAMLKAEFMTLWDGLKSNGQIMVLGAT  729
+
+Query  425  NRKDMIDEALLRPGRLEVHMEISLPDEHGRLQILKIHTSRMASNGIL-ENDVDMEELASL  483
+            NRK+ IDEA LR  R+     I  P+   R  IL    +++  +  L END D+E + + 
+Sbjct  730  NRKNDIDEAFLR--RMPKTFAIGKPNASQRTAIL----NKILKDAKLDENDFDLEYIVAN  891
+
+Query  484  TKNFSGAEIAGLIKSASSFAFYRHIK  509
+            T+ FSG+++  L + A+      +IK
+Sbjct  892  TRGFSGSDLRELCREAAILPVREYIK  969
+
+
+>XM_714227.2 Candida albicans SC5314 putative AAA family ATPase 
+(YTA6), partial mRNA
+Length=2463
+
+ Score = 74.7 bits (182),  Expect = 3e-14, Method: Compositional matrix adjust.
+ Identities = 77/262 (29%), Positives = 129/262 (49%), Gaps = 41/262 (16%)
+ Frame = +1
+
+Query  304   VKGILLYGPPGTGKTLIARQIGKMLNAREPKIVNGPEILNKYVGQSEENVRKLFADAERE  363
+              +G+LL+GPPGTGKT++AR +    N+     ++   + +KY+G+SE+ V+ LF  A++ 
+Sbjct  1711  TRGMLLFGPPGTGKTMLARAVATESNSTF-FSISSSSLTSKYLGESEKLVKALFLLAKK-  1884
+
+Query  364   YRDRGEESGLHIIIFDELDAICKKRGSSGGDTGVGDQVVNQLLAKM-------------D  410
+                        I+  DE+D++   R  + G+     ++ N+ L +              D
+Sbjct  1885  -------LAPLIVFMDEIDSLLGAR--TEGEIESTRRIKNEFLVQWSELSSAAAGRETDD  2037
+
+Query  411   GVDQLNNILVIGMTNRKDMIDEALLRPGRLEVHMEISLPDEHGRL-QILKIHTSRMASNG  469
+             G   ++ +L++G TN    IDEA  R  R      I LP++  R+ QI K+   +   N 
+Sbjct  2038  G--DVSRVLILGATNLPWSIDEAARR--RFVRRQYIPLPEDEARISQIKKLL--KYQKNT  2199
+
+Query  470   ILENDVDMEELASLTKNFSGAEIAGLIKSASSFAFYRHIKVGTTAAVSGNLENIK-VNRN  528
+             +  +D D  +L  LTK FSG++I  L K  S+    R +       +S   E I+ ++  
+Sbjct  2200  L--DDSDYNKLIELTKGFSGSDITALAKD-SAMGPLRSL---GDKLLSTPTEQIRPISLE  2361
+
+Query  529   DFLNALSEVRPAY---GVSEEE  547
+             DF N+L  +RP+    G+ E E
+Sbjct  2362  DFENSLKYIRPSVSSDGLKEYE  2427
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.133    0.380    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1659288070
+
+
+Query= 14218043|NP_001343130.1|chromosome I|N/A|-1|4721586|4722583|N/A|78|No description available
+
+Length=78
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.320    0.133    0.373    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 75169276
+
+
+Query= 5802962|NP_001343038.1|chromosome I|pex7|1|4722783|4724644|N/A|308|No description available
+
+Length=308
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_709205.1 Candida albicans SC5314 Pex7p (PEX7), partial mRNA        189     3e-58
+
+
+>XM_709205.1 Candida albicans SC5314 Pex7p (PEX7), partial mRNA
+Length=1143
+
+ Score = 189 bits (481),  Expect = 3e-58, Method: Compositional matrix adjust.
+ Identities = 122/377 (32%), Positives = 186/377 (49%), Gaps = 70/377 (19%)
+ Frame = +1
+
+Query  1     MLSLRTPGFQGESVQFSPLVENKIAVAAVTHYGLGGSGRLYIHDVTPKGIQVCQ-HYDVE  59
+             MLS RT G+ G  +Q+SP  +NK+AVA   +YGL G+GRL+I ++ P G    Q  ++ +
+Sbjct  1     MLSFRTKGYNGYGIQYSPFYDNKLAVATAANYGLVGNGRLFILNIEPNGTVSDQISWETQ  180
+
+Query  60    DSLFGVRWSQNCENQVYACCGDGSLRLFDLTMPSKPIHKWKEHKAEIVAIDTNTVDRRIV  119
+             D LF + WS+  ENQ     GDG+L+LFDLT+P+ P+  WKEH  E+  ++ N VD+   
+Sbjct  181   DGLFDIAWSEIHENQAVVASGDGTLKLFDLTVPNFPVMNWKEHSREVFCVNWNLVDKTNF  360
+
+Query  120   VTGSWDGTIKLWLGNLPNSVQTLNN-------------GSNSRIL---------------  151
+             V+GSWDG IKLW  N P S+ TLN+             GS S  L               
+Sbjct  361   VSGSWDGNIKLWSPNRPQSLLTLNSNVMDYSTRVAPNAGSASVPLSHQPAHQPQQQQQQQ  540
+
+Query  152   --TVATHYS------SPNLLGYTSSDGLCKFWDFRSSDKF---MSIEIPNQITCMNWSKS  200
+               T    YS      SP+++   +     + WD RS +      +     +   ++W+K 
+Sbjct  541   VNTANCIYSAQFSPHSPSMVVSCNGGSQVQVWDVRSPNPLQLKFTAHGGLEALSVDWNKY  720
+
+Query  201   NHRMVYTADNNNLVYCYDIANL-------------------KTPLSVLSGHQLAVRSIKS  241
+                ++ +   +  V  +D+ ++                    TPL+ L GH+ AVR ++ 
+Sbjct  721   KSTVIASGGTDKSVRIWDLRSITKIDQPIAQSPMASGHIRGPTPLNELIGHEFAVRRVQW  900
+
+Query  242   SNSAHDLLATASYDMTSRIFDPEQHSCIRKVD-----------LHSEFVRDVDWSDFGDG  290
+             S      L + SYDMT+RI++ E     R ++            H EFV   D+S +G+ 
+Sbjct  901   SPHNPKELMSTSYDMTARIWNDELDERARFLNSRVGGLKGVFGRHKEFVIGSDYSLWGEP  1080
+
+Query  291   SWIASVGWDESLYIWNA  307
+              W+A+ GWDE +YIW++
+Sbjct  1081  GWVATTGWDEMVYIWDS  1131
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.133    0.425    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 531888826
+
+
+Query= 2542266|NP_594693.1|chromosome I|cdc45|1|4724771|4726845|N/A|638|No description available
+
+Length=638
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_705020.2 Candida albicans SC5314 DNA replication initiation fa...  186     6e-52
+
+
+>XM_705020.2 Candida albicans SC5314 DNA replication initiation 
+factor (CDC45), partial mRNA
+Length=1740
+
+ Score = 186 bits (473),  Expect = 6e-52, Method: Compositional matrix adjust.
+ Identities = 171/675 (25%), Positives = 308/675 (46%), Gaps = 139/675 (21%)
+ Frame = +1
+
+Query  1     MFIKRSDYASAYLKIKEASVS-GGCTVQLFVA-LDPDALCACKLLSTLLKGDFISHKIRP  58
+             M+I  + YA  +  IK +S+S   C + +FV+ LD DALCA K+LS LL+ + I +++ P
+Sbjct  1     MYITPNQYAKTFQDIKRSSLSHSTCKLVIFVSCLDVDALCAAKILSLLLRKELIQYQLIP  180
+
+Query  59    VSGYRDLEQANKTLLEQNEDIKFIILLNCGTMVDLNNYL-VSMEDV--------------  103
+              +GY DL+     L   + ++  IIL+ CG M+DL  +  V+ E+               
+Sbjct  181   TTGYSDLKLHYDKL---DSEVTNIILIGCGAMLDLEGFFDVNPEEFLGDNSTTNGHTIDN  351
+
+Query  104   ------------------SIYVIDSHRPHNLNNIYIENNIFVFDDGDIEEDMNKIHDAWY  145
+                                IYV+D HRP NL+N++    +   D+G I+ ++N+  +A+ 
+Sbjct  352   DTELELDAVKTDNFALTRKIYVVDGHRPWNLDNLFGSAMVVCLDNGYIDGNLNEEKEAYN  531
+
+Query  146   AFnshelsdeensdssnereeeveddnrsvesYSSSDYQARSRRRFSEETTQrraeikek  205
+                    S++E+ D  + +              S +D      +  +++     +    +
+Sbjct  532   VLVEMSDSEDEDEDEGHNQN-------------SHTDDDQEGDKTDADDENDESSVSTSR  672
+
+Query  206   rkkrkeFASILSEYYEKGSWYGESITNILFAVASMLGREDNDMLWLAIVGLTCLEIHCQS  265
+             +  +      +  YY + S    S +  ++A+ S +G  + D LWL IVG +  +  C  
+Sbjct  673   KGVKSINEDKIQTYYNQSSTIASSCSITVYALVSAIGETNVDNLWLGIVGASGFD--C--  840
+
+Query  266   SKKYFNRSYSLLKDEVNRLNPSPLENQIVGRAHGKTPHDQSIRLEDEFRFMLVRHWSLYD  325
+                      S+  DEV R +                  D  I +E      L+RH SLYD
+Sbjct  841   ---------SIFVDEVRRFST-----------------DSGIHMERGTYLPLLRHSSLYD  942
+
+Query  326   SMLHSAYVGSRLHIWSEEGRKRLHKLLAKMGLSLVECKQTYIHMNMDLKKTLKSSLKRFA  385
+             ++L++         W + G KR+HK+LAKMG+ +V  KQ + +++  +K  L   LK++ 
+Sbjct  943   ALLYN---------WID-GDKRIHKILAKMGVPIVAAKQQWQYLDPPIKNKLPGLLKKYL  1092
+
+Query  386   PFYGLDDVIFHSFTRTYGFKCTLSASDVSYAISALLEMGNTGVLLQSKTVARSPDMTEEE  445
+             P     ++          ++C +++ DV  +++ALLE G  G+   S       D+ +E 
+Sbjct  1093  PELPQVEIF---------YRCGVTSMDVFVSLTALLETG-VGLNNTSANSIDHGDLEDEN  1242
+
+Query  446   YLEKFE-NAQNQEWLHNFYDAYDALDDVD-----SLERALKLAMHLQRAIVRTGITLLEK  499
+              L + E  ++   ++ NF+ A+D++          LE+ +  A  +Q+ + +T   ++E+
+Sbjct  1243  ELIRREIKSRESSYIRNFWSAFDSVSSFGISNNIGLEKGITAAKLVQKELFQTIKYIIEQ  1422
+
+Query  500   RAIKTLRSFRFGLINEGPDLKIFMHPLALTKMSLWIAEAINEQEREFGKLRHLPLVLAAF  559
+             + IK L+ +R  ++ +      F +P+ L K+S  I + + +Q  +       PLV+AA 
+Sbjct  1423  KLIKNLKVYRLCILKDESSHLGFDNPVLLIKLSNRIMDYLKQQTLK-------PLVVAA-  1578
+
+Query  560   VEEKNRYLIVGTSTSAFTSNEddddddGHGHNRFGVAFQEVANMTSATLQMDCFEASVIE  619
+              E  N Y ++G                   +N F       + ++ A ++ D FEAS++E
+Sbjct  1579  -ELSNTYFVLGMGI----------------NNAF-------SKISGAQMKKDFFEASLVE  1686
+
+Query  620   CQKSDLGVFLESLSF  634
+              +K DL  FLE L+F
+Sbjct  1687  IKKEDLAPFLEQLTF  1731
+
+
+
+Lambda      K        H        a         alpha
+   0.321    0.135    0.396    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1302503506
+
+
+Query= 2542250|NP_594694.1|chromosome I|cis4|-1|4726781|4729340|N/A|732|No description available
+
+Length=732
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+XM_710348.2 Candida albicans SC5314 metal cation transporter (CAA...  129     1e-31
+XM_717488.2 Candida albicans SC5314 Zn(2+) transporter (CAALFM_C2...  69.7    6e-13
+
+
+>XM_710348.2 Candida albicans SC5314 metal cation transporter 
+(CAALFM_C406770WA), partial mRNA
+Length=1881
+
+ Score = 129 bits (324),  Expect = 1e-31, Method: Compositional matrix adjust.
+ Identities = 67/138 (49%), Positives = 98/138 (71%), Gaps = 3/138 (2%)
+ Frame = +1
+
+Query  337   IVNGVLADKESRSIFYFFLLNVSYMFVQVIYGLWTNSLGLISDAIHMAFDCIAILVGLVA  396
+             I+  ++   ++R+IF F LLN ++MFVQ +Y   + SLGL+SD++HMA DC+++++GL+A
+Sbjct  877   ILKELMGHSDTRAIFNFLLLNATFMFVQFLYSFRSKSLGLLSDSLHMALDCMSLVLGLIA  1056
+
+Query  397   TTLAKMPL--NYAYPFGFAKIEALSGFTNGIFLVLISFSIVGEALYRLFHPPQM-NTDQL  453
+               ++K  +  N  YPFG    E L+GFTNG  LV IS SI+ EA+ RLF+P  +  T +L
+Sbjct  1057  GVISKHEIDSNGKYPFGLKNFEILAGFTNGTLLVGISGSILFEAIGRLFNPVHLQKTTEL  1236
+
+Query  454   LLVSFLGLVVNLVGILAF  471
+             ++VS LGL+VNLVGI AF
+Sbjct  1237  IIVSILGLLVNLVGIFAF  1290
+
+
+ Score = 110 bits (276),  Expect = 8e-26, Method: Compositional matrix adjust.
+ Identities = 63/149 (42%), Positives = 90/149 (60%), Gaps = 4/149 (3%)
+ Frame = +1
+
+Query  585   GIFLHIIADTMGSVGVIVSTILIQWFSWTGFDPLASLIIAALIFVSVLPLIKDSAKNLLS  644
+             GIFLHI+AD +GSVGV++STIL ++FSW GFDP+AS+IIA LIFVS +PLIK +A  LL 
+Sbjct  1441  GIFLHIMADALGSVGVVISTILTKYFSWDGFDPIASIIIATLIFVSAVPLIKSTASTLLL  1620
+
+Query  645   VTDPESEYLLKQClsnislsnsvislsnPKFWTNERGEVYGILHIQVSIDGDLNVVRNEV  704
+                   E  ++  L  +     V SL+ P+FW   R  V G +HIQV    + + ++ + 
+Sbjct  1621  SISKTKEDQIRNILHEVQQVKGVRSLTTPRFWPGPRNNVCGYVHIQVYRGENTSYIKRQC  1800
+
+Query  705   FRKLSIAVPNLKHICIQSERP-NNCWCGK  732
+              +       N+  + +Q E   ++CWC K
+Sbjct  1801  EKMFE--SRNMD-VMLQIENDYDDCWCRK  1878
+
+
+>XM_717488.2 Candida albicans SC5314 Zn(2+) transporter (CAALFM_C202200WA), 
+partial mRNA
+Length=1437
+
+ Score = 69.7 bits (169),  Expect = 6e-13, Method: Compositional matrix adjust.
+ Identities = 41/129 (32%), Positives = 73/129 (57%), Gaps = 3/129 (2%)
+ Frame = +1
+
+Query  345  KESRSIFYFFLLNVSYMFVQVIYGLWTNSLGLISDAIHMAFDCIAILVGLVATTLAKM-P  403
+            KE R I    +L+  +  ++ I G   +SL LI+D+ HM  D I++++ L A  +    P
+Sbjct  10   KEIR-IVALLILDTVFFLLEAIIGYTVHSLALIADSFHMLNDIISLIIALWAVRVKNTKP  186
+
+Query  404  LNYAYPFGFAKIEALSGFTNGIFLVLISFSIVGEALYRLFHPPQMNTDQL-LLVSFLGLV  462
+             +  Y +G+ + E L    N +FL+ + F+I+ +++ R F P +++  +L L+V   GLV
+Sbjct  187  ADGKYTYGWQRAEILGALINAVFLLALCFTIIMDSIQRFFEPQEISNPKLILIVGIAGLV  366
+
+Query  463  VNLVGILAF  471
+             N VG++ F
+Sbjct  367  SNGVGLVLF  393
+
+
+
+Lambda      K        H        a         alpha
+   0.329    0.143    0.438    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1522110240
+
+
+  Database: 1_subject_sequences\c_albicans\GCF_000182965.3\rna.fna
+    Posted date:  Nov 28, 2025  9:03 PM
+  Number of letters in database: 8,971,703
+  Number of sequences in database:  6,119
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 13
+Window for multiple hits: 40

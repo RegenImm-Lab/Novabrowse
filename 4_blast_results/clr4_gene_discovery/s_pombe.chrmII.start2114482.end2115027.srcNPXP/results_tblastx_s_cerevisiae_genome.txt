@@ -1,0 +1,109 @@
+TBLASTX 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: 1_subject_sequences\s_cerevisiae\GCF_000146045.2\GCF_000146045.2_R64
+_genomic.fna
+           17 sequences; 12,157,105 total letters
+
+
+
+Query= 2541941|NM_001019054.3|chromosome II|tfs1|-1|2114912|2116455|1200|293|No description available
+
+Length=1200
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value  N
+
+NC_001139.9 Saccharomyces cerevisiae S288C chromosome VII, comple...  163     1e-40  1
+
+
+>NC_001139.9 Saccharomyces cerevisiae S288C chromosome VII, complete 
+sequence
+Length=1090940
+
+ Score = 163 bits (351),  Expect = 1e-40
+ Identities = 62/116 (53%), Positives = 87/116 (75%), Gaps = 0/116 (0%)
+ Frame = +1/+3
+
+Query  610     YRNRMRSLYMNLKDKNNPKLRASVLRNEITPQRLSTMTSAELASEDRRKEDAKLEQENLF  789
+               Y+ R R +Y N+  KNNP L+  +   +ITP+ L+T  + +LA    +++  ++ ++NL+
+Sbjct  418065  YKARYRIIYSNVISKNNPDLKHKIANGDITPEFLATCDAKDLAPAPLKQKIEEIAKQNLY  418244
+
+Query  790     HAQGAKPQKAVTDLFTCGKCKQKKVSYYQMQTRSADEPMTTFCECTVCGNRWKFS*  957
+               +AQGA  +++VTD FTCGKCK+KKVSYYQ+QTRSADEP+TTFC C  CGNRWKFS*
+Sbjct  418245  NAQGATIERSVTDRFTCGKCKEKKVSYYQLQTRSADEPLTTFCTCEACGNRWKFS*  418412
+
+
+ Score = 71.2 bits (149),  Expect = 1e-12
+ Identities = 35/59 (59%), Positives = 37/59 (63%), Gaps = 0/59 (0%)
+ Frame = -2/-2
+
+Query  956     *ENFQRFPQTVHSQNVVIGSSADLVCIW**ETFFCLHFPQVKRSVTAFWGLAPCAWNKF  780
+               *ENF   P   H Q VV GSSADLVC  **+TFF LH P V  SVT    +APCA  KF
+Sbjct  418411  *ENFHLLPHASHVQKVVNGSSADLVCN***DTFFSLHLPHVNLSVTDLSMVAPCALYKF  418235
+
+
+
+Lambda      K        H
+   0.318    0.134    0.401 
+
+
+Effective search space used: 1442376720
+
+
+Query= 2539619|NM_001021773.3|chromosome II|mat1-Mc|1|2114481|2115026|546|181|No description available
+
+Length=546
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value  N
+
+NC_001148.4 Saccharomyces cerevisiae S288C chromosome XVI, comple...  51.5    1e-12  2
+
+
+>NC_001148.4 Saccharomyces cerevisiae S288C chromosome XVI, complete 
+sequence
+Length=948066
+
+ Score = 51.5 bits (106),  Expect(2) = 1e-12
+ Identities = 17/53 (32%), Positives = 32/53 (60%), Gaps = 0/53 (0%)
+ Frame = +1/+1
+
+Query  385     NNSQVSKLVGEMWRNESKEVRMRYFKMSEFYKAQHQKMYPGYKYQPRKNKVKR  543
+               +NS +SK++G  W+    E +  +  ++E  K +H++ YP YKY+P +   K+
+Sbjct  679813  HNSNISKIIGTKWKGLQPEDKAHWENLAEKEKLEHERKYPEYKYKPVRKSKKK  679971
+
+
+ Score = 36.3 bits (73),  Expect(2) = 1e-12
+ Identities = 14/34 (41%), Positives = 21/34 (62%), Gaps = 0/34 (0%)
+ Frame = +1/+1
+
+Query  265     ILKSLRKDTTSTERTPRPPNAFILYRKEKHATLL  366
+               + +S     +ST + PRP NAFIL+R+  H  L+
+Sbjct  679678  VRQSTMNPKSSTPKIPRPKNAFILFRQHYHRILI  679779
+
+
+
+Lambda      K        H
+   0.318    0.134    0.401 
+
+
+Effective search space used: 567231560
+
+
+  Database: 1_subject_sequences\s_cerevisiae\GCF_000146045.2\GCF_000146045.2_R64
+_genomic.fna
+    Posted date:  Nov 28, 2025  9:03 PM
+  Number of letters in database: 12,157,105
+  Number of sequences in database:  17
+
+
+
+Matrix: BLOSUM62
+Neighboring words threshold: 13
+Window for multiple hits: 40

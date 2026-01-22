@@ -1,0 +1,154 @@
+TBLASTX 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: 1_subject_sequences\c_albicans\GCF_000182965.3\rna.fna
+           6,119 sequences; 8,971,703 total letters
+
+
+
+Query= 2541941|NM_001019054.3|chromosome II|tfs1|-1|2114912|2116455|1200|293|No description available
+
+Length=1200
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value  N
+
+XM_707869.2 Candida albicans SC5314 transcription elongation fact...  219     3e-65  2
+
+
+>XM_707869.2 Candida albicans SC5314 transcription elongation 
+factor DST1 (CAALFM_C101860WA), partial mRNA
+Length=918
+
+ Score = 219 bits (473),  Expect(2) = 3e-65
+ Identities = 93/178 (52%), Positives = 118/178 (66%), Gaps = 0/178 (0%)
+ Frame = +1/+1
+
+Query  424  RTFKSDNVNVNVTDDKIRNNCIGLMYNALVIDSDESSSLIIAKAKEIDAQVLARAAGKTG  603
+            R  K+D VN  + ++  RN  +  +Y +L +D D+S   I+  A EI+A+V      K  
+Sbjct  385  RNPKTDGVNTQLYENDTRNASVSALYTSLAVDRDDSPKHILRIAIEIEAEVYKSEYLKVS  564
+
+Query  604  SEYRNRMRSLYMNLKDKNNPKLRASVLRNEITPQRLSTMTSAELASEDRRKEDAKLEQEN  783
+              YRNR+RS  MNL++K NP+LR  +L  +I P     MT  E+A E  +KE  KL ++N
+Sbjct  565  DSYRNRLRSFTMNLRNKKNPELRERILSKQILPAAFIKMTPNEMAPEALKKEIEKLHKQN  744
+
+Query  784  LFHAQGAKPQKAVTDLFTCGKCKQKKVSYYQMQTRSADEPMTTFCECTVCGNRWKFS*  957
+            LF AQGA  ++AVTD FTCGKCK KKVSYYQMQTRSADEP+TTFC C  CGNRWKFS*
+Sbjct  745  LFDAQGATEKRAVTDRFTCGKCKHKKVSYYQMQTRSADEPLTTFCTCENCGNRWKFS*  918
+
+
+ Score = 49.6 bits (102),  Expect(2) = 3e-65
+ Identities = 17/71 (24%), Positives = 42/71 (59%), Gaps = 0/71 (0%)
+ Frame = +1/+1
+
+Query  88   DIRSAKAALEKAIQGKNIETIINIMTRLKNEVVATEELLKETRLGLVVGKLRSHPNEKVG  267
+            D +  ++ +    +  +  TI+ ++  L + V  +E+LL+ET++G+ V K RSH + ++ 
+Sbjct  4    DTKEIRSTVSNLEKAVDDTTILKLLNILNDGVKPSEKLLRETKVGVAVNKFRSHDSAEIN  183
+
+Query  268  EQAREIVKKWK  300
+               +++++ W+
+Sbjct  184  GLVKKMIRNWR  216
+
+
+ Score = 79.4 bits (167),  Expect(2) = 4e-17
+ Identities = 38/58 (66%), Positives = 40/58 (69%), Gaps = 0/58 (0%)
+ Frame = -2/-2
+
+Query  953  ENFQRFPQTVHSQNVVIGSSADLVCIW**ETFFCLHFPQVKRSVTAFWGLAPCAWNKF  780
+            ENF   PQ    QNVV GSSADLVCI ** TF CLH PQV  SVTA + +AP A NKF
+Sbjct  914  ENFHLLPQFSQVQNVVKGSSADLVCI***LTFLCLHLPQVNLSVTALFSVAP*ASNKF  741
+
+
+ Score = 24.9 bits (48),  Expect(2) = 4e-17
+ Identities = 19/48 (40%), Positives = 21/48 (44%), Gaps = 0/48 (0%)
+ Frame = -1/-1
+
+Query  738  SQFGRSHGTESLRSNFIS*Y*CSKFRVIFIFKIHIQGPHSVSIFRTSF  595
+            S F R H  E  R N   *   S F V  I KIH +    +SI  T F
+Sbjct  699  SHFIRGHFNERSR*NLFR*DSFS*FWVFLISKIHGKAS*PISITVTYF  556
+
+
+ Score = 60.6 bits (126),  Expect(2) = 6e-12
+ Identities = 40/105 (38%), Positives = 54/105 (51%), Gaps = 0/105 (0%)
+ Frame = +2/+2
+
+Query  638  *ILKIKITRNLEHQYYEMKLLRKDSVP*LLPNWLQKTVARKMPS*NKKIYSMRKVLNPKK  817
+            *I +I+ T+N E + Y  K     S+ * L  WL +   RK+ +   K   M KVL  ++
+Sbjct  599  *IFEIRKTQN*EKESYRNKFYLLRSLK*PLMKWLLRH*KRKLKNCTNKTCLMLKVLLKRE  778
+
+Query  818  LLQTFLLVGSVSKKKFLITKCKQDLLMSL*QRFVNVLFAEIAGNF  952
+                  LV SVS ++ +I KCK D  MSL*  FV V    I G+F
+Sbjct  779  Q*PIDSLVASVSTRRSVIIKCKPDQRMSL*LHFVLVKIVAIDGSF  913
+
+
+ Score = 29.5 bits (58),  Expect(2) = 6e-12
+ Identities = 12/29 (41%), Positives = 19/29 (66%), Gaps = 0/29 (0%)
+ Frame = +1/+1
+
+Query  76   MDSADIRSAKAALEKAIQGKNIETIINIM  162
+            MD+ +IRS  + LEKA+    I  ++NI+
+Sbjct  1    MDTKEIRSTVSNLEKAVDDTTILKLLNIL  87
+
+
+
+Lambda      K        H
+   0.318    0.134    0.401 
+
+
+Effective search space used: 973699650
+
+
+Query= 2539619|NM_001021773.3|chromosome II|mat1-Mc|1|2114481|2115026|546|181|No description available
+
+Length=546
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value  N
+
+XM_710662.2 Candida albicans SC5314 Rfg1p (RFG1), partial mRNA        52.4    1e-11  2
+
+
+>XM_710662.2 Candida albicans SC5314 Rfg1p (RFG1), partial mRNA
+Length=1803
+
+ Score = 52.4 bits (108),  Expect(2) = 1e-11
+ Identities = 19/48 (40%), Positives = 29/48 (60%), Gaps = 0/48 (0%)
+ Frame = +1/+1
+
+Query  388  NSQVSKLVGEMWRNESKEVRMRYFKMSEFYKAQHQKMYPGYKYQPRKN  531
+            N +VS+ +G  WR  S + +  +  ++E  K  H K YPGY+Y PR+N
+Sbjct  718  NPEVSRELGRRWRGLSPQEKEHWNNLAEEEKKNHAKKYPGYRYTPRRN  861
+
+
+ Score = 31.8 bits (63),  Expect(2) = 1e-11
+ Identities = 12/34 (35%), Positives = 19/34 (56%), Gaps = 0/34 (0%)
+ Frame = +1/+1
+
+Query  292  TSTERTPRPPNAFILYRKEKHATLLKSNPSINNS  393
+            +   + PRP NAFIL+R++ H  +L     I  +
+Sbjct  619  SKVNKIPRPRNAFILFRQKYHQMVLDEGTVIRTN  720
+
+
+
+Lambda      K        H
+   0.318    0.134    0.401 
+
+
+Effective search space used: 386296008
+
+
+  Database: 1_subject_sequences\c_albicans\GCF_000182965.3\rna.fna
+    Posted date:  Nov 28, 2025  9:03 PM
+  Number of letters in database: 8,971,703
+  Number of sequences in database:  6,119
+
+
+
+Matrix: BLOSUM62
+Neighboring words threshold: 13
+Window for multiple hits: 40

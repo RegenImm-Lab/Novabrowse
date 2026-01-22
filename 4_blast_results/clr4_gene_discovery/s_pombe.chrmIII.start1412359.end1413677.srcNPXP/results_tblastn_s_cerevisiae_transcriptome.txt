@@ -1,0 +1,1713 @@
+TBLASTN 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: 1_subject_sequences\s_cerevisiae\GCF_000146045.2\rna.fna
+           6,138 sequences; 8,873,817 total letters
+
+
+
+Query= 2539499|NP_588180.1|chromosome III|hta1|-1|1411143|1412180|N/A|132|No description available
+
+Length=132
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001178243.1 Saccharomyces cerevisiae S288C histone H2A (HTA2),...  162     4e-53
+NM_001180533.3 Saccharomyces cerevisiae S288C histone H2A (HTA1),...  159     5e-52
+NM_001183266.1 Saccharomyces cerevisiae S288C histone H2AZ (HTZ1)...  80.5    6e-21
+
+
+>NM_001178243.1 Saccharomyces cerevisiae S288C histone H2A (HTA2), 
+partial mRNA
+Length=399
+
+ Score = 162 bits (409),  Expect = 4e-53, Method: Compositional matrix adjust.
+ Identities = 98/114 (86%), Positives = 107/114 (94%), Gaps = 0/114 (0%)
+ Frame = +1
+
+Query  19   RSAKAGLAFPVGRVHRLLRKGNYAQRVGAGAPvylaavleylaaeilelaGNAARDNKKT  78
+            RSAKAGL FPVGRVHRLLR+GNYAQR+G+GAPVYL AVLEYLAAEILELAGNAARDNKKT
+Sbjct  55   RSAKAGLTFPVGRVHRLLRRGNYAQRIGSGAPVYLTAVLEYLAAEILELAGNAARDNKKT  234
+
+Query  79   RIIPRHLQLAIRNDEELNKLLGHVTIAQGGVVPNINAHLLPKTSGRTGKPSQEL  132
+            RIIPRHLQLAIRND+ELNKLLG+VTIAQGGV+PNI+ +LLPK S +T K SQEL
+Sbjct  235  RIIPRHLQLAIRNDDELNKLLGNVTIAQGGVLPNIHQNLLPKKSAKTAKASQEL  396
+
+
+>NM_001180533.3 Saccharomyces cerevisiae S288C histone H2A (HTA1), 
+partial mRNA
+Length=399
+
+ Score = 159 bits (402),  Expect = 5e-52, Method: Compositional matrix adjust.
+ Identities = 97/114 (85%), Positives = 106/114 (93%), Gaps = 0/114 (0%)
+ Frame = +1
+
+Query  19   RSAKAGLAFPVGRVHRLLRKGNYAQRVGAGAPvylaavleylaaeilelaGNAARDNKKT  78
+            RSAKAGL FPVGRVHRLLR+GNYAQR+G+GAPVYL AVLEYLAAEILELAGNAARDNKKT
+Sbjct  55   RSAKAGLTFPVGRVHRLLRRGNYAQRIGSGAPVYLTAVLEYLAAEILELAGNAARDNKKT  234
+
+Query  79   RIIPRHLQLAIRNDEELNKLLGHVTIAQGGVVPNINAHLLPKTSGRTGKPSQEL  132
+            RIIPRHLQLAIRND+ELNKLLG+VTIAQGGV+PNI+ +LLPK S +  K SQEL
+Sbjct  235  RIIPRHLQLAIRNDDELNKLLGNVTIAQGGVLPNIHQNLLPKKSAKATKASQEL  396
+
+
+>NM_001183266.1 Saccharomyces cerevisiae S288C histone H2AZ (HTZ1), 
+partial mRNA
+Length=405
+
+ Score = 80.5 bits (197),  Expect = 6e-21, Method: Compositional matrix adjust.
+ Identities = 63/108 (58%), Positives = 78/108 (72%), Gaps = 2/108 (2%)
+ Frame = +1
+
+Query  21   AKAGLAFPVGRVHRLLRKGNYAQ-RVGAGAPvylaavleylaaeilelaGNAARDNKKTR  79
+            A+AGL FPVGR+ R L++    + RVG+ A +YL AVLEYL AE+LELAGNAA+D K  R
+Sbjct  79   ARAGLQFPVGRIKRYLKRHATGRTRVGSKAAIYLTAVLEYLTAEVLELAGNAAKDLKVKR  258
+
+Query  80   IIPRHLQLAIRNDEELNKLLGHVTIAQGGVVPNINAHLLPKTSGRTGK  127
+            I PRHLQLAIR D+EL+ L+   TIA GGV+P+IN  LL K   +  K
+Sbjct  259  ITPRHLQLAIRGDDELDSLI-RATIASGGVLPHINKALLLKVEKKGSK  399
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.135    0.390    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 128278748
+
+
+Query= 2539276|NP_588179.1|chromosome III|N/A|1|1409496|1410142|N/A|128|No description available
+
+Length=128
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.322    0.140    0.427    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 121178813
+
+
+Query= 2539282|NP_588178.1|chromosome III|N/A|-1|1408087|1409329|N/A|122|No description available
+
+Length=122
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.326    0.141    0.387    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 109083700
+
+
+Query= 2538750|NP_588176.1|chromosome III|N/A|1|1406676|1407257|N/A|140|No description available
+
+Length=140
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.321    0.137    0.397    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 145184899
+
+
+Query= 2538761|NP_588174.1|chromosome III|N/A|1|1405075|1405666|N/A|127|No description available
+
+Length=127
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.321    0.135    0.399    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 118705776
+
+
+Query= 2539301|NP_588175.1|chromosome III|N/A|-1|1404866|1406366|N/A|132|No description available
+
+Length=132
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.325    0.140    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 128278748
+
+
+Query= 2539533|NP_588173.1|chromosome III|N/A|-1|1403450|1404900|N/A|149|No description available
+
+Length=149
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.327    0.143    0.454    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 167331748
+
+
+Query= 2539167|NP_588172.1|chromosome III|wtf11|1|1399378|1400820|N/A|264|No description available
+
+Length=264
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.320    0.136    0.414    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 425531920
+
+
+Query= 2539028|NP_588171.2|chromosome III|gst4|-1|1397187|1398747|N/A|337|No description available
+
+Length=337
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001179866.3 Saccharomyces cerevisiae S288C S-glutathionyl-(chl...  338     1e-115
+NM_001182757.1 Saccharomyces cerevisiae S288C omega-class glutath...  296     2e-99 
+NM_001181283.3 Saccharomyces cerevisiae S288C omega-class glutath...  237     2e-76 
+
+
+>NM_001179866.3 Saccharomyces cerevisiae S288C S-glutathionyl-(chloro)hydroquinone 
+reductase (ECM4), partial mRNA
+Length=1113
+
+ Score = 338 bits (866),  Expect = 1e-115, Method: Compositional matrix adjust.
+ Identities = 174/362 (48%), Positives = 224/362 (62%), Gaps = 62/362 (17%)
+ Frame = +1
+
+Query  34    SSKDGEFRRQVSSFRERISPEHKYFQPEKDRYHLYVSYACPWAHRTLIVRKLKGLENVIP  93
+             S  +G F+RQVSSFRE IS +H  ++P K RY LYVS ACPWAHRTLI R LKGL +VI 
+Sbjct  19    SGTNGAFKRQVSSFRETISKQHPIYKPAKGRYWLYVSLACPWAHRTLITRALKGLTSVIG  198
+
+Query  94    VHVVGWLMGPNGWNF--------DKEN---------------------------------  112
+               VV W +   GW F        D E+                                 
+Sbjct  199   CSVVHWHLDEKGWRFLDMEKQLEDSEDFLEHWHDVAGGIRTAKEDSSKSFAEIKNDSQRF  378
+
+Query  113   --DSTGDPLYNSPYLRNLYFRADPNYNMRFTVPVLWDSKYNTIVNNESAEIIRMFND-AF  169
+               D+T +P Y    + +LY+++DP Y+ RFTVPVLWD +  TIVNNES+EIIR+ N  AF
+Sbjct  379   MVDATNEPHYGYKRISDLYYKSDPQYSARFTVPVLWDLETQTIVNNESSEIIRILNSSAF  558
+
+Query  170   NEVIEDEEKRVVDLYPSSLRTKIDELNDYFYDTVNNGVYKTGFATTAEAYEKNVRVVFQG  229
+             +E ++D+ K+  DL P+ L+T+ID+ N + YD++NNGVYKTGFA  AE YE  V  VF+ 
+Sbjct  559   DEFVDDDHKKT-DLVPAQLKTQIDDFNSWVYDSINNGVYKTGFAEKAEVYESEVNNVFEH  735
+
+Query  230   LDRLEQVLKESKGP-----------------FLLGDHLTETDVRLYTTIVRFDPVYVQHF  272
+             LD++E++L +                     F +GD LTE D+RLYTT++RFDPVYVQHF
+Sbjct  736   LDKVEKILSDKYSKLKAKYGEEDRQKILGEFFTVGDQLTEADIRLYTTVIRFDPVYVQHF  915
+
+Query  273   KCNIGTIRHNYPHINQWLKRLYWKHPAFHETTDFKHIKCHYTQSHTQINPLGITPLGPIP  332
+             KCN  +IR  YP I+ W++ LYW + AF  TTDF HIK HYT+SHT+INPLGITPLGP P
+Sbjct  916   KCNFTSIRAGYPFIHLWVRNLYWNYDAFRYTTDFDHIKLHYTRSHTRINPLGITPLGPKP  1095
+
+Query  333   NV  334
+             ++
+Sbjct  1096  DI  1101
+
+
+>NM_001182757.1 Saccharomyces cerevisiae S288C omega-class glutathione 
+transferase (GTO3), partial mRNA
+Length=1101
+
+ Score = 296 bits (758),  Expect = 2e-99, Method: Compositional matrix adjust.
+ Identities = 162/357 (45%), Positives = 200/357 (56%), Gaps = 56/357 (16%)
+ Frame = +1
+
+Query  34    SSKDGEFRRQVSSFRERISPEHKYFQPEKDRYHLYVSYACPWAHRTLIVRKLKGLENVIP  93
+             S+   EF+RQ S FRE IS +H  ++P K RY LYV+  CPWA RTLI R LKGL  +I 
+Sbjct  19    SNNKAEFKRQSSPFREIISADHPIYKPAKGRYWLYVALPCPWAQRTLITRALKGLAPIIG  198
+
+Query  94    VHVVGWLMGPNGWNFDKENDS---------------------------------------  114
+               V  W +   GW F +E D                                        
+Sbjct  199   CSVAHWHLDDKGWRFLEEGDGKTNERHWFDIAGGISSVNLNTSTPVANIPNNAHRLLVDG  378
+
+Query  115   TGDPLYNSPYLRNLYFRADPNYNMRFTVPVLWDSKYNTIVNNESAEIIRMFNDAFNEVIE  174
+             T +P Y    L + YF+  P+Y  RFTVPVLWD +  TIVNNES++II + N A  +   
+Sbjct  379   TDEPHYGYKRLSDFYFKTKPDYKGRFTVPVLWDLETCTIVNNESSDIIGIMNSAAFDEFV  558
+
+Query  175   DEEKRVVDLYPSSLRTKIDELNDYFYDTVNNGVYKTGFATTAEAYEKNVRVVFQGLDRLE  234
+              EE R V L P SL  +I E N + YD +NNGVYK GFA  AE YE+ V  +FQ LD+LE
+Sbjct  559   GEEYRQVRLVPRSLEAQITEFNSWVYDKINNGVYKAGFAECAEVYEREVTSLFQYLDKLE  738
+
+Query  235   QVL------------KESKGP-----FLLGDHLTETDVRLYTTIVRFDPVYVQHFKCNIG  277
+              +L            K +K       F +GD LTE DVRLY TIVRFD VY QHFKCN+ 
+Sbjct  739   NLLDKKYTDLEAEYGKNNKDKILDRYFAIGDTLTEADVRLYPTIVRFDVVYHQHFKCNLA  918
+
+Query  278   TIRHNYPHINQWLKRLYWKHPAFHETTDFKHIKCHYTQSHTQINPLGITPLGPIPNV  334
+             TIR +Y  I+ WLK +YW+H AF  TTDF HIK  YT+S  ++NP+GITPLGP P++
+Sbjct  919   TIRDDYSRIHTWLKNIYWRHEAFQRTTDFTHIKLGYTRSQPRVNPIGITPLGPKPDI  1089
+
+
+>NM_001181283.3 Saccharomyces cerevisiae S288C omega-class glutathione 
+transferase (GTO1), partial mRNA
+Length=1071
+
+ Score = 237 bits (604),  Expect = 2e-76, Method: Compositional matrix adjust.
+ Identities = 137/350 (39%), Positives = 184/350 (53%), Gaps = 61/350 (17%)
+ Frame = +1
+
+Query  46    SFRERISPEHKYFQPEKDRYHLYVSYACPWAHRTLIVRKLKGLENVIPVHVVGWLMGPNG  105
+             S++  IS  H  F+PEK RY++Y +  CP+ HR ++ R LK LE V+ + +  W +   G
+Sbjct  10    SYKGTISKTHSVFKPEKGRYYIYGALGCPFTHRAILARSLKKLEPVLGLVLSHWQLDSKG  189
+
+Query  106   WNF---------------------------------DKENDSTG-------DPLYNSPYL  125
+               F                                 D  NDS         DP+ N   L
+Sbjct  190   ARFLPAPHRPEKYKERFFTATGGIASAKLDESEELGDVNNDSARLFVDGAFDPVENISRL  369
+
+Query  126   RNLYFRADPNY-NMRFTVPVLWDSKYNTIVNNESAEIIRMFNDA-FNEVIEDEEKRVVDL  183
+               LY+  DP Y   +FTVPVLWDSK   IVNNES +IIR+ N   F+E I+ EE  V+DL
+Sbjct  370   SELYYLNDPKYPGTKFTVPVLWDSKTRKIVNNESGDIIRILNSGVFDEFIQSEETNVIDL  549
+
+Query  184   YPSSLRTKIDELNDYFYDTVNNGVYKTGFATTAEAYEKNVRVVFQGLDRLEQVLKES---  240
+              P  L  +ID+   + +  +N GVYK G A   + YE  V+ +F+ L ++E VLKE+   
+Sbjct  550   VPHDLIDEIDKNIKWVHPKINLGVYKVGLAENGKIYETEVKTLFENLQKMECVLKENYKR  729
+
+Query  241   -------------KGPFLLGDHLTETDVRLYTTIVRFDPVYVQHFKCNIGTIRHNYPHIN  287
+                             F+LG  LTE D+RLY +I+RFD VYVQHFKCN+ TIR  +P+++
+Sbjct  730   LEEQFSGNKQKILAKYFVLGQRLTEADIRLYPSIIRFDVVYVQHFKCNLKTIRDGFPYLH  909
+
+Query  288   QWLKRLYWKHPAFHETTDFKHIKCHYTQ---SHTQINPLGITPLGPIPNV  334
+              WL  LYW +  F  TTDF HIK  Y +   S  +IN  GI PLGP P++
+Sbjct  910   LWLINLYWNYAEFRFTTDFNHIKLFYIRMEVSRNKINQFGIVPLGPKPDI  1059
+
+
+
+Lambda      K        H        a         alpha
+   0.322    0.139    0.440    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 594163193
+
+
+Query= 2538753|NP_588170.1|chromosome III|ole1|-1|1392543|1394875|N/A|479|No description available
+
+Length=479
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001180920.3 Saccharomyces cerevisiae S288C stearoyl-CoA 9-desa...  420     9e-144
+
+
+>NM_001180920.3 Saccharomyces cerevisiae S288C stearoyl-CoA 9-desaturase 
+(OLE1), partial mRNA
+Length=1533
+
+ Score = 420 bits (1079),  Expect = 9e-144, Method: Compositional matrix adjust.
+ Identities = 202/402 (50%), Positives = 285/402 (71%), Gaps = 5/402 (1%)
+ Frame = +1
+
+Query  37    ERKWDPKAPKHIQEQPWTMQNWWRHLNWLHCMLIFGLPMIAIYGVFT--TPLQTKTLIFA  94
+             + K + K   HI EQPWT+ NW +HLNWL+ +L+ G+PMI  Y   +   PL     +F+
+Sbjct  256   QEKEEAKTKIHISEQPWTLNNWHQHLNWLNMVLVCGMPMIGWYFALSGKVPLHLNVFLFS  435
+
+Query  95    IIYYAYSGLGITAGYHRLWSHRAYKAKKPLEYFLaaggaaaFEGSIRWWSRDHRAHHRYT  154
+             + YYA  G+ ITAGYHRLWSHR+Y A  PL  F A  G A+ EGS +WW   HR HHRYT
+Sbjct  436   VFYYAVGGVSITAGYHRLWSHRSYSAHWPLRLFYAIFGCASVEGSAKWWGHSHRIHHRYT  615
+
+Query  155   DTDKDPYNVKKGFWYAHVGWMIILQNPRRIGRSDVSDLNSDPFVMFNHRHFLPIASFMAF  214
+             DT +DPY+ ++G WY+H+GWM++  NP+   R+D++D+  D  + F HRH++ +    AF
+Sbjct  616   DTLRDPYDARRGLWYSHMGWMLLKPNPKYKARADITDMTDDWTIRFQHRHYILLMLLTAF  795
+
+Query  215   IFPSLFCGLLWGDYRGGYFYAGVCRLVFVHHATFCVNSLAHLIGSQPFDDTNSARNHFIT  274
+             + P+L CG  + DY GG  YAG  R+  +  ATFC+NSLAH IG+QPFDD  + R+++IT
+Sbjct  796   VIPTLICGYFFNDYMGGLIYAGFIRVFVIQQATFCINSLAHYIGTQPFDDRRTPRDNWIT  975
+
+Query  275   ALVTLGEGNHNYHHAFPNDYRNGLRWYEYDPTKIFIYIASLFGLAYNLNTFPDNEiqkgi  334
+             A+VT GEG HN+HH FP DYRN ++WY+YDPTK+ IY+ SL GLAY+L  F  N I++ +
+Sbjct  976   AIVTFGEGYHNFHHEFPTDYRNAIKWYQYDPTKVIIYLTSLVGLAYDLKKFSQNAIEEAL  1155
+
+Query  335   vqqkqkvLDRWRAKLNWGIPLEQLPVMEFEDFLEQSK-TRPLVLINGVVHDMTGF--EHP  391
+             +QQ+QK +++ +AK+NWG  L  LP+ + + FL +SK  + LV+I+G+VHD++G+  EHP
+Sbjct  1156  IQQEQKKINKKKAKINWGPVLTDLPMWDKQTFLAKSKENKGLVIISGIVHDVSGYISEHP  1335
+
+Query  392   GGQGLLRSAFGKDATAAFNGGVYDHTNGAHNLLSTYRVAVVR  433
+             GG+ L+++A GKDAT AF+GGVY H+N A N+L+  RVAV++
+Sbjct  1336  GGETLIKTALGKDATKAFSGGVYRHSNAAQNVLADMRVAVIK  1461
+
+
+
+Lambda      K        H        a         alpha
+   0.325    0.140    0.467    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 916672295
+
+
+Query= 2538836|NP_588169.1|chromosome III|rsc7|1|1388704|1392087|N/A|390|No description available
+
+Length=390
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001182591.1 Saccharomyces cerevisiae S288C Npl6p (NPL6), parti...  183     3e-54
+NM_001179918.1 Saccharomyces cerevisiae S288C Swp82p (SWP82), par...  72.8    2e-14
+
+
+>NM_001182591.1 Saccharomyces cerevisiae S288C Npl6p (NPL6), partial 
+mRNA
+Length=1308
+
+ Score = 183 bits (465),  Expect = 3e-54, Method: Compositional matrix adjust.
+ Identities = 104/284 (37%), Positives = 160/284 (56%), Gaps = 15/284 (5%)
+ Frame = +1
+
+Query  91    DPEGEKKVNELGYLNGGREYRCRTFTCLGRGNRLYMLSTEPARAMGYRDSYLLFLKHRSL  150
+             DPEGE K+   G L GGRE+  RTFT   +GNR +ML+TEPAR +G+RDSYL F  H +L
+Sbjct  388   DPEGETKITADGDLLGGREFLVRTFTLTEKGNRKFMLATEPARIVGFRDSYLFFQTHPNL  567
+
+Query  151   HKIIVDDSEKWDLIERNIIPHSYKGRAVGIVAARSIFREFGARIIVGGRRIVDDYWEGEF  210
+             +K I++ ++K DLI+R ++P+SY+ R + +V AR +F+EFGA+II GG+ I DDY+  E 
+Sbjct  568   YKFILNQTQKNDLIDRGVLPYSYRNRQIALVTARGVFKEFGAKIIRGGKHITDDYYASEL  747
+
+Query  211   RARG-FVEGELA-DPDDK----LPPPGMPYNRNQYVAWHGASAVYHPQPSLEAQLpaaar  264
+             R +G  +EG+LA DP DK    L     P + N           +  +P     +  +  
+Sbjct  748   RTKGNVIEGKLAGDPIDKSARALETMMYPASENGINPAKNQVEFFEHRP--HGHMSNSNI  921
+
+Query  265   krkkeppkdaTWLFQHAKATAAYNNDI----TKYLVQKQDIGYFEPHTNLLHVPLNTQPT  320
+                        WL+QH+ A + +N+D+     K L+  Q  G  + +TN+LH+P +TQ T
+Sbjct  922   IASGSKLSSTNWLYQHSAACSRFNSDLFYDRVKVLLVDQQ-GLRDAYTNILHIPESTQST  1098
+
+Query  321   KT-HWIQAKTGTECPAPKLDILVALNSDV-APQVSIANIPPSVY  362
+                 W ++K  +      +   V  ++D+  P+  ++ IP  +Y
+Sbjct  1099  TVLGWRRSKNDSPSDTSIVYETVIHDNDLNKPKTGLSEIPKEIY  1230
+
+
+>NM_001179918.1 Saccharomyces cerevisiae S288C Swp82p (SWP82), 
+partial mRNA
+Length=1872
+
+ Score = 72.8 bits (177),  Expect = 2e-14, Method: Compositional matrix adjust.
+ Identities = 43/123 (35%), Positives = 60/123 (49%), Gaps = 5/123 (4%)
+ Frame = +1
+
+Query  90   VDPEGEKKVNELGYLNGGREYRCRTFTCLGRGNRLYMLSTEPARAM----GYRDSYLLFL  145
+            +D  GEKKV   G L GGR Y   TFT       L +L  +  + +       D     +
+Sbjct  274  LDAYGEKKVGSNGELFGGRHYLFNTFTFTAHMGVLLVLLQDVIKVLYQSNATHDEDEFIV  453
+
+Query  146  KHRSLHKIIVDDSEKWDLIERNIIPHSYKGRAVGIVAARSIFREFGARIIVGGRRIVDDY  205
+            +H  +  +   + +   L +  +IP   KG +   + ARS F EFGA +I GG+RIVDDY
+Sbjct  454  QHDQILVMETSEEQTKFLAKNGVIPEESKG-SFKYITARSAFVEFGASVIAGGQRIVDDY  630
+
+Query  206  WEG  208
+            WE 
+Sbjct  631  WES  639
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.135    0.415    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 713186414
+
+
+Query= 2539165|NP_588168.1|chromosome III|akr7|1|1386604|1387960|N/A|333|No description available
+
+Length=333
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001184224.1 Saccharomyces cerevisiae S288C pyridoxine 4-dehydr...  153     2e-44
+
+
+>NM_001184224.1 Saccharomyces cerevisiae S288C pyridoxine 4-dehydrogenase 
+(YPR127W), partial mRNA
+Length=1038
+
+ Score = 153 bits (387),  Expect = 2e-44, Method: Compositional matrix adjust.
+ Identities = 102/305 (33%), Positives = 156/305 (51%), Gaps = 40/305 (13%)
+ Frame = +1
+
+Query  13   GLGLMGLTWRPKQTPIKQAFELMNYALSQGSN-----YWNAGEFYGINPPTANLDLLADY  67
+            G GLM LTWR +  P  QAFE M+  +          ++N GEFYG  P   NL  + D+
+Sbjct  46   GYGLMSLTWRAEPIPQSQAFEAMHRVVELSRERGHKAFFNVGEFYG--PDFINLSYVHDF  219
+
+Query  68   FEKYPKNADKVFLSVKGGTDFKTLAPHGDPESVTKSVKNALTRLRGKKKLDLFQCARVDH  127
+            F KYP     V +S KGG D  TL P G  + V +SVKN+++ + G   +D+F+ AR+D 
+Sbjct  220  FAKYPDLRKDVVISCKGGADNATLTPRGSHDDVVQSVKNSVSAIGGY--IDIFEVARIDT  393
+
+Query  128  KV-------PIETTMKALKAFVDSGEISCVGLSEASAESIKRALAIVP-----IAAVETE  175
+             +       P E+  +AL   +  G I  + LSE + E I+   AI       +  VE E
+Sbjct  394  SLCTKGEVYPYES-FEALAEMISEGVIGGISLSEVNEEQIR---AIHKDWGKFLTCVEVE  561
+
+Query  176  YSLFSRDIEKNGILDTCTQLSIPIIAYAPFCHGLLTGRVKTAEDLKDFIKAFPFLRNMDK  235
+             SLFS DI  NGI  TC +L + II Y+P   GLLTG++K+  D    I    F +++ +
+Sbjct  562  LSLFSNDILHNGIAKTCAELGLSIICYSPLGRGLLTGQLKSNAD----IPEGDFRKSLKR  729
+
+Query  236  FNPKVFEKNIPFLK-----AVEQLAQKFGMSMPEFALNFIIANGK------GMIIPIPGS  284
+            F+ +  +KN+  ++      V++  Q   +++ + AL ++    K         IPIP  
+Sbjct  730  FSDESLKKNLTLVRFLQEEIVDKRPQNNSITLAQLALGWVKHWNKVPEYSGAKFIPIPSG  909
+
+Query  285  TTVQR  289
+            +++ +
+Sbjct  910  SSISK  924
+
+
+
+Lambda      K        H        a         alpha
+   0.320    0.138    0.405    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 584541117
+
+
+Query= 2539075|NP_588167.1|chromosome III|emc4|-1|1383702|1384974|N/A|193|No description available
+
+Length=193
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001181097.1 Saccharomyces cerevisiae S288C chaperone EMC4 (EMC...  110     3e-31
+
+
+>NM_001181097.1 Saccharomyces cerevisiae S288C chaperone EMC4 
+(EMC4), partial mRNA
+Length=573
+
+ Score = 110 bits (275),  Expect = 3e-31, Method: Compositional matrix adjust.
+ Identities = 66/153 (43%), Positives = 87/153 (57%), Gaps = 3/153 (2%)
+ Frame = +1
+
+Query  26   DNSDKFPTPRGFQQKSLVSKNIHSGNSASSTSIFAkreeelqkdlllkkAWELAYSPLKQ  85
+             NS+  P+P GF+  S    N+      +++   +  ++     L ++KAW++A  P K 
+Sbjct  73   QNSNTLPSPPGFEGNS-SKGNVTRKQQDATSQTTSLAQKNQITVLQVQKAWQIALQPAKS  249
+
+Query  86   IPMNAILAYMSGNSLQIFSIMTTLMLLVNPLKAITSTGSAFTPFKGTHP--GTLWPAMGA  143
+            IPMN  ++YMSG SLQI  IMT LMLL  P+KAI ST SAF P  G       +  AM  
+Sbjct  250  IPMNIFMSYMSGTSLQIIPIMTALMLLSGPIKAIFSTRSAFKPVLGNKATQSQVQTAMFM  429
+
+Query  144  YILFQLLLMGIGVYKLQRMGLLPTTTSDWLAWE  176
+            YI+FQ +LM IG  KL  MGL+P    DWL WE
+Sbjct  430  YIVFQGVLMYIGYRKLNSMGLIPNAKGDWLPWE  528
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.132    0.404    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 263110572
+
+
+Query= 2541530|NP_593315.1|chromosome III|sla1|-1|1382407|1383547|N/A|298|No description available
+
+Length=298
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001180110.1 Saccharomyces cerevisiae S288C tRNA maturation pro...  132     2e-37
+
+
+>NM_001180110.1 Saccharomyces cerevisiae S288C tRNA maturation 
+protein LHP1 (LHP1), partial mRNA
+Length=828
+
+ Score = 132 bits (332),  Expect = 2e-37, Method: Compositional matrix adjust.
+ Identities = 85/216 (39%), Positives = 128/216 (59%), Gaps = 27/216 (13%)
+ Frame = +1
+
+Query  67   VLKQVEFYFSDTNLPHDKFLWTTSQKNDGWVPIQTIANFKRMRRFQPLEAIVNALRKSPE  126
+             LKQVEFYFS+ N P+D+FL TT++KNDGWVPI TIA F RM++++P++ ++ ALR S E
+Sbjct  97   CLKQVEFYFSEFNFPYDRFLRTTAEKNDGWVPISTIATFNRMKKYRPVDKVIEALRSS-E  273
+
+Query  127  LLEVDEAGEKVRRMIPL-------VRVDNKSVMERSVYCKGFGDEK-DDTQIA-----LE  173
+            +LEV   GE V+R +PL        R++     +R++    F  E  + +QI      LE
+Sbjct  274  ILEVSADGENVKRRVPLDLTAARNARIEQN---QRTLAVMNFPHEDVEASQIPELQENLE  444
+
+Query  174  KFFEENAGPISAVRMRRDD-DKKFKGSVFVEFKEPDVANKFLEKV-----KTAPLKWGED  227
+             FF++  G I+ VR+RRD  +KKF G+V VEFK       FL+           L +   
+Sbjct  445  AFFKK-LGEINQVRLRRDHRNKKFNGTVLVEFKTIPECEAFLKSYSNDDESNEILSYEGK  621
+
+Query  228  ELTIMSKKEYVDMKAELHKNDPPKFSSKRRRFDAFK  263
+            +L++++KK++ D++ E  K+    FS + R F+  K
+Sbjct  622  KLSVLTKKQF-DLQREASKSK--NFSGRSRSFNGHK  720
+
+
+
+Lambda      K        H        a         alpha
+   0.312    0.129    0.361    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 504036313
+
+
+Query= 2539523|NP_588181.1|chromosome III|htb1|1|1412358|1413676|N/A|126|No description available
+
+Length=126
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001180532.3 Saccharomyces cerevisiae S288C histone H2B (HTB1),...  183     9e-62
+NM_001178242.1 Saccharomyces cerevisiae S288C histone H2B (HTB2),...  182     2e-61
+
+
+>NM_001180532.3 Saccharomyces cerevisiae S288C histone H2B (HTB1), 
+partial mRNA
+Length=396
+
+ Score = 183 bits (465),  Expect = 9e-62, Method: Compositional matrix adjust.
+ Identities = 88/100 (88%), Positives = 94/100 (94%), Gaps = 0/100 (0%)
+ Frame = +1
+
+Query  27   KKRGKNRKETYSSYIYKVLKQVHPDTGISNQAMRILNSFVNDIFERIATEASKLAAYNKK  86
+            KKR K RKETYSSYIYKVLKQ HPDTGIS ++M ILNSFVNDIFERIATEASKLAAYNKK
+Sbjct  91   KKRSKARKETYSSYIYKVLKQTHPDTGISQKSMSILNSFVNDIFERIATEASKLAAYNKK  270
+
+Query  87   STISSREIQTAVRLILPGELAKHAVTEGTKSVTKYSSSAQ  126
+            STIS+REIQTAVRLILPGELAKHAV+EGT++VTKYSSS Q
+Sbjct  271  STISAREIQTAVRLILPGELAKHAVSEGTRAVTKYSSSTQ  390
+
+
+>NM_001178242.1 Saccharomyces cerevisiae S288C histone H2B (HTB2), 
+partial mRNA
+Length=396
+
+ Score = 182 bits (463),  Expect = 2e-61, Method: Compositional matrix adjust.
+ Identities = 88/100 (88%), Positives = 94/100 (94%), Gaps = 0/100 (0%)
+ Frame = +1
+
+Query  27   KKRGKNRKETYSSYIYKVLKQVHPDTGISNQAMRILNSFVNDIFERIATEASKLAAYNKK  86
+            KKR K RKETYSSYIYKVLKQ HPDTGIS ++M ILNSFVNDIFERIATEASKLAAYNKK
+Sbjct  91   KKRSKVRKETYSSYIYKVLKQTHPDTGISQKSMSILNSFVNDIFERIATEASKLAAYNKK  270
+
+Query  87   STISSREIQTAVRLILPGELAKHAVTEGTKSVTKYSSSAQ  126
+            STIS+REIQTAVRLILPGELAKHAV+EGT++VTKYSSS Q
+Sbjct  271  STISAREIQTAVRLILPGELAKHAVSEGTRAVTKYSSSTQ  390
+
+
+
+Lambda      K        H        a         alpha
+   0.310    0.122    0.315    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 116232739
+
+
+Query= 2539341|NP_588182.1|chromosome III|sec5|-1|1413419|1416193|N/A|815|No description available
+
+Length=815
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.131    0.380    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1689549555
+
+
+Query= 9843672|NP_588182.1|chromosome III|N/A|-1|1413636|1416149|N/A|815|No description available
+
+Length=815
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.131    0.380    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1689549555
+
+
+Query= 2538812|NP_588183.2|chromosome III|lmb1|1|1417252|1419223|N/A|505|No description available
+
+Length=505
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.331    0.142    0.443    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 978577437
+
+
+Query= 3361548|NP_001342824.1|chromosome III|atg6|-1|1418899|1420481|N/A|464|No description available
+
+Length=464
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001183934.1 Saccharomyces cerevisiae S288C beclin 1 (VPS30), p...  93.6    6e-21
+
+
+>NM_001183934.1 Saccharomyces cerevisiae S288C beclin 1 (VPS30), 
+partial mRNA
+Length=1674
+
+ Score = 93.6 bits (231),  Expect = 6e-21, Method: Compositional matrix adjust.
+ Identities = 76/265 (29%), Positives = 124/265 (47%), Gaps = 60/265 (23%)
+ Frame = +1
+
+Query  245   QIKKLSLERQYDCANLEFEHNSR-----------KLEKLQKMNVFSDIFYISHYSEPNGE  293
+             +++KLS +   D  N++F  N +           +L+KL+K+N+F+  F ISH       
+Sbjct  835   KLQKLSDQNLMDLNNIQFNKNLQSLKLQYELSLNQLDKLRKINIFNATFKISH------S  996
+
+Query  294   GSIATINGLRLGRLPSQKVNWAEINAAWGMTVLLLDVLTEKLDFHSSSYQLKPFGSQSFI  353
+             G  ATINGLRLG +P   V W EINAA G  +LLL  + + L  +   Y+L+P GS S I
+Sbjct  997   GPFATINGLRLGSIPESVVPWKEINAALGQLILLLATINKNLKINLVDYELQPMGSFSKI  1176
+
+Query  354   -------IRFDRD----PNGNQVKPTKLDL-FSSGELKIFMNR-RFDQGMVAFLDYL---  397
+                    + ++      P    + P   D  F+ G  +IF    +FD+ +   L+ +   
+Sbjct  1177  KKRMVNSVEYNNSTTNAPGDWLILPVYYDENFNLG--RIFRKETKFDKSLETTLEIISEI  1350
+
+Query  398   -HQFGDFCAAKTPSAV-----------------------LPYAIENDRIGGKCIRL-AFN  432
+               Q     ++ +   +                       LPY +  D+I G  ++L   +
+Sbjct  1351  TRQLSTIASSYSSQTLTTSQDESSMNNANDVENSTSILELPYIMNKDKINGLSVKLHGSS  1530
+
+Query  433   QDENWTRALKFVLTDIKFLEAYVSS  457
+              +  WT A+KF+LT++K+L A+ S+
+Sbjct  1531  PNLEWTTAMKFLLTNVKWLLAFSSN  1605
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.133    0.386    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 885615955
+
+
+Query= 2539147|NP_588184.1|chromosome III|gdh1|-1|1419130|1421202|N/A|451|No description available
+
+Length=451
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001178204.1 Saccharomyces cerevisiae S288C glutamate dehydroge...  528     0.0  
+NM_001183795.3 Saccharomyces cerevisiae S288C glutamate dehydroge...  526     0.0  
+
+
+>NM_001178204.1 Saccharomyces cerevisiae S288C glutamate dehydrogenase 
+(NADP(+)) GDH3 (GDH3), partial mRNA
+Length=1374
+
+ Score = 528 bits (1359),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 276/454 (61%), Positives = 334/454 (74%), Gaps = 12/454 (3%)
+ Frame = +1
+
+Query  6     EPEFQQAYKEIVGSIESSKLFEVHPELKRVLPIISIPERVLEFRVTWEDDKGNCRVNTGY  65
+             EPEFQQAY EIV S+E SK+FE  P+ K+VLPI+S+PER+++FRVTWE+D G   V  GY
+Sbjct  10    EPEFQQAYDEIVSSVEDSKIFEKFPQYKKVLPIVSVPERIIQFRVTWENDNGEQEVAQGY  189
+
+Query  66    RVQFNSALGPYKGGLRFHPSVNLSILKFLGFEQIFKNALTGLPMgggkggSDFDPKGKSD  125
+             RVQFNSA GPYKGGLRFHPSVNLSILKFLGFEQIFKNALTGL MGGGKGG   D KGKSD
+Sbjct  190   RVQFNSAKGPYKGGLRFHPSVNLSILKFLGFEQIFKNALTGLDMGGGKGGLCVDLKGKSD  369
+
+Query  126   NEIRRFSQAFMRQLFRYIGPQTDVPAGDIGVTGFVVMHMFGEYKRLRNEYSGVVTGKHML  185
+             NEIRR   AFMR+L R+IG  TDVPAGDIGV G  + ++FG Y+  +N + GV+TGK + 
+Sbjct  370   NEIRRICYAFMRELSRHIGKDTDVPAGDIGVGGREIGYLFGAYRSYKNSWEGVLTGKGLN  549
+
+Query  186   TGGSNIRPEATGYGVVYYVKHMIEHRTKGAETLKGKRVAISGSGNVAQYAALKCIQEGAI  245
+              GGS IRPEATG+G+VYY + MI++ T G E+ +GKRV ISGSGNVAQYAALK I+ G I
+Sbjct  550   WGGSLIRPEATGFGLVYYTQAMIDYATNGKESFEGKRVTISGSGNVAQYAALKVIELGGI  729
+
+Query  246   VKSISDSKGVLIAKTAEGLVPEEIHEIMALKEKRAS---IADSASLC--KKHHYIAGARP  300
+             V S+SDSKG +I++T  G+  E+IH+I + K +  S   I D  S     K  Y+AGARP
+Sbjct  730   VVSLSDSKGCIISET--GITSEQIHDIASAKIRFKSLEEIVDEYSTFSESKMKYVAGARP  903
+
+Query  301   WTNVGEIDIALPCATQNEVSGEEAAALIKQGCRYVAEGSNMGSSAEAVEVFEKSRASG--  358
+             WT+V  +DIALPCATQNEVSG+EA AL+  G ++VAEG+NMGS+ EA+ VFE +R++   
+Sbjct  904   WTHVSNVDIALPCATQNEVSGDEAKALVASGVKFVAEGANMGSTPEAISVFETARSTATN  1083
+
+Query  359   --EGCWLAPGKAANAGGVAVSGLEMAQNAQFSTWTHAEVDAKLAGIMQNIFEQSTDVASK  416
+               +  W  P KAAN GGVAVSGLEMAQN+Q  TWT   VD +L  IM N F      A +
+Sbjct  1084  AKDAVWFGPPKAANLGGVAVSGLEMAQNSQKVTWTAERVDQELKKIMINCFNDCIQAAQE  1263
+
+Query  417   Y-CDSGSNNIPSLVDGANIAGFLKVATAMQAVGD  449
+             Y  +  +N +PSLV GANIA F+ VA AM   GD
+Sbjct  1264  YSTEKNTNTLPSLVKGANIASFVMVADAMLDQGD  1365
+
+
+>NM_001183795.3 Saccharomyces cerevisiae S288C glutamate dehydrogenase 
+(NADP(+)) GDH1 (GDH1), partial mRNA
+Length=1365
+
+ Score = 526 bits (1356),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 275/453 (61%), Positives = 335/453 (74%), Gaps = 12/453 (3%)
+ Frame = +1
+
+Query  6     EPEFQQAYKEIVGSIESSKLFEVHPELKRVLPIISIPERVLEFRVTWEDDKGNCRVNTGY  65
+             EPEFQQAY+E+V S+E S LFE HPE ++VLPI+S+PER+++FRVTWE+DKG   V  GY
+Sbjct  7     EPEFQQAYEEVVSSLEDSTLFEQHPEYRKVLPIVSVPERIIQFRVTWENDKGEQEVAQGY  186
+
+Query  66    RVQFNSALGPYKGGLRFHPSVNLSILKFLGFEQIFKNALTGLPMgggkggSDFDPKGKSD  125
+             RVQ+NSA GPYKGGLRFHPSVNLSILKFLGFEQIFKN+LTGL MGGGKGG   D KG+S+
+Sbjct  187   RVQYNSAKGPYKGGLRFHPSVNLSILKFLGFEQIFKNSLTGLDMGGGKGGLCVDLKGRSN  366
+
+Query  126   NEIRRFSQAFMRQLFRYIGPQTDVPAGDIGVTGFVVMHMFGEYKRLRNEYSGVVTGKHML  185
+             NEIRR   AFMR+L R+IG  TDVPAGDIGV G  + ++FG Y+  +N + GV+TGK + 
+Sbjct  367   NEIRRICYAFMRELSRHIGQDTDVPAGDIGVGGREIGYLFGAYRSYKNSWEGVLTGKGLN  546
+
+Query  186   TGGSNIRPEATGYGVVYYVKHMIEHRTKGAETLKGKRVAISGSGNVAQYAALKCIQEGAI  245
+              GGS IRPEATGYG+VYY + MI++ T G E+ +GKRV ISGSGNVAQYAALK I+ G  
+Sbjct  547   WGGSLIRPEATGYGLVYYTQAMIDYATNGKESFEGKRVTISGSGNVAQYAALKVIELGGT  726
+
+Query  246   VKSISDSKGVLIAKTAEGLVPEEIHEIMALKEKRASIAD-----SASLCKKHHYIAGARP  300
+             V S+SDSKG +I++T  G+  E++ +I + K    S+       S     K  YIAGARP
+Sbjct  727   VVSLSDSKGCIISET--GITSEQVADISSAKVNFKSLEQIVNEYSTFSENKVQYIAGARP  900
+
+Query  301   WTNVGEIDIALPCATQNEVSGEEAAALIKQGCRYVAEGSNMGSSAEAVEVFEKSRASG--  358
+             WT+V ++DIALPCATQNEVSGEEA AL+ QG +++AEGSNMGS+ EA+ VFE +R++   
+Sbjct  901   WTHVQKVDIALPCATQNEVSGEEAKALVAQGVKFIAEGSNMGSTPEAIAVFETARSTATG  1080
+
+Query  359   --EGCWLAPGKAANAGGVAVSGLEMAQNAQFSTWTHAEVDAKLAGIMQNIFEQSTDVASK  416
+               E  W  P KAAN GGVAVSGLEMAQN+Q  TWT   VD +L  IM N F +  D A K
+Sbjct  1081  PSEAVWYGPPKAANLGGVAVSGLEMAQNSQRITWTSERVDQELKRIMINCFNECIDYAKK  1260
+
+Query  417   YCDSGSNNIPSLVDGANIAGFLKVATAMQAVGD  449
+             Y   G   +PSLV GANIA F+KV+ AM   GD
+Sbjct  1261  YTKDG-KVLPSLVKGANIASFIKVSDAMFDQGD  1356
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.133    0.392    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 854583590
+
+
+Query= 2539480|NP_588185.1|chromosome III|tti1|-1|1421145|1425866|N/A|1098|No description available
+
+Length=1098
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001179599.1 Saccharomyces cerevisiae S288C Tti1p (TTI1), parti...  65.1    5e-11
+
+
+>NM_001179599.1 Saccharomyces cerevisiae S288C Tti1p (TTI1), partial 
+mRNA
+Length=3117
+
+ Score = 65.1 bits (157),  Expect = 5e-11, Method: Compositional matrix adjust.
+ Identities = 40/157 (25%), Positives = 81/157 (52%), Gaps = 4/157 (3%)
+ Frame = +1
+
+Query  568   CIAIDSISWISSLQGVKFRSKLMAYFYPLLEHLAFASPYVSSFAEACIQAIATNCNYSTP  627
+             C  + SI  I ++   +F+ +L+ Y Y +++ LA  S  +   +++C   IA    + + 
+Sbjct  1789  CTVLFSIETICAVMREEFQPELIDYIYTVVDALASPSEAIRYVSQSCALRIADTLYHGSI  1968
+
+Query  628   AELLRENIDYVVNSVALKLNTLDVSPQLPIVMAYVIKNDDGGCIRYIGDVVDAIFGILDA  687
+               ++  N+DY+V S++ +LN+  ++ ++  ++  + +      I    DV++ IF +LD 
+Sbjct  1969  PNMILSNVDYLVESISSRLNS-GMTERVSQILMVICQLAGYETIENFKDVIETIFKLLDY  2145
+
+Query  688   YHGYARLTEGLLGILYAII---KQESINGEEKKLIVG  721
+             YHGY+ L      +   II   K++ IN +E  L + 
+Sbjct  2146  YHGYSDLCLQFFQLFKIIILEMKKKYINDDEMILKIA  2256
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.133    0.385    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 2339450722
+
+
+Query= 2539181|NP_588186.2|chromosome III|N/A|1|1427048|1429462|N/A|321|No description available
+
+Length=321
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001180286.1 Saccharomyces cerevisiae S288C GTPase-activating p...  180     1e-54
+NM_001183042.1 Saccharomyces cerevisiae S288C Sps18p (SPS18), par...  97.8    5e-24
+NM_001179012.1 Saccharomyces cerevisiae S288C ADP-ribosylation fa...  79.7    4e-17
+NM_001179394.3 Saccharomyces cerevisiae S288C GTPase-activating p...  75.5    4e-16
+
+
+>NM_001180286.1 Saccharomyces cerevisiae S288C GTPase-activating 
+protein GCS1 (GCS1), partial mRNA
+Length=1059
+
+ Score = 180 bits (456),  Expect = 1e-54, Method: Compositional matrix adjust.
+ Identities = 104/300 (35%), Positives = 153/300 (51%), Gaps = 30/300 (10%)
+ Frame = +1
+
+Query  4    KLDQLTRLPENKKCFDCDAPNPQWASCNLGIFICLDCSGQHRGLGVEKSFVRSITMDNWS  63
+            +L QL ++  NKKC DC APNPQWA+   G FICL+C+G HRGLGV  SFVRSITMD + 
+Sbjct  37   RLLQLQKIGANKKCMDCGAPNPQWATPKFGAFICLECAGIHRGLGVHISFVRSITMDQFK  216
+
+Query  64   ERQVKMMEVGGNSN-AKTFLSTDPMFSAAGSIREKYNTDIAEDLRQKI-----------R  111
+              ++  ME GGN    + F S +   S    +  KY+  +AED ++K+           R
+Sbjct  217  PEELLRMEKGGNEPLTEWFKSHNIDLSLPQKV--KYDNPVAEDYKEKLTCLCEDRVFEER  390
+
+Query  112  AEVD---------------GVEWVKVDRpksvsshasvtssstvptipsvsKEANDKYFA  156
+              +D                   V   R  +   +    + +      +  KE N+ YFA
+Sbjct  391  EHLDFDASKLSATSQTAASATPGVAQSREGTPLENRRSATPANSSNGANFQKEKNEAYFA  570
+
+Query  157  KLGSINSQRPDDLPPSQGGRYQGFGSSNSVNPNSSARNNGGSF-LDQLSSNPVSALSHGW  215
+            +LG  N  RPD LPPSQGG+YQGFGS+ +  P   +  +  +  L+   ++P+  LS GW
+Sbjct  571  ELGKKNQSRPDHLPPSQGGKYQGFGSTPAKPPQERSAGSSNTLSLENFQADPLGTLSRGW  750
+
+Query  216  NMFSRSVSQQIQDVNKSYIQPGITKVQDPETRKDYMNAINNFSSNVQEGAKQSFTQLKSF  275
+             +FS +V++  +DVN++ I+P + + Q  E  ++   A   F    QE +   F    +F
+Sbjct  751  GLFSSAVTKSFEDVNETVIKPHVQQWQSGELSEETKRAAAQFGQKFQETSSYGFQAFSNF  930
+
+
+>NM_001183042.1 Saccharomyces cerevisiae S288C Sps18p (SPS18), 
+partial mRNA
+Length=903
+
+ Score = 97.8 bits (242),  Expect = 5e-24, Method: Compositional matrix adjust.
+ Identities = 63/260 (24%), Positives = 121/260 (47%), Gaps = 17/260 (7%)
+ Frame = +1
+
+Query  14   NKKCFDCDAPNPQWASCNLGIFICLDCSGQHRGLGVEKSFVRSITMDNWSERQVKMMEVG  73
+            N  CF+C + NPQ+ SC+ GIFIC++C+   RG+G     V+SITMDN+ E+ V+ +E  
+Sbjct  73   NNNCFECKSVNPQFVSCSFGIFICVNCANLLRGMGTNIFCVKSITMDNFEEKDVRRVEKS  252
+
+Query  74   GNSNAKTFLSTDPMFSAAGSIREKYNTDIAEDLRQKIRAEVDG--------VEWVKVDRp  125
+            GN+   +FLS + +      +REKY+   A+  ++++  EV          + +    + 
+Sbjct  253  GNNRFGSFLSKNGILQNGIPLREKYDNLFAKSYKRRLANEVRSNDINRNMYLGFNNFQQY  432
+
+Query  126  ksvsshasvtssstvptipsvsKEANDKYFAK--LGSINSQRPDDLPPSQGGRYQGFGSS  183
+             + ++      +    +  S + E  +    +  LGS N Q  +  P           S 
+Sbjct  433  TNGATSQIRDRTLREISNNSNASEGAEFVLPEKVLGSDNFQDCERFPAC-------LSSE  591
+
+Query  184  NSVNPNSSARNNGGSFLDQLSSNPVSALSHGWNMFSRSVSQQIQDVNKSYIQPGITKVQD  243
+             +++ N+         +++  ++P+  +S  W + S ++ +  +D   S +QP I  +Q 
+Sbjct  592  RNLDENNVTSATSTLTIEKFQNDPIGTISRSWQLLSDALYKSYEDFKGSVVQPTIENIQQ  771
+
+Query  244  PETRKDYMNAINNFSSNVQE  263
+                 D   +  +F+  + E
+Sbjct  772  RNLPNDIKRSFVHFNEKLHE  831
+
+
+>NM_001179012.1 Saccharomyces cerevisiae S288C ADP-ribosylation 
+factor GTPase-activating protein (GLO3), partial mRNA
+Length=1482
+
+ Score = 79.7 bits (195),  Expect = 4e-17, Method: Compositional matrix adjust.
+ Identities = 29/70 (41%), Positives = 43/70 (61%), Gaps = 0/70 (0%)
+ Frame = +1
+
+Query  13   ENKKCFDCDAPNPQWASCNLGIFICLDCSGQHRGLGVEKSFVRSITMDNWSERQVKMMEV  72
+            EN+ CFDC   NP W S   G+ +C+ CS  HR +GV  +FV+S T+D W+   ++  ++
+Sbjct  79   ENRVCFDCGNKNPTWTSVPFGVMLCIQCSAVHRNMGVHITFVKSSTLDKWTINNLRRFKL  258
+
+Query  73   GGNSNAKTFL  82
+            GGN  A+ F 
+Sbjct  259  GGNHKARDFF  288
+
+
+>NM_001179394.3 Saccharomyces cerevisiae S288C GTPase-activating 
+protein AGE2 (AGE2), partial mRNA
+Length=897
+
+ Score = 75.5 bits (184),  Expect = 4e-16, Method: Compositional matrix adjust.
+ Identities = 40/118 (34%), Positives = 66/118 (56%), Gaps = 7/118 (6%)
+ Frame = +1
+
+Query  5    LDQLTRLPENKKCFDCDAP-NPQWASCNLGIFICLDCSGQHRGLGVEKSFVRSITMDNWS  63
+            L  L R P N  C DC A  +P+WAS +LG+FIC+ C+G HR LG   S V+S+ +D W 
+Sbjct  31   LSALLRDPGNSHCADCKAQLHPRWASWSLGVFICIKCAGIHRSLGTHISKVKSVDLDTWK  210
+
+Query  64   ERQ-VKMMEVGGNSNAKTFLSTDPMFSAAGSIREKYNTDIAEDLRQKIRAEVDGVEWV  120
+            E   VK+++   N  A ++       + A  ++++  TD +  L+  I+ + +  +W+
+Sbjct  211  EEHLVKLIQFKNNLRANSYYEA----TLADELKQRKITDTS-SLQNFIKNKYEYKKWI  369
+
+
+
+Lambda      K        H        a         alpha
+   0.312    0.129    0.379    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 555674889
+
+
+Query= 2539454|NP_588187.1|chromosome III|N/A|-1|1428742|1430848|N/A|557|No description available
+
+Length=557
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.311    0.128    0.377    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1097170998
+
+
+Query= 2539481|NP_588188.1|chromosome III|epe1|-1|1431047|1435040|N/A|948|No description available
+
+Length=948
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001178942.1 Saccharomyces cerevisiae S288C [Histone H3]-lysine...  140     7e-36
+
+
+>NM_001178942.1 Saccharomyces cerevisiae S288C [Histone H3]-lysine-36 
+demethylase (JHD1), partial mRNA
+Length=1479
+
+ Score = 140 bits (354),  Expect = 7e-36, Method: Compositional matrix adjust.
+ Identities = 89/284 (31%), Positives = 145/284 (51%), Gaps = 18/284 (6%)
+ Frame = +1
+
+Query  169   FNEPTIFPSSDTQNTRQLNLSKIATLIGYDCPLALVDVVTQKQIPNKMDMESWVKYMS-L  227
+              N     P+  T N   L ++ I  +IG D  + ++DV  Q Q+    ++ SW +Y +  
+Sbjct  508   LNSGVYVPNVGTDNG-CLTVNYITEMIGEDYHVDVMDV--QSQMNENWNLGSWNEYFTNT  678
+
+Query  228   EPSKRGRIYDVLSLEVSTTKLAYYVRKPNIVRDLDLVNTVWPPGSF---ALGEY------  278
+             EP +R RI +V+SLEVS  +    + +P  VR  DLV+ +W          GE       
+Sbjct  679   EPDRRDRIRNVISLEVSNIE-GLELERPTAVRQNDLVDKIWSFNGHLEKVNGEKAEENDP  855
+
+Query  279   -PHVDTYCLMSAENSYTEFHIEFGGSSAYYNILDGCKIFYLIPGTSKNWEAYTAWLTSSN  337
+              P V  Y LMS +++YT+FH++F G+S YYN++ G K F L P T  N + Y  W +   
+Sbjct  856   KPKVTKYILMSVKDAYTDFHLDFAGTSVYYNVISGQKKFLLFPPTQSNIDKYIEW-SLKE  1032
+
+Query  338   DSDKKFLPNMVDVCYCVEVHSQQTILVPSGWIYAVVTPCDTISIAGNFLTFLHIYPQLSI  397
+             D +  FL ++++    +E+ +    ++P+G+I+AV TP D++   GNFLT   +   L I
+Sbjct  1033  DQNSVFLGDILEDGIAMELDAGDLFMIPAGYIHAVYTPVDSLVFGGNFLTIRDLETHLKI  1212
+
+Query  398   YNLELQLGIEKEYQYPYFESIMWYTAIHFYLAFPDNSSRDGIDD  441
+               +E    + + + +P F+ +M    +  YLA   N     + D
+Sbjct  1213  VEIEKLTKVPRRFTFPKFDQVM--GKLCEYLALDKNKITSDVSD  1338
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.133    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1995385173
+
+
+Query= 2538794|NP_001417975.1|chromosome III|apn1|1|1435152|1436648|N/A|349|No description available
+
+Length=349
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001179680.1 Saccharomyces cerevisiae S288C DNA-(apurinic or ap...  292     1e-97
+
+
+>NM_001179680.1 Saccharomyces cerevisiae S288C DNA-(apurinic or 
+apyrimidinic site) lyase APN1 (APN1), partial mRNA
+Length=1104
+
+ Score = 292 bits (748),  Expect = 1e-97, Method: Compositional matrix adjust.
+ Identities = 143/311 (46%), Positives = 201/311 (65%), Gaps = 4/311 (1%)
+ Frame = +1
+
+Query  2    IGAHISAAGGVFNALINMKNINANSCAFFVKSQRKWTSPDLSEDVAQKFLETASEMKFDA  61
+             GAH+S AGG+ N++ N  N   NS A F+KS RKW SP  +++   KF +  +   ++ 
+Sbjct  49   FGAHMSGAGGISNSVTNAFNTGCNSFAMFLKSPRKWVSPQYTQEEIDKFKKNCATYNYNP  228
+
+Query  62   SKQVLVHGSYLINMANADEQKREQAFNCFVDDLKRCERLGVGLYNFHPGSTASCTKEEGI  121
+               VL HG Y IN+AN D +K E+++  F+DDL RCE+LG+GLYN HPGST     +  +
+Sbjct  229  LTDVLPHGQYFINLANPDREKAEKSYESFMDDLNRCEQLGIGLYNLHPGSTLKGDHQLQL  408
+
+Query  122  NNLAECINRAHEETKSVIIVTENMAGQGNCLGGTFDDFAALKSKIKNLDRWRVCLDTCHT  181
+              LA  +N+A +ETK V IV ENMAG GN +G +  D   +   I++  R  VC+DTCHT
+Sbjct  409  KQLASYLNKAIKETKFVKIVLENMAGTGNLVGSSLVDLKEVIGMIEDKSRIGVCIDTCHT  588
+
+Query  182  FAAGYDIRTEESYKKVIDEFDEKVGAKYVSGWHLNDSKAPLGSNRDLHENIGLGFLGLEP  241
+            FAAGYDI T E++     EF++ +G KY+S  HLNDSKAPLG+NRDLHE +G G+LG++ 
+Sbjct  589  FAAGYDISTTETFNNFWKEFNDVIGFKYLSAVHLNDSKAPLGANRDLHERLGQGYLGIDV  768
+
+Query  242  FRLIMNDSRWDGIPLVLETPAKSPEQWKKEVELLRFMVGKSS----DDVELMKESARLSN  297
+            FR+I +     GIP+VLETP ++ E +  E++L+ ++  KS     +D E  +++  L  
+Sbjct  769  FRMIAHSEYLQGIPIVLETPYENDEGYGNEIKLMEWLESKSESELLEDKEYKEKNDTLQK  948
+
+Query  298  LGAASRKEHLN  308
+            LGA SRKE L+
+Sbjct  949  LGAKSRKEQLD  981
+
+
+
+Lambda      K        H        a         alpha
+   0.316    0.133    0.393    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 619040298
+
+
+Query= 2539559|NP_588192.1|chromosome III|str2|-1|1435211|1442014|N/A|597|No description available
+
+Length=597
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001179127.2 Saccharomyces cerevisiae S288C siderophore transpo...  167     3e-45
+NM_001178880.3 Saccharomyces cerevisiae S288C siderophore transpo...  164     6e-44
+NM_001179120.1 Saccharomyces cerevisiae S288C siderophore transpo...  150     3e-39
+NM_001183411.1 Saccharomyces cerevisiae S288C Enb1p (ENB1), parti...  138     3e-35
+NM_001178711.1 Saccharomyces cerevisiae S288C glutathione exchang...  137     8e-35
+NM_001179896.1 Saccharomyces cerevisiae S288C glutathione exchang...  133     1e-33
+
+
+>NM_001179127.2 Saccharomyces cerevisiae S288C siderophore transporter 
+(ARN2), partial mRNA
+Length=1863
+
+ Score = 167 bits (424),  Expect = 3e-45, Method: Compositional matrix adjust.
+ Identities = 144/604 (24%), Positives = 280/604 (46%), Gaps = 43/604 (7%)
+ Frame = +1
+
+Query  3     ENYGSMEHRKKSFRNNENLEQQFHPLREELDNAGPINDRTSELSLEG-----VSKAEAIA  57
+             +N  S   RK + +N   L      + E++D+     D   +  L+G     + K+E +A
+Sbjct  19    DNRSSQTKRKNTEKNCNELM-----VDEKMDDDSSPRDEMKD-KLKGTKSLIIRKSELMA  180
+
+Query  58    ---STWSKRSIIVAYLGLYLLSFASSLEQQTTYSLQRYATSNFSAHSNLATINLVGNILL  114
+                 TW  ++I +     ++ +FA  L+     +   YA +++SAHS ++T++++  ++ 
+Sbjct  181   KKYDTWQLKAIFL--FSAFICTFAYGLDSSIRGTYMTYAMNSYSAHSLISTVSVIVLMIS  354
+
+Query  115   AVVRAPMVKAADVFGRSESLSLALGMTVLGYLSLAFSRNIQMFTVAYILYICGQTGLGLL  174
+             AV +      +D+FGR     +++ + ++G +  + + ++Q +    + Y  G  G+ L 
+Sbjct  355   AVSQVIFGGLSDIFGRLTLFLVSIVLYIVGTIIQSQAYDVQRYAAGAVFYYVGLVGVMLQ  534
+
+Query  175   SQLIIADTSSLLNRGILSAIPELPYLATVWIGPVLAQAFHPEKNYGWRLGYGIWAFILPT  234
+               L+++D SSL  R   + IP  P + T W+   + +A +P +N+ W +   +WAFI P 
+Sbjct  535   VVLMLSDNSSLKWRLFYTLIPSWPSIITTWVSGSVVEAANPLENWSWNI--AMWAFIFPL  708
+
+Query  235   VSLPLLASLFLNQRKAKAAGLYREHHNLINHSTPEKL--RLFYLFWQELDGLGIVLFVSG  292
+               +PL+  +   + K +    ++E  +  ++     L   L  LFW+ LD +G++LF +G
+Sbjct  709   CCIPLILCMLHMRWKVRNDVEWKELQDEKSYYQTHGLVQMLVQLFWK-LDVVGVLLFTAG  885
+
+Query  293   FTLLLLPFSHSSQVVSPDStiltlftitlsiallVTLCFYDVKYARYPVFALKSLKDRTI  352
+                +L+P + +  V +       +    L   L+    +++ + A  P    K LKDR +
+Sbjct  886   VGCILVPLTLAGGVSTNWRNSKIIGPFVLGFVLVPGFIYWESRLALVPFAPFKLLKDRGV  1065
+
+Query  353   LGSCVLIFTYFMSYYIFSNFLTSFLQVSYGLSIDMSSLTLNVFVFSMTTTAILSGFLMKR  412
+                  ++F     Y + + +L + L V+   S   ++  +N++ F     A   G ++ R
+Sbjct  1066  WAPLGIMFFICFVYQMAAGYLYTILVVAVDESASSATRIINLYSFVTAVVAPFLGLIVTR  1245
+
+Query  413   FGRFKMLLMISVPMYVlgilgiilfgiNDNHYTRPLVLVLILAGMGGGLLTLSAQIAVQS  472
+               R K  ++    +Y + +     +    +     ++  +++ G+   L      +++QS
+Sbjct  1246  SSRLKSYIIFGGSLYFITMGLFYRYRSGQDA-DGGIIAGMVIWGLSSCLFDYPTIVSIQS  1422
+
+Query  473   VSSHAKLGMNLTLYLTFSSVGGAFGSAIAGGVWSKRLSSRLLHDLKDHLPVPEIESIFRD  532
+             V+SH  +     L  T   +GGA  +AI+G +W++ L  +LLH + D            D
+Sbjct  1423  VTSHENMATVTALNYTVFRIGGAVAAAISGAIWTQSLYPKLLHYMGDA-----------D  1569
+
+Query  533   LRTA---------LSYPQGTQIRNIINVAYTATEKDLFHISLVASLFMFAGLVIIRDVPL  583
+             L TA         LS P GT +R+ +  AY   +K    ++LV S  MF     +RD P 
+Sbjct  1570  LATAAYGSPLTFILSNPWGTPVRSAMVEAYRHVQKYEVIVALVFSAPMFLLTFCVRD-PR  1746
+
+Query  584   STEN  587
+              TE+
+Sbjct  1747  LTED  1758
+
+
+>NM_001178880.3 Saccharomyces cerevisiae S288C siderophore transporter 
+(SIT1), partial mRNA
+Length=1887
+
+ Score = 164 bits (414),  Expect = 6e-44, Method: Compositional matrix adjust.
+ Identities = 134/556 (24%), Positives = 266/556 (48%), Gaps = 33/556 (6%)
+ Frame = +1
+
+Query  44    ELSLEGVSKAEAIASTWSKRSIIVA-YLGLYLLSFASSLEQQTTYSLQRYATSNFSAHSN  102
+             EL   GV   E  A  +++    VA +  L+L+++A  L+    Y+ Q YATS++S HS 
+Sbjct  142   ELIDPGVHNIEIYAEMYNRPIYRVALFFSLFLIAYAYGLDGNIRYTFQAYATSSYSQHSL  321
+
+Query  103   LATINLVGNILLAVVRAPMVKAADVFGRSESLSLALGMTVLGYLSLAFSRNIQMFTVAYI  162
+             L+T+N +  ++ AV +    + +D+FGR   + +++    +G +  + + NI  F V   
+Sbjct  322   LSTVNCIKTVIAAVGQIFFARLSDIFGRFSIMIVSIIFYSMGTIIESQAVNITRFAVGGC  501
+
+Query  163   LYICGQTGLGLLSQLIIADTSSLLNRGILSAIPELPYLATVWIGPVLAQAFHPEKNYGWR  222
+              Y  G TG+ L+ ++I +D S+L  R +   IP LP++   WI   +  A     +  W+
+Sbjct  502   FYQLGLTGIILILEVIASDFSNLNWRLLALFIPALPFIINTWISGNVTSAI----DANWK  669
+
+Query  223   LGYGIWAFILPTVSLPL----LASLFLNQRKAKAAGLYREHHNLINHSTPEKLRLFYLFW  278
+              G G+WAFILP   +PL    L   +L ++ AK     +     +N    +   +   FW
+Sbjct  670   WGIGMWAFILPLACIPLGICMLHMRYLARKHAKDR--LKPEFEALNKLKWKSFCIDIAFW  843
+
+Query  279   QELDGLGIVLFVSGFTLLLLPFS---------HSSQVVSPDStiltlftitlsiallVTL  329
+             + LD +G++L    F  +L+PF+          ++ ++ P+     +             
+Sbjct  844   K-LDIIGMLLITVFFGCVLVPFTLAGGLKEEWKTAHIIVPEVIGWVVVLPLYM-------  999
+
+Query  330   CFYDVKYARYPVFALKSLKDRTILGSCVLIFTYFMSYYIFSNFLTSFLQVSYGLSIDMSS  389
+               +++KY+R+P+     ++DR I  + ++ F    ++Y+  +++ + L V+   SI  ++
+Sbjct  1000  -LWEIKYSRHPLTPWDLIQDRGIFFALLIAFFINFNWYMQGDYMYTVLVVAVHESIKSAT  1176
+
+Query  390   LTLNVFVFSMTTTAILSGFLMKRFGRFKMLLMISVPMYVlgilgiilfgiNDNHYTRPLV  449
+                +++ F       + GF++ +  R K  ++  +  +++    ++ +  +   ++  ++
+Sbjct  1177  RITSLYSFVSVIVGTILGFILIKVRRTKPFIIFGISCWIVSFGLLVHYRGDSGAHSG-II  1353
+
+Query  450   LVLILAGMGGGLLTLSAQIAVQ-SVSSHAKLGMNLTLYLTFSSVGGAFGSAIAGGVWSKR  508
+               L L G G G  T   Q ++Q S  +HA++ +  +LYL   ++G AFGS+++G VW+  
+Sbjct  1354  GSLCLLGFGAGSFTYVTQASIQASAKTHARMAVVTSLYLATYNIGSAFGSSVSGAVWTNI  1533
+
+Query  509   LSSRLLHDLKDHLPVPEIESIFRDLRTALSYPQGTQIRNIINVAYTATEKDLFHISLVAS  568
+             L   +   + D  P    ++         +Y  GT  R  + ++Y   +K L  I LV  
+Sbjct  1534  LPKEISKRISD--PTLAAQAYGSPFTFITTYTWGTPERIALVMSYRYVQKILCIIGLVFC  1707
+
+Query  569   LFMFAGLVIIRDVPLS  584
+               +     ++R+  L+
+Sbjct  1708  FPLLGCAFMLRNHKLT  1755
+
+
+>NM_001179120.1 Saccharomyces cerevisiae S288C siderophore transporter 
+(ARN1), partial mRNA
+Length=1884
+
+ Score = 150 bits (380),  Expect = 3e-39, Method: Compositional matrix adjust.
+ Identities = 143/589 (24%), Positives = 266/589 (45%), Gaps = 32/589 (5%)
+ Frame = +1
+
+Query  8     MEHR-KKSFRNNENLEQQFHPLREELDNAGPINDRTSELSLEGVSKAEAIASTWSKRSI-  65
+             MEH       N+ N +    P   E  NA  +    S +    + + E I S ++K  + 
+Sbjct  61    MEHELNPETHNDSNSDSYGLPQLSEKYNA--LRQNRSLI----IQQTEIIGSAYNKWYLQ  222
+
+Query  66    IVAYLGLYLLSFASSLEQQTTYSLQRYATSNFSAHSNLATINLVGNILLAVVRAPMVKAA  125
+              +  L  ++  +   L+    Y    YATS++S HS L+TIN++  ++ A  +    + +
+Sbjct  223   AILLLSAFICGYGYGLDGNIRYIYTGYATSSYSEHSLLSTINVINAVVSAASQIIYARLS  402
+
+Query  126   DVFGRSESLSLALGMTVLGYLSLAFSRNIQMFTVAYILYICGQTGLGLLSQLIIADTSSL  185
+             DVFGR      A+ + V+G +  + + ++Q +    I Y  G  G+ L+  +I++D SSL
+Sbjct  403   DVFGRLYLFISAVILYVVGTIIQSQAYDVQRYAAGAIFYNAGYVGVILILLIILSDFSSL  582
+
+Query  186   LNRGILSAIPELPYLATVWIGPVLAQAFHPEKNYGWRLGYGIWAFILPTVSLPLLASLFL  245
+               R +   +P  P++   WI   +    +P  N+ W +  G+WAFI P   +P++  +  
+Sbjct  583   KWRLLYQFVPTWPFIINTWIAGNITSRANPVVNWSWDV--GMWAFIFPLSCVPIVLCMLH  756
+
+Query  246   NQRKA---------KAAGLYREHHNLINHSTPEKLRLFYLFWQELDGLGIVLFVSGFTLL  296
+              Q +A         K    Y + H  I         L  LFW  LD +G++L       +
+Sbjct  757   MQWRARKTPEWHALKGQKSYYQEHGFIK-------ILKQLFWM-LDVVGVLLMGCSLGCI  912
+
+Query  297   LLPFSHSSQVVSPDStiltlftitlsiallVTLCFYDVKYARYPVFALKSLKDRTILGSC  356
+             L+P + +  V +  +    +    L   L+  L  ++ ++AR P+   + +KDR +  S 
+Sbjct  913   LVPLTLAGGVKTTWNDSRLIGPFVLGFVLIPILWIWEYRFARDPILPYRLVKDRAVWSSM  1092
+
+Query  357   VLIFTYFMSYYIFSNFLTSFLQVSYGLSIDMSSLTLNVFVFSMTTTAILSGFLMKRFGRF  416
+              + F     YY+ +++L + + V+   S+  ++    +  F  T  +     L+ R  R 
+Sbjct  1093  GISFLIDFIYYMAADYLYTVMIVAVNESVKSATRIATLSSFVSTVASPFFALLVTRCTRL  1272
+
+Query  417   KMLLMISVPMYVlgilgiilfgiNDNHYTRPLVLVLILAGMGGGLLTLSAQIAVQSVSSH  476
+             K  +M    ++++ +  +  F      ++  ++  L + G+G  L T    ++VQS  SH
+Sbjct  1273  KPFIMFGCALWMVAMGLLYHFRGGSQSHS-GIIGALCVWGVGTTLFTYPVTVSVQSAVSH  1449
+
+Query  477   AKLGMNLTLYLTFSSVGGAFGSAIAGGVWSKRLSSRLLHDLKD-HLPVPEIESIFRDLRT  535
+               +     L  T   +G A GSA++G +W++ L  ++L  + D  L     ES +  + T
+Sbjct  1450  ENMATVTALNYTLYRIGSAVGSAVSGAIWTQTLYKQILKRMGDVALATTAYESPYTFIET  1629
+
+Query  536   ALSYPQGTQIRNIINVAYTATEKDLFHISLVASLFMFAGLVIIRDVPLS  584
+                Y  GT  RN +  AY   ++    ++LV  + + A  + +RD  L+
+Sbjct  1630  ---YTWGTPQRNALMNAYKYVQRLETIVALVFCVPLIAFSLCLRDPKLT  1767
+
+
+>NM_001183411.1 Saccharomyces cerevisiae S288C Enb1p (ENB1), partial 
+mRNA
+Length=1821
+
+ Score = 138 bits (348),  Expect = 3e-35, Method: Compositional matrix adjust.
+ Identities = 136/594 (23%), Positives = 268/594 (45%), Gaps = 34/594 (6%)
+ Frame = +1
+
+Query  17    NNENLEQQFHPLREELDNAGPINDRTSELS-LEGVSKA-------EAIASTWS--KRSII  66
+              N+NL+ +      E  ++      TS L  ++ V+K         A   T+S  K +++
+Sbjct  22    RNDNLDDKSTVCYSEKTDSNVEKSTTSGLRRIDAVNKVLSDYSSFTAFGVTFSSLKTALL  201
+
+Query  67    VAYLGLYLLSFASSLEQQTTYSLQRYATSNFSAHSNLATINLVGNILLAVVRAPMVKAAD  126
+             VA   L+L  + + L  Q + S+Q YA ++F  HS + +IN V +I+ +VV  P  + +D
+Sbjct  202   VA---LFLQGYCTGLGGQISQSIQTYAANSFGKHSQVGSINTVKSIVASVVAVPYARISD  372
+
+Query  127   VFGRSESLSLALGMTVLGYLSLAFSRNIQMFTVAYILYICGQTGLGLLSQLIIADTSSLL  186
+              FGR E    AL +  +G +  A +          ++   G +G  LL+  +  D S L 
+Sbjct  373   RFGRIECWIFALVLYTIGEIISAATPTFSGLFAGIVIQQFGYSGFRLLATALTGDLSGLR  552
+
+Query  187   NRGILSAIPELPYLATVWI-GPVLAQAFHPEKNYGWRLGYGIWAFILPTVSL----PLLA  241
+             +R     I  +P +   W+ G +++        Y WR GYGI+  I+P  +L    P + 
+Sbjct  553   DRTFAMNIFLIPVIINTWVSGNIVSSVAGNVAPYKWRWGYGIFCIIVPISTLILVLPYVY  732
+
+Query  242   SLFLNQRKAKAAGLYREHHNLINHSTPEKLRLFYLFWQELDGLGIVLFVSGFTLLLLPFS  301
+             + +++ R  K   L  +        T  K      F  +++ +G++LF +   L+LLP +
+Sbjct  733   AQYISWRSGKLPPLKLKEKGQTLRQTLWK------FADDINLIGVILFTAFLVLVLLPLT  894
+
+Query  302   HSSQVVSPDStiltlftitlsiallVTLCFYDVKYARYPVFALKSLKDRTILGSCVLIFT  361
+              +    S       +  I +   L      +++K+A+ P      L D TI  + ++ F 
+Sbjct  895   IAGGATSKWREGHIIAMIVVGGCLGFIFLIWELKFAKNPFIPRVYLGDPTIYVALLMEFV  1074
+
+Query  362   YFMSYYIFSNFLTSFLQVSYGLSIDMSSLTLNVFVFSMTTTAILSGFLMKRFGRFKMLLM  421
+             + +   I   +L + L V++G S   +     ++ F  + T I+ G ++  +   K+ ++
+Sbjct  1075  WRLGLQIELEYLVTVLMVAFGESTLSAQRIAQLYNFLQSCTNIVVGIMLHFYPHPKVFVV  1254
+
+Query  422   ISVPMYVlgilgiilfgiNDNHYTRPLVLVLILAGMGGGLLTLSAQIAVQSVSSHAKLGM  481
+                 + V+G+  +  + +  +  +  L+   I+ G+ GG++       V + ++H ++  
+Sbjct  1255  AGSLLGVIGMGLLYKYRVVYDGIS-GLIGAEIVVGIAGGMIRFPMWTLVHASTTHNEMAT  1431
+
+Query  482   NLTLYLTFSSVGGAFGSAIAGGVWSKRLSSRLLHDLKDHLPVPEIESIFRDLRTALSYPQ  541
+                L ++   +G A G++IAG +W++RL+  L+  L   L +   +S    L+    YP 
+Sbjct  1432  VTGLLMSVYQIGDAVGASIAGAIWTQRLAKELIQRLGSSLGMAIYKSPLNYLK---KYPI  1602
+
+Query  542   GTQIRNIINVAYTATEKDLFHISL------VASLFMFAGLVIIRDVPLSTENHD  589
+             G+++R  +  +Y+  ++ L  +S+          F   G  + +   LS E  +
+Sbjct  1603  GSEVRVQMIESYSKIQRLLIIVSISFAAFNAVLCFFLRGFTVNKKQSLSAEERE  1764
+
+
+>NM_001178711.1 Saccharomyces cerevisiae S288C glutathione exchanger 
+(GEX1), partial mRNA
+Length=1848
+
+ Score = 137 bits (345),  Expect = 8e-35, Method: Compositional matrix adjust.
+ Identities = 118/518 (23%), Positives = 248/518 (48%), Gaps = 18/518 (3%)
+ Frame = +1
+
+Query  73    YLLSFASSLEQQTTYSLQRYATSNFSAHSNLATINLVGNILLAVVRAPMVKAADVFGRSE  132
+             ++  F  SL+     +   YAT+++S HS L+T+ ++  ++    +    + +D FGR  
+Sbjct  199   FVCGFGISLDYTLRSTYTGYATNSYSEHSLLSTVQVINAVVSVGSQVVYSRLSDHFGRLR  378
+
+Query  133   SLSLALGMTVLGYLSLAFSRNIQMFTVAYILYICGQTGLGLLSQLIIADTSSLLNRGILS  192
+                +A    ++G +  + +  + M+    + Y CG  G  LL  LI++D SSL  R    
+Sbjct  379   LFLVATIFYIMGTIIQSQATRLTMYAAGSVFYNCGYVGTNLLLTLILSDFSSLKWRMFYQ  558
+
+Query  193   AIPELPYLATVWIGPVLAQAFHPEKNYGWRLGYGIWAFILPTVSLPLL-ASLFLNQRKAK  251
+                  PY+   WI   +  A +P+KN+ W +   +WAFI P  +LP++   L++  + +K
+Sbjct  559   YASYWPYIIIPWISGNIITAANPQKNWSWNI--AMWAFIYPLSALPIIFLILYMKYKSSK  732
+
+Query  252   AAGLYREHHNLINHSTPEKL-----RLFYLFWQELDGLGIVLFVSGFTLLLLPFSHSSQV  306
+              A    E  +L   +  E+       L +LFW+ LD +GI+L       +L+P + +++ 
+Sbjct  733   TA----EWRSLKEQARKERTGGLFENLVFLFWK-LDIVGILLITVSLGCILVPLTLANET  897
+
+Query  307   VSPDStiltlftitlsiallVTLCFYDVKYARYPVFALKSLKDRTILGSCVLIFTYFMSY  366
+                      + T+     L     +++ K+A+ P+   K L DR I     + F  F ++
+Sbjct  898   SQKWHNSKIIATLVSGGCLFFIFLYWEAKFAKSPLLPFKLLSDRGIWAPLGVTFFNFFTF  1077
+
+Query  367   YIFSNFLTSFLQVSYGLSIDMSSLTLNVFVFSMTTTAILSGFLMKRFGRFKMLLMISVPM  426
+             +I  ++L   L VS   S   ++  +N+  F   T +     L+ +  + K+ ++     
+Sbjct  1078  FISCDYLYPVLLVSMKESSTSAARIVNLPDFVAATASPFYSLLVAKTRKLKLSVIGGCAA  1257
+
+Query  427   YVlgilgiilfgiNDNHYTRPLVLVLILAGMGGGLLTLSAQIAVQSVSSHAKLGMNLTLY  486
+             +++ +     +      +   ++   ++ G+ G L + S  + +Q++++H+++ +   + 
+Sbjct  1258  WMVCMGLFYKYRGGSGSH-EGVIAASVIMGLSGLLCSNSVIVILQAMTTHSRMAVITGIQ  1434
+
+Query  487   LTFSSVGGAFGSAIAGGVWSKRLSSRLLHDLKDHLPVPEIESIFRDLRTALS-YPQGTQI  545
+              TFS +G A G++++G +W++ + ++L  +L +   + EI   +    T +S YP G+  
+Sbjct  1435  YTFSKLGAAIGASVSGAIWTQTMPNQLYKNLGND-TLAEIA--YASPYTFISDYPWGSPE  1605
+
+Query  546   RNIINVAYTATEKDLFHISLVASLFMFAGLVIIRDVPL  583
+             R+ +  +Y   ++ +  + L  ++  FA  + +RD  L
+Sbjct  1606  RDAVVESYRYVQRIIMTVGLACTVPFFAFTMFMRDPEL  1719
+
+
+>NM_001179896.1 Saccharomyces cerevisiae S288C glutathione exchanger 
+(GEX2), partial mRNA
+Length=1848
+
+ Score = 133 bits (335),  Expect = 1e-33, Method: Compositional matrix adjust.
+ Identities = 116/518 (22%), Positives = 247/518 (48%), Gaps = 18/518 (3%)
+ Frame = +1
+
+Query  73    YLLSFASSLEQQTTYSLQRYATSNFSAHSNLATINLVGNILLAVVRAPMVKAADVFGRSE  132
+             ++  F  SL+     +   YAT+++S HS L+T+ ++  ++    +    + +D FGR  
+Sbjct  199   FVCGFGISLDYTLRSTYTGYATNSYSEHSLLSTVQVINAVVSVGSQVVYSRLSDHFGRLR  378
+
+Query  133   SLSLALGMTVLGYLSLAFSRNIQMFTVAYILYICGQTGLGLLSQLIIADTSSLLNRGILS  192
+                +A    ++G +  + +  + M+    + Y CG  G  LL  LI++D SSL  R    
+Sbjct  379   LFLVATIFYIMGTIIQSQATRLTMYAAGSVFYNCGYVGTNLLLTLILSDFSSLKWRMFYQ  558
+
+Query  193   AIPELPYLATVWIGPVLAQAFHPEKNYGWRLGYGIWAFILPTVSLPLL-ASLFLNQRKAK  251
+                  PY+   WI   +  A +P+KN+ W +   +WAFI P  +LP++   L++  + +K
+Sbjct  559   YASYWPYIIIPWISGNIITAANPQKNWSWNI--AMWAFIYPLSTLPIIFLILYMKYKSSK  732
+
+Query  252   AAGLYREHHNLINHSTPEKL-----RLFYLFWQELDGLGIVLFVSGFTLLLLPFSHSSQV  306
+              A    E  +L   +  E+       L +LFW+ LD +GI+L       +L+P + +++ 
+Sbjct  733   TA----EWRSLKEQARKERTGGLFENLVFLFWK-LDIVGILLITVSLGCILVPLTLANET  897
+
+Query  307   VSPDStiltlftitlsiallVTLCFYDVKYARYPVFALKSLKDRTILGSCVLIFTYFMSY  366
+                      + T+     L     +++ K+A+ P+   K L DR I     + F  F ++
+Sbjct  898   SQKWHNSKIIATLVSGGCLFFIFLYWEAKFAKSPLLPFKLLSDRGIWAPLGVTFFNFFTF  1077
+
+Query  367   YIFSNFLTSFLQVSYGLSIDMSSLTLNVFVFSMTTTAILSGFLMKRFGRFKMLLMISVPM  426
+             +I  ++L   L VS   S   ++  +N+  F   T +     L+ +  + K+ ++     
+Sbjct  1078  FISCDYLYPVLLVSMKESSTSAARIVNLPDFVAATASPFYSLLVAKTRKLKLSVIGGCAA  1257
+
+Query  427   YVlgilgiilfgiNDNHYTRPLVLVLILAGMGGGLLTLSAQIAVQSVSSHAKLGMNLTLY  486
+             +++ +     +      +   ++   ++ G+ G L + S  + +Q++++H+++ +   + 
+Sbjct  1258  WMVCMGLFYKYRGGSGSH-EGVIAASVIMGLSGLLCSNSVIVILQAMTTHSRMAVITGIQ  1434
+
+Query  487   LTFSSVGGAFGSAIAGGVWSKRLSSRLLHDLKDHLPVPEIESIFRDLRTALS-YPQGTQI  545
+              TFS +G A G++++G +W++ + ++L  +L +   + EI   +    T +S YP G+  
+Sbjct  1435  YTFSKLGAAIGASVSGAIWTQTMPNQLYKNLGND-TLAEIA--YASPYTFISDYPWGSPE  1605
+
+Query  546   RNIINVAYTATEKDLFHISLVASLFMFAGLVIIRDVPL  583
+             R+ +  +Y   ++ +  + L  ++  F   + +R+  L
+Sbjct  1606  RDAVVESYRYVQRIIMTVGLACTVPFFTFTMFMRNPEL  1719
+
+
+
+Lambda      K        H        a         alpha
+   0.323    0.137    0.397    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1192164158
+
+
+Query= 2539372|NP_588190.1|chromosome III|rpl6|1|1437122|1438009|N/A|195|No description available
+
+Length=195
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001182336.1 Saccharomyces cerevisiae S288C 60S ribosomal prote...  195     2e-64
+NM_001182432.1 Saccharomyces cerevisiae S288C 60S ribosomal prote...  187     2e-61
+
+
+>NM_001182336.1 Saccharomyces cerevisiae S288C 60S ribosomal protein 
+eL6 RPL6B (RPL6B), partial mRNA
+Length=531
+
+ Score = 195 bits (495),  Expect = 2e-64, Method: Compositional matrix adjust.
+ Identities = 108/177 (61%), Positives = 127/177 (72%), Gaps = 3/177 (2%)
+ Frame = +1
+
+Query  20   AGEAAAKYYPAYRENVPKKARKAVRPTKLRASLAPGTVCILLAGRFRGKRVVVLSQLED-  78
+              + A K+YP+     PKK RKAVRP KLRASL PGTV ILLAGRFRGKRVV L  LED 
+Sbjct  4    TAQQAPKWYPSEDVAAPKKTRKAVRPQKLRASLVPGTVLILLAGRFRGKRVVYLKHLEDN  183
+
+Query  79   TLVVTGPYKVNGVPIRRVNHRYVIATSAPKIDVSGVSVEKFTKAYFAKQKRSGPVKKDEA  138
+            TL+VTGP+KVNGVP+RRVN RYVIATS  K+ V GV+VEKF   YFAK+K +   KK+  
+Sbjct  184  TLLVTGPFKVNGVPLRRVNARYVIATST-KVSVEGVNVEKFNVEYFAKEKLTKKEKKEAN  360
+
+Query  139  FFAENAPKNALPAERIADQKAVDAKLLPAIKAIPNMKEYLAASFALSNGDRPHLMKF  195
+             F E   K  +  ER+ DQK VD  LL  IK  P +K+YL+ASF+L NGD+PHL+KF
+Sbjct  361  LFPEQQTKE-IKTERVEDQKVVDKALLAEIKKTPLLKQYLSASFSLKNGDKPHLLKF  528
+
+
+>NM_001182432.1 Saccharomyces cerevisiae S288C 60S ribosomal protein 
+eL6 RPL6A (RPL6A), partial mRNA
+Length=531
+
+ Score = 187 bits (474),  Expect = 2e-61, Method: Compositional matrix adjust.
+ Identities = 103/177 (58%), Positives = 127/177 (72%), Gaps = 3/177 (2%)
+ Frame = +1
+
+Query  20   AGEAAAKYYPAYRENVPKKARKAVRPTKLRASLAPGTVCILLAGRFRGKRVVVLSQLED-  78
+            + + A K+YP+      KK RKA RP KLRASL PGTV ILLAGRFRGKRVV L  LED 
+Sbjct  4    SAQKAPKWYPSEDVAALKKTRKAARPQKLRASLVPGTVLILLAGRFRGKRVVYLKHLEDN  183
+
+Query  79   TLVVTGPYKVNGVPIRRVNHRYVIATSAPKIDVSGVSVEKFTKAYFAKQKRSGPVKKDEA  138
+            TL+++GP+KVNGVP+RRVN RYVIATS  K+ V GV+VEKF   YFAK+K +   KK+  
+Sbjct  184  TLLISGPFKVNGVPLRRVNARYVIATST-KVSVEGVNVEKFNVEYFAKEKLTKKEKKEAN  360
+
+Query  139  FFAENAPKNALPAERIADQKAVDAKLLPAIKAIPNMKEYLAASFALSNGDRPHLMKF  195
+             F E   K  + AER+ DQK VD  L+  IK  P +K+YL+ASF+L NGD+PH++KF
+Sbjct  361  LFPEQQNKE-IKAERVEDQKVVDKALIAEIKKTPLLKQYLSASFSLKNGDKPHMLKF  528
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.132    0.373    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 267982990
+
+
+Query= 2539424|NP_588191.1|chromosome III|jmj4|1|1438194|1439920|N/A|473|No description available
+
+Length=473
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.314    0.135    0.403    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 902386493
+
+
+Query= 2539570|NP_588193.1|chromosome III|spt3|1|1442953|1444599|N/A|307|No description available
+
+Length=307
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001180700.1 Saccharomyces cerevisiae S288C transcriptional reg...  263     3e-87
+
+
+>NM_001180700.1 Saccharomyces cerevisiae S288C transcriptional 
+regulator SPT3 (SPT3), partial mRNA
+Length=1014
+
+ Score = 263 bits (672),  Expect = 3e-87, Method: Compositional matrix adjust.
+ Identities = 150/332 (45%), Positives = 207/332 (62%), Gaps = 33/332 (10%)
+ Frame = +1
+
+Query  9     KYRVEIQQMMFILGEVQDPLPETTQLVEELIRGQVMEMLIQANELALRRGSRSITVEDLF  68
+             KYRVEIQQMMF+ GE+ DP  ETT L+E+++RGQV+E+L+Q+N+ A  RGSRSI  ED+ 
+Sbjct  16    KYRVEIQQMMFVSGEINDPPVETTSLIEDIVRGQVIEILLQSNKTAHLRGSRSILPEDVI  195
+
+Query  69    FLIRHDRAKVNRLKTYLSWKEVRKKAKEQDA---------NP-ADTKDLFEEVDSKTRS-  117
+             FLIRHD+AKVNRL+TYLSWK++RK AK+QDA         NP A  +D  ++     +  
+Sbjct  196   FLIRHDKAKVNRLRTYLSWKDLRKNAKDQDASAGVASGTGNPGAGGEDDLKKAGGGEKDE  375
+
+Query  118   ----------MNAVAMPWEVKNmftep--vpeteefeedndtmemAYATRQRLKMADERT  165
+                        + + +PWE++ MF E       +  + D D  E    T +RLKMAD+RT
+Sbjct  376   KDGGNMMKVKKSQIKLPWELQFMFNEHPLENNDDNDDMDEDEREANIVTLKRLKMADDRT  555
+
+Query  166   KKMTREEYVHWSECRQASFTYRKGKRFREWCGMSILTDTRPDNDIVDILGFLTFEIVATL  225
+             + MT+EEYVHWS+CRQASFT+RK KRF++W G+S LT+ +P +D++DILGFLTFEIV +L
+Sbjct  556   RNMTKEEYVHWSDCRQASFTFRKNKRFKDWSGISQLTEGKPHDDVIDILGFLTFEIVCSL  735
+
+Query  226   TEEALAVKDRMDRIQNssgsggshaahhP----------KNCSLFDGLTEGRTPLQVSHV  275
+             TE AL +K R   +Q         +  +           +   LFDG      PL+  H+
+Sbjct  736   TETALKIKQREQVLQTQKDKSQQSSQDNTNFEFASSTLHRKKRLFDGPENVINPLKPRHI  915
+
+Query  276   LEAFRRLQIPDKTHTAMRSFHGGLVKSRVYLI  307
+              EA+R LQ  D  H A+ +F GG + S+  ++
+Sbjct  916   EEAWRVLQTIDMRHRALTNFKGGRLSSKPIIM  1011
+
+
+
+Lambda      K        H        a         alpha
+   0.320    0.133    0.385    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 521997623
+
+
+Query= 2539500|NP_588194.1|chromosome III|nnr2|1|1444488|1445881|N/A|327|No description available
+
+Length=327
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001179717.1 Saccharomyces cerevisiae S288C NADHX dehydratase (...  229     9e-74
+
+
+>NM_001179717.1 Saccharomyces cerevisiae S288C NADHX dehydratase 
+(NNR2), partial mRNA
+Length=1014
+
+ Score = 229 bits (584),  Expect = 9e-74, Method: Compositional matrix adjust.
+ Identities = 136/322 (42%), Positives = 185/322 (57%), Gaps = 24/322 (7%)
+ Frame = +1
+
+Query  16    KRIIPPLLDTFHKGQAG-RVGVFGGCQHYTGAPYYSSMSSMLFGSDQSHIFCEKEAANVI  74
+             KR IPPLL  FHKGQ+G RV + GGC+ YTGAPY+S+ ++ L G D +H+ CE  A  VI
+Sbjct  46    KRCIPPLLPKFHKGQSGGRVCIIGGCEDYTGAPYFSANATALMGCDLTHVICEYNAGTVI  225
+
+Query  75    KSYSPDLIVHPFLREKDKAGPEDSVDKCFELIKPMMGRLHAIVIGPGLGRDEWMQEIMAK  134
+             KSY+P+L+VHP+LR  +     D +D+  + I  ++ R+H +VIGPGLGRD  M + +  
+Sbjct  226   KSYTPNLMVHPYLRMSNTKLDVD-MDEQRKKINSLLDRIHVVVIGPGLGRDPLMLKSIKD  402
+
+Query  135   VIEY---ARKNDMPMVIDADGLWLIQQRP---ELVSGY--HNVILTPNVIEFKRLCDKLD  186
+             +I Y     +  +P+VIDADGL+L+ Q     E++  Y    VILTPNV+EFKRLCD + 
+Sbjct  403   IIRYILEKHEGKIPLVIDADGLFLVTQDSEVKEMLKSYPKGRVILTPNVVEFKRLCDAIG  582
+
+Query  187   IKSDGPDACNQL-AGKLNLLIIQKGQSDII---SDGATAYACSVPGGLKRCGGQGDILTG  242
+              K D       L A +LN ++++KGQSD I            S  G  KR GGQGD LTG
+Sbjct  583   KKGDSHSEMGSLIAQELNCIVVEKGQSDKIFSPDSEKDMLTNSEEGSNKRVGGQGDTLTG  762
+
+Query  243   ILATFLAWRHAYL-----SKEWDTEGNMDAK-----ECLFLAAFGASACTRWCSRLAFKE  292
+              ++  LA+  A        +E   E + D       +   L+ +     TR CSRL FK 
+Sbjct  763   AISCMLAFSRAMYDFKICEQEEKGESSNDKPLKNWVDYAMLSCYAGCTITRECSRLGFKA  942
+
+Query  293   CGRATQSTDLVRHVGKAYNALM  314
+              GRA Q+TDL   VG+ +  L 
+Sbjct  943   KGRAMQTTDLNDRVGEVFAKLF  1008
+
+
+
+Lambda      K        H        a         alpha
+   0.321    0.138    0.425    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 570108003
+
+
+Query= 2539076|NP_588195.1|chromosome III|N/A|-1|1446213|1447571|N/A|227|No description available
+
+Length=227
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001181301.3 Saccharomyces cerevisiae S288C transporter YIP1 (Y...  152     2e-46
+
+
+>NM_001181301.3 Saccharomyces cerevisiae S288C transporter YIP1 
+(YIP1), partial mRNA
+Length=747
+
+ Score = 152 bits (384),  Expect = 2e-46, Method: Compositional matrix adjust.
+ Identities = 89/196 (45%), Positives = 120/196 (61%), Gaps = 9/196 (5%)
+ Frame = +1
+
+Query  39   EPLSQGWLAAFSTSGYPGEPSLLEELEINFGHIKQKTTHVLNPFK---HVDVHIMDDTDM  95
+            +PL  G L A ST GYP EP LLEE+ INF HI  KT  VL P +    V   I++D+D+
+Sbjct  154  DPLPVGILHALSTKGYPHEPPLLEEIGINFDHIITKTKMVLIPIRFGSGVPQEILNDSDL  333
+
+Query  96   AGPIlfcllfstflslHGRSHFGYIYGIALLGSLSLHFVLRLMS------AKNLFFTRTV  149
+            AGP++F LLF  FL + G+ HFGYIYG+AL G++SLH + +LMS        NL F  T 
+Sbjct  334  AGPLIFFLLFGLFLLMAGKVHFGYIYGVALFGTISLHNLSKLMSNNDTSTQTNLQFFNTA  513
+
+Query  150  SVLGYSLLPLVVIAFFKNIFTFNGIAGYALAALACIWCTYAASAMFVGILQVNNMRFLVA  209
+            S+LGY  LPL  ++        N   GY ++ L  IW T+ +S     +LQ+ N R L+A
+Sbjct  514  SILGYCFLPLCFLSLLGIFHGLNNTTGYVVSVLFVIWSTWTSSGFLNSLLQLQNARLLIA  693
+
+Query  210  YPIALFYGVFAVITVF  225
+            YP+ +FY VFA++ +F
+Sbjct  694  YPLLIFYSVFALMVIF  741
+
+
+
+Lambda      K        H        a         alpha
+   0.327    0.140    0.432    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 339350620
+
+
+  Database: 1_subject_sequences\s_cerevisiae\GCF_000146045.2\rna.fna
+    Posted date:  Nov 28, 2025  9:03 PM
+  Number of letters in database: 8,873,817
+  Number of sequences in database:  6,138
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 13
+Window for multiple hits: 40

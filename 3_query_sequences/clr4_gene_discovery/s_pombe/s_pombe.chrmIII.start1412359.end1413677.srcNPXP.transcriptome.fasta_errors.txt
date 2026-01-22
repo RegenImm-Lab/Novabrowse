@@ -1,0 +1,2 @@
+Error processing gene 9843809: 'NoneType' object has no attribute 'attrib'
+Sequence not found for transcript ID: NM_001023172.1 (Gene ID: 9843672)

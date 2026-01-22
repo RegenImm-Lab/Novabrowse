@@ -1,0 +1,18 @@
+2026-01-22 02:14:03,476 - INFO - Starting BLAST pipeline for multiple sequences...
+2026-01-22 02:14:03,476 - INFO - 
+==================================================
+2026-01-22 02:14:03,476 - INFO - Processing sequence 1/1 - Species: c_albicans
+2026-01-22 02:14:03,477 - INFO - Created output directory: 4_blast_results\clr4_gene_discovery\c_albicans.chrmNC_032095.1.start64158.end65279.srcNPXP
+2026-01-22 02:14:03,477 - INFO - Processing BLAST types: tblastn
+2026-01-22 02:14:03,477 - INFO - 
+Starting tblastn searches for c_albicans...
+2026-01-22 02:14:03,477 - INFO - 
+Processing tblastn for species s_cerevisiae (1/2)
+2026-01-22 02:14:03,478 - INFO -   Overriding evalue with species-specific value: 1e-10
+2026-01-22 02:14:03,478 - INFO - 
+Executing BLAST command:
+2026-01-22 02:14:03,478 - INFO -   - Type: tblastn
+2026-01-22 02:14:03,478 - INFO -   - Query file: 3_query_sequences\clr4_gene_discovery\c_albicans\c_albicans.chrmNC_032095.1.start64158.end65279.srcNPXP.proteome.fasta
+2026-01-22 02:14:03,478 - INFO -   - Database: 2_subject_blastdb\s_cerevisiae_GCF_000146045.2
+2026-01-22 02:14:03,478 - INFO -   - Output file: 4_blast_results\clr4_gene_discovery\c_albicans.chrmNC_032095.1.start64158.end65279.srcNPXP\results_tblastn_s_cerevisiae_transcriptome.txt
+2026-01-22 02:14:03,479 - INFO -   - Full command: tblastn -query 3_query_sequences\clr4_gene_discovery\c_albicans\c_albicans.chrmNC_032095.1.start64158.end65279.srcNPXP.proteome.fasta -db 2_subject_blastdb\s_cerevisiae_GCF_000146045.2 -out 4_blast_results\clr4_gene_discovery\c_albicans.chrmNC_032095.1.start64158.end65279.srcNPXP\results_tblastn_s_cerevisiae_transcriptome.txt -outfmt 0 -num_threads 48 -evalue 1e-10
