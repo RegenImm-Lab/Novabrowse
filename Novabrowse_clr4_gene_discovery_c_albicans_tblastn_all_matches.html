@@ -15609,7 +15609,7 @@ function updateGeneRectVisibility(geneVisible, geneName, hide2ndMatchActive, sec
     geneRects.forEach(rect => {
         // Check if this rect is for a 2nd match gene
         const rectSpeciesIndex = parseInt(rect.id.split('_')[1]);
-        const rectGeneId = rect.id.split('_')[2];
+        const rectGeneId = rect.id.split('_').slice(2).join('_');
 
         let is2ndMatch = false;
         if (secondMatchGenes.has(geneName)) {
@@ -17235,7 +17235,9 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
     // Single pass through all rectangles
     geneRects.forEach(rect => {
         const rectId = rect.id;
-        const [, rectSpeciesMatch, rectGeneId] = rectId.split('_');
+        const parts = rectId.split('_');
+        const rectSpeciesMatch = parts[1];
+        const rectGeneId = parts.slice(2).join('_');
         const speciesMatchInt = parseInt(rectSpeciesMatch);
         // isHoveredGene is true for the specific rect being hovered:
         // - For query species hover: the query gene rect
@@ -17254,7 +17256,7 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
         if (!isHighlight) {
             // When unhighlighting, use ribbon color if available, otherwise white
             newColor = ribbonGeneColor || '#fff';
-        } else if (isHoveredGene || isCorrespondingQueryGene || isOtherSubjectMatch) {
+        } else if (isHoveredGene || isCorrespondingQueryGene || isOtherSubjectMatch || (hoveredSubjectId && rectGeneId === hoveredSubjectId)) {
             // The specific rect being hovered, the corresponding query gene, or matches in other species are blue
             newColor = '#258eff';
         } else if (hoveredGeneName === geneName) {
@@ -17286,7 +17288,7 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
                     svg: svgElement,
                     x: rectWidth,
                     y: rectY + (rectHeight / 2) - (triangleHeight / 2)-1,
-                    color: isHoveredGene ? '#258eff' : 
+                    color: (isHoveredGene || (hoveredSubjectId && rectGeneId === hoveredSubjectId)) ? '#258eff' : 
                            (isSameSpecies && !isMainSpecies) ? '#8b8b8b' : '#258eff'
                 };
 
@@ -17870,7 +17872,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
         isHovering = true;
         const mainName = geneElement.getAttribute('data-gene-name');
         const speciesIndex = parseInt(geneElement.id.split('_')[1]);
-        const geneId = geneElement.id.split('_')[2];
+        const geneId = geneElement.id.split('_').slice(2).join('_');
 
         // Get actual start position (this is already cumulative for query species)
         let startPosition = parseInt(geneElement.getAttribute('data-start-position'));
@@ -18009,7 +18011,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
             }
         });
 
-        highlightSvgGene(mainName, true, speciesIndex, geneId);
+        highlightSvgGene(mainName, true, speciesIndex, geneId, speciesIndex !== -1 ? geneId : null);
 
         // Show tooltips with adjusted start position
         tooltips.chr.innerHTML = `${mappedChrName}<br>Position: ${displayPosition.toLocaleString('fr-FR')}`;
@@ -18119,7 +18121,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
         isHovering = false;
         const mainName = geneElement.getAttribute('data-gene-name');
         const speciesIndex = parseInt(geneElement.id.split('_')[1]);
-        const geneId = geneElement.id.split('_')[2];
+        const geneId = geneElement.id.split('_').slice(2).join('_');
         const isQuerySpecies = speciesIndex === -1;
 
         // Check if this gene has ribbonGene setting enabled
@@ -18225,7 +18227,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
 
         // Find and scroll to the corresponding table row (use geneId for query species)
         const isQuerySpecies = speciesIndex === -1;
-        const geneId = geneElement.id.split('_')[2];
+        const geneId = geneElement.id.split('_').slice(2).join('_');
         const rows = isQuerySpecies 
             ? document.querySelectorAll(`tr[data-gene-id="${geneId}"]`)
             : document.querySelectorAll(`tr[data-gene-name="${mainName}"]`);
@@ -21755,7 +21757,7 @@ function removeRibbonPlot() {
         });
 
         document.querySelectorAll('rect[data-gene-name]').forEach(rect => {
-            const geneId = rect.id.split('_')[2];
+            const geneId = rect.id.split('_').slice(2).join('_');
             if (geneId) {
                 rect.removeEventListener('mouseenter', () => highlightGeneRibbons(geneId));
                 rect.removeEventListener('mouseleave', () => highlightGeneRibbons(geneId, false));
@@ -21768,7 +21770,7 @@ function removeRibbonPlot() {
 function getGeneRectPosition(rect) {
     const rectId = rect.id;
     const speciesIndex = parseInt(rectId.split('_')[1]);
-    const geneId = rectId.split('_')[2];
+    const geneId = rectId.split('_').slice(2).join('_');
 
     const svgElement = rect.closest('svg');
     if (!svgElement) {
@@ -22589,7 +22591,7 @@ function createRibbonSVG() {
     });
 
     document.querySelectorAll('rect[data-gene-name]').forEach(rect => {
-        const geneId = rect.id.split('_')[2];  // Extract geneId from rect id (rect_speciesIndex_geneId)
+        const geneId = rect.id.split('_').slice(2).join('_');  // Extract geneId from rect id (rect_speciesIndex_geneId)
         if (geneId) {
             rect.addEventListener('mouseenter', () => highlightGeneRibbons(geneId));
             rect.addEventListener('mouseleave', () => highlightGeneRibbons(geneId, false));
