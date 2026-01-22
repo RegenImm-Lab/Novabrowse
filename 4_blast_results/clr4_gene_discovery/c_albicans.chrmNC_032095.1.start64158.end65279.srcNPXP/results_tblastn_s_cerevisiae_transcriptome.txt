@@ -70,7 +70,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 938100998
 
 
-Query= 3638036|XP_720373.1|chromosome NC_032095.1|N/A|1|61436|62254|N/A|272|No description available
+Query= 3638036|XP_720373.1|chromosome NC_032095.1|CAALFM_C700380WA|1|61436|62254|N/A|272|No description available
 
 Length=272
                                                                       Score     E
@@ -683,7 +683,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 594163193
 
 
-Query= 3638039|XP_720376.1|chromosome NC_032095.1|N/A|-1|56057|57376|N/A|439|No description available
+Query= 3638039|XP_720376.1|chromosome NC_032095.1|CAALFM_C700350CA|-1|56057|57376|N/A|439|No description available
 
 Length=439
 
@@ -702,7 +702,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 825938330
 
 
-Query= 3638040|XP_720377.1|chromosome NC_032095.1|N/A|-1|52950|55865|N/A|971|No description available
+Query= 3638040|XP_720377.1|chromosome NC_032095.1|CAALFM_C700340CA|-1|52950|55865|N/A|971|No description available
 
 Length=971
                                                                       Score     E
@@ -803,7 +803,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 2049441544
 
 
-Query= 3638042|XP_720379.1|chromosome NC_032095.1|N/A|-1|51706|52854|N/A|382|No description available
+Query= 3638042|XP_720379.1|chromosome NC_032095.1|CAALFM_C700330CA|-1|51706|52854|N/A|382|No description available
 
 Length=382
                                                                       Score     E
@@ -1496,7 +1496,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 1922526586
 
 
-Query= 3638045|XP_720382.1|chromosome NC_032095.1|N/A|-1|47151|47987|N/A|278|No description available
+Query= 3638045|XP_720382.1|chromosome NC_032095.1|CAALFM_C700310CA|-1|47151|47987|N/A|278|No description available
 
 Length=278
 
@@ -1515,7 +1515,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 455803173
 
 
-Query= 3638046|XP_720383.1|chromosome NC_032095.1|N/A|1|46308|47108|N/A|266|No description available
+Query= 3638046|XP_720383.1|chromosome NC_032095.1|CAALFM_C700300WA|1|46308|47108|N/A|266|No description available
 
 Length=266
                                                                       Score     E
@@ -3994,7 +3994,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 1028577744
 
 
-Query= 3637977|XP_720386.1|chromosome NC_032095.1|N/A|1|38506|39678|N/A|390|No description available
+Query= 3637977|XP_720386.1|chromosome NC_032095.1|CAALFM_C700270WA|1|38506|39678|N/A|390|No description available
 
 Length=390
                                                                       Score     E
@@ -4089,7 +4089,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 713186414
 
 
-Query= 3637978|XP_720387.1|chromosome NC_032095.1|N/A|-1|35364|38294|N/A|976|No description available
+Query= 3637978|XP_720387.1|chromosome NC_032095.1|CAALFM_C700260CA|-1|35364|38294|N/A|976|No description available
 
 Length=976
                                                                       Score     E
@@ -4341,7 +4341,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 676625442
 
 
-Query= 3638033|XP_720370.1|chromosome NC_032095.1|N/A|-1|65302|68745|N/A|1147|No description available
+Query= 3638033|XP_720370.1|chromosome NC_032095.1|CAALFM_C700410CA|-1|65302|68745|N/A|1147|No description available
 
 Length=1147
                                                                       Score     E
@@ -4418,7 +4418,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 2445549046
 
 
-Query= 3638032|XP_720369.1|chromosome NC_032095.1|N/A|-1|69077|69538|N/A|153|No description available
+Query= 3638032|XP_720369.1|chromosome NC_032095.1|CAALFM_C700420CA|-1|69077|69538|N/A|153|No description available
 
 Length=153
                                                                       Score     E
@@ -4455,7 +4455,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 174278233
 
 
-Query= 3637993|XP_720368.1|chromosome NC_032095.1|N/A|1|70600|72360|N/A|586|No description available
+Query= 3637993|XP_720368.1|chromosome NC_032095.1|CAALFM_C700430WA|1|70600|72360|N/A|586|No description available
 
 Length=586
                                                                       Score     E
@@ -4840,7 +4840,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 818777015
 
 
-Query= 3637991|XP_720366.1|chromosome NC_032095.1|N/A|-1|74656|75453|N/A|265|No description available
+Query= 3637991|XP_720366.1|chromosome NC_032095.1|CAALFM_C700450CA|-1|74656|75453|N/A|265|No description available
 
 Length=265
                                                                       Score     E
@@ -4889,7 +4889,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 427949715
 
 
-Query= 3637990|XP_720365.1|chromosome NC_032095.1|N/A|1|75619|76341|N/A|240|No description available
+Query= 3637990|XP_720365.1|chromosome NC_032095.1|CAALFM_C700460WA|1|75619|76341|N/A|240|No description available
 
 Length=240
                                                                       Score     E
@@ -5023,7 +5023,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 1000006140
 
 
-Query= 3637986|XP_720361.1|chromosome NC_032095.1|N/A|-1|81173|81904|N/A|243|No description available
+Query= 3637986|XP_720361.1|chromosome NC_032095.1|CAALFM_C700490CA|-1|81173|81904|N/A|243|No description available
 
 Length=243
                                                                       Score     E
@@ -5068,7 +5068,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 378133548
 
 
-Query= 3637987|XP_720362.1|chromosome NC_032095.1|N/A|1|81345|81815|N/A|156|No description available
+Query= 3637987|XP_720362.1|chromosome NC_032095.1|CAALFM_C700500WA|1|81345|81815|N/A|156|No description available
 
 Length=156
                                                                       Score     E
@@ -5128,7 +5128,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 806841490
 
 
-Query= 3638001|XP_720359.1|chromosome NC_032095.1|N/A|1|84176|87451|N/A|1091|No description available
+Query= 3638001|XP_720359.1|chromosome NC_032095.1|CAALFM_C700520WA|1|84176|87451|N/A|1091|No description available
 
 Length=1091
                                                                       Score     E
