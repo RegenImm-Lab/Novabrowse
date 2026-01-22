@@ -7393,7 +7393,7 @@ function highlightMainSpeciesCells(mainRow, isHighlight) {
     const geneId = link ? link.getAttribute('href').split('/').pop() : null;
 
     // Highlight corresponding SVG gene rectangle
-    highlightSvgGene(geneName, isHighlight, -1, geneId);
+    highlightSvgGene(geneName, isHighlight, -1, geneId, null);
 }
 
 // Highlights or unhighlights subject species cells on hover
@@ -7451,9 +7451,13 @@ function highlightSpeciesCells(speciesCell, isHighlight) {
             });
         }
 
+        // Get the query gene ID from the main row's data attribute
+        const queryGeneId = mainRow ? mainRow.getAttribute('data-gene-id') : null;
+
         // Highlight corresponding SVG gene rectangle
+        // Pass both queryGeneId (for filtering) and geneId (the hovered subject gene for blue coloring)
         if (geneName) {
-            highlightSvgGene(geneName, isHighlight, parseInt(speciesIndex), geneId);
+            highlightSvgGene(geneName, isHighlight, parseInt(speciesIndex), queryGeneId, geneId);
         }
     } catch (error) {
 
@@ -7465,7 +7469,7 @@ function highlightSpeciesCells(speciesCell, isHighlight) {
 }
 
 // Highlights or unhighlights a gene rectangle in the chromosome SVG
-function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, hoveredGeneId = null) {
+function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId = null, hoveredSubjectId = null) {
     if (!geneName) return;
 
     // Cancel any pending animation frame
@@ -7486,12 +7490,12 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, hoveredGeneI
         GeneHighlightCache.lastUpdate = Date.now();
     }
 
-    // If hoveredGeneId is provided, filter rects to only include:
-    // 1. The specific query gene being hovered (matching hoveredGeneId)
+    // If queryGeneId is provided, filter rects to only include:
+    // 1. The specific query gene (matching queryGeneId)
     // 2. Subject species rects that are matches for this specific query gene
-    if (hoveredGeneId && window.geneData) {
+    if (queryGeneId && window.geneData) {
         // Find the query gene data by ID
-        const queryGeneData = window.geneData[hoveredGeneId];
+        const queryGeneData = window.geneData[queryGeneId];
         if (queryGeneData && queryGeneData.matches) {
             // Get set of valid subject gene IDs for this query gene
             const validSubjectIds = new Set(queryGeneData.matches.map(m => m.gene_id));
@@ -7502,8 +7506,8 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, hoveredGeneI
                 const isQuerySpecies = parseInt(rectSpecies) === -1;
 
                 if (isQuerySpecies) {
-                    // For query species, only include the specific hovered gene
-                    return rectGeneId === hoveredGeneId;
+                    // For query species, only include the specific query gene
+                    return rectGeneId === queryGeneId;
                 } else {
                     // For subject species, only include rects that are matches for this query gene
                     return validSubjectIds.has(rectGeneId);
@@ -7524,8 +7528,8 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, hoveredGeneI
     const ribbonGeneColor = getRibbonColorForGene(geneName);
 
     // Get hovered gene name if needed
-    const hoveredGeneName = hoveredGeneId ? 
-        document.querySelector(SELECTORS.hoveredRect(hoveredGeneId))?.getAttribute('data-gene-name') : 
+    const hoveredGeneName = queryGeneId ? 
+        document.querySelector(SELECTORS.hoveredRect(queryGeneId))?.getAttribute('data-gene-name') : 
         null;
 
     // Prepare changes
@@ -7540,18 +7544,25 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, hoveredGeneI
         const rectId = rect.id;
         const [, rectSpeciesMatch, rectGeneId] = rectId.split('_');
         const speciesMatchInt = parseInt(rectSpeciesMatch);
-        const isHoveredGene = hoveredGeneId && rectGeneId === hoveredGeneId && 
-                              speciesMatchInt === parseInt(speciesIndex);
+        // isHoveredGene is true for the specific rect being hovered:
+        // - For query species hover: the query gene rect
+        // - For subject species hover: the specific subject gene rect
+        const isHoveredGene = (speciesIndex === -1 && queryGeneId && rectGeneId === queryGeneId && speciesMatchInt === -1) ||
+                              (speciesIndex !== -1 && hoveredSubjectId && rectGeneId === hoveredSubjectId && speciesMatchInt === parseInt(speciesIndex));
         const isSameSpecies = speciesMatchInt === parseInt(speciesIndex);
         const isMainSpecies = speciesMatchInt === -1;
+        // When hovering subject species, this identifies the corresponding query gene
+        const isCorrespondingQueryGene = isMainSpecies && queryGeneId && rectGeneId === queryGeneId;
+        // Matches in other subject species (not the one being hovered) - should also be blue and on top
+        const isOtherSubjectMatch = !isMainSpecies && speciesMatchInt !== parseInt(speciesIndex);
 
         // Determine color - EXACT same logic as original
         let newColor;
         if (!isHighlight) {
             // When unhighlighting, use ribbon color if available, otherwise white
             newColor = ribbonGeneColor || '#fff';
-        } else if (isHoveredGene) {
-            // The specific rect being hovered is always blue
+        } else if (isHoveredGene || isCorrespondingQueryGene || isOtherSubjectMatch) {
+            // The specific rect being hovered, the corresponding query gene, or matches in other species are blue
             newColor = '#258eff';
         } else if (hoveredGeneName === geneName) {
             // Other rects of the same gene as the hovered one become white
@@ -7573,7 +7584,7 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, hoveredGeneI
 
                 // Skip adding indicators for non-hovered query species genes with same name
                 // Only add indicator if: it's the hovered gene, OR it's a subject species match
-                const shouldAddIndicator = isHoveredGene || !isMainSpecies;
+                const shouldAddIndicator = isHoveredGene || isCorrespondingQueryGene || !isMainSpecies;
                 if (!shouldAddIndicator) {
                     return; // Skip this rect - it's another query gene with same name
                 }
@@ -7739,7 +7750,7 @@ function highlightRowGroup(row, isHighlight) {
     }
 
     // Highlight corresponding SVG gene rectangle (pass geneId for unique identification)
-    highlightSvgGene(geneName, isHighlight, -1, geneId);
+    highlightSvgGene(geneName, isHighlight, -1, geneId, null);
 }
 
 // Checks if a table element is hidden by current filters or column toggles

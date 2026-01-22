@@ -4546,7 +4546,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 472,
+   "execution_count": 235,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4647,7 +4647,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 473,
+   "execution_count": 236,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4786,7 +4786,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 474,
+   "execution_count": 237,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5002,7 +5002,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 475,
+   "execution_count": 238,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5282,7 +5282,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 476,
+   "execution_count": 239,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5554,7 +5554,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 477,
+   "execution_count": 240,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5830,7 +5830,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 478,
+   "execution_count": 241,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5858,7 +5858,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 479,
+   "execution_count": 242,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -6788,7 +6788,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 480,
+   "execution_count": 243,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -6889,7 +6889,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 481,
+   "execution_count": 244,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -7648,7 +7648,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 482,
+   "execution_count": 245,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -8033,7 +8033,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 483,
+   "execution_count": 246,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -8956,7 +8956,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 484,
+   "execution_count": 247,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -9066,7 +9066,7 @@
     "    const geneId = link ? link.getAttribute('href').split('/').pop() : null;\n",
     "\n",
     "    // Highlight corresponding SVG gene rectangle\n",
-    "    highlightSvgGene(geneName, isHighlight, -1, geneId, null);\n",
+    "    highlightSvgGene(geneName, isHighlight, -1, geneId);\n",
     "}\n",
     "\n",
     "// Highlights or unhighlights subject species cells on hover\n",
@@ -9124,13 +9124,9 @@
     "            });\n",
     "        }\n",
     "\n",
-    "        // Get the query gene ID from the main row's data attribute\n",
-    "        const queryGeneId = mainRow ? mainRow.getAttribute('data-gene-id') : null;\n",
-    "        \n",
     "        // Highlight corresponding SVG gene rectangle\n",
-    "        // Pass both queryGeneId (for filtering) and geneId (the hovered subject gene for blue coloring)\n",
     "        if (geneName) {\n",
-    "            highlightSvgGene(geneName, isHighlight, parseInt(speciesIndex), queryGeneId, geneId);\n",
+    "            highlightSvgGene(geneName, isHighlight, parseInt(speciesIndex), geneId);\n",
     "        }\n",
     "    } catch (error) {\n",
     "        \n",
@@ -9142,7 +9138,7 @@
     "}\n",
     "\n",
     "// Highlights or unhighlights a gene rectangle in the chromosome SVG\n",
-    "function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId = null, hoveredSubjectId = null) {\n",
+    "function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, hoveredGeneId = null) {\n",
     "    if (!geneName) return;\n",
     "    \n",
     "    // Cancel any pending animation frame\n",
@@ -9163,12 +9159,12 @@
     "        GeneHighlightCache.lastUpdate = Date.now();\n",
     "    }\n",
     "    \n",
-    "    // If queryGeneId is provided, filter rects to only include:\n",
-    "    // 1. The specific query gene (matching queryGeneId)\n",
+    "    // If hoveredGeneId is provided, filter rects to only include:\n",
+    "    // 1. The specific query gene being hovered (matching hoveredGeneId)\n",
     "    // 2. Subject species rects that are matches for this specific query gene\n",
-    "    if (queryGeneId && window.geneData) {\n",
+    "    if (hoveredGeneId && window.geneData) {\n",
     "        // Find the query gene data by ID\n",
-    "        const queryGeneData = window.geneData[queryGeneId];\n",
+    "        const queryGeneData = window.geneData[hoveredGeneId];\n",
     "        if (queryGeneData && queryGeneData.matches) {\n",
     "            // Get set of valid subject gene IDs for this query gene\n",
     "            const validSubjectIds = new Set(queryGeneData.matches.map(m => m.gene_id));\n",
@@ -9179,8 +9175,8 @@
     "                const isQuerySpecies = parseInt(rectSpecies) === -1;\n",
     "                \n",
     "                if (isQuerySpecies) {\n",
-    "                    // For query species, only include the specific query gene\n",
-    "                    return rectGeneId === queryGeneId;\n",
+    "                    // For query species, only include the specific hovered gene\n",
+    "                    return rectGeneId === hoveredGeneId;\n",
     "                } else {\n",
     "                    // For subject species, only include rects that are matches for this query gene\n",
     "                    return validSubjectIds.has(rectGeneId);\n",
@@ -9201,8 +9197,8 @@
     "    const ribbonGeneColor = getRibbonColorForGene(geneName);\n",
     "    \n",
     "    // Get hovered gene name if needed\n",
-    "    const hoveredGeneName = queryGeneId ? \n",
-    "        document.querySelector(SELECTORS.hoveredRect(queryGeneId))?.getAttribute('data-gene-name') : \n",
+    "    const hoveredGeneName = hoveredGeneId ? \n",
+    "        document.querySelector(SELECTORS.hoveredRect(hoveredGeneId))?.getAttribute('data-gene-name') : \n",
     "        null;\n",
     "    \n",
     "    // Prepare changes\n",
@@ -9217,25 +9213,18 @@
     "        const rectId = rect.id;\n",
     "        const [, rectSpeciesMatch, rectGeneId] = rectId.split('_');\n",
     "        const speciesMatchInt = parseInt(rectSpeciesMatch);\n",
-    "        // isHoveredGene is true for the specific rect being hovered:\n",
-    "        // - For query species hover: the query gene rect\n",
-    "        // - For subject species hover: the specific subject gene rect\n",
-    "        const isHoveredGene = (speciesIndex === -1 && queryGeneId && rectGeneId === queryGeneId && speciesMatchInt === -1) ||\n",
-    "                              (speciesIndex !== -1 && hoveredSubjectId && rectGeneId === hoveredSubjectId && speciesMatchInt === parseInt(speciesIndex));\n",
+    "        const isHoveredGene = hoveredGeneId && rectGeneId === hoveredGeneId && \n",
+    "                              speciesMatchInt === parseInt(speciesIndex);\n",
     "        const isSameSpecies = speciesMatchInt === parseInt(speciesIndex);\n",
     "        const isMainSpecies = speciesMatchInt === -1;\n",
-    "        // When hovering subject species, this identifies the corresponding query gene\n",
-    "        const isCorrespondingQueryGene = isMainSpecies && queryGeneId && rectGeneId === queryGeneId;\n",
-    "        // Matches in other subject species (not the one being hovered) - should also be blue and on top\n",
-    "        const isOtherSubjectMatch = !isMainSpecies && speciesMatchInt !== parseInt(speciesIndex);\n",
     "        \n",
     "        // Determine color - EXACT same logic as original\n",
     "        let newColor;\n",
     "        if (!isHighlight) {\n",
     "            // When unhighlighting, use ribbon color if available, otherwise white\n",
     "            newColor = ribbonGeneColor || '#fff';\n",
-    "        } else if (isHoveredGene || isCorrespondingQueryGene || isOtherSubjectMatch) {\n",
-    "            // The specific rect being hovered, the corresponding query gene, or matches in other species are blue\n",
+    "        } else if (isHoveredGene) {\n",
+    "            // The specific rect being hovered is always blue\n",
     "            newColor = '#258eff';\n",
     "        } else if (hoveredGeneName === geneName) {\n",
     "            // Other rects of the same gene as the hovered one become white\n",
@@ -9257,7 +9246,7 @@
     "                \n",
     "                // Skip adding indicators for non-hovered query species genes with same name\n",
     "                // Only add indicator if: it's the hovered gene, OR it's a subject species match\n",
-    "                const shouldAddIndicator = isHoveredGene || isCorrespondingQueryGene || !isMainSpecies;\n",
+    "                const shouldAddIndicator = isHoveredGene || !isMainSpecies;\n",
     "                if (!shouldAddIndicator) {\n",
     "                    return; // Skip this rect - it's another query gene with same name\n",
     "                }\n",
@@ -9423,7 +9412,7 @@
     "    }\n",
     "\n",
     "    // Highlight corresponding SVG gene rectangle (pass geneId for unique identification)\n",
-    "    highlightSvgGene(geneName, isHighlight, -1, geneId, null);\n",
+    "    highlightSvgGene(geneName, isHighlight, -1, geneId);\n",
     "}\n",
     "\n",
     "// Checks if a table element is hidden by current filters or column toggles\n",
@@ -9455,7 +9444,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 485,
+   "execution_count": 248,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -11419,7 +11408,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 486,
+   "execution_count": 249,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -11731,7 +11720,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 487,
+   "execution_count": 250,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -12270,7 +12259,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 488,
+   "execution_count": 251,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -13098,7 +13087,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 489,
+   "execution_count": 252,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -13346,7 +13335,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 490,
+   "execution_count": 253,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -13545,7 +13534,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 491,
+   "execution_count": 254,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -13763,7 +13752,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 492,
+   "execution_count": 255,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -14890,7 +14879,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 493,
+   "execution_count": 256,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -17696,7 +17685,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 494,
+   "execution_count": 257,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -17885,7 +17874,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 495,
+   "execution_count": 258,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -18159,7 +18148,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 496,
+   "execution_count": 259,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -18192,7 +18181,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 497,
+   "execution_count": 260,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -19282,7 +19271,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 498,
+   "execution_count": 261,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -19328,7 +19317,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 499,
+   "execution_count": 262,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -20706,7 +20695,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 500,
+   "execution_count": 263,
    "metadata": {},
    "outputs": [
     {
