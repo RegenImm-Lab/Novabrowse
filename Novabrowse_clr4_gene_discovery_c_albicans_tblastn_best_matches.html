@@ -7524,8 +7524,8 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
     const activeRects = document.querySelectorAll('.active_rect');
     activeRects.forEach(rect => rect.classList.remove('active_rect'));
 
-    // Get ribbon color for THIS specific gene
-    const ribbonGeneColor = getRibbonColorForGene(geneName);
+    // Get ribbon color for THIS specific gene (using queryGeneId for lookup)
+    const ribbonGeneColor = getRibbonColorForGene(queryGeneId);
 
     // Get hovered gene name if needed
     const hoveredGeneName = queryGeneId ? 
@@ -7666,13 +7666,24 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
 
             // Handle genes that should stay on top (those with ribbonGene enabled)
             const ribbonState = window.ribbonState || { ribbonSettings: {} };
-            const topGenes = Object.entries(ribbonState.ribbonSettings || {})
+            const topGeneIds = Object.entries(ribbonState.ribbonSettings || {})
                 .filter(([_, settings]) => settings.ribbonGene)
-                .map(([name, _]) => name);
+                .map(([geneId, _]) => geneId);
 
-            if (topGenes.length > 0) {
-                topGenes.forEach(topGeneName => {
-                    const topGeneRects = document.querySelectorAll(SELECTORS.geneRect(topGeneName));
+            if (topGeneIds.length > 0) {
+                topGeneIds.forEach(topGeneId => {
+                    // Get query rect and subject rects for this gene
+                    const topGeneRects = [];
+                    const queryRect = document.querySelector(`rect[id="rect_-1_${topGeneId}"]`);
+                    if (queryRect) topGeneRects.push(queryRect);
+
+                    if (window.geneData && window.geneData[topGeneId]) {
+                        window.geneData[topGeneId].matches.forEach(match => {
+                            const subjectRects = document.querySelectorAll(`rect[id$="_${match.gene_id}"]`);
+                            subjectRects.forEach(r => topGeneRects.push(r));
+                        });
+                    }
+
                     topGeneRects.forEach(rect => {
                         if (rect.style.display !== 'none') {
                             const parent = rect.parentNode;
@@ -11783,17 +11794,17 @@ function updateGeneCheckboxColors() {
     const checkboxes = document.querySelectorAll('.gene_checkbox:not(.hidden)'); // Skip hidden checkboxes
 
     checkboxes.forEach(checkbox => {
-        const geneName = checkbox.getAttribute('data-gene-name');
+        const geneId = checkbox.getAttribute('data-gene-id');
 
         let color = null;
 
-        // First check if there's a custom setting for this gene
-        if (ribbonState.ribbonSettings && ribbonState.ribbonSettings[geneName] && ribbonState.ribbonSettings[geneName].color) {
-            color = ribbonState.ribbonSettings[geneName].color;
+        // First check if there's a custom setting for this gene (using geneId)
+        if (ribbonState.ribbonSettings && ribbonState.ribbonSettings[geneId] && ribbonState.ribbonSettings[geneId].color) {
+            color = ribbonState.ribbonSettings[geneId].color;
         } 
-        // Otherwise use the default color from geneColors
-        else if (ribbonState.geneColors.has(geneName)) {
-            color = ribbonState.geneColors.get(geneName);
+        // Otherwise use the default color from geneColors (using geneId)
+        else if (ribbonState.geneColors.has(geneId)) {
+            color = ribbonState.geneColors.get(geneId);
         }
 
         if (color) {
@@ -12236,7 +12247,7 @@ function prepareRibbonData() {
     const totalGenes = mainChromGenes.length;
     mainChromGenes.forEach((gene, index) => {
         const progress = totalGenes > 1 ? index / (totalGenes - 1) : 0;
-        ribbonData.colors.set(gene.geneName, getGeneColor(progress));
+        ribbonData.colors.set(gene.geneId, getGeneColor(progress));
     });
 
     // Find active species
@@ -12251,14 +12262,28 @@ function prepareRibbonData() {
     // Processes each visible gene (iterate by geneId to handle duplicate names like N/A)
     visibleGenes.forEach((geneName, geneId) => {
 
-        // Get all gene rectangles for this gene
-        const geneRects = Array.from(document.querySelectorAll(`rect[data-gene-name="${geneName}"]`))
-            .filter(rect => {
-                const speciesIndex = parseInt(rect.id.split('_')[1]);
-                return activeSpecies.has(speciesIndex) && rect.style.display !== 'none';
-            });
+        // Get all gene rectangles for this specific gene (by geneId, not geneName)
+        // Query gene rect uses ID format: rect_{speciesIndex}_{geneId}
+        // For query species, use exact geneId match; for subject species, use geneData matches
+        const queryRect = document.querySelector(`rect[id="rect_-1_${geneId}"]`);
+        const subjectGeneIds = window.geneData && window.geneData[geneId] ? 
+            window.geneData[geneId].matches.map(m => m.gene_id) : [];
 
-        const geneColor = ribbonData.colors.get(geneName);
+        const geneRects = [];
+        if (queryRect && queryRect.style.display !== 'none' && activeSpecies.has(-1)) {
+            geneRects.push(queryRect);
+        }
+        subjectGeneIds.forEach(subjectId => {
+            const subjectRects = document.querySelectorAll(`rect[id$="_${subjectId}"]`);
+            subjectRects.forEach(rect => {
+                const speciesIndex = parseInt(rect.id.split('_')[1]);
+                if (activeSpecies.has(speciesIndex) && rect.style.display !== 'none') {
+                    geneRects.push(rect);
+                }
+            });
+        });
+
+        const geneColor = ribbonData.colors.get(geneId);
 
         // Group rectangles by species, checking temporary_hidden per species
         const speciesGroups = new Map();
@@ -12359,9 +12384,9 @@ function prepareRibbonData() {
                             type: 'connector',
                             geneName,
                             geneId: mainPos.geneId,
-                            color: ribbonState.ribbonSettings[geneName]?.color || geneColor,
+                            color: ribbonState.ribbonSettings[geneId]?.color || geneColor,
                             opacity,
-                            keepOnTop: ribbonState.ribbonSettings[geneName]?.keepOnTop || false,
+                            keepOnTop: ribbonState.ribbonSettings[geneId]?.keepOnTop || false,
                             d: `M ${lastPos.rightX+2},${lastPos.y} 
                                 C ${lastPos.rightX + controlPointOffset},${lastPos.y} 
                                 ${currentPos.x - controlPointOffset},${currentPos.y} 
@@ -12437,7 +12462,7 @@ function reorderRibbonPaths() {
         if (isHovered) {
             // Only include paths with the matching geneId in hoveredPaths
             hoveredPaths = paths.filter(p => p.getAttribute('data-gene-id') === hoveredGeneId);
-        } else if (ribbonState.ribbonSettings[geneName]?.keepOnTop) {
+        } else if (ribbonState.ribbonSettings[geneId]?.keepOnTop) {
             keepOnTopPaths.push({ geneName, paths });
         } else {
             regularPaths.push(...paths);
@@ -12469,8 +12494,8 @@ function reorderRibbonPaths() {
 }
 
 // Returns default ribbon settings (color, opacity) for a gene
-function getDefaultRibbonSettings(geneName) {
-    const defaultColor = ribbonState.geneColors.get(geneName) || '#258eff';
+function getDefaultRibbonSettings(geneId) {
+    const defaultColor = ribbonState.geneColors.get(geneId) || '#258eff';
     return {
         color: defaultColor,
         width: 2,
@@ -12481,16 +12506,16 @@ function getDefaultRibbonSettings(geneName) {
 }
 
 // Gets current ribbon settings for a gene from stored state
-function getRibbonSettings(geneName) {
-    if (!ribbonState.ribbonSettings[geneName]) {
-        ribbonState.ribbonSettings[geneName] = getDefaultRibbonSettings(geneName);
+function getRibbonSettings(geneId) {
+    if (!ribbonState.ribbonSettings[geneId]) {
+        ribbonState.ribbonSettings[geneId] = getDefaultRibbonSettings(geneId);
     }
-    return ribbonState.ribbonSettings[geneName];
+    return ribbonState.ribbonSettings[geneId];
 }
 
 // Applies color and opacity settings to a ribbon path element
-function applyRibbonSettings(path, geneName) {
-    const settings = getRibbonSettings(geneName);
+function applyRibbonSettings(path, geneId) {
+    const settings = getRibbonSettings(geneId);
     path.setAttribute('stroke', settings.color);
     path.setAttribute('stroke-width', settings.width);
     path.setAttribute('opacity', settings.opacity !== undefined ? settings.opacity : 0.5);
@@ -12525,7 +12550,7 @@ function rgbToHex(rgb) {
 }
 
 // Displays the ribbon customization widget for a gene
-function showRibbonSettingWidget(button, geneName) {
+function showRibbonSettingWidget(button, geneName, geneId) {
     // Remove any existing widget first
     removeRibbonSettingWidget();
 
@@ -12538,7 +12563,7 @@ function showRibbonSettingWidget(button, geneName) {
     }
 
     // Get current settings for this ribbon
-    const settings = getRibbonSettings(geneName);
+    const settings = getRibbonSettings(geneId);
 
     // Convert color to hex format for the color picker
     const hexColor = rgbToHex(settings.color);
@@ -12609,7 +12634,7 @@ function showRibbonSettingWidget(button, geneName) {
         const keepOnTop = keepTopInput.checked;
         const ribbonGene = ribbonGeneInput.checked;
 
-        ribbonState.ribbonSettings[geneName] = {
+        ribbonState.ribbonSettings[geneId] = {
             color: newColor,
             width: !isNaN(widthValue) ? widthValue : 2,
             opacity: !isNaN(opacityValue) ? opacityValue : 0.5,
@@ -12621,31 +12646,46 @@ function showRibbonSettingWidget(button, geneName) {
         // Update keepOnTopOrder array
         if (keepOnTop) {
             // Remove if already exists (to re-add at the end)
-            const index = ribbonState.keepOnTopOrder.indexOf(geneName);
+            const index = ribbonState.keepOnTopOrder.indexOf(geneId);
             if (index > -1) {
                 ribbonState.keepOnTopOrder.splice(index, 1);
             }
             // Add to the end (highest priority)
-            ribbonState.keepOnTopOrder.push(geneName);
+            ribbonState.keepOnTopOrder.push(geneId);
         } else {
             // Remove from the array
-            const index = ribbonState.keepOnTopOrder.indexOf(geneName);
+            const index = ribbonState.keepOnTopOrder.indexOf(geneId);
             if (index > -1) {
                 ribbonState.keepOnTopOrder.splice(index, 1);
             }
         }
 
         // Handle gene rectangle coloring
+        // Get rects by geneId: query rect directly, subject rects via geneData matches
+        const getGeneRectsById = (queryGeneId) => {
+            const rects = [];
+            const queryRect = document.querySelector(`rect[id="rect_-1_${queryGeneId}"]`);
+            if (queryRect) rects.push(queryRect);
+
+            if (window.geneData && window.geneData[queryGeneId]) {
+                window.geneData[queryGeneId].matches.forEach(match => {
+                    const subjectRects = document.querySelectorAll(`rect[id$="_${match.gene_id}"]`);
+                    subjectRects.forEach(r => rects.push(r));
+                });
+            }
+            return rects;
+        };
+
         if (ribbonGene) {
             // Color all gene rectangles for this gene with the ribbon color
-            const geneRects = document.querySelectorAll(`rect[data-gene-name="${geneName}"]`);
+            const geneRects = getGeneRectsById(geneId);
             geneRects.forEach(rect => {
                 rect.setAttribute('fill', newColor);
                 rect.setAttribute('data-original-fill', '#fff'); // Store original color
             });
         } else {
             // Restore original white color when unchecked
-            const geneRects = document.querySelectorAll(`rect[data-gene-name="${geneName}"]`);
+            const geneRects = getGeneRectsById(geneId);
             geneRects.forEach(rect => {
                 rect.setAttribute('fill', rect.getAttribute('data-original-fill') || '#fff');
             });
@@ -12653,15 +12693,15 @@ function showRibbonSettingWidget(button, geneName) {
 
         // Update all ribbon paths for this gene if ribbon is active
         if (ribbonState.isActive && ribbonState.svg) {
-            const paths = ribbonState.svg.querySelectorAll(`path[data-gene-name="${geneName}"]`);
-            paths.forEach(path => applyRibbonSettings(path, geneName));
+            const paths = ribbonState.svg.querySelectorAll(`path[data-gene-id="${geneId}"]`);
+            paths.forEach(path => applyRibbonSettings(path, geneId));
 
             // Reorder paths to respect keepOnTop settings
             reorderRibbonPaths();
         }
 
         // Update the checkbox color to match the ribbon color
-        updateGeneCheckboxColor(geneName, newColor);
+        updateGeneCheckboxColor(geneId, newColor);
     };
 
     // Add real-time update listeners
@@ -12690,12 +12730,34 @@ function showRibbonSettingWidget(button, geneName) {
 
         // Reset all gene rectangle colors - BUT RESPECT RIBBON GENE SETTINGS
         document.querySelectorAll('rect[data-gene-name]').forEach(rect => {
-            const rectGeneName = rect.getAttribute('data-gene-name');
-            if (rectGeneName) {
-                // Check if this gene has ribbonGene setting enabled
-                if (ribbonState.ribbonSettings[rectGeneName]?.ribbonGene) {
+            const rectId = rect.id;
+            if (rectId) {
+                // Extract geneId from rect id (format: rect_{speciesIndex}_{geneId})
+                const parts = rectId.split('_');
+                const speciesIndex = parseInt(parts[1]);
+                const rectGeneId = parts[2];
+
+                // For query species rects, check if ribbonGene is enabled using the geneId
+                // For subject species rects, find the query gene that has this as a match
+                let settingsKey = null;
+                if (speciesIndex === -1) {
+                    settingsKey = rectGeneId;
+                } else {
+                    // Find query gene that has this subject gene as a match
+                    for (const [queryId, settings] of Object.entries(ribbonState.ribbonSettings)) {
+                        if (settings.ribbonGene && window.geneData && window.geneData[queryId]) {
+                            const hasMatch = window.geneData[queryId].matches.some(m => m.gene_id === rectGeneId);
+                            if (hasMatch) {
+                                settingsKey = queryId;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (settingsKey && ribbonState.ribbonSettings[settingsKey]?.ribbonGene) {
                     // Keep the ribbon color
-                    rect.setAttribute('fill', ribbonState.ribbonSettings[rectGeneName].color);
+                    rect.setAttribute('fill', ribbonState.ribbonSettings[settingsKey].color);
                 } else {
                     // Reset to white only if ribbonGene is not enabled
                     rect.setAttribute('fill', '#fff');
@@ -12706,6 +12768,9 @@ function showRibbonSettingWidget(button, geneName) {
         // Remove the widget
         removeRibbonSettingWidget();
 
+        // Update checkbox colors to reflect the new settings
+        updateGeneCheckboxColors();
+
         // Use setTimeout to ensure activeRibbonButton is cleared after the current event cycle
         setTimeout(() => {
             activeRibbonButton = null;
@@ -12714,16 +12779,20 @@ function showRibbonSettingWidget(button, geneName) {
 }
 
 // Updates a gene checkbox border to match its ribbon color
-function updateGeneCheckboxColor(geneName, color) {
-    const checkboxes = document.querySelectorAll(`.gene_checkbox[data-gene-name="${geneName}"]`);
-    checkboxes.forEach(checkbox => {
-        // Update BOTH the stored color in ribbonState.geneColors AND ribbonSettings
-        ribbonState.geneColors.set(geneName, color);
+function updateGeneCheckboxColor(geneId, color) {
+    // Iterate through all checkboxes and find matching geneId (more robust than CSS selector)
+    const allCheckboxes = document.querySelectorAll('.gene_checkbox:not(#master_checkbox)');
+    allCheckboxes.forEach(checkbox => {
+        const checkboxGeneId = checkbox.getAttribute('data-gene-id');
+        if (checkboxGeneId === geneId) {
+            // Update BOTH the stored color in ribbonState.geneColors AND ribbonSettings
+            ribbonState.geneColors.set(geneId, color);
 
-        // Apply the color to the checkbox
-        checkbox.style.borderColor = color;
-        if (checkbox.checked) {
-            checkbox.style.backgroundColor = color;
+            // Apply the color to the checkbox
+            checkbox.style.borderColor = color;
+            if (checkbox.checked) {
+                checkbox.style.backgroundColor = color;
+            }
         }
     });
 }
@@ -12782,13 +12851,13 @@ function createRibbonSVG() {
     // Store the colors for later use
     ribbonState.geneColors = ribbonState.ribbonData.colors;
 
-    // Create paths - apply checkbox visibility immediately
-    const checkedGenesToShow = new Set();
+    // Create paths - apply checkbox visibility immediately (using geneId for unique identification)
+    const checkedGeneIdsToShow = new Set();
     document.querySelectorAll('.gene_checkbox:not(#master_checkbox)').forEach(checkbox => {
         if (checkbox.checked) {
-            const geneName = checkbox.getAttribute('data-gene-name');
-            if (geneName) {
-                checkedGenesToShow.add(geneName);
+            const geneId = checkbox.getAttribute('data-gene-id');
+            if (geneId) {
+                checkedGeneIdsToShow.add(geneId);
             }
         }
     });
@@ -12802,7 +12871,7 @@ function createRibbonSVG() {
         path.setAttribute('d', pathData.d);
 
         // Apply stored settings or use defaults
-        const settings = getRibbonSettings(pathData.geneName);
+        const settings = getRibbonSettings(pathData.geneId);
         path.setAttribute('stroke', settings.color || pathData.color);
         path.setAttribute('stroke-width', settings.width || '2');
         path.setAttribute('opacity', settings.opacity !== undefined ? settings.opacity : pathData.opacity);
@@ -12810,8 +12879,8 @@ function createRibbonSVG() {
             path.setAttribute('stroke-dasharray', settings.lineType);
         }
 
-        // Only show ribbons for checked genes
-        path.style.display = checkedGenesToShow.has(pathData.geneName) ? '' : 'none';
+        // Only show ribbons for checked genes (using geneId)
+        path.style.display = checkedGeneIdsToShow.has(pathData.geneId) ? '' : 'none';
 
         svg.appendChild(path);
     });
@@ -13026,30 +13095,30 @@ function updateRibbonVisibility() {
     if (!ribbonState.svg || !ribbonState.isActive) return;
 
     const checkboxes = document.querySelectorAll('.gene_checkbox:not(#master_checkbox)');
-    const checkedGeneNames = new Set();
+    const checkedGeneIds = new Set();
 
-    // Collect all checked gene names
+    // Collect all checked gene IDs (using geneId for unique identification)
     checkboxes.forEach(checkbox => {
         if (checkbox.checked) {
-            const geneName = checkbox.getAttribute('data-gene-name');
-            if (geneName) {
-                checkedGeneNames.add(geneName);
+            const geneId = checkbox.getAttribute('data-gene-id');
+            if (geneId) {
+                checkedGeneIds.add(geneId);
             }
         }
     });
 
-    // Update ribbon visibility based on checked state
+    // Update ribbon visibility based on checked state (using geneId)
     const allPaths = ribbonState.svg.querySelectorAll('.ribbon_path');
     allPaths.forEach(path => {
-        const pathGeneName = path.getAttribute('data-gene-name');
-        path.style.display = checkedGeneNames.has(pathGeneName) ? '' : 'none';
+        const pathGeneId = path.getAttribute('data-gene-id');
+        path.style.display = checkedGeneIds.has(pathGeneId) ? '' : 'none';
     });
 }
 
 // Gets the current display color for a gene's ribbon paths
-function getRibbonColorForGene(geneName) {
+function getRibbonColorForGene(geneId) {
     // Assumes ribbonState exists globally
-    const settings = ribbonState.ribbonSettings?.[geneName];
+    const settings = ribbonState.ribbonSettings?.[geneId];
     return settings?.ribbonGene ? settings.color : null;
 }
 </script>
@@ -16454,6 +16523,7 @@ document.addEventListener('click', function(e) {
         e.stopPropagation();
 
         const geneName = clickedRibbonButton.getAttribute('data-gene-name');
+        const geneId = clickedRibbonButton.getAttribute('data-gene-id');
 
 
 
@@ -16469,7 +16539,7 @@ document.addEventListener('click', function(e) {
 
             removeRibbonSettingWidget();
 
-            showRibbonSettingWidget(clickedRibbonButton, geneName);
+            showRibbonSettingWidget(clickedRibbonButton, geneName, geneId);
             activeRibbonButton = clickedRibbonButton;
 
         }
@@ -16490,6 +16560,8 @@ document.addEventListener('click', function(e) {
         removeRibbonSettingWidget();
         activeRibbonButton = null;
 
+        // Update checkbox colors to reflect any changes made
+        updateGeneCheckboxColors();
     }
 
 });
