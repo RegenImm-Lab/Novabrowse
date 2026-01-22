@@ -7950,6 +7950,8 @@ function addHoverEvents(element, chrName, tooltips, isMainChromosome) {
         }
 
         const svg = element.closest('svg');
+        // Remove any existing hover-lines first
+        svg.querySelectorAll('#hover-line').forEach(el => el.remove());
         svg.appendChild(hoverLine);
 
         tooltips.chr.textContent = chrName;
@@ -8247,6 +8249,8 @@ function addGeneEvents(geneElement, chrName, tooltips) {
 
         // Add hover line at gene's start position
         const svg = geneElement.closest('svg');
+        // Remove any existing hover-lines first
+        svg.querySelectorAll('#hover-line').forEach(el => el.remove());
         svg.appendChild(hoverLine);
         const yPosition = parseFloat(geneElement.getAttribute('y'));
         hoverLine.setAttribute('y1', yPosition);
