@@ -7356,7 +7356,8 @@ function addHoverEffect() {
             for (let k = -1; k <= columnIndices.subjectColumnCount - 2; k++) {
                 const neighborCell = row.cells[cellIndex + k];
 
-                if (neighborCell) {
+                // Skip chrm column cells - they shouldn't trigger gene highlighting
+                if (neighborCell && !neighborCell.classList.contains('chrm')) {
                     neighborCell.addEventListener('mouseenter', function() {
                         highlightSpeciesCells(cell, true);
                     });
