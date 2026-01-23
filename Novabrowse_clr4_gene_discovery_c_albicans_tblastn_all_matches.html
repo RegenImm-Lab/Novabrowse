@@ -18984,8 +18984,8 @@ function updateChromoTriggerPosition() {
                         actualStart: gene.start
                     });
 
-                    if (ribbonState.ribbonSettings[gene.name]?.ribbonGene) {
-                        geneRect.setAttribute('fill', ribbonState.ribbonSettings[gene.name].color);
+                    if (ribbonState.ribbonSettings[geneId]?.ribbonGene) {
+                        geneRect.setAttribute('fill', ribbonState.ribbonSettings[geneId].color);
                         geneRect.setAttribute('data-original-fill', '#fff');
                     }
 
@@ -19211,8 +19211,8 @@ function updateChromoTriggerPosition() {
                                 chromosome: match.chrm
                             });
 
-                            if (ribbonState.ribbonSettings[gene.name]?.ribbonGene) {
-                                geneRect.setAttribute('fill', ribbonState.ribbonSettings[gene.name].color);
+                            if (ribbonState.ribbonSettings[geneId]?.ribbonGene) {
+                                geneRect.setAttribute('fill', ribbonState.ribbonSettings[geneId].color);
                                 geneRect.setAttribute('data-original-fill', '#fff');
                             }
 
@@ -21965,7 +21965,7 @@ function prepareRibbonData() {
 
             // Skip 2nd matches if hide2ndMatch is active
             if (hide2ndMatchActive && pos.speciesIndex !== -1) {
-                const speciesMatches = geneData[geneName]?.matches.filter(m => 
+                const speciesMatches = geneData[geneId]?.matches.filter(m => 
                     m.species === pos.speciesIndex
                 );
 
