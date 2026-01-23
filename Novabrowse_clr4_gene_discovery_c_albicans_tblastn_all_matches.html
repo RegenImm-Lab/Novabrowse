@@ -22096,14 +22096,14 @@ function reorderRibbonPaths() {
     const svg = ribbonState.svg;
     const allPaths = Array.from(svg.querySelectorAll('.ribbon_path'));
 
-    // Group paths by gene name
-    const pathsByGene = new Map();
+    // Group paths by geneId (since ribbonSettings uses geneId as key)
+    const pathsByGeneId = new Map();
     allPaths.forEach(path => {
-        const geneName = path.getAttribute('data-gene-name');
-        if (!pathsByGene.has(geneName)) {
-            pathsByGene.set(geneName, []);
+        const geneId = path.getAttribute('data-gene-id');
+        if (!pathsByGeneId.has(geneId)) {
+            pathsByGeneId.set(geneId, []);
         }
-        pathsByGene.get(geneName).push(path);
+        pathsByGeneId.get(geneId).push(path);
     });
 
     // Create three groups: regular, keepOnTop (in order), and currently hovered
@@ -22115,15 +22115,12 @@ function reorderRibbonPaths() {
     const hoveredPath = svg.querySelector('.ribbon_path.highlighted');
     const hoveredGeneId = hoveredPath ? hoveredPath.getAttribute('data-gene-id') : null;
 
-    // Sort paths into groups (use geneId for hovered matching, geneName for keepOnTop settings)
-    pathsByGene.forEach((paths, geneName) => {
-        // For hovered matching, check if any path in this group has the hovered geneId
-        const isHovered = hoveredGeneId && paths.some(p => p.getAttribute('data-gene-id') === hoveredGeneId);
-        if (isHovered) {
-            // Only include paths with the matching geneId in hoveredPaths
-            hoveredPaths = paths.filter(p => p.getAttribute('data-gene-id') === hoveredGeneId);
-        } else if (ribbonState.ribbonSettings[geneName]?.keepOnTop) {
-            keepOnTopPaths.push({ geneName, paths });
+    // Sort paths into groups using geneId consistently
+    pathsByGeneId.forEach((paths, geneId) => {
+        if (geneId === hoveredGeneId) {
+            hoveredPaths = paths;
+        } else if (ribbonState.ribbonSettings[geneId]?.keepOnTop) {
+            keepOnTopPaths.push({ geneId, paths });
         } else {
             regularPaths.push(...paths);
         }
@@ -22136,8 +22133,8 @@ function reorderRibbonPaths() {
     });
 
     // 2. Keep on top paths (in their priority order)
-    ribbonState.keepOnTopOrder.forEach(geneName => {
-        const entry = keepOnTopPaths.find(e => e.geneName === geneName);
+    ribbonState.keepOnTopOrder.forEach(geneId => {
+        const entry = keepOnTopPaths.find(e => e.geneId === geneId);
         if (entry) {
             entry.paths.forEach(path => {
                 svg.appendChild(path);
@@ -26812,8 +26809,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Get the color for a gene based on its position in the gene list
-let ribbonSvg = null;
-let isRibbonActive = false;
 
 let geneCheckboxStates = {};
 
@@ -26827,21 +26822,10 @@ let ribbonState = {
     ribbonSettings: {}
 };
 
-// Save checkbox states before any action that might affect them
-// Restore checkbox states after DOM updates
-// Store default ribbon settings
+// Initialize keepOnTopOrder for ribbon z-ordering
 if (!ribbonState.keepOnTopOrder) {
     ribbonState.keepOnTopOrder = [];
 }
-
-// Get or create ribbon settings for a gene
-// Apply settings to a ribbon path
-// Convert RGB color to hex format
-// Create and show ribbon setting widget
-// Create and show ribbon setting widget
-// Remove ribbon setting widget
-// Create the ribbon SVG and add it to the DOM, using pre-calculated data
-// Update the function to work regardless of ribbon state
 // Toggle ribbon plot on/off
 // Setup event handlers to manage ribbon behavior
 // Debounce helper function to improve performance
@@ -26967,9 +26951,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add listeners to species toggle buttons
     document.querySelectorAll('.species_toggle').forEach(button => {
         button.addEventListener('click', () => {
-            if (isRibbonActive) {
+            if (ribbonState.isActive) {
                 // Delay update slightly to let the toggle state change
-                setTimeout(updateRibbons, 0);
+                setTimeout(updateRibbonVisibility, 0);
             }
         });
     });
@@ -27014,7 +26998,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateGeneCheckboxColors();
 
             // Update ribbon display
-            if (isRibbonActive) {
+            if (ribbonState.isActive) {
                 updateRibbonVisibility();
             }
         });
@@ -27029,7 +27013,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateGeneCheckboxColors();
 
                 // Update ribbon display when checkbox state changes
-                if (isRibbonActive) {
+                if (ribbonState.isActive) {
                     updateRibbonVisibility();
                 }
             }
@@ -27043,7 +27027,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateGeneCheckboxColors();
 
             // Update ribbon display when checkbox state changes
-            if (isRibbonActive) {
+            if (ribbonState.isActive) {
                 updateRibbonVisibility();
             }
         }
