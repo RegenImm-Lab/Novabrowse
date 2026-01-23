@@ -13,7 +13,7 @@ Database: 1_subject_sequences\s_pombe\GCF_000002945.2\rna.fna
 
 
 
-Query= 850503|NP_116613.1|chromosome VI|N/A|1|51349|52971|N/A|540|No description available
+Query= 850503|NP_116613.1|chromosome VI|YFL040W|1|51349|52971|N/A|540|No description available
 
 Length=540
                                                                       Score     E
@@ -744,7 +744,7 @@ Lambda      K        H        a         alpha    sigma
 Effective search space used: 2205357606
 
 
-Query= 1466401|NP_878071.1|chromosome VI|N/A|1|48733|48924|N/A|63|No description available
+Query= 1466401|NP_878071.1|chromosome VI|YFL041W-A|1|48733|48924|N/A|63|No description available
 
 Length=63
 

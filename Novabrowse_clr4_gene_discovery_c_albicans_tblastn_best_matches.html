@@ -5004,7 +5004,7 @@ function toggleTranscripts(rowNumber, speciesIndex, subRow = '') {
     });
 }
 
-function checkBothOff() {
+function checkbothOff() {
     let toggleBasicBtn = document.getElementById('toggleBasic');
     let toggleDetailedBtn = document.getElementById('toggleDetailed');
     let isBasicOff = !toggleBasicBtn.classList.contains('active');
@@ -5097,7 +5097,7 @@ function toggleColumns(columnClass) {
     }
 
     updateRowNumbers();
-    checkBothOff();
+    checkbothOff();
     updateSpeciesSeparatorBorders();
 }
 
@@ -5186,7 +5186,7 @@ function toggleVisibilityColumn(columnClass) {
     normalizeTableCells();
     updateHeaderColspan();
 
-    // Only call applyFilters if filter is active - this ensures column visibility is respected
+    // only call applyFilters if filter is active - this ensures column visibility is respected
     if (document.getElementById('toggleFilter').classList.contains('active')) {
         // Delay slightly to ensure toggle state is updated
         setTimeout(() => {
@@ -5283,7 +5283,7 @@ function updateHeaderColspan() {
         const columnClass = getColumnClassForHeaderCell(i, columnIndices.queryColumnCount);
         if (!columnClass) continue;
 
-        // Only check if the corresponding data column exists and is visible
+        // only check if the corresponding data column exists and is visible
         const hasVisibleDataColumn = (
             i < firstDataRow.cells.length && 
             firstDataRow.cells[i] && 
@@ -5936,7 +5936,7 @@ function updateGeneRectVisibility(geneVisible, geneName, hide2ndMatchActive, sec
             if (hide2ndMatchActive && is2ndMatch) {
                 rect.style.display = 'none';
             } else if (!currentClasses.includes('span_filtered')) {
-                // Only show if not filtered by span
+                // only show if not filtered by span
                 rect.style.display = '';
             }
         } else {
@@ -6172,7 +6172,7 @@ function applySpanFilter() {
                 const currentClasses = rect.getAttribute('class') || '';
                 rect.setAttribute('class', currentClasses.replace('span_filtered', '').trim());
 
-                // Only show if not hidden by other filters
+                // only show if not hidden by other filters
                 if (!rect.getAttribute('class')?.includes('filtered_out')) {
                     rect.style.display = '';
                 }
@@ -6180,7 +6180,7 @@ function applySpanFilter() {
                 // Show gene indicators when filter is inactive
                 const geneIndicators = chromosomesDiv.querySelectorAll(`path#gene_indicator`);
                 geneIndicators.forEach(indicator => {
-                    // Only show indicators if the rect is visible
+                    // only show indicators if the rect is visible
                     if (rect.style.display !== 'none') {
                         indicator.style.display = '';
                     }
@@ -6220,7 +6220,7 @@ function toggleFilter() {
             const currentClasses = rect.getAttribute('class') || '';
             rect.setAttribute('class', currentClasses.replace('filtered_out', '').trim());
 
-            // Only make visible if not filtered by span
+            // only make visible if not filtered by span
             if (!rect.getAttribute('class')?.includes('span_filtered')) {
                 rect.style.display = '';
             }
@@ -7007,7 +7007,7 @@ function highlightCellAndNeighbors(cell, speciesIndex) {
     if (speciesIndex === -1) {
         // For query species (first section)
         const totalColumns = columnIndices.queryColumnCount;
-        // Only highlight cells within the query species section
+        // only highlight cells within the query species section
         for (let i = 0; i < totalColumns; i++) {
             const targetCell = row.cells[i];
             if (targetCell && !targetCell.classList.contains('chrm')) {
@@ -7063,7 +7063,7 @@ function highlightCellAndNeighbors(cell, speciesIndex) {
 
             const baseIndex = columnIndices.queryColumnCount + (visualPosition * columnIndices.subjectColumnCount);
 
-            // Only highlight cells within this species section
+            // only highlight cells within this species section
             for (let i = 0; i < columnIndices.subjectColumnCount; i++) {
                 const targetCell = row.cells[baseIndex + i];
                 if (targetCell && !targetCell.classList.contains('chrm')) {
@@ -7098,7 +7098,7 @@ function updateHighlightCount(speciesIndex) {
     const start = parseInt(startInput.value);
     const end = parseInt(endInput.value);
 
-    // Only get chromosome info for subject species, not query species
+    // only get chromosome info for subject species, not query species
     let selectedChromosomes = [];
     let allSelected = true;
     if (speciesIndex !== -1) {
@@ -7525,7 +7525,7 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
     const activeRects = document.querySelectorAll('.active_rect');
     activeRects.forEach(rect => rect.classList.remove('active_rect'));
 
-    // Get ribbon color for THIS specific gene (using queryGeneId for lookup)
+    // Get ribbon color for this gene
     const ribbonGeneColor = getRibbonColorForGene(queryGeneId);
 
     // Get hovered gene name if needed
@@ -7586,10 +7586,9 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
                 const rectWidth = parseFloat(rect.getAttribute('width'));
 
                 // Skip adding indicators for non-hovered query species genes with same name
-                // Only add indicator if: it's the hovered gene, OR it's a subject species match
                 const shouldAddIndicator = isHoveredGene || isCorrespondingQueryGene || !isMainSpecies;
                 if (!shouldAddIndicator) {
-                    return; // Skip this rect - it's another query gene with same name
+                    return; 
                 }
 
                 const indicatorData = {
@@ -7711,7 +7710,7 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
                 });
             }
 
-            // Finally, ensure any active (blue) rectangles and indicators are on top (skip hovered)
+            // Ensure any active (blue) rectangles and indicators are on top (skip hovered)
             const activeRects = document.querySelectorAll('.active_rect');
             activeRects.forEach(rect => {
                 const isCurrentlyHovered = blueRects.some(br => br.element === rect && br.isHovered);
@@ -7764,7 +7763,7 @@ function highlightRowGroup(row, isHighlight) {
         }
     }
 
-    // Highlight corresponding SVG gene rectangle (pass geneId for unique identification)
+    // Highlight corresponding SVG gene rectangle
     highlightSvgGene(geneName, isHighlight, -1, geneId, null);
 }
 
@@ -8076,7 +8075,7 @@ function addHoverEvents(element, chrName, tooltips, isMainChromosome) {
         const relativeY = e.clientY - svgRect.top;
         const svgHeight = svgRect.height - triangleHeight;
 
-        // Get the accession number and chromosome number
+        // Get the accession and chromosome number
         const accessionNumber = element.getAttribute('data-accession');
         const chromosomeNum = element.getAttribute('data-chromosome');
 
@@ -8269,7 +8268,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
         rows.forEach(row => {
             row.classList.add('hover_highlight');
 
-            // Only highlight species columns if not query species
+            // only highlight species columns if not query species
             if (speciesIndex !== -1) {
                 const speciesCells = row.querySelectorAll(`.cell_species_${speciesIndex}_${geneId}`);
                 speciesCells.forEach(cell => {
@@ -8301,7 +8300,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
         tooltips.chr.style.left = (e.clientX - chrTooltipWidth - 10) + 'px';
         tooltips.chr.style.top = (e.clientY - 10) + 'px';
 
-        // Only show species tooltip for non-query species
+        // only show species tooltip for non-query species
         if (speciesIndex !== -1) {
             const speciesGeneName = geneElement.getAttribute('data-species-gene-name');
             tooltips.gene.textContent = `Species: ${speciesGeneName}`;
@@ -8405,7 +8404,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
         const geneId = geneElement.id.split('_').slice(2).join('_');
         const isQuerySpecies = speciesIndex === -1;
 
-        // Unhighlight rects via highlightSvgGene (handles colors and indicators)
+        // Unhighlight rects
         highlightSvgGene(mainName, false, speciesIndex, geneId, speciesIndex !== -1 ? geneId : null);
 
         // Remove table row highlights
@@ -8497,7 +8496,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
             }, 1000);
         });
 
-        // Find and scroll to the corresponding table row (use geneId for query species)
+        // Find and scroll to the corresponding table row
         const isQuerySpecies = speciesIndex === -1;
         const geneId = geneElement.id.split('_').slice(2).join('_');
         const rows = isQuerySpecies 
@@ -10171,7 +10170,7 @@ function hideGenesOnKeptChromosomes(speciesIndex) {
     const spans = keepState.spans.get(speciesIndex);
 
     Object.entries(genesOutsideKeepSpan[speciesIndex].chromosomes).forEach(([chromosomeName, chromosomeData]) => {
-        // Only process kept chromosomes
+        // only process kept chromosomes
         if (!keptChromosomes.has(chromosomeName)) return;
 
         // Find genes outside the span on this chromosome
@@ -10342,7 +10341,7 @@ function hideGenesInTable(speciesIndex, genesOutsideKeepSpan) {
                     for (let i = startOffset; i <= endOffset; i++) {
                         const neighborCell = row.cells[cellIndex + i];
                         if (neighborCell && !neighborCell.classList.contains('chrm')) {
-                            // Only add temporary_hidden if it's NOT a chrm cell
+                            // only add temporary_hidden if it's NOT a chrm cell
                             neighborCell.classList.add('temporary_hidden');
                         }
                     }
@@ -10372,7 +10371,7 @@ function getSpeciesSectionColumns(speciesIndex) {
 
 // Re-applies keep filter after other filter changes to maintain consistency
 function refreshKeepFilter(speciesIndex) {
-    // Only refresh if keep is actually active for this species
+    // only refresh if keep is actually active for this species
     if (!keepState.activeSpecies.has(speciesIndex)) {
         return;
     }
@@ -10786,7 +10785,7 @@ function toggleSpeciesColumns(speciesIndex) {
                 return false;
             });
 
-            // Only update display if not already hidden by filter
+            // only update display if not already hidden by filter
             if (!filterActive || row.style.display !== 'none') {
                 row.style.display = hasVisibleContent ? '' : 'none';
             }
@@ -11730,7 +11729,7 @@ function updateMasterCheckboxState() {
     const masterCheckbox = document.getElementById('master_checkbox');
     if (!masterCheckbox) return;
 
-    // Only count visible (non-hidden) checkboxes
+    // only count visible (non-hidden) checkboxes
     const allCheckboxes = Array.from(document.querySelectorAll('.gene_checkbox:not(#master_checkbox):not(.hidden)'));
     if (allCheckboxes.length === 0) {
         masterCheckbox.checked = false;
@@ -11765,11 +11764,11 @@ function updateGeneCheckboxColors() {
 
         let color = null;
 
-        // First check if there's a custom setting for this gene (using geneId)
+        // First check if there's a custom setting for this gene
         if (ribbonState.ribbonSettings && ribbonState.ribbonSettings[geneId] && ribbonState.ribbonSettings[geneId].color) {
             color = ribbonState.ribbonSettings[geneId].color;
         } 
-        // Otherwise use the default color from geneColors (using geneId)
+        // Otherwise use the default color from geneColors
         else if (ribbonState.geneColors.has(geneId)) {
             color = ribbonState.geneColors.get(geneId);
         }
@@ -12114,7 +12113,7 @@ function getGeneRectPosition(rect) {
     return result;
 }
 
-// Highlights or dims ribbon paths for a specific gene on hover (uses geneId for unique matching)
+// Highlights or dims ribbon paths for a specific gene on hover
 function highlightGeneRibbons(geneId, highlight = true) {
     if (!ribbonState.svg || !ribbonState.isActive) return;
 
@@ -12192,14 +12191,14 @@ function prepareRibbonData() {
         }
     }
 
-    // Now collect ONLY genes that have matches and visible main chromosome rectangles
+    // Now collect only genes that have matches and visible main chromosome rectangles
     const allMainGeneRects = document.querySelectorAll('rect[data-gene-name][id^="rect_-1_"]');
     allMainGeneRects.forEach(rect => {
         if (rect.style.display !== 'none') {
             const geneName = rect.getAttribute('data-gene-name');
             const pos = getGeneRectPosition(rect);
 
-            // ONLY add genes that have matches
+            // only add genes that have matches
             if (pos && geneName !== 'placeholder' && genesWithMatches.has(geneName)) {
                 mainChromGenes.push({ geneName, geneId: pos.geneId, y: pos.y });
                 visibleGenes.set(pos.geneId, geneName);
@@ -12210,7 +12209,7 @@ function prepareRibbonData() {
 
     mainChromGenes.sort((a, b) => a.y - b.y);
 
-    // Generate color map ONLY for genes with matches
+    // Generate color map only for genes with matches
     const totalGenes = mainChromGenes.length;
     mainChromGenes.forEach((gene, index) => {
         const progress = totalGenes > 1 ? index / (totalGenes - 1) : 0;
@@ -12226,10 +12225,10 @@ function prepareRibbonData() {
         }
     });
 
-    // Processes each visible gene (iterate by geneId to handle duplicate names like N/A)
+    // Processes each visible gene
     visibleGenes.forEach((geneName, geneId) => {
 
-        // Get all gene rectangles for this specific gene (by geneId, not geneName)
+        // Get all gene rectangles for this specific gene
         // Query gene rect uses ID format: rect_{speciesIndex}_{geneId}
         // For query species, use exact geneId match; for subject species, use geneData matches
         const queryRect = document.querySelector(`rect[id="rect_-1_${geneId}"]`);
@@ -12259,7 +12258,7 @@ function prepareRibbonData() {
             if (!pos) return;
 
             // Check if this SPECIFIC match is hidden by temporary_hidden
-            // Only skip if THIS specific species/gene combination is hidden
+            // only skip if THIS specific species/gene combination is hidden
             if (pos.speciesIndex !== -1) { // Don't check query species
                 const cells = document.querySelectorAll(`.cell_species_${pos.speciesIndex}_${pos.geneId}`);
                 const isHidden = Array.from(cells).some(cell => 
@@ -12403,7 +12402,7 @@ function reorderRibbonPaths() {
     const svg = ribbonState.svg;
     const allPaths = Array.from(svg.querySelectorAll('.ribbon_path'));
 
-    // Group paths by geneId (since ribbonSettings uses geneId as key)
+    // Group paths
     const pathsByGeneId = new Map();
     allPaths.forEach(path => {
         const geneId = path.getAttribute('data-gene-id');
@@ -12418,11 +12417,11 @@ function reorderRibbonPaths() {
     const keepOnTopPaths = [];
     let hoveredPaths = [];
 
-    // Check if there's a currently hovered gene (use geneId for unique matching)
+    // Check if there's a currently hovered gene
     const hoveredPath = svg.querySelector('.ribbon_path.highlighted');
     const hoveredGeneId = hoveredPath ? hoveredPath.getAttribute('data-gene-id') : null;
 
-    // Sort paths into groups using geneId consistently
+    // Sort paths into groups
     pathsByGeneId.forEach((paths, geneId) => {
         if (geneId === hoveredGeneId) {
             hoveredPaths = paths;
@@ -12701,7 +12700,7 @@ function showRibbonSettingWidget(button, geneName, geneId) {
                 const speciesIndex = parseInt(parts[1]);
                 const rectGeneId = parts[2];
 
-                // For query species rects, check if ribbonGene is enabled using the geneId
+                // For query species rects, check if ribbonGene is enabled
                 // For subject species rects, find the query gene that has this as a match
                 let settingsKey = null;
                 if (speciesIndex === -1) {
@@ -12732,7 +12731,7 @@ function showRibbonSettingWidget(button, geneName, geneId) {
         // Remove the widget
         removeRibbonSettingWidget();
 
-        // Update checkbox colors to reflect the new settings
+        // Update checkbox colors
         updateGeneCheckboxColors();
 
         // Use setTimeout to ensure activeRibbonButton is cleared after the current event cycle
@@ -12744,12 +12743,12 @@ function showRibbonSettingWidget(button, geneName, geneId) {
 
 // Updates a gene checkbox border to match its ribbon color
 function updateGeneCheckboxColor(geneId, color) {
-    // Iterate through all checkboxes and find matching geneId (more robust than CSS selector)
+    // Iterate through all checkboxes and find matching geneId
     const allCheckboxes = document.querySelectorAll('.gene_checkbox:not(#master_checkbox)');
     allCheckboxes.forEach(checkbox => {
         const checkboxGeneId = checkbox.getAttribute('data-gene-id');
         if (checkboxGeneId === geneId) {
-            // Update BOTH the stored color in ribbonState.geneColors AND ribbonSettings
+            // Update both the stored color in ribbonState.geneColors and ribbonSettings
             ribbonState.geneColors.set(geneId, color);
 
             // Apply the color to the checkbox
@@ -12815,7 +12814,7 @@ function createRibbonSVG() {
     // Store the colors for later use
     ribbonState.geneColors = ribbonState.ribbonData.colors;
 
-    // Create paths - apply checkbox visibility immediately (using geneId for unique identification)
+    // Create paths
     const checkedGeneIdsToShow = new Set();
     document.querySelectorAll('.gene_checkbox:not(#master_checkbox)').forEach(checkbox => {
         if (checkbox.checked) {
@@ -12843,13 +12842,13 @@ function createRibbonSVG() {
             path.setAttribute('stroke-dasharray', settings.lineType);
         }
 
-        // Only show ribbons for checked genes (using geneId)
+        // only show ribbons for checked genes
         path.style.display = checkedGeneIdsToShow.has(pathData.geneId) ? '' : 'none';
 
         svg.appendChild(path);
     });
 
-    // Add hover handlers to table rows and gene rectangles (use geneId for unique identification)
+    // Add hover handlers to table rows and gene rectangles
     document.querySelectorAll('tr[data-gene-id]').forEach(row => {
         const geneId = row.getAttribute('data-gene-id');
         const geneName = row.getAttribute('data-gene-name');
@@ -12860,7 +12859,7 @@ function createRibbonSVG() {
     });
 
     document.querySelectorAll('rect[data-gene-name]').forEach(rect => {
-        const geneId = rect.id.split('_').slice(2).join('_');  // Extract geneId from rect id (rect_speciesIndex_geneId)
+        const geneId = rect.id.split('_').slice(2).join('_'); 
         if (geneId) {
             rect.addEventListener('mouseenter', () => highlightGeneRibbons(geneId));
             rect.addEventListener('mouseleave', () => highlightGeneRibbons(geneId, false));
@@ -13061,7 +13060,7 @@ function updateRibbonVisibility() {
     const checkboxes = document.querySelectorAll('.gene_checkbox:not(#master_checkbox)');
     const checkedGeneIds = new Set();
 
-    // Collect all checked gene IDs (using geneId for unique identification)
+    // Collect all checked gene IDs
     checkboxes.forEach(checkbox => {
         if (checkbox.checked) {
             const geneId = checkbox.getAttribute('data-gene-id');
@@ -13071,7 +13070,7 @@ function updateRibbonVisibility() {
         }
     });
 
-    // Update ribbon visibility based on checked state (using geneId)
+    // Update ribbon visibility based on checked state
     const allPaths = ribbonState.svg.querySelectorAll('.ribbon_path');
     allPaths.forEach(path => {
         const pathGeneId = path.getAttribute('data-gene-id');
@@ -14319,7 +14318,7 @@ function addCellContent(cellGroup, cell, x, y, width, height, contentGroup = nul
     // Create a group for all elements within this cell
     const elementsGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
 
-    // Get all direct child nodes (elements AND text nodes) that need to be positioned
+    // Get all direct child nodes (elements and text nodes) that need to be positioned
     const childNodes = Array.from(cell.childNodes).filter(child => {
         // For text nodes, only include non-empty, non-whitespace ones
         if (child.nodeType === Node.TEXT_NODE) {
@@ -15993,7 +15992,7 @@ function updateHeaderCounts() {
         .filter(row => 
             row.style.display !== 'none' && 
             row.getAttribute('data-gene-name') !== 'placeholder' && 
-            row.cells[0].hasAttribute('rowspan')  // Only count main rows
+            row.cells[0].hasAttribute('rowspan')  // only count main rows
         );
 
     // Get unique gene IDs by looking at the href attribute of links
@@ -16645,7 +16644,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check if toggleFilterName is active
         const toggleFilterName = document.getElementById('toggleFilterName');
         if (!toggleFilterName || !toggleFilterName.classList.contains('active')) {
-            return; // Only proceed if toggleFilterName is active
+            return; // only proceed if toggleFilterName is active
         }
 
         // Check if the clicked element is within a first-gene-id-column cell
@@ -16850,7 +16849,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addVisibilityToggle('toggleMatchesInfo', '.matches_info', 'inline');
     addVisibilityToggle('toggleFullScoreInfo', '.score_info', 'inline');
     addVisibilityToggle('toggleIDInfo', '.gene_id_info', 'inline');
-    // Only add listener for transcripts button if not all genome species
+    // only add listener for transcripts button if not all genome species
     if (typeof allSpeciesAreGenome === 'undefined' || !allSpeciesAreGenome) {
         addVisibilityToggle('toggleTranscriptsInfo', '.transcripts_info', 'inline');
     } else {
@@ -17117,7 +17116,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Get the color for a gene based on its position in the gene list
 
-let geneCheckboxStates = {};
 
 let ribbonState = {
     svg: null,

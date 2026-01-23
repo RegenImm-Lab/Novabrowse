@@ -207,38 +207,45 @@ title = "ACT1_synteny" # Prefix for output files from this run
 query_sequences_list = [
     {
         'query_species': 's_cerevisiae',           # Species name (must match ASSEMBLY_MAPPING key)
-        'protein_sources': ('NP_','XP_'),          # Filter by protein accession prefix
-        'show_only_best_matches': 'True',          # 'True', 'False' or 'Both' (two files generated)
+        'protein_sources': ('NP_','XP_'),          # Filter by protein accession prefix (see note below)
+        'show_only_best_matches': 'True',          # 'True' (best match only), 'False' (all matches), or 'Both' (generates two separate HTML files)
         'retrieved_sequences': {
             'download_from_NCBI': True,            # Fetch sequences from NCBI
-            'chromosome': 'VI',                    # Chromosome name
+            'chromosome': 'VI',                    # Chromosome name or NCBI accession (e.g., 'VI', 'NC_001138.5')
             'start_position': 53260,               # Region start coordinate
             'end_position': 54696,                 # Region end coordinate
-            'genes_upstream': 5,                   # Include also 5 genes before the region
-            'genes_downstream': 5,                 # Include also 5 genes after the region
+            'genes_upstream': 5,                   # Include 5 genes before the region
+            'genes_downstream': 5,                 # Include 5 genes after the region
         },
     },
 ]
 ```
-1. Use chromosome `VI` and the corresponding start `53260` and end `54696` coordinates of *ACT1*. 
+1. Use chromosome `VI` and the corresponding start `53260` and end `54696` coordinates of *ACT1*.
 2. Set upstream/downstream genes to include flanking genes (e.g., 5 each)
+
 > **Note:** The `query_species` value must match the name you used in `ASSEMBLY_MAPPING` (step 3) and your folder name in `1_subject_sequences/`.
+
+> **Chromosome identifiers:** You can use traditional chromosome names (`'VI'`, `'2'`, `'2p'`, `'II'`) or NCBI accession identifiers (`'NC_001138.5'`, `'NC_032095.1'`). Accession identifiers support version-flexible matching - for example, `'NC_032095'` will match `'NC_032095.1'`. Use accession identifiers when traditional names don't work or for more precise targeting.
+
+> **Adaptive range fetching:** The `genes_upstream` and `genes_downstream` parameters use adaptive range searching. Novabrowse automatically expands the search window to find exactly the requested number of genes, regardless of gene density in the region.
 
 ### 2. Configure BLAST settings
 
 Choose which BLAST algorithm(s) to use:
-- `blastn` - nucleotide vs nucleotide
-- `tblastn` - protein vs translated nucleotide
-- `tblastx` - translated nucleotide vs translated nucleotide
+- `blastn` - nucleotide vs nucleotide (best for closely related species)
+- `tblastn` - protein vs translated nucleotide (most common for cross-species analysis)
+- `tblastx` - translated nucleotide vs translated nucleotide (for divergent species)
 
-You can enable multiple types at once - a separate result file will be generated for each:
+You can enable multiple types at once - a **separate result file will be generated for each combination** of BLAST type and database type:
 
 ```python
 blast_settings = {
-    'blast_type': ['tblastn', 'blastn'],  # Two result files will be generated
+    'blast_type': ['tblastn', 'blastn'],  # Two result files per species/database combination
     'blast_options': '-outfmt 0 -num_threads 48'
 }
 ```
+
+For example, with 2 subject species configured with `'type': ['transcriptome', 'genome']` and 2 BLAST types, you'll get 8 total result files (2 species × 2 database types × 2 BLAST types).
 
 ### 3. Select subject species
 
@@ -252,7 +259,7 @@ Configure which species to search against. Each species can be configured separa
 | `maximum_evalue` | E-value threshold - only hits with e-value ≤ this value are kept (e.g., `1e-10`) |
 | `minimum_score` | Minimum BLAST bit score - hits below this score are filtered out (0 = no minimum) |
 | `additional_blast_parameters` | Extra BLAST command-line options for this species only (e.g., `'-word_size 11'`) |
-| `type` | Database type: `'transcriptome'` (search rna.fna) or `'genome'` (search genomic.fna) |
+| `type` | Database type(s) as list: `['transcriptome']`, `['genome']`, or `['transcriptome', 'genome']` for both |
 
 > **Note:** Per-species `maximum_evalue` and `minimum_score` settings override the general values in `blast_options`.
 
@@ -263,24 +270,25 @@ subject_species = {
        'maximum_evalue': 1e-10,
        'minimum_score': 0,
        'additional_blast_parameters': '',
-       'type': 'transcriptome'
+       'type': ['transcriptome']  # Can also use ['genome'] or ['transcriptome', 'genome']
    },
    's_pombe': {
        'enabled': True,         # Search this species
        'maximum_evalue': 1e-10,
        'minimum_score': 0,
        'additional_blast_parameters': '',
-       'type': 'transcriptome'
+       'type': ['transcriptome']
    },
    'c_albicans': {
        'enabled': True,         # Search this species
        'maximum_evalue': 1e-10,
        'minimum_score': 0,
        'additional_blast_parameters': '',
-       'type': 'transcriptome'
+       'type': ['transcriptome']
    },
 }
 ```
+> **Note:** When using `['transcriptome', 'genome']`, separate result files are generated for each database type.
 > **Tip:** Set the query species to `enabled: False` to avoid self-hits. You typically want to search other species, not your query species against itself.
 
 ### 4. Map species to [NCBI](https://www.ncbi.nlm.nih.gov/) organism names
@@ -324,6 +332,37 @@ Example how the tblastn output file should look:
 - **Automated [NCBI](https://www.ncbi.nlm.nih.gov/) retrieval** - Direct integration with [NCBI](https://www.ncbi.nlm.nih.gov/) E-utilities API for automatic gene sequence downloads from specified genomic regions
 - **Custom sequence support** - Incorporate user-provided sequences (e.g., from nanopore sequencing) alongside or instead of [NCBI](https://www.ncbi.nlm.nih.gov/) data
 - **Flexible filtering** - Configure E-value thresholds and bit score cutoffs independently for each subject species to account for database size differences
+- **Automatic quality filtering** - Filters out discontinued and obsolete gene entries from NCBI to ensure only current, valid gene annotations are included in results
+
+#### **Gene Signal Discovery**
+When searching against genome databases (not transcriptomes), Novabrowse can detect unannotated genes by clustering nearby BLAST hits. The `consider_one_gene` parameter controls how close BLAST High-scoring Segment Pairs (HSPs) need to be to be considered part of the same gene:
+
+```python
+consider_one_gene = 1050  # Maximum distance (bp) between HSPs to merge into one gene
+```
+
+HSPs within this distance are merged into a single entry with combined coverage. Good practice is to use the largest annotated intron length for your species. This is essential for genome-wide searches where gene structure is unknown.
+
+#### **Gene Naming**
+Novabrowse uses a hierarchical approach to gene naming:
+1. Official gene symbol (e.g., ACT1)
+2. Locus tag identifier (e.g., CAALFM_C700260CA) - useful for species with systematic naming
+3. First available synonym
+4. "Uncharacterized" for genes without standard names
+
+This ensures genes are properly identified even when standard nomenclature is unavailable.
+
+#### **Protein Source Filtering**
+The `protein_sources` parameter controls which types of gene annotations to include based on NCBI accession prefixes:
+
+| Prefix | Description |
+|--------|-------------|
+| `NP_` | RefSeq curated proteins (manually reviewed, highest quality) |
+| `XP_` | RefSeq predicted proteins (computational models) |
+| `YP_` | RefSeq provisional proteins |
+| `WP_` | Non-redundant RefSeq proteins |
+
+Only genes with at least one product matching these prefixes will be retrieved. This filtering helps ensure annotation quality and reduces noise from low-confidence predictions.
 
 #### **Interactive Visualization**
 - **High-resolution chromosomal maps** - Interactive chromosome visualizations showing precise gene positions with support for both single chromosomes and multi-arm configurations
