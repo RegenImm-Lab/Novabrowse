@@ -1,1 +1,0 @@
-Error processing gene 9843809: 'NoneType' object has no attribute 'attrib'

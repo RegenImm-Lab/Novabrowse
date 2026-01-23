@@ -1,2 +1,0 @@
-Sequence not found for transcript ID: NM_001022024.1 (Gene ID: 9845277)
-Sequence not found for transcript ID: NM_001019312.1 (Gene ID: 9844570)

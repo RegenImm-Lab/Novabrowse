@@ -8,6 +8,7 @@
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Quick Start & Tutorial](#quick-start--tutorial)
+- [Configuration Reference](#configuration-reference)
 - [General Features](#general-features)
 - [Documentation](#documentation)
 - [Troubleshooting](#troubleshooting)
@@ -207,11 +208,11 @@ title = "ACT1_synteny" # Prefix for output files from this run
 query_sequences_list = [
     {
         'query_species': 's_cerevisiae',           # Species name (must match ASSEMBLY_MAPPING key)
-        'protein_sources': ('NP_','XP_'),          # Filter by protein accession prefix (see note below)
-        'show_only_best_matches': 'True',          # 'True' (best match only), 'False' (all matches), or 'Both' (generates two separate HTML files)
+        'protein_sources': ('NP_','XP_'),          # See note Protein Source Filtering
+        'show_only_best_matches': 'True',          # Allowed values: 'True', 'False', 'Both'
         'retrieved_sequences': {
             'download_from_NCBI': True,            # Fetch sequences from NCBI
-            'chromosome': 'VI',                    # Chromosome name or NCBI accession (e.g., 'VI', 'NC_001138.5')
+            'chromosome': 'VI',                    # Allowed types: '6', '6q', 'VI' or 'NC_001138.5'
             'start_position': 53260,               # Region start coordinate
             'end_position': 54696,                 # Region end coordinate
             'genes_upstream': 5,                   # Include 5 genes before the region
@@ -270,7 +271,7 @@ subject_species = {
        'maximum_evalue': 1e-10,
        'minimum_score': 0,
        'additional_blast_parameters': '',
-       'type': ['transcriptome']  # Can also use ['genome'] or ['transcriptome', 'genome']
+       'type': ['transcriptome']
    },
    's_pombe': {
        'enabled': True,         # Search this species
@@ -325,44 +326,120 @@ Example how the tblastn output file should look:
 
 <br><br><br><br>
 
-## General Features
+## Configuration Reference
 
-#### **BLAST Integration**
-- **Multiple BLAST algorithms** - Support for BLASTn, tBLASTn, and tBLASTx searches with independent configuration per subject species
-- **Automated [NCBI](https://www.ncbi.nlm.nih.gov/) retrieval** - Direct integration with [NCBI](https://www.ncbi.nlm.nih.gov/) E-utilities API for automatic gene sequence downloads from specified genomic regions
-- **Custom sequence support** - Incorporate user-provided sequences (e.g., from nanopore sequencing) alongside or instead of [NCBI](https://www.ncbi.nlm.nih.gov/) data
-- **Flexible filtering** - Configure E-value thresholds and bit score cutoffs independently for each subject species to account for database size differences
-- **Automatic quality filtering** - Filters out discontinued and obsolete gene entries from NCBI to ensure only current, valid gene annotations are included in results
+This section provides detailed documentation for all configuration parameters. For usage examples, see the tutorials above.
 
-#### **Gene Signal Discovery**
-When searching against genome databases (not transcriptomes), Novabrowse can detect unannotated genes by clustering nearby BLAST hits. The `consider_one_gene` parameter controls how close BLAST High-scoring Segment Pairs (HSPs) need to be to be considered part of the same gene:
+### Query Configuration (`query_sequences_list`)
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `query_species` | string | Species name (must match `ASSEMBLY_MAPPING` key and folder name) |
+| `protein_sources` | tuple | Filter genes by accession prefix. See [Protein Source Prefixes](#protein-source-prefixes) |
+| `show_only_best_matches` | string | `'True'` (best match only), `'False'` (all matches), or `'Both'` (generates two separate HTML files) |
+
+#### Retrieved Sequences (`retrieved_sequences`)
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `download_from_NCBI` | bool | Set `False` to use only custom sequences |
+| `chromosome` | string | Chromosome name (`'VI'`, `'2'`, `'2p'`) or NCBI accession (`'NC_001138.5'`). Version-flexible matching supported |
+| `start_position` | int | Region start coordinate |
+| `end_position` | int | Region end coordinate (must be > start_position) |
+| `genes_upstream` | int | Number of flanking genes before region (uses adaptive range searching) |
+| `genes_downstream` | int | Number of flanking genes after region (uses adaptive range searching) |
+
+> **Note:** NCBI API rejects queries larger than ~8-10 MB. Reduce region size or gene counts if you get "HTTP Error 400".
+
+#### Custom Sequences (`custom_sequences`)
+
+Optional array for including user-provided sequences alongside NCBI data (e.g., from nanopore sequencing):
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | string | Unique display name for results |
+| `id` | string | ID for NCBI link generation |
+| `description` | string | FASTA header description |
+| `nucleotide_sequence` | string | DNA sequence |
+| `protein_sequence` | string | Amino acid sequence |
+| `chromosome` | string | Chromosome identifier |
+| `strand` | string | `"1"` (forward) or `"-1"` (reverse) |
+| `start_position` | string | Genomic start coordinate |
+| `end_position` | string | Genomic end coordinate |
+
+### BLAST Configuration
+
+#### Gene Signal Discovery (`consider_one_gene`)
+
+For genome searches (not transcriptomes), Novabrowse clusters nearby BLAST HSPs into gene units:
 
 ```python
 consider_one_gene = 1050  # Maximum distance (bp) between HSPs to merge into one gene
 ```
 
-HSPs within this distance are merged into a single entry with combined coverage. Good practice is to use the largest annotated intron length for your species. This is essential for genome-wide searches where gene structure is unknown.
+HSPs within this distance are merged into a single entry with combined coverage. When BLASTing a transcript against a genome, HSPs correspond to exons and gaps between them are introns. Set this value larger than the largest intron in your species to ensure all exons from the same gene are grouped correctly.
 
-#### **Gene Naming**
-Novabrowse uses a hierarchical approach to gene naming:
-1. Official gene symbol (e.g., ACT1)
-2. Locus tag identifier (e.g., CAALFM_C700260CA) - useful for species with systematic naming
-3. First available synonym
-4. "Uncharacterized" for genes without standard names
+#### BLAST Settings (`blast_settings`)
 
-This ensures genes are properly identified even when standard nomenclature is unavailable.
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `blast_type` | list | Algorithm(s) to use: `['tblastn']`, `['blastn']`, `['tblastx']`, or combinations like `['tblastn', 'blastn']` |
+| `blast_options` | string | Command-line options. `-outfmt 0` is required. `-num_threads` is auto-adjusted to available cores |
 
-#### **Protein Source Filtering**
-The `protein_sources` parameter controls which types of gene annotations to include based on NCBI accession prefixes:
+**BLAST algorithms:**
+- `blastn` - nucleotide vs nucleotide (best for closely related species)
+- `tblastn` - protein vs translated nucleotide (most common for cross-species)
+- `tblastx` - translated nucleotide vs translated nucleotide (for divergent species)
+
+### Subject Species Configuration (`subject_species`)
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `enabled` | bool | `True` to include in analysis, `False` to skip |
+| `maximum_evalue` | float | E-value threshold - hits above this are filtered out (e.g., `1e-10`) |
+| `minimum_score` | int | Minimum bit score filter (`0` = no minimum) |
+| `additional_blast_parameters` | string | Species-specific BLAST command-line options |
+| `type` | list | Database type(s): `['transcriptome']`, `['genome']`, or `['transcriptome', 'genome']` for both |
+
+> **Tip:** Set query species to `enabled: False` to avoid self-hits.
+
+> **Output files:** Separate result files are generated for each combination of BLAST type × database type × species.
+
+### Protein Source Prefixes
+
+The `protein_sources` parameter filters genes by NCBI accession prefix:
 
 | Prefix | Description |
 |--------|-------------|
 | `NP_` | RefSeq curated proteins (manually reviewed, highest quality) |
 | `XP_` | RefSeq predicted proteins (computational models) |
+| `XM_` | Predicted mRNA sequences (not experimentally validated) |
+| `XR_` | RefSeq non-coding RNA |
 | `YP_` | RefSeq provisional proteins |
 | `WP_` | Non-redundant RefSeq proteins |
+| `CAA_` | EMBL (European Molecular Biology Laboratory) entries |
+| `BAD_` | DDBJ (DNA Data Bank of Japan) entries |
 
-Only genes with at least one product matching these prefixes will be retrieved. This filtering helps ensure annotation quality and reduces noise from low-confidence predictions.
+Only genes with at least one product matching these prefixes will be retrieved.
+
+### Gene Name Assignment
+
+When retrieving genes from NCBI, Novabrowse assigns display names using this fallback hierarchy:
+1. Official gene symbol (e.g., `ACT1`)
+2. Locus tag identifier (e.g., `CAALFM_C700260CA`)
+3. First available synonym
+4. `"Uncharacterized"` if no identifiers available
+
+## General Features
+
+#### **BLAST Integration**
+- **Multiple BLAST algorithms** - Support for BLASTn, tBLASTn, and tBLASTx with independent configuration per subject species
+- **Automated NCBI retrieval** - Direct integration with NCBI E-utilities API for automatic gene sequence downloads
+- **Custom sequence support** - Incorporate user-provided sequences (e.g., from nanopore sequencing) alongside NCBI data
+- **Flexible filtering** - Configure E-value thresholds and bit score cutoffs independently per species
+- **Automatic quality filtering** - Filters out discontinued and obsolete gene entries from NCBI
+- **Gene signal discovery** - Detect unannotated genes in genome searches through HSP clustering (see [Configuration Reference](#gene-signal-discovery-consider_one_gene))
+- **Smart gene naming** - Hierarchical fallback for display names when official nomenclature is unavailable
 
 #### **Interactive Visualization**
 - **High-resolution chromosomal maps** - Interactive chromosome visualizations showing precise gene positions with support for both single chromosomes and multi-arm configurations
