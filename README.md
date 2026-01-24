@@ -47,12 +47,10 @@ conda install -c bioconda blast
 1. Download from [NCBI FTP](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
 2. Install and add to system PATH
 
-### 4. [NCBI](https://www.ncbi.nlm.nih.gov/) Entrez Email
+### 4. NCBI Entrez Email
 
-[NCBI](https://www.ncbi.nlm.nih.gov/) requires an email address for Entrez API access. This is used to identify your requests and allows [NCBI](https://www.ncbi.nlm.nih.gov/) to contact you if there are problems.
-
-**Register (optional but recommended):**
-- Create an [NCBI](https://www.ncbi.nlm.nih.gov/) account at [ncbi.nlm.nih.gov/account](https://www.ncbi.nlm.nih.gov/account/)
+NCBI requires an email address for Entrez API access (needed for sequence retrieval requests).
+- You can create the account at [ncbi.nlm.nih.gov/account](https://www.ncbi.nlm.nih.gov/account/)
 
 
 ## Installation
@@ -67,12 +65,14 @@ conda install -c bioconda blast
    **Option B: [Download ZIP](https://github.com/RegenImm-Lab/Novabrowse/archive/refs/heads/main.zip)** and extract it
 
 2. **Install Python dependencies**
-   
+
    Open a terminal in the project folder and run:
    ```bash
    pip install -r requirements.txt
    ```
-   
+
+   This installs Biopython and certifi (for SSL certificate handling).
+
    > **Windows note:** If `pip` doesn't work, try `py -m pip install -r requirements.txt` instead.
 
 ## Quick Start
@@ -85,10 +85,10 @@ In Novabrowse:
 
 Novabrowse supports both transcriptome and genome analysis. For each subject species, you'll need:
 
-- **GTF annotation file** (Gene Transfer Format) - contains gene coordinates, names, and transcript information. The GTF must follow [NCBI](https://www.ncbi.nlm.nih.gov/) formatting conventions, but doesn't have to be downloaded from [NCBI](https://www.ncbi.nlm.nih.gov/).
+- **GTF annotation file** (Gene Transfer Format) - contains gene coordinates, names, and transcript information. The GTF must follow NCBI formatting conventions, but doesn't have to be downloaded from NCBI.
 - **FASTA sequence file** - either transcriptome (`rna.fna`) or genome (`genomic.fna`) depending on your analysis needs.
 
-For this tutorial, we'll use three fungal species from [NCBI](https://www.ncbi.nlm.nih.gov/):
+For this tutorial, we'll use three fungal species from NCBI:
 
 | Species | NCBI Link |
 |---------|-----------|
@@ -98,7 +98,7 @@ For this tutorial, we'll use three fungal species from [NCBI](https://www.ncbi.n
 
 These files (GTF annotations and transcripts for all three species, plus the genome for *S. cerevisiae*) are already included in `1_subject_sequences/`. Below we explain how they were downloaded, which you can follow to add your own species or update the existing files.
 
-**How to download from [NCBI](https://www.ncbi.nlm.nih.gov/):**
+**How to download from NCBI:**
 
 - The image below shows *S. cerevisiae* as an example. When downloading assemblies from NCBI, you can choose the source (RefSeq or GenBank) based on your specific research needs.
 
@@ -144,14 +144,7 @@ run_makeblastdb(
 
 ### 3. Generate chromosome data file
 
-Open `get_chromosome_info.ipynb` and edit:
-
-1. Set your [NCBI](https://www.ncbi.nlm.nih.gov/) Entrez email:
-   ```python
-   Entrez.email = "your.email@example.com"
-   ```
-
-2. Add your species to `ASSEMBLY_MAPPING`:
+Open `get_chromosome_info.ipynb` and add your species to `ASSEMBLY_MAPPING`:
    ```python
    ASSEMBLY_MAPPING = {
        '<custom_name>': '<assembly>',
@@ -165,18 +158,55 @@ Open `get_chromosome_info.ipynb` and edit:
    }
    ```
 
-Then run the notebook. It will query [NCBI](https://www.ncbi.nlm.nih.gov/) for chromosome accessions and lengths for each species and save the results to `chromosome_data.json`.
+Then run the notebook. It will query NCBI for chromosome accessions and lengths for each species and save the results to `chromosome_data.json`.
 
 This file is used for mapping genes onto chromosomes.
 
-**Important:** Both query and subject species must be included. If [NCBI](https://www.ncbi.nlm.nih.gov/) doesn't have chromosome information for a species, you'll need to add it manually to `chromosome_data.json`.
+**Important:** Both query and subject species must be included. If NCBI doesn't have chromosome information for a species, you'll need to add it manually to `chromosome_data.json`.
 
 ### 4. Configure Novabrowse
+
+#### Open the main notebook
 
 Open `novabrowse_1.0.ipynb`. This is the main notebook that:
 1. Downloads query species sequences for your specified genomic region
 2. Runs BLAST searches against your subject species
 3. Generates interactive HTML result files
+
+#### Set up NCBI Entrez email from query sequence retrieval
+
+By default the pipeline reads your email from the `ENTREZ_EMAIL_ENV` environment variable. Choose one of these methods:
+
+**Option A: Set system environment variable (Recommended)**
+
+This keeps your email out of the code and works automatically.
+
+*Windows (Command Prompt):*
+```cmd
+setx ENTREZ_EMAIL_ENV "your.email@example.com"
+```
+
+*Windows (PowerShell):*
+```powershell
+[System.Environment]::SetEnvironmentVariable("ENTREZ_EMAIL_ENV", "your.email@example.com", "User")
+```
+
+*macOS/Linux:*
+```bash
+echo 'export ENTREZ_EMAIL_ENV="your.email@example.com"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+> **Note:** After setting the environment variable, restart your terminal/IDE for changes to take effect.
+
+**Option B: Set directly in notebook**
+
+Alternatively, in the second code cell of the main Novabrowse notebook, replace the environment variable line with your email:
+```python
+Entrez.email = "your.email@example.com"  # Replace with your email
+```
+
+> **Warning:** If you use Option B and plan to share your code publicly, remember to remove your email before committing.
 
 
 ## Tutorial 1: Detecting Orthologs Across Species
@@ -194,7 +224,7 @@ This tutorial demonstrates how to identify orthologous genes across multiple spe
 To analyze a genomic region, first identify the chromosome and coordinates of your region of interest.
 
 To find coordinates for the *ACT1* gene locus in *S. cerevisiae*:
-1. Search for *S. cerevisiae* [*ACT1*](https://www.ncbi.nlm.nih.gov/gene/850504) gene on [NCBI](https://www.ncbi.nlm.nih.gov/)
+1. Search for *S. cerevisiae* [*ACT1*](https://www.ncbi.nlm.nih.gov/gene/850504) gene on NCBI
 
 <img src="images/how_to_get_genomic_region.png" alt="How to get genomic region" style="margin-left: 20px;">
 
@@ -292,9 +322,9 @@ subject_species = {
 > **Note:** When using `['transcriptome', 'genome']`, separate result files are generated for each database type.
 > **Tip:** Set the query species to `enabled: False` to avoid self-hits. You typically want to search other species, not your query species against itself.
 
-### 4. Map species to [NCBI](https://www.ncbi.nlm.nih.gov/) organism names
+### 4. Map species to NCBI organism names
 
-Map each species name to its [NCBI](https://www.ncbi.nlm.nih.gov/) organism name (used for Entrez queries and display names in results):
+Map each species name to its NCBI organism name (used for Entrez queries and display names in results):
 
 ```python
 species_to_orgn = {
@@ -479,7 +509,7 @@ The Novabrowse HTML output includes numerous interactive buttons organized into 
 - **Matches** - Displays match count statistics in species headers (e.g., "Matches: 9" showing how many query genes have hits)
 - **Score & E-value** - Shows BLAST filtering parameters in species headers (minimum score and maximum E-value thresholds used)
 - **abc/123** - Controls visibility of alphabetical/numerical sorting buttons in the query species column
-- **ID** - Toggles display of [NCBI](https://www.ncbi.nlm.nih.gov/) gene IDs in parentheses next to gene names (e.g., "foxp3 (12345)")
+- **ID** - Toggles display of NCBI gene IDs in parentheses next to gene names (e.g., "foxp3 (12345)")
 - **Transcripts** - Shows/hides transcript isoform counts and expandable transcript details for each gene match
 - **Title wrap** - Enables text wrapping in species header cells to prevent horizontal overflow of long species names
 
@@ -500,7 +530,7 @@ Species toggle buttons allow you to show or hide individual subject species colu
 
 #### Column Visibility Toggles
 - **#** - Row numbering for easy reference and navigation through large gene lists
-- **Gene (query)** - Query species gene names with [NCBI](https://www.ncbi.nlm.nih.gov/) links. Hiding this column removes the source gene identifiers
+- **Gene (query)** - Query species gene names with NCBI links. Hiding this column removes the source gene identifiers
 - **Gene (subject)** - Subject species gene names and IDs. Toggle to focus on other metrics when gene names are not needed
 - **Start** - Genomic start coordinates for each gene. Useful for precise location mapping
 - **End** - Genomic end coordinates for each gene. Combined with Start, defines exact gene boundaries
@@ -525,16 +555,16 @@ Click gene names in the Query Species column to add or remove them from the filt
 
 ## Troubleshooting
 
-### "HTTP Error 400" from [NCBI](https://www.ncbi.nlm.nih.gov/)
+### "HTTP Error 400" from NCBI
 - Reduce the genomic region size or number of upstream/downstream genes
-- [NCBI](https://www.ncbi.nlm.nih.gov/) API has limits on query size (~8-10 MB)
+- NCBI API has limits on query size (~8-10 MB)
 
 ### "makeblastdb not found"
 - Ensure BLAST+ is installed and in your PATH
 - Try running `makeblastdb -version` to verify
 
 ### No genes found
-- Check that the chromosome format matches [NCBI](https://www.ncbi.nlm.nih.gov/) naming
+- Check that the chromosome format matches NCBI naming
 - Verify genomic coordinates are correct for your assembly version
 
 ## License
