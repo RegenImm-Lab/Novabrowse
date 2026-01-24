@@ -233,7 +233,7 @@ To find coordinates for the *ACT1* gene locus in *S. cerevisiae*:
 
 Configure the first cell:
 ```python
-title = "ACT1_synteny" # Prefix for output files from this run
+title = "ACT1_orthology" # Prefix for output files from this run
 
 query_sequences_list = [
     {
@@ -339,13 +339,15 @@ species_to_orgn = {
 
 ### 6. Find results in the project root folder as interactive HTML files
 
-Example output files:
-- `Novabrowse_ACT1_synteny_s_cerevisiae_blastn_best_matches.html` - blastn results
-- `Novabrowse_ACT1_synteny_s_cerevisiae_tblastn_best_matches.html` - tblastn results
+> **Tip:** You can compare your results with the reference files in the `tutorial/` folder to see the expected output:
+> - `Novabrowse_ACT1_orthology_s_cerevisiae_tblastn_best_matches.html`
+> - `Novabrowse_ACT1_orthology_s_cerevisiae_blastn_best_matches.html`
 
 Example how the tblastn output file should look:
 
 <img src="images/sample_file.png" alt="How to download from NCBI" style="margin-left: 20px;">
+
+
 
 
 <br>
