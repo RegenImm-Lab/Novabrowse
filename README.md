@@ -173,7 +173,7 @@ Open `novabrowse_1.0.ipynb`. This is the main notebook that:
 2. Runs BLAST searches against your subject species
 3. Generates interactive HTML result files
 
-#### Set up NCBI Entrez email from query sequence retrieval
+#### Set up NCBI Entrez email fom query sequence retrieval
 
 By default the pipeline reads your email from the `ENTREZ_EMAIL_ENV` environment variable. Choose one of these methods:
 
@@ -211,12 +211,11 @@ Entrez.email = "your.email@example.com"  # Replace with your email
 
 ## Tutorial 1: Detecting Orthologs Across Species
 
-This tutorial demonstrates how to identify orthologous genes across multiple species using synteny analysis. You'll search for orthologs of a target gene and the genes flanking it on both sides, then visualize their chromosomal positions across species.
+This tutorial demonstrates how to identify orthologous genes across multiple species. You'll search for orthologs of a target gene and the genes flanking it on both sides, then visualize their chromosomal positions across species.
 
 **What you'll learn:**
 - How to define a genomic region of interest in the query species
 - Configure BLAST searches against multiple subject species
-- Interpret the resulting synteny visualization
 
 ### 1. Setting up a query
 **In this example scenario:** We'll examine the *ACT1* locus (encoding actin) in *S. cerevisiae* and find its orthologus loci in *S. pombe* and *C. albicans*.
