@@ -173,7 +173,7 @@ Open `novabrowse_1.0.ipynb`. This is the main notebook that:
 2. Runs BLAST searches against your subject species
 3. Generates interactive HTML result files
 
-#### Set up NCBI Entrez email fom query sequence retrieval
+#### Set up NCBI Entrez email for query sequence retrieval
 
 By default the pipeline reads your email from the `ENTREZ_EMAIL_ENV` environment variable. Choose one of these methods:
 
