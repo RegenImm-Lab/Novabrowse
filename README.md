@@ -7,7 +7,9 @@
 - [Core Capabilities](#core-capabilities)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Quick Start & Tutorial](#quick-start--tutorial)
+- [Quick Start](#quick-start)
+- [Tutorial 1: Detecting Orthologs Across Species](#tutorial-1-detecting-orthologs-across-species)
+- [Tutorial 2: Using Custom Sequences and Gene Signal Discovery](#tutorial-2-using-custom-sequences-and-gene-signal-discovery)
 - [Configuration Reference](#configuration-reference)
 - [General Features](#general-features)
 - [Documentation](#documentation)
@@ -354,8 +356,152 @@ Example how the tblastn output file should look:
 
 ## Tutorial 2: Using Custom Sequences and Gene Signal Discovery
 
+[Selmecki et al. (2005)](https://doi.org/10.1534/genetics.104.034652) identified the longest syntenic region between *C. albicans* and *S. cerevisiae* on chromosome 7, spanning 11 ORFs from *DCC1* to *PGS1*. In this tutorial, we'll examine this region using *LEU2* as our anchor gene, while demonstrating custom sequences and genome searches.
 
-<br><br><br><br>
+We'll query from *C. albicans* with flanking genes from NCBI plus a custom *LEU2* sequence. For *S. pombe*, which doesn't share this syntenic arrangement, we'll use only custom sequences: *leu2* and a nearby gene *sor1* to demonstrate multiple custom sequence entries.
+
+### 1. Finding sequence data for custom sequences
+
+To create a custom sequence entry, you need nucleotide and protein sequences, plus genomic coordinates (`chromosome`, `strand`, `start_position`, `end_position`) as shown in [Tutorial 1](#1-setting-up-a-query).
+
+When using `download_from_NCBI: True`, Novabrowse automatically retrieves sequences for genes within your specified coordinates. However, for this tutorial we'll manually obtain sequences from NCBI to demonstrate the custom sequence workflow:
+
+1. Open the gene page [*C. albicans* *LEU2*](https://www.ncbi.nlm.nih.gov/gene/3638034) and from there open "[Transcripts and products](https://www.ncbi.nlm.nih.gov/datasets/gene/3638034/#transcripts-and-proteins)":
+
+<img src="images/how_to_get_sequences.png" alt="C. albicans LEU2 gene page on NCBI" style="margin-left: 20px;">
+
+2. Open the transcript ([XM_715278.1](https://www.ncbi.nlm.nih.gov/nuccore/XM_715278.1?report=fasta)) and protein ([XP_720371.1](https://www.ncbi.nlm.nih.gov/protein/XP_720371.1?report=fasta)) subpages, select FASTA format, and copy the sequences.
+
+3. From the gene page, note the `id` (from URL), `chromosome`, `strand`, `start_position`, and `end_position` from the "Genomic context" section.
+
+### 2. Adding custom sequences to your query
+
+Add a `custom_sequences` array to include your own sequences. You can process multiple query species and multiple transcripts in one run:
+
+```python
+query_sequences_list = [
+    {
+        'query_species': 'c_albicans',
+        'protein_sources': ('NP_','XP_'),
+        'show_only_best_matches': 'Both',
+        'retrieved_sequences': {
+            'download_from_NCBI': True,
+            'chromosome': 'NC_032095.1',
+            'start_position': 64158,
+            'end_position': 65279,
+            'genes_upstream': 7,
+            'genes_downstream': 11,
+        },
+        'custom_sequences': [
+            {
+                "name": "LEU2_custom",            # Your chosen display name
+                "id": "3638034",                  # Gene ID from URL (ncbi.nlm.nih.gov/gene/[ID])
+                "description": ">XP_720371.1 3-isopropylmalate dehydrogenase [Candida albicans SC5314]",  # FASTA header
+                "nucleotide_sequence": "ATGTCTGTTAAAACCAAAACCATTACT...",  # Copy from transcript FASTA
+                "protein_sequence": "MSVKTKTITVLPGDHVGTEIVNEAIKV...",     # Copy from protein FASTA
+                "chromosome": "NC_032095.1",      # From gene page "Genomic context"
+                "strand": "1",                    # "1" = forward, "-1" = reverse
+                "start_position": "64158",        # From gene page coordinates
+                "end_position": "65279"           # From gene page coordinates
+            },
+        ]
+    },
+    # S. pombe LEU2 is not in a syntenic region with C. albicans, so we use only
+    # custom sequences: leu2 and a nearby gene (sor1) to demonstrate multiple entries
+    {
+        'query_species': 's_pombe',
+        'protein_sources': ('NP_','XP_'),
+        'show_only_best_matches': 'False',
+        'retrieved_sequences': {
+            'download_from_NCBI': False,          # Only using custom sequences
+            'chromosome': '',
+            'start_position': 0,
+            'end_position': 0,
+            'genes_upstream': 0,
+            'genes_downstream': 0,
+        },
+        'custom_sequences': [
+            {
+                "name": "leu2_custom",
+                "id": "2543296",
+                "description": ">NP_594576.1 3-isopropylmalate dehydratase Leu2 [Schizosaccharomyces pombe]",
+                "nucleotide_sequence": "GTCCATAACCAAACACCAAGGATTTTT...",
+                "protein_sequence": "MSPSVASPKTLYDKVWDSHVVDLQEDG...",
+                "chromosome": "I",
+                "strand": "1",
+                "start_position": "4439855",
+                "end_position": "4442513"
+            },
+            {
+                "name": "sor1_custom",
+                "id": "2543287",
+                "description": ">NP_594578.1 sororin [Schizosaccharomyces pombe]",
+                "nucleotide_sequence": "GTACGCAATATACAAAAGTGAAATGCA...",
+                "protein_sequence": "MDSDDSFVKTAHVIETSTPENKKLSHR...",
+                "chromosome": "I",
+                "strand": "1",
+                "start_position": "4444383",
+                "end_position": "4446593"
+            },
+        ]
+    },
+]
+```
+
+> **Note:** In the *C. albicans* configuration above, `LEU2` (retrieved via `download_from_NCBI: True`) and `LEU2_custom` contain identical sequences. This demonstrates that custom sequences appear alongside NCBI-retrieved genes in the results, allowing you to verify your custom entries or include alternative annotations for the same locus.
+
+### 3. Searching against genomes (gene signal discovery)
+
+When searching against genomes, BLAST returns separate HSPs for each exon. The `consider_one_gene` parameter clusters nearby HSPs into gene units:
+
+```python
+consider_one_gene = 1050  # Longest known intron in S. cerevisiae (~1kb)
+```
+
+This enables **gene signal discovery** - finding potential unannotated genes. Set this value to accommodate the largest intron in your target species.
+
+Enable genome searches by setting `type` to include `'genome'`:
+
+```python
+subject_species = {
+   's_cerevisiae': {
+       'enabled': True,
+       'maximum_evalue': 1e-10,
+       'minimum_score': 0,
+       'additional_blast_parameters': '',
+       'type': ['transcriptome', 'genome']  # Search both database types
+   },
+   # ... other species
+}
+```
+
+### 4. Using tblastx for divergent species
+
+For highly divergent species, `tblastx` (translated nucleotide vs translated nucleotide) can find matches that other algorithms might miss:
+
+```python
+blast_settings = {
+    'blast_type': ['tblastn', 'tblastx'],
+    'blast_options': '-outfmt 0 -num_threads 48'
+}
+```
+
+### 5. Generating both output file types
+
+Setting `show_only_best_matches: 'Both'` generates two output files per BLAST type:
+- `*_best_matches.html` - Only the top hit per gene
+- `*_all_matches.html` - All hits including paralogs
+
+Run all notebook cells to generate your results.
+
+> **Tip:** Compare your results with the reference files in the `tutorial/` folder:
+> - `Novabrowse_LEU2_loci_synteny_c_albicans_tblastn_best_matches.html`
+> - `Novabrowse_LEU2_loci_synteny_c_albicans_tblastn_all_matches.html`
+> - `Novabrowse_LEU2_loci_synteny_c_albicans_tblastx_best_matches.html`
+> - `Novabrowse_LEU2_loci_synteny_c_albicans_tblastx_all_matches.html`
+> - `Novabrowse_LEU2_loci_synteny_s_pombe_tblastn_all_matches.html`
+> - `Novabrowse_LEU2_loci_synteny_s_pombe_tblastx_all_matches.html`
+
 
 ## Configuration Reference
 
