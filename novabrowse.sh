@@ -20,4 +20,4 @@ if [ "$#" = 0 ]; then
 fi
 
 exec env UID="$(id -u)" GID="$(id -g)" \
-	docker compose "$@"
+	docker compose --project-directory docker "$@"
