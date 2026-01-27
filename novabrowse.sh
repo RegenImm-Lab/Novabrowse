@@ -6,10 +6,13 @@
 # command.
 #
 # Usage:
-#	./novabrowse.sh {docker compose command}
+#	./novabrowse.sh [docker compose command]
 #
-# Example:
-#	./novabrowse.sh up --build
+# Example (runs the Novabrowse container):
+# 	./novabrowse.sh
+#
+# Example (clears the NCBI cache by removing the persistent volume):
+#	./novabrowse.sh down -v
 #
 
 if [ "$#" = 0 ]; then
