@@ -79,12 +79,12 @@ RUN --mount=type=cache,id=pixi-cache,uid="$UID",gid="$GID",target="$HOME/.cache/
 
 # Copy entrypoint script from the host, and the converted notebook
 # script from the "convert" stage.
-COPY --chown="$UID:$GID" docker-entrypoint.sh "$HOME/docker-entrypoint.sh"
+COPY --chown="$UID:$GID" docker/docker-entrypoint.sh docker-entrypoint.sh
 COPY --chown="$UID:$GID" --from=convert "$HOME/$NOTEBOOK.py" "$NOTEBOOK.py"
 
 # Add caching.
-COPY --chown="$UID:$GID" ncbi_cache.py ncbi_cache.py
-RUN --mount=type=bind,source=ncbi_cache-head.py,target=ncbi_cache-head.py \
+COPY --chown="$UID:$GID" docker/ncbi_cache.py ncbi_cache.py
+RUN --mount=type=bind,source=docker/ncbi_cache-head.py,target=ncbi_cache-head.py \
 	cat ncbi_cache-head.py "$NOTEBOOK.py" >"$NOTEBOOK"_tmp.py && \
 	mv "$NOTEBOOK"_tmp.py "$NOTEBOOK.py"
 
