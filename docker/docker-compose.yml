@@ -1,6 +1,8 @@
+name: novabrowse
+
 services:
 
-  novabrowse:
+  app:
     cap_drop:
       - ALL
 
@@ -13,13 +15,13 @@ services:
         NOTEBOOK: novabrowse_1.0
 
     volumes:
-      - ./1_subject_sequences:/project/1_subject_sequences
-      - ./2_subject_blastdb:/project/2_subject_blastdb
-      - ./3_query_sequences:/project/3_query_sequences
-      - ./4_blast_results:/project/4_blast_results
-      - ./5_novabrowse_output:/project/5_novabrowse_output
+      - ../1_subject_sequences:/project/1_subject_sequences
+      - ../2_subject_blastdb:/project/2_subject_blastdb
+      - ../3_query_sequences:/project/3_query_sequences
+      - ../4_blast_results:/project/4_blast_results
+      - ../5_novabrowse_output:/project/5_novabrowse_output
 
-      - ./chromosome_data.json:/project/chromosome_data.json:ro
+      - ../chromosome_data.json:/project/chromosome_data.json:ro
 
       - ncbi_cache:/project/ncbi_cache
 

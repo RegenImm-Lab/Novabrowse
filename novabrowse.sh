@@ -16,7 +16,7 @@
 #
 
 if [ "$#" = 0 ]; then
-	set -- run --rm novabrowse
+	set -- run --rm app
 fi
 
 exec env UID="$(id -u)" GID="$(id -g)" \
