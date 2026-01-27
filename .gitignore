@@ -1,2 +1,8 @@
 gene_fetch.log
 nul
+
+# Ignore environment variable files (private information).
+novabrowse.env
+
+# Ignore Python cache directory.
+__pycache__
