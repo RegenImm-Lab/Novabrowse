@@ -1,0 +1,32 @@
+#!/bin/sh -
+
+# This script is used to run one of the Novabrowse Jupyter notebooks
+# in a Docker container.
+#
+# Usage:
+#	./run-notebook {notebook}
+#
+# Example:
+# 	./run-notebook novabrowse_1.0.ipynb
+#
+
+here="$(dirname "$0")"
+
+if [ ! -f "$1" ]; then
+	printf 'Error: Notebook file "%s" not found.\n' "$1" >&2
+	exit 1
+fi
+
+if [ ! -d "$here/novabrowse_output" ]; then
+	printf 'Note: Creating output directory "%s/novabrowse_output".\n' "$here" 2>&1
+	mkdir -p "$here/novabrowse_output" || exit 1
+fi
+
+env UID="$(id -u)" GID="$(id -g)" \
+	docker compose --project-directory "$here" \
+	build --build-arg NOTEBOOK="$1"
+env UID="$(id -u)" GID="$(id -g)" \
+	docker compose --project-directory "$here" \
+	run --rm app
+
+printf '\nNote: To access the output files, check the directory "%s/novabrowse_output".\n' "$here" 2>&1

@@ -19,11 +19,9 @@
 FROM debian:stable-slim AS base
 
 # Build arguments: UID and GID should match the host user to avoid
-# permission issues.  NOTEBOOK is the name of the notebook (without
-# .ipynb extension) to convert and run.
+# permission issues.
 ARG UID
 ARG GID
-ARG NOTEBOOK
 
 ENV HOME="/project"
 
@@ -59,13 +57,23 @@ RUN --mount=type=cache,id=pip-cache,uid="$UID",gid="$GID",target="$HOME/.cache/p
 		jupyterlab_pygments \
 		nbconvert
 
-RUN --mount=type=bind,source="$NOTEBOOK.ipynb",target="$NOTEBOOK.ipynb" \
+ARG NOTEBOOK
+
+RUN --mount=type=bind,source="$NOTEBOOK",target="notebook.ipynb" \
 	jupyter-nbconvert --to script \
-		"$NOTEBOOK.ipynb" \
+		notebook.ipynb \
 		--output-dir "$HOME"
+
+# Add caching header stub to generated notebook script.
+RUN --mount=type=bind,source=docker/ncbi_cache-head.py,target=ncbi_cache-head.py \
+	cat ncbi_cache-head.py notebook.py >notebook_tmp.py && \
+	mv notebook_tmp.py notebook.py
 
 # --- Final runtime stage to install BLAST and set up Docker entrypoint.
 FROM base AS runtime
+
+# Mount point for persistent NCBI cache.
+RUN mkdir ncbi_cache
 
 # Pixi isn't available via system packages, so install it manually.
 RUN curl -fsSL https://pixi.sh/install.sh | sh -s
@@ -80,16 +88,7 @@ RUN --mount=type=cache,id=pixi-cache,uid="$UID",gid="$GID",target="$HOME/.cache/
 # Copy entrypoint script from the host, and the converted notebook
 # script from the "convert" stage.
 COPY --chown="$UID:$GID" docker/docker-entrypoint.sh docker-entrypoint.sh
-COPY --chown="$UID:$GID" --from=convert "$HOME/$NOTEBOOK.py" "$NOTEBOOK.py"
-
-# Add caching.
 COPY --chown="$UID:$GID" docker/ncbi_cache.py ncbi_cache.py
-RUN --mount=type=bind,source=docker/ncbi_cache-head.py,target=ncbi_cache-head.py \
-	cat ncbi_cache-head.py "$NOTEBOOK.py" >"$NOTEBOOK"_tmp.py && \
-	mv "$NOTEBOOK"_tmp.py "$NOTEBOOK.py"
+COPY --chown="$UID:$GID" --from=convert "$HOME/notebook.py" notebook.py
 
-# Mount point for persistent NCBI cache.
-RUN mkdir ncbi_cache
-
-ENV NOTEBOOK="$NOTEBOOK"
 CMD ["./docker-entrypoint.sh"]

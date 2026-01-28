@@ -12,7 +12,6 @@ services:
       args:
         UID: "${UID:-1000}"
         GID: "${GID:-1000}"
-        NOTEBOOK: novabrowse_1.0
 
     volumes:
       - ../1_subject_sequences:/project/1_subject_sequences
@@ -23,10 +22,8 @@ services:
 
       - ../chromosome_data.json:/project/chromosome_data.json:ro
 
+      - ./novabrowse_output:/project/novabrowse_output
       - ncbi_cache:/project/ncbi_cache
-
-    environment:
-      OUTPUT_DIR: 5_novabrowse_output
 
     env_file:
       - novabrowse.env
