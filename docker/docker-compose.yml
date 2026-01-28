@@ -18,7 +18,6 @@ services:
       - ../2_subject_blastdb:/project/2_subject_blastdb
       - ../3_query_sequences:/project/3_query_sequences
       - ../4_blast_results:/project/4_blast_results
-      - ../5_novabrowse_output:/project/5_novabrowse_output
 
       - ../chromosome_data.json:/project/chromosome_data.json:ro
 
