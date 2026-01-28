@@ -26,8 +26,9 @@ you may have made to it.
 Make a copy of the `novabrowse.env.example` file and name it
 `novabrowse.env` in the `docker` directory. Edit the `novabrowse.env`
 file to set any environment variables as needed. Currently, the only
-variable is `ENTREZ_EMAIL_ENV`, which should be set to your email
-address for NCBI Entrez access.
+required environment variable is `ENTREZ_EMAIL_ENV`, which should be set
+to your email address for NCBI Entrez access, but also see the note
+about caching below.
 
 ## Basic Usage
 
@@ -66,4 +67,3 @@ The cache volume can be removed using the command
 ``` shell
 docker volume rm novabrowse_ncbi_cache
 ```
-
