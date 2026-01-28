@@ -62,6 +62,11 @@ It's possible to modify the cache retention period by setting the
 `ENTREZ_CACHE_EXPIRY_DAYS` variable in the `novabrowse.env` file to a
 different number of days.
 
+Setting the `ENTREZ_USE_CACHE` variable in the `novabrowse.env` file to
+`false` will disable the use of the cache entirely. Doing so will not
+clear the existing cache, but will cause all NCBI data to be
+re-downloaded on each request for the duration of the run.
+
 The cache volume can be removed using the command
 
 ``` shell
