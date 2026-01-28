@@ -10,7 +10,7 @@ consistently across different environments.
 ## Prerequisites
 
 - Basic knowledge of using the command line.
-- Docker an Docker Compose installed on your machine.
+- Docker and Docker Compose installed on your machine.
 
 ## Setup
 
@@ -18,10 +18,11 @@ This Docker setup assumes that you have cloned the Novabrowse Git
 repository.
 
 It will make the directories `1_subject_sequences`, `2_subject_blastdb`,
-`3_query_sequences`, and `4_blast_results` available inside the Docker
-container (read/write). It also makes the `chromosome_data.json` file
-available inside the container (read-only), including any modifications
-you may have made to it.
+`3_query_sequences`, and `4_blast_results` from the Git repository's
+top-level directory available inside the Docker container (read/write).
+It also makes the `chromosome_data.json` file available inside the
+container (read-only), including any modifications you may have made to
+it.
 
 Make a copy of the `novabrowse.env.example` file and name it
 `novabrowse.env` in the `docker` directory. Edit the `novabrowse.env`
@@ -37,6 +38,14 @@ To run, e.g., the `novabrowse_1.0.ipynb` notebook, use
 ``` shell
 ./run_notebook ../novabrowse_1.0.ipynb
 ```
+
+or
+
+``` shell
+./docker/run_notebook novabrowse_1.0.ipynb
+```
+
+... depending on what your current working directory is.
 
 This command will build the Docker image (if not already built), which
 includes converting the given notebook to a Python script, and then run
