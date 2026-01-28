@@ -1,2 +1,5 @@
 # Ignore the output directory
 novabrowse_output
+
+# Ignore the personal environment file.
+novabrowse.env
