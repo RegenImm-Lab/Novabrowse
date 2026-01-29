@@ -65,11 +65,12 @@ not need to re-download the same data. All calls to the `Entrez.efetch`
 and `Entrez.esearch` functions from the Biopython library will use this
 cache.
 
-The data is cached for three days. After this period, the cached data
-will be considered stale and will be re-downloaded on the next request.
-It's possible to modify the cache retention period by setting the
-`ENTREZ_CACHE_EXPIRY_DAYS` variable in the `novabrowse.env` file to a
-different number of days.
+The size of the cache is limited to 500 MB, or to the value of the
+`ENTREZ_CACHE_SIZE_MB` variable in the `novabrowse.env` file, if set.
+You may want to increase this limit if you are working with a large
+number of sequences, or if a single request is likely to exceed 500 MB
+(e.g., downloading large genomes). A single run of the default
+`novabrowse_1.0.ipynb` notebook uses about 75 MB of cache space.
 
 Setting the `ENTREZ_USE_CACHE` variable in the `novabrowse.env` file to
 `false` will disable the use of the cache entirely. Doing so will not

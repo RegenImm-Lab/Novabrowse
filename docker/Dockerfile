@@ -38,6 +38,7 @@ RUN --mount=type=cache,target=/var/cache/apt,id=apt-cache \
 	apt-get install -y --no-install-recommends \
 		curl \
 		python3-biopython \
+		python3-diskcache \
 		python3-libsass \
 		python3-venv
 
@@ -59,7 +60,7 @@ RUN --mount=type=cache,id=pip-cache,uid="$UID",gid="$GID",target="$HOME/.cache/p
 
 ARG NOTEBOOK
 
-RUN --mount=type=bind,source="$NOTEBOOK",target="notebook.ipynb" \
+RUN --mount=type=bind,source="$NOTEBOOK",target=notebook.ipynb \
 	jupyter-nbconvert --to script \
 		notebook.ipynb \
 		--output-dir "$HOME"
