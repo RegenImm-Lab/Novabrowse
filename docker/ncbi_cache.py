@@ -14,9 +14,10 @@ import diskcache
 # Global cache instance
 _cache: Optional[diskcache.Cache] = None
 
-def init_cache(cache_dir: str = "ncbi_cache",
-               size_limit_mb: int = 500,
-               enabled: bool = True) -> diskcache.Cache:
+
+def init_cache(
+    cache_dir: str = "ncbi_cache", size_limit_mb: int = 500, enabled: bool = True
+) -> diskcache.Cache:
     """
     Initialize the global cache instance.
 
@@ -30,11 +31,12 @@ def init_cache(cache_dir: str = "ncbi_cache",
         _cache = diskcache.Cache(
             cache_dir,
             size_limit=size_limit_mb * 1024 * 1024,
-            eviction_policy='least-recently-used'
+            eviction_policy="least-recently-used",
         )
     else:
         _cache = None
     return _cache
+
 
 def get_cache() -> Optional[diskcache.Cache]:
     """Get the global cache instance, creating it if necessary."""
@@ -42,6 +44,7 @@ def get_cache() -> Optional[diskcache.Cache]:
     if _cache is None:
         init_cache()
     return _cache
+
 
 def make_cache_key(func_name: str, args: tuple, kwargs: dict) -> str:
     """
@@ -54,15 +57,15 @@ def make_cache_key(func_name: str, args: tuple, kwargs: dict) -> str:
 
     # Include relevant global Entrez settings that might affect results
     global_settings = {
-        'email': getattr(Entrez, 'email', None),
-        'api_key': getattr(Entrez, 'api_key', None),
-        'tool': getattr(Entrez, 'tool', None),
+        "email": getattr(Entrez, "email", None),
+        "api_key": getattr(Entrez, "api_key", None),
+        "tool": getattr(Entrez, "tool", None),
     }
     cache_parts.append(str(sorted(global_settings.items())))
 
     # Add positional arguments
     for arg in args:
-        if hasattr(arg, '__dict__'):
+        if hasattr(arg, "__dict__"):
             cache_parts.append(str(sorted(arg.__dict__.items())))
         else:
             cache_parts.append(str(arg))
@@ -75,6 +78,7 @@ def make_cache_key(func_name: str, args: tuple, kwargs: dict) -> str:
 
     return hashlib.md5(cache_string.encode()).hexdigest()
 
+
 def detect_format(data: bytes, kwargs: dict) -> str:
     """
     Detect the format of the response data.
@@ -83,29 +87,30 @@ def detect_format(data: bytes, kwargs: dict) -> str:
         Format string: 'fasta', 'text', or 'xml'
     """
     # Check rettype/retmode in kwargs
-    rettype = kwargs.get('rettype', '').lower()
-    retmode = kwargs.get('retmode', '').lower()
+    rettype = kwargs.get("rettype", "").lower()
+    retmode = kwargs.get("retmode", "").lower()
 
-    if rettype == 'fasta':
-        return 'fasta'
-    elif retmode == 'xml':
-        return 'xml'
-    elif retmode == 'text':
-        return 'text'
+    if rettype == "fasta":
+        return "fasta"
+    elif retmode == "xml":
+        return "xml"
+    elif retmode == "text":
+        return "text"
 
     # Try to detect from content
     try:
         sample = data[:1000] if isinstance(data, bytes) else data[:1000].encode()
-        sample_str = sample.decode('utf-8', errors='ignore').strip()
+        sample_str = sample.decode("utf-8", errors="ignore").strip()
 
-        if sample_str.startswith('>'):
-            return 'fasta'
-        elif sample_str.startswith('<?xml') or sample_str.startswith('<'):
-            return 'xml'
+        if sample_str.startswith(">"):
+            return "fasta"
+        elif sample_str.startswith("<?xml") or sample_str.startswith("<"):
+            return "xml"
     except:
         pass
 
-    return 'xml'  # Default
+    return "xml"  # Default
+
 
 def cache_ncbi_request(func: Callable) -> Callable:
     """
@@ -116,6 +121,7 @@ def cache_ncbi_request(func: Callable) -> Callable:
     2. Returns cached result if available
     3. Otherwise makes the actual request and caches it
     """
+
     @wraps(func)
     def wrapper(*args, **kwargs):
         cache = get_cache()
@@ -133,62 +139,65 @@ def cache_ncbi_request(func: Callable) -> Callable:
 
         if cached_entry is not None:
             # Cache hit - return appropriate IO object
-            data = cached_entry['data']
-            format_type = cached_entry['format']
+            data = cached_entry["data"]
+            format_type = cached_entry["format"]
 
             # Log cache hit
             description = _make_description(func_name, kwargs)
             print(f"Using cached data for {description}")
 
-            if format_type in ('fasta', 'text'):
-                return StringIO(data.decode('utf-8') if isinstance(data, bytes) else data)
+            if format_type in ("fasta", "text"):
+                return StringIO(
+                    data.decode("utf-8") if isinstance(data, bytes) else data
+                )
             else:
-                return BytesIO(data if isinstance(data, bytes) else data.encode('utf-8'))
+                return BytesIO(
+                    data if isinstance(data, bytes) else data.encode("utf-8")
+                )
 
         # Cache miss - make actual request
         response = func(*args, **kwargs)
 
         # Read and store the response
-        if hasattr(response, 'read'):
+        if hasattr(response, "read"):
             response_data = response.read()
             if isinstance(response_data, str):
-                response_data = response_data.encode('utf-8')
+                response_data = response_data.encode("utf-8")
         else:
-            response_data = str(response).encode('utf-8')
+            response_data = str(response).encode("utf-8")
 
         # Detect format and store in cache
         data_format = detect_format(response_data, kwargs)
-        cache[cache_key] = {
-            'data': response_data,
-            'format': data_format
-        }
+        cache[cache_key] = {"data": response_data, "format": data_format}
 
         # Return appropriate IO object
-        if data_format in ('fasta', 'text'):
-            return StringIO(response_data.decode('utf-8'))
+        if data_format in ("fasta", "text"):
+            return StringIO(response_data.decode("utf-8"))
         else:
             return BytesIO(response_data)
 
     return wrapper
 
+
 def _make_description(func_name: str, kwargs: dict) -> str:
     """Create a human-readable description of the request."""
     description = f"{func_name}"
 
-    if 'db' in kwargs:
+    if "db" in kwargs:
         description += f" from {kwargs['db']}"
 
-    if 'term' in kwargs:
-        term = kwargs['term']
+    if "term" in kwargs:
+        term = kwargs["term"]
         term_preview = term[:100] + "..." if len(term) > 100 else term
         description += f": {term_preview}"
-    elif 'id' in kwargs:
-        id_str = str(kwargs['id'])
+    elif "id" in kwargs:
+        id_str = str(kwargs["id"])
         if len(id_str) > 50:
             id_str = id_str[:47] + "..."
         description += f": {id_str}"
 
     return description
+
 
 def apply_cache_to_entrez():
     """
@@ -198,7 +207,7 @@ def apply_cache_to_entrez():
     from Bio import Entrez
 
     # Store original functions
-    if not hasattr(Entrez, '_original_esearch'):
+    if not hasattr(Entrez, "_original_esearch"):
         Entrez._original_esearch = Entrez.esearch
         Entrez._original_efetch = Entrez.efetch
 
@@ -208,14 +217,16 @@ def apply_cache_to_entrez():
 
     print("NCBI request caching enabled")
 
+
 def disable_cache_for_entrez():
     """Restore original Entrez functions without caching."""
     from Bio import Entrez
 
-    if hasattr(Entrez, '_original_esearch'):
+    if hasattr(Entrez, "_original_esearch"):
         Entrez.esearch = Entrez._original_esearch
         Entrez.efetch = Entrez._original_efetch
         print("NCBI request caching disabled")
+
 
 def clear_cache():
     """Clear all cached data."""
