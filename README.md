@@ -37,11 +37,11 @@ Novabrowse pipeline runs in a Jupyter Notebook, so you need a compatible program
 
 - [VS Code](https://code.visualstudio.com/) with the [Jupyter extension](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
-### 3. <a href="https://www.ncbi.nlm.nih.gov/" target="_blank">NCBI</a> (https://www.ncbi.nlm.nih.gov/) BLAST+ Command Line Tools
+### 3. <a href="https://www.ncbi.nlm.nih.gov/" target="_blank">NCBI</a> BLAST+ Command Line Tools
 
 BLAST+ must be installed and available in your system PATH.
 
-**Option A: Conda (Recommended)**
+**Option A: Conda**
 ```bash
 conda install -c bioconda blast
 ```
