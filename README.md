@@ -22,7 +22,7 @@
 ## Core Capabilities
 
 - **Multi-species synteny analysis** - Compare gene order conservation across multiple species simultaneously with interactive ribbon plots connecting orthologous genes across chromosomes
-- **Gene signal discovery** - Identify unannotated genes in genomic regions through distance-based HSP clustering, revealing gene units missed by standard annotation pipelines
+- **Gene signal discovery** - Identify unannotated genes in genomic regions through distance-based High-scoring Segment Pair (HSP) clustering, revealing gene units missed by standard annotation pipelines
 - **Coverage visualization** - View alignment coverage as identity-color-coded bars positioned along query sequences, showing both extent and quality of matches
 
 ## Prerequisites
@@ -554,6 +554,20 @@ blast_settings = {
 - **Batch processing** - Process multiple genomic regions and species within single execution runs
 - **Column customization** - Toggle visibility and reorder data columns including coordinates, lengths, alignment statistics, and chromosome visualizations
 - **Drag-and-drop organization** - Reorder subject species columns to facilitate comparative analysis
+
+## Pipeline Overview
+<img src="images/pipeline.svg" alt="Novabrowse pipeline overview schematic">
+
+1. **Query and subject species selection** — The user selects a genomic region of interest in the **query species** by specifying chromosome coordinates and optional flanking genes. Query sequences can come from NCBI, be provided manually as custom sequences, or both. For each **subject species**, the user chooses the database type (transcriptome and/or genome), BLAST algorithm (BLASTn, tBLASTn, and/or tBLASTx), and filtering thresholds (minimum bitscore and maximum E-value).
+
+2. **Automated query sequence retrieval** — The pipeline retrieves transcript and peptide sequences from NCBI for all **query species** genes in the target region, including upstream and downstream flanking genes. Any custom sequences are also incorporated at this stage. The results are saved as FASTA files (`transcripts.fasta` and `proteins.fasta`).
+
+   > **Note:** Subject species databases (FASTA files and GTF annotations) must be prepared manually before running the pipeline — see [Prepare subject species files](#1-prepare-subject-species-files).
+
+3. **BLAST search and results filtering** — The pipeline runs BLAST searches against each configured **subject species** database. For transcriptome hits, results are matched to GTF annotation entries to retrieve gene names, chromosomal positions, and annotation details. BLAST may return one or more HSPs (aligned segments) per transcript, these are grouped under the matching gene and later visualized as a coverage bar in the final output. For genome hits, HSPs are clustered by a user-defined distance threshold to identify putative gene units where nearby HSPs are grouped and assigned unique identifiers (e.g., Gene_1, Gene_2, etc.).
+
+4. **Data integration and table generation** — The pipeline combines query gene metadata (names, coordinates, lengths, among others) with the filtered BLAST results, maps each query gene to its ranked **subject species** matches, and compiles everything into an interactive HTML table.
+
 
 ## Parameters Reference
 
