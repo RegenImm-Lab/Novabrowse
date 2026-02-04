@@ -11,7 +11,9 @@
 - [Tutorial 1: Detecting Orthologs Across Species](#tutorial-1-detecting-orthologs-across-species)
 - [Tutorial 2: Using Custom Sequences and Gene Signal Discovery](#tutorial-2-using-custom-sequences-and-gene-signal-discovery)
 - [Documentation](#documentation)
-- [General Features](#general-features)
+  - [General Features](#general-features)
+  - [Parameters Reference](#parameters-reference)
+  - [Interactive Controls Reference](#interactive-controls-reference)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
 - [Citation](#citation)
@@ -99,7 +101,7 @@ For this tutorial, we'll use three fungal species from NCBI:
 
 These files (GTF annotations and transcripts for all three species, plus the genome for *S. cerevisiae*) are already included in `1_subject_sequences/`. Below we explain how they were downloaded, which you can follow to add your own species or update the existing files.
 
-**How to download from NCBI:**
+**How to download subject species sequences from NCBI:**
 
 - The image below shows *S. cerevisiae* as an example. When downloading assemblies from NCBI, you can choose the source (RefSeq or GenBank) based on your specific research needs.
 
@@ -523,7 +525,36 @@ blast_settings = {
 
 # Documentation
 
-### Parameters Reference
+## General Features
+
+#### **BLAST Integration**
+- **Multiple BLAST algorithms** - Support for BLASTn, tBLASTn, and tBLASTx with independent configuration per subject species
+- **Automated NCBI retrieval** - Direct integration with NCBI E-utilities API for automatic gene sequence downloads
+- **Custom sequence support** - Incorporate user-provided sequences (e.g., from nanopore sequencing) alongside NCBI data
+- **Flexible filtering** - Configure E-value thresholds and bit score cutoffs independently per species
+- **Automatic quality filtering** - Filters out discontinued and obsolete gene entries from NCBI
+- **Gene signal discovery** - Detect unannotated genes in genome searches through HSP clustering (see [Configuration Reference](#gene-signal-discovery-consider_one_gene))
+- **Smart gene naming** - Hierarchical fallback for display names when official nomenclature is unavailable
+
+#### **Interactive Visualization**
+- **High-resolution chromosomal maps** - Interactive chromosome visualizations showing precise gene positions with support for both single chromosomes and multi-arm configurations
+- **Dynamic filtering system** - Filter by gene names, conservation levels, genomic coordinates, or match quality with real-time statistical updates
+- **Isoform management** - Automatic consolidation of transcript isoforms with expandable views showing all variants and their alignment statistics
+- **Coordinate-based highlighting** - Focus analysis on specific genomic regions through visual highlighting or selective display of genes within defined coordinate ranges
+
+#### **Analysis Features**
+- **Transcriptome and genome searches** - Search against both annotated transcriptomes (using GTF files) or raw genomes (with automatic HSP clustering)
+- **Multi-arm chromosome support** - Proper coordinate transformation for chromosomes represented as separate p and q arms in assemblies
+- **Alignment quality metrics** - Track coverage percentage, identity (both total and local), bit scores, E-values, and HSP counts
+- **Publication-ready export** - Generate SVG files containing complete table structure, chromosome maps, and active ribbon visualizations for direct use in publications or further editing
+
+#### **User Experience**
+- **All-in-one HTML output** - Self-contained interactive HTML files with embedded JavaScript for dynamic filtering and visualization without requiring server-side processing
+- **Batch processing** - Process multiple genomic regions and species within single execution runs
+- **Column customization** - Toggle visibility and reorder data columns including coordinates, lengths, alignment statistics, and chromosome visualizations
+- **Drag-and-drop organization** - Reorder subject species columns to facilitate comparative analysis
+
+## Parameters Reference
 
 This section provides detailed documentation for all configuration parameters. For usage examples, see the tutorials above.
 
@@ -626,35 +657,6 @@ When retrieving genes from NCBI, Novabrowse assigns display names using this fal
 2. Locus tag identifier (e.g., `CAALFM_C700260CA`)
 3. First available synonym
 4. `"Uncharacterized"` if no identifiers available
-
-## General Features
-
-#### **BLAST Integration**
-- **Multiple BLAST algorithms** - Support for BLASTn, tBLASTn, and tBLASTx with independent configuration per subject species
-- **Automated NCBI retrieval** - Direct integration with NCBI E-utilities API for automatic gene sequence downloads
-- **Custom sequence support** - Incorporate user-provided sequences (e.g., from nanopore sequencing) alongside NCBI data
-- **Flexible filtering** - Configure E-value thresholds and bit score cutoffs independently per species
-- **Automatic quality filtering** - Filters out discontinued and obsolete gene entries from NCBI
-- **Gene signal discovery** - Detect unannotated genes in genome searches through HSP clustering (see [Configuration Reference](#gene-signal-discovery-consider_one_gene))
-- **Smart gene naming** - Hierarchical fallback for display names when official nomenclature is unavailable
-
-#### **Interactive Visualization**
-- **High-resolution chromosomal maps** - Interactive chromosome visualizations showing precise gene positions with support for both single chromosomes and multi-arm configurations
-- **Dynamic filtering system** - Filter by gene names, conservation levels, genomic coordinates, or match quality with real-time statistical updates
-- **Isoform management** - Automatic consolidation of transcript isoforms with expandable views showing all variants and their alignment statistics
-- **Coordinate-based highlighting** - Focus analysis on specific genomic regions through visual highlighting or selective display of genes within defined coordinate ranges
-
-#### **Analysis Features**
-- **Transcriptome and genome searches** - Search against both annotated transcriptomes (using GTF files) or raw genomes (with automatic HSP clustering)
-- **Multi-arm chromosome support** - Proper coordinate transformation for chromosomes represented as separate p and q arms in assemblies
-- **Alignment quality metrics** - Track coverage percentage, identity (both total and local), bit scores, E-values, and HSP counts
-- **Publication-ready export** - Generate SVG files containing complete table structure, chromosome maps, and active ribbon visualizations for direct use in publications or further editing
-
-#### **User Experience**
-- **All-in-one HTML output** - Self-contained interactive HTML files with embedded JavaScript for dynamic filtering and visualization without requiring server-side processing
-- **Batch processing** - Process multiple genomic regions and species within single execution runs
-- **Column customization** - Toggle visibility and reorder data columns including coordinates, lengths, alignment statistics, and chromosome visualizations
-- **Drag-and-drop organization** - Reorder subject species columns to facilitate comparative analysis
 
 ### Interactive Controls Reference
 
