@@ -571,7 +571,7 @@ This section provides detailed documentation for all configuration parameters. F
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `download_from_NCBI` | bool | Set `False` to use only custom sequences |
-| `chromosome` | string | Chromosome name (`'VI'`, `'2'`, `'2p'`) or NCBI accession (`'NC_001138.5'`). Version-flexible matching supported |
+| `chromosome` | string | Chromosome name (`'VI'`, `'2'`, `'2p'`) or NCBI accession (`'NC_001138.5'`) |
 | `start_position` | int | Region start coordinate |
 | `end_position` | int | Region end coordinate (must be > start_position) |
 | `genes_upstream` | int | Number of flanking genes before region (uses adaptive range searching) |
@@ -586,14 +586,14 @@ Optional array for including user-provided sequences alongside NCBI data (e.g., 
 | Field | Type | Description |
 |-------|------|-------------|
 | `name` | string | Unique display name for results |
-| `id` | string | ID for NCBI link generation |
+| `id` | string | Gene ID from NCBI URL, used to generate hyperlinks in the HTML output (can be left blank) |
 | `description` | string | FASTA header description |
 | `nucleotide_sequence` | string | DNA sequence |
 | `protein_sequence` | string | Amino acid sequence |
-| `chromosome` | string | Chromosome identifier |
-| `strand` | string | `"1"` (forward) or `"-1"` (reverse) |
+| `chromosome` | string | Chromosome name (`'VI'`, `'2'`, `'2p'`) or NCBI accession (`'NC_001138.5'`) |
+| `strand` | string | `"1"` (forward) or `"-1"` (reverse). Stored in BLAST query headers but does not affect the HTML output |
 | `start_position` | string | Genomic start coordinate |
-| `end_position` | string | Genomic end coordinate |
+| `end_position` | string | Genomic end coordinate (must be > start_position) |
 
 ### BLAST Configuration
 
