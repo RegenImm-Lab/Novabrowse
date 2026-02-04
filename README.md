@@ -50,10 +50,11 @@ conda install -c bioconda blast
 1. Download from [NCBI FTP](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
 2. Install and add to system PATH
 
-### 4. NCBI Entrez Email
+### 4. NCBI Account
 
-NCBI requires an email address for Entrez API access (needed for sequence retrieval requests).
+Novabrowse uses the [NCBI Entrez API](https://www.ncbi.nlm.nih.gov/books/NBK25501/) to retrieve sequences, which requires an NCBI account:
 - You can create the account at [ncbi.nlm.nih.gov/account](https://www.ncbi.nlm.nih.gov/account/)
+- The email associated with your NCBI account will also be used to identify your Entrez API requests
 
 
 ## Installation
