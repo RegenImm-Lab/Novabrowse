@@ -350,7 +350,7 @@ species_to_orgn = {
 > - `Novabrowse_ACT1_orthology_s_cerevisiae_tblastn_best_matches.html`
 > - `Novabrowse_ACT1_orthology_s_cerevisiae_blastn_best_matches.html`
 
-Example how the tblastn output file should look:
+Example of how the tblastn output file should look:
 
 <img src="images/tutorial1_sample_file.png" alt="How to download from NCBI" style="margin-left: 20px;">
 
