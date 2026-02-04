@@ -10,9 +10,8 @@
 - [Quick Start](#quick-start)
 - [Tutorial 1: Detecting Orthologs Across Species](#tutorial-1-detecting-orthologs-across-species)
 - [Tutorial 2: Using Custom Sequences and Gene Signal Discovery](#tutorial-2-using-custom-sequences-and-gene-signal-discovery)
-- [Configuration Reference](#configuration-reference)
-- [General Features](#general-features)
 - [Documentation](#documentation)
+- [General Features](#general-features)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
 - [Citation](#citation)
@@ -227,7 +226,7 @@ To analyze a genomic region, first identify the chromosome and coordinates of yo
 To find coordinates for the *ACT1* gene locus in *S. cerevisiae*:
 1. Search for *S. cerevisiae* [*ACT1*](https://www.ncbi.nlm.nih.gov/gene/850504) gene on NCBI
 
-<img src="images/how_to_get_genomic_region.png" alt="How to get genomic region" style="margin-left: 20px;">
+<img src="images/tutorial1_how_to_get_genomic_region.png" alt="How to get genomic region" style="margin-left: 20px;">
 
 2. Find the genomic location: `Chromosome: VI; NC_001138.5 (53260..54696, complement)`
 
@@ -260,6 +259,11 @@ query_sequences_list = [
 > **Chromosome identifiers:** You can use traditional chromosome names (`'VI'`, `'2'`, `'2p'`, `'II'`) or NCBI accession identifiers (`'NC_001138.5'`, `'NC_032095.1'`). Accession identifiers support version-flexible matching - for example, `'NC_032095'` will match `'NC_032095.1'`. Use accession identifiers when traditional names don't work or for more precise targeting.
 
 > **Adaptive range fetching:** The `genes_upstream` and `genes_downstream` parameters use adaptive range searching. Novabrowse automatically expands the search window to find exactly the requested number of genes, regardless of gene density in the region.
+
+> **Output file types:** The `show_only_best_matches` parameter controls which output files are generated:
+> - `'True'` — generates `*_best_matches.html` with only the top hit per gene
+> - `'False'` — generates `*_all_matches.html` with all hits including paralogs
+> - `'Both'` — generates both files
 
 ### 2. Configure BLAST settings
 
@@ -338,7 +342,7 @@ species_to_orgn = {
 
 ### 5. Run all notebook cells sequentially
 
-### 6. Find results in the project root folder as interactive HTML files
+### 6. Find results in the project root folder as HTML files
 
 > **Tip:** You can compare your results with the reference files in the `tutorial/` folder to see the expected output:
 > - `Novabrowse_ACT1_orthology_s_cerevisiae_tblastn_best_matches.html`
@@ -346,7 +350,7 @@ species_to_orgn = {
 
 Example how the tblastn output file should look:
 
-<img src="images/sample_file.png" alt="How to download from NCBI" style="margin-left: 20px;">
+<img src="images/tutorial1_sample_file.png" alt="How to download from NCBI" style="margin-left: 20px;">
 
 
 
@@ -356,23 +360,41 @@ Example how the tblastn output file should look:
 
 ## Tutorial 2: Using Custom Sequences and Gene Signal Discovery
 
-[Selmecki et al. (2005)](https://doi.org/10.1534/genetics.104.034652) identified the longest syntenic region between *C. albicans* and *S. cerevisiae* on chromosome 7, spanning 11 ORFs from *DCC1* to *PGS1*. In this tutorial, we'll examine this region using *LEU2* as our anchor gene, while demonstrating custom sequences and genome searches.
+[Selmecki et al. (2005)](https://doi.org/10.1534/genetics.104.034652) identified the longest syntenic region between *C. albicans* and *S. cerevisiae* on chromosome 7, spanning 11 ORFs from *DCC1* to *PGS1*. In this tutorial, we'll examine this region using *LEU2* as our anchor gene, while demonstrating two features: custom query sequences and searches against genomes.
 
-We'll query from *C. albicans* with flanking genes from NCBI plus a custom *LEU2* sequence. For *S. pombe*, which doesn't share this syntenic arrangement, we'll use only custom sequences: *leu2* and a nearby gene *sor1* to demonstrate multiple custom sequence entries.
+We'll set up two query species to demonstrate different workflows:
+- **C. albicans** — NCBI-retrieved query genes combined with a custom sequence
+- **S. pombe** — only custom query sequences, no NCBI retrieval
 
 ### 1. Finding sequence data for custom sequences
 
-To create a custom sequence entry, you need nucleotide and protein sequences, plus genomic coordinates (`chromosome`, `strand`, `start_position`, `end_position`) as shown in [Tutorial 1](#1-setting-up-a-query).
+To create a custom sequence entry, you need to set nucleotide and protein sequences, plus genomic coordinates (`chromosome`, `start_position`, `end_position`).
 
-When using `download_from_NCBI: True`, Novabrowse automatically retrieves sequences for genes within your specified coordinates. However, for this tutorial we'll manually obtain sequences from NCBI to demonstrate the custom sequence workflow:
+When using `download_from_NCBI: True`, Novabrowse automatically retrieves sequences for genes within your specified coordinates. However, for this tutorial, to demonstrate the custom sequence workflow, we'll manually obtain those sequences from NCBI:
 
-1. Open the gene page [*C. albicans* *LEU2*](https://www.ncbi.nlm.nih.gov/gene/3638034) and from there open "[Transcripts and products](https://www.ncbi.nlm.nih.gov/datasets/gene/3638034/#transcripts-and-proteins)":
+1. Open the gene page for [*C. albicans* *LEU2*](https://www.ncbi.nlm.nih.gov/gene/3638034) and from there open "[Transcripts and proteins table](https://www.ncbi.nlm.nih.gov/datasets/gene/3638034/#transcripts-and-proteins)":
 
-<img src="images/how_to_get_sequences.png" alt="C. albicans LEU2 gene page on NCBI" style="margin-left: 20px;">
+<img src="images/tutorial2_how_to_get_sequences.png" alt="C. albicans LEU2 gene page on NCBI" style="margin-left: 20px;">
 
-2. Open the transcript ([XM_715278.1](https://www.ncbi.nlm.nih.gov/nuccore/XM_715278.1?report=fasta)) and protein ([XP_720371.1](https://www.ncbi.nlm.nih.gov/protein/XP_720371.1?report=fasta)) subpages, select FASTA format, and copy the sequences.
+2. Then navigate to both the transcript ([XM_715278.1](https://www.ncbi.nlm.nih.gov/nuccore/XM_715278.1?report=fasta)) and protein ([XP_720371.1](https://www.ncbi.nlm.nih.gov/protein/XP_720371.1?report=fasta)) subpages:
 
-3. From the gene page, note the `id` (from URL), `chromosome`, `strand`, `start_position`, and `end_position` from the "Genomic context" section.
+<img src="images/tutorial2_transcripts_and_proteins_page.png" alt="C. albicans LEU2 transcripts and proteins page on NCBI" style="margin-left: 20px;">
+
+3. In the subpages select FASTA format:
+
+<img src="images/tutorial2_get_fasta.png" alt="C. albicans LEU2 transcript default page on NCBI" style="margin-left: 20px;">
+
+4. Finally, copy the sequence part only:
+
+<img src="images/tutorial2_copy_fasta.png" alt="C. albicans LEU2 transcript fasta sequence page on NCBI" style="margin-left: 20px;">
+
+5. Each custom sequence also requires genomic context fields: `chromosome`, `start_position`, and `end_position`, which determine how the gene is positioned in the HTML output, and `id`, which is used to generate a hyperlink to the NCBI gene page (can be left blank if not needed). The `strand` field is stored in BLAST query headers for reference but does not affect the final HTML output (can be left as `"1"` if not needed). For this sample, we use the values from "Genomic context" section of the gene page and we get the `id` from the URL:
+
+<img src="images/tutorial2_genomic_context.png" alt="C. albicans LEU2 genomic context info on NCBI" style="margin-left: 20px;">
+
+> **Note:** For *C. albicans* chromosome parameter, we use the NCBI accession (`NC_032095.1`) instead of the chromosome name because the NCBI Entrez API does not map the chromosome name correctly for this species. Either format works when supported (see [Chromosome identifiers](#1-setting-up-a-query) in Tutorial 1).
+
+Repeat the same process for *S. pombe* [*leu2*](https://www.ncbi.nlm.nih.gov/gene/2543296) and [*sor1*](https://www.ncbi.nlm.nih.gov/gene/2543287) to obtain their sequences and genomic coordinates.
 
 ### 2. Adding custom sequences to your query
 
@@ -383,14 +405,14 @@ query_sequences_list = [
     {
         'query_species': 'c_albicans',
         'protein_sources': ('NP_','XP_'),
-        'show_only_best_matches': 'Both',
+        'show_only_best_matches': 'Both',         # Generates two files: best hits only + all hits
         'retrieved_sequences': {
-            'download_from_NCBI': True,
-            'chromosome': 'NC_032095.1',
-            'start_position': 64158,
-            'end_position': 65279,
-            'genes_upstream': 7,
-            'genes_downstream': 11,
+            'download_from_NCBI': True,            # Fetch flanking genes from NCBI
+            'chromosome': 'NC_032095.1',           # Accession from "Genomic context" (see note above)
+            'start_position': 64158,               # LEU2 start coordinate
+            'end_position': 65279,                 # LEU2 end coordinate
+            'genes_upstream': 7,                   # Include 7 genes before LEU2
+            'genes_downstream': 11,                # Include 11 genes after LEU2
         },
         'custom_sequences': [
             {
@@ -399,15 +421,14 @@ query_sequences_list = [
                 "description": ">XP_720371.1 3-isopropylmalate dehydrogenase [Candida albicans SC5314]",  # FASTA header
                 "nucleotide_sequence": "ATGTCTGTTAAAACCAAAACCATTACT...",  # Copy from transcript FASTA
                 "protein_sequence": "MSVKTKTITVLPGDHVGTEIVNEAIKV...",     # Copy from protein FASTA
-                "chromosome": "NC_032095.1",      # From gene page "Genomic context"
+                "chromosome": "NC_032095.1",      # Accession from "Genomic context" (see note above)
                 "strand": "1",                    # "1" = forward, "-1" = reverse
                 "start_position": "64158",        # From gene page coordinates
                 "end_position": "65279"           # From gene page coordinates
             },
         ]
     },
-    # S. pombe LEU2 is not in a syntenic region with C. albicans, so we use only
-    # custom sequences: leu2 and a nearby gene (sor1) to demonstrate multiple entries
+    # For S. pombe so we use only custom sequences to demonstrate multiple entries
     {
         'query_species': 's_pombe',
         'protein_sources': ('NP_','XP_'),
@@ -448,7 +469,7 @@ query_sequences_list = [
 ]
 ```
 
-> **Note:** In the *C. albicans* configuration above, `LEU2` (retrieved via `download_from_NCBI: True`) and `LEU2_custom` contain identical sequences. This demonstrates that custom sequences appear alongside NCBI-retrieved genes in the results, allowing you to verify your custom entries or include alternative annotations for the same locus.
+> **Note:** In the *C. albicans* configuration above, `LEU2` (retrieved via `download_from_NCBI: True`) and `LEU2_custom` contain identical sequences. The tutorial intentionally includes the same gene twice (once from NCBI, once as custom) to demonstrate that they produce identical results.
 
 ### 3. Searching against genomes (gene signal discovery)
 
@@ -458,7 +479,7 @@ When searching against genomes, BLAST returns separate HSPs for each exon. The `
 consider_one_gene = 1050  # Longest known intron in S. cerevisiae (~1kb)
 ```
 
-This enables **gene signal discovery** - finding potential unannotated genes. Set this value to accommodate the largest intron in your target species.
+This enables **gene signal discovery** - finding potential unannotated genes. Note that intron sizes differ between species, good practice is to set this value similar to than the largest known intron in your species to ensure all exons from the same gene are grouped correctly.
 
 Enable genome searches by setting `type` to include `'genome'`:
 
@@ -477,7 +498,7 @@ subject_species = {
 
 ### 4. Using tblastx for divergent species
 
-For highly divergent species, `tblastx` (translated nucleotide vs translated nucleotide) can find matches that other algorithms might miss:
+For highly divergent species, `tblastx` (translated nucleotide vs translated nucleotide) can find matches that other BLAST algorithms might miss:
 
 ```python
 blast_settings = {
@@ -486,13 +507,8 @@ blast_settings = {
 }
 ```
 
-### 5. Generating both output file types
-
-Setting `show_only_best_matches: 'Both'` generates two output files per BLAST type:
-- `*_best_matches.html` - Only the top hit per gene
-- `*_all_matches.html` - All hits including paralogs
-
-Run all notebook cells to generate your results.
+### 5. Run all notebook cells sequentially
+### 6. Find results in the project root folder as HTML files
 
 > **Tip:** Compare your results with the reference files in the `tutorial/` folder:
 > - `Novabrowse_LEU2_loci_synteny_c_albicans_tblastn_best_matches.html`
@@ -502,8 +518,12 @@ Run all notebook cells to generate your results.
 > - `Novabrowse_LEU2_loci_synteny_s_pombe_tblastn_all_matches.html`
 > - `Novabrowse_LEU2_loci_synteny_s_pombe_tblastx_all_matches.html`
 
+<br>
 
-## Configuration Reference
+
+# Documentation
+
+### Parameters Reference
 
 This section provides detailed documentation for all configuration parameters. For usage examples, see the tutorials above.
 
@@ -554,7 +574,7 @@ For genome searches (not transcriptomes), Novabrowse clusters nearby BLAST HSPs 
 consider_one_gene = 1050  # Maximum distance (bp) between HSPs to merge into one gene
 ```
 
-HSPs within this distance are merged into a single entry with combined coverage. When BLASTing a transcript against a genome, HSPs correspond to exons and gaps between them are introns. Set this value larger than the largest intron in your species to ensure all exons from the same gene are grouped correctly.
+HSPs within this distance are merged into a single entry with combined coverage. When BLASTing a transcript against a genome, HSPs correspond to exons and gaps between them are introns. Set this value similar to than the largest intron in your species to ensure all exons from the same gene are grouped correctly.
 
 #### BLAST Settings (`blast_settings`)
 
@@ -635,8 +655,6 @@ When retrieving genes from NCBI, Novabrowse assigns display names using this fal
 - **Batch processing** - Process multiple genomic regions and species within single execution runs
 - **Column customization** - Toggle visibility and reorder data columns including coordinates, lengths, alignment statistics, and chromosome visualizations
 - **Drag-and-drop organization** - Reorder subject species columns to facilitate comparative analysis
-
-## Documentation
 
 ### Interactive Controls Reference
 
