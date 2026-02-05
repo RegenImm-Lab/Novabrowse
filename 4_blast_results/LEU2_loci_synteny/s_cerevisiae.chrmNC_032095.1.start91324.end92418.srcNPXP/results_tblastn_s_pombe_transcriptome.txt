@@ -1,0 +1,261 @@
+TBLASTN 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: 1_subject_sequences\s_pombe\GCF_000002945.2\rna.fna
+           12,413 sequences; 16,398,369 total letters
+
+
+
+Query= 3638034|3638034|chromosome NC_032095.1|LEU2_custom|1|91324|92418|1122|373|>XP_720371.1 3-isopropylmalate dehydrogenase [Candida albicans SC5314] [CUSTOM]
+
+Length=373
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001021706.4 Schizosaccharomyces pombe 3-isopropylmalate dehydr...  355     7e-121
+NR_194785.1 Schizosaccharomyces pombe non-coding RNA (SPOM_SPNCRN...  353     2e-119
+NM_001019430.3 Schizosaccharomyces pombe homoisocitrate dehydroge...  115     7e-29 
+NR_151254.1 Schizosaccharomyces pombe non-coding RNA (SPOM_SPNCRN...  103     2e-24 
+NM_001021109.3 Schizosaccharomyces pombe isocitrate dehydrogenase...  84.7    4e-18 
+NR_194095.1 Schizosaccharomyces pombe non-coding RNA (SPOM_SPNCRN...  63.5    2e-11 
+
+
+>NM_001021706.4 Schizosaccharomyces pombe 3-isopropylmalate dehydrogenase 
+Leu1 (leu1), mRNA
+Length=1285
+
+ Score = 355 bits (911),  Expect = 7e-121, Method: Compositional matrix adjust.
+ Identities = 193/373 (52%), Positives = 257/373 (69%), Gaps = 14/373 (4%)
+ Frame = +3
+
+Query  6     KTITVLPGDHVGTEIVNEAIKVLKAIEAATPYQKIQFDFKHHLIGGAAIDATGVPLPDDA  65
+             K I VLPGDH+G EIV  A++VLK +E   P  +++ +F+ H IGGA+IDA G PL D+ 
+Sbjct  81    KKIVVLPGDHIGPEIVASALEVLKVVEKKRP--ELKLEFEEHKIGGASIDAYGTPLTDET  254
+
+Query  66    LESAKSSDAVLLGAVGGPKWGTGTVRPEQGLLKIRKELNLYANIRPCNFASDSLLELSPL  125
+             +++   +D VLLGAVGGP+W     RPEQGLLK+RK + ++AN+RPCNFAS SL++ SPL
+Sbjct  255   VKACLEADGVLLGAVGGPEWTNPNCRPEQGLLKLRKSMGVWANLRPCNFASKSLVKYSPL  434
+
+Query  126   KAEVVKGTNLIIVRELVGGIYFGERQEQEESEDKKTAWDTEKYTVDEVTRITRMAAFMAL  185
+             K E+V+G +  +VREL GG YFGER E   S     A DT  Y+++EV+RI R+AA++A 
+Sbjct  435   KPEIVEGVDFCVVRELTGGCYFGERTEDNGS---GYAMDTWPYSLEEVSRIARLAAWLAE  605
+
+Query  186   QHNPPLPIWSLDKANVLASSRLWRKTVDKVISEEFPALSVQHQLIDSAAMILIQNPTKLN  245
+               NPP P+  LDKANVLA+SRLWRKTV K+  EE+P L++++QLIDSAAM+L+++P  LN
+Sbjct  606   TSNPPAPVTLLDKANVLATSRLWRKTVAKIFKEEYPHLTLKNQLIDSAAMLLVKSPRTLN  785
+
+Query  246   GIIITSNMFGDIISDEASVI--pgslgllpsaslaslpDTNTAFGLYEPCHGSAPDLPAN  303
+             G+++T N+FGDIISDEASVI     L    S S            L EP HGSAPD+   
+Sbjct  786   GVVLTDNLFGDIISDEASVIPGSLGLLPSASLSGVVGKSEEKVHCLVEPIHGSAPDIAGK  965
+
+Query  304   K-VNPIATILSAASMLRLSLDCVKeaealeeaVKQVLDS------GIRTADLRGTSSTTE  356
+               VNP+ TILSA+ +LR  L+  KEAEA+E AV++VLD       G+ T DL G +ST +
+Sbjct  966   GIVNPVGTILSASLLLRYGLNAPKEAEAIEAAVRKVLDDTSIGGRGLYTRDLGGEASTAD  1145
+
+Query  357   VGDAIAETVTKIL  369
+             +  A+ E + KIL
+Sbjct  1146  ITKAVVEELEKIL  1184
+
+
+>NR_194785.1 Schizosaccharomyces pombe non-coding RNA (SPOM_SPNCRNA.5430), 
+lncRNA
+Length=1433
+
+ Score = 353 bits (905),  Expect = 2e-119, Method: Compositional matrix adjust.
+ Identities = 192/372 (52%), Positives = 256/372 (69%), Gaps = 14/372 (4%)
+ Frame = -1
+
+Query  6     KTITVLPGDHVGTEIVNEAIKVLKAIEAATPYQKIQFDFKHHLIGGAAIDATGVPLPDDA  65
+             K I VLPGDH+G EIV  A++VLK +E   P  +++ +F+ H IGGA+IDA G PL D+ 
+Sbjct  1103  KKIVVLPGDHIGPEIVASALEVLKVVEKKRP--ELKLEFEEHKIGGASIDAYGTPLTDET  930
+
+Query  66    LESAKSSDAVLLGAVGGPKWGTGTVRPEQGLLKIRKELNLYANIRPCNFASDSLLELSPL  125
+             +++   +D VLLGAVGGP+W     RPEQGLLK+RK + ++AN+RPCNFAS SL++ SPL
+Sbjct  929   VKACLEADGVLLGAVGGPEWTNPNCRPEQGLLKLRKSMGVWANLRPCNFASKSLVKYSPL  750
+
+Query  126   KAEVVKGTNLIIVRELVGGIYFGERQEQEESEDKKTAWDTEKYTVDEVTRITRMAAFMAL  185
+             K E+V+G +  +VREL GG YFGER E   S     A DT  Y+++EV+RI R+AA++A 
+Sbjct  749   KPEIVEGVDFCVVRELTGGCYFGERTEDNGS---GYAMDTWPYSLEEVSRIARLAAWLAE  579
+
+Query  186   QHNPPLPIWSLDKANVLASSRLWRKTVDKVISEEFPALSVQHQLIDSAAMILIQNPTKLN  245
+               NPP P+  LDKANVLA+SRLWRKTV K+  EE+P L++++QLIDSAAM+L+++P  LN
+Sbjct  578   TSNPPAPVTLLDKANVLATSRLWRKTVAKIFKEEYPHLTLKNQLIDSAAMLLVKSPRTLN  399
+
+Query  246   GIIITSNMFGDIISDEASVI--pgslgllpsaslaslpDTNTAFGLYEPCHGSAPDLPAN  303
+             G+++T N+FGDIISDEASVI     L    S S            L EP HGSAPD+   
+Sbjct  398   GVVLTDNLFGDIISDEASVIPGSLGLLPSASLSGVVGKSEEKVHCLVEPIHGSAPDIAGK  219
+
+Query  304   K-VNPIATILSAASMLRLSLDCVKeaealeeaVKQVLDS------GIRTADLRGTSSTTE  356
+               VNP+ TILSA+ +LR  L+  KEAEA+E AV++VLD       G+ T DL G +ST +
+Sbjct  218   GIVNPVGTILSASLLLRYGLNAPKEAEAIEAAVRKVLDDTSIGGRGLYTRDLGGEASTAD  39
+
+Query  357   VGDAIAETVTKI  368
+             +  A+ E + KI
+Sbjct  38    ITKAVVEELEKI  3
+
+
+>NM_001019430.3 Schizosaccharomyces pombe homoisocitrate dehydrogenase 
+Lys12 (lys12), mRNA
+Length=1488
+
+ Score = 115 bits (289),  Expect = 7e-29, Method: Compositional matrix adjust.
+ Identities = 105/373 (28%), Positives = 181/373 (49%), Gaps = 44/373 (12%)
+ Frame = +3
+
+Query  8     ITVLPGDHVGTEIVNEAIKVLKAIEAATPYQKIQFDFKHHLIGGAAIDATGVPLPDDALE  67
+             + ++P D +G E+V  A ++++ + A     K++FDF     G    + TG  LP+  +E
+Sbjct  81    LGLIPADGIGKEVVPAARRLMENLPAK---HKLKFDFIDLDAGWGTFERTGKALPERTVE  251
+
+Query  68    SAKS-SDAVLLGAVGGPKWGT-GTVRPEQGLLKIRKELNLYANIRPCNFASDSLLELSPL  125
+               K+  +A L GAV  P     G   P   ++ +RK++ LYAN+RP          +  L
+Sbjct  252   RLKTECNAALFGAVQSPTHKVAGYSSP---IVALRKKMGLYANVRP----------VKSL  392
+
+Query  126   KAEVVKGTNLIIVRELVGGIYFGERQEQEESEDKKTAWDTEKYTVDEVTRITRMAAFMAL  185
+                  K  +L+IVRE    +Y  E +  + +  K+ A    + + +  T+I +MA  +A 
+Sbjct  393   DGAKGKPVDLVIVRENTECLYVKEERMVQNTPGKRVAEAIRRISEEASTKIGKMAFEIAK  572
+
+Query  186   Q------------HNPPLPIWSLDKANVLA-SSRLWRKTVD--KVISEEFPALSVQHQLI  230
+                          H  PL +  + K+NV++ +  L+R++    + +   + +++V  Q++
+Sbjct  573   SRQKIRESGTYSIHKKPL-VTIIHKSNVMSVTDGLFRESCRHAQSLDPSYASINVDEQIV  749
+
+Query  231   DSAAMILIQNPTKLNGIIITSNMFGDIISDEASVIpgslgllpsaslaslpDTNTAFGLY  290
+             DS    L + P   + +++  N++GDI+SD A+ +      + S  L    +    F + 
+Sbjct  750   DSMVYRLFREPECFD-VVVAPNLYGDILSDGAASL------IGSLGLVPSANVGDNFVMS  908
+
+Query  291   EPCHGSAPDLPANKV-NPIATILSAASMLRLSLDCVKeaealeeaVKQVLDSG-IRTADL  348
+             EP HGSAPD+    + NP+AT  S A ML   +     A  +  AV +VL  G + T DL
+Sbjct  909   EPVHGSAPDIAGRGIANPVATFRSVALMLEF-MGHQDAAADIYTAVDKVLTEGKVLTPDL  1085
+
+Query  349   RGTSSTTEVGDAI  361
+              G S T E+ DA+
+Sbjct  1086  GGKSGTNEITDAV  1124
+
+
+>NR_151254.1 Schizosaccharomyces pombe non-coding RNA (SPOM_SPNCRNA.870), 
+lncRNA
+Length=2070
+
+ Score = 103 bits (257),  Expect = 2e-24, Method: Compositional matrix adjust.
+ Identities = 88/326 (27%), Positives = 158/326 (48%), Gaps = 42/326 (13%)
+ Frame = -3
+
+Query  8    ITVLPGDHVGTEIVNEAIKVLKAIEAATPYQKIQFDFKHHLIGGAAIDATGVPLPDDALE  67
+            + ++P D +G E+V  A ++++ + A     K++FDF     G    + TG  LP+  +E
+Sbjct  907  LGLIPADGIGKEVVPAARRLMENLPAK---HKLKFDFIDLDAGWGTFERTGKALPERTVE  737
+
+Query  68   SAKS-SDAVLLGAVGGPKWGT-GTVRPEQGLLKIRKELNLYANIRPCNFASDSLLELSPL  125
+              K+  +A L GAV  P     G   P   ++ +RK++ LYAN+RP          +  L
+Sbjct  736  RLKTECNAALFGAVQSPTHKVAGYSSP---IVALRKKMGLYANVRP----------VKSL  596
+
+Query  126  KAEVVKGTNLIIVRELVGGIYFGERQEQEESEDKKTAWDTEKYTVDEVTRITRMAAFMAL  185
+                 K  +L+IVRE    +Y  E +  + +  K+ A    + + +  T+I +MA  +A 
+Sbjct  595  DGAKGKPVDLVIVRENTECLYVKEERMVQNTPGKRVAEAIRRISEEASTKIGKMAFEIAK  416
+
+Query  186  Q------------HNPPLPIWSLDKANVLA-SSRLWRKTVD--KVISEEFPALSVQHQLI  230
+                         H  PL +  + K+NV++ +  L+R++    + +   + +++V  Q++
+Sbjct  415  SRQKIRESGTYSIHKKPL-VTIIHKSNVMSVTDGLFRESCRHAQSLDPSYASINVDEQIV  239
+
+Query  231  DSAAMILIQNPTKLNGIIITSNMFGDIISDEASVIpgslgllpsaslaslpDTNTAFGLY  290
+            DS    L + P   + +++  N++GDI+SD A+ +      + S  L    +    F + 
+Sbjct  238  DSMVYRLFREPECFD-VVVAPNLYGDILSDGAASL------IGSLGLVPSANVGDNFVMS  80
+
+Query  291  EPCHGSAPDLPANKV-NPIATILSAA  315
+            EP HGSAPD+    + NP+AT  S A
+Sbjct  79   EPVHGSAPDIAGRGIANPVATFRSVA  2
+
+
+>NM_001021109.3 Schizosaccharomyces pombe isocitrate dehydrogenase 
+(NAD+) subunit 2 (idh2), mRNA
+Length=1457
+
+ Score = 84.7 bits (208),  Expect = 4e-18, Method: Compositional matrix adjust.
+ Identities = 84/365 (23%), Positives = 158/365 (43%), Gaps = 48/365 (13%)
+ Frame = +3
+
+Query  7     TITVLPGDHVGTEIVNEAIKVLKAIEAATPYQKIQFDFKHHLIGGAAIDATGVPLPDDAL  66
+             T+T++ GD +G EI     ++ KA +    +++++    + ++           +PDDA 
+Sbjct  171   TVTMIAGDGIGPEIAQSVERIFKAAKVPIEWERVKV---YPILKNGT-----TTIPDDAK  326
+
+Query  67    ESAKSSDAVLLGAVGGPKWGTGTVRPEQGLLKIRKELNLYANIRPCNFASDSLLELSPLK  126
+             ES + +   L G +  P  G G V      L +R+   L+AN+RPC       + ++  K
+Sbjct  327   ESVRKNKVALKGPLATP-IGKGHVSMN---LTLRRTFGLFANVRPC-------VSITGYK  473
+
+Query  127   AEVVKGTNLIIVRELVGGIYFGERQEQEESEDKKTAWDTEKYTVDEVTRITRMA------  180
+                    N +++RE   G Y G   E                 V  +  ITR A      
+Sbjct  474   TP-YDNVNTVLIRENTEGEYSGIEHEVIPG------------VVQSIKLITRAASERVIR  614
+
+Query  181   -AFMALQHNPPLPIWSLDKANVLASSRLWRKTVDKVISEEFPALSVQHQLIDSAAMILIQ  239
+              AF   +      I  + KA ++  +        K ++ E+P + ++ +++D+A + ++ 
+Sbjct  615   YAFQYARQTGKNNITVVHKATIMRMADGLFLECAKELAPEYPDIELREEILDNACLKIVT  794
+
+Query  240   NPTKLNG-IIITSNMFGDIISDEASVIpgslgllpsaslaslpDTNTAFGLYEPCHGSAP  298
+             +P   N  +++  N++GDI+SD  + +      +    L    +      ++E  HG+AP
+Sbjct  795   DPVPYNNTVMVMPNLYGDIVSDMCAGL------IGGLGLTPSGNIGNQASIFEAVHGTAP  956
+
+Query  299   DLPANKV-NPIATILSAASMLR-LSLDCVKeaealeeaVKQVLDSGIRTADLRGTSSTTE  356
+             D+    + NP A +LS+  ML+ ++L+   +            +   RT DL G S+  +
+Sbjct  957   DIAGKGLANPTALLLSSVMMLKHMNLNDYAKRIESAIFDTLANNPDARTKDLGGKSNNVQ  1136
+
+Query  357   VGDAI  361
+               DAI
+Sbjct  1137  YTDAI  1151
+
+
+>NR_194095.1 Schizosaccharomyces pombe non-coding RNA (SPOM_SPNCRNA.4738), 
+lncRNA
+Length=1109
+
+ Score = 63.5 bits (153),  Expect = 2e-11, Method: Compositional matrix adjust.
+ Identities = 61/258 (24%), Positives = 110/258 (43%), Gaps = 39/258 (15%)
+ Frame = -2
+
+Query  61   LPDDALESAKSSDAVLLGAVGGPKWGTGTVRPEQGLLKIRKELNLYANIRPCNFASDSLL  120
+            +PDDA ES + +   L G +  P  G G V      L +R+   L+AN+RPC       +
+Sbjct  688  IPDDAKESVRKNKVALKGPLATP-IGKGHVSMN---LTLRRTFGLFANVRPC-------V  542
+
+Query  121  ELSPLKAEVVKGTNLIIVRELVGGIYFGERQEQEESEDKKTAWDTEKYTVDEVTRITRMA  180
+             ++  K       N +++RE   G Y G   E                 V  +  ITR A
+Sbjct  541  SITGYKTP-YDNVNTVLIRENTEGEYSGIEHEVIPG------------VVQSIKLITRAA  401
+
+Query  181  -------AFMALQHNPPLPIWSLDKANVLASSRLWRKTVDKVISEEFPALSVQHQLIDSA  233
+                   AF   +      I  + KA ++  +        K ++ E+P + ++ +++D+A
+Sbjct  400  SERVIRYAFQYARQTGKNNITVVHKATIMRMADGLFLECAKELAPEYPDIELREEILDNA  221
+
+Query  234  AMILIQNPTKLNG-IIITSNMFGDIISDEASVIpgslgllpsaslaslpDTNTAFGLYEP  292
+             + ++ +P   N  +++  N++GDI+SD  + +      +    L    +      ++E 
+Sbjct  220  CLKIVTDPVPYNNTVMVMPNLYGDIVSDMCAGL------IGGLGLTPSGNIGNQASIFEA  59
+
+Query  293  CHGSAPDLPANKV-NPIA  309
+             HG+APD+    + NP A
+Sbjct  58   VHGTAPDIAGKGLANPTA  5
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.132    0.373    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 1191754864
+
+
+  Database: 1_subject_sequences\s_pombe\GCF_000002945.2\rna.fna
+    Posted date:  Nov 28, 2025  9:03 PM
+  Number of letters in database: 16,398,369
+  Number of sequences in database:  12,413
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 13
+Window for multiple hits: 40

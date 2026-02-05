@@ -1,0 +1,193 @@
+TBLASTN 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: 1_subject_sequences\s_cerevisiae\GCF_000146045.2\rna.fna
+           6,138 sequences; 8,873,817 total letters
+
+
+
+Query= 3638034|3638034|chromosome NC_032095.1|LEU2_custom|1|91324|92418|1122|373|>XP_720371.1 3-isopropylmalate dehydrogenase [Candida albicans SC5314] [CUSTOM]
+
+Length=373
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+NM_001178665.1 Saccharomyces cerevisiae S288C 3-isopropylmalate d...  531     0.0  
+NM_001179442.1 Saccharomyces cerevisiae S288C homoisocitrate dehy...  108     4e-27
+NM_001183555.1 Saccharomyces cerevisiae S288C isocitrate dehydrog...  79.0    8e-17
+NM_001182876.1 Saccharomyces cerevisiae S288C isocitrate dehydrog...  67.4    6e-13
+
+
+>NM_001178665.1 Saccharomyces cerevisiae S288C 3-isopropylmalate 
+dehydrogenase (LEU2), partial mRNA
+Length=1095
+
+ Score = 531 bits (1367),  Expect = 0.0, Method: Compositional matrix adjust.
+ Identities = 282/364 (77%), Positives = 318/364 (87%), Gaps = 5/364 (1%)
+ Frame = +1
+
+Query  6     KTITVLPGDHVGTEIVNEAIKVLKAIEAATPYQKIQFDFKHHLIGGAAIDATGVPLPDDA  65
+             K I VLPGDHVG EI  EAIKVLKAI        ++FDF++HLIGGAAIDATGVPLPD+A
+Sbjct  13    KKIVVLPGDHVGQEITAEAIKVLKAISDV--RSNVKFDFENHLIGGAAIDATGVPLPDEA  186
+
+Query  66    LESAKSSDAVLLGAVGGPKWGTGTVRPEQGLLKIRKELNLYANIRPCNFASDSLLELSPL  125
+             LE++K +DAVLLGAVGGPKWGTG+VRPEQGLLKIRKEL LYAN+RPCNFASDSLL+LSP+
+Sbjct  187   LEASKKADAVLLGAVGGPKWGTGSVRPEQGLLKIRKELQLYANLRPCNFASDSLLDLSPI  366
+
+Query  126   KAEVVKGTNLIIVRELVGGIYFGERQEQEESEDKKTAWDTEKYTVDEVTRITRMAAFMAL  185
+             K +  KGT+ ++VRELVGGIYFG+R+E    +    AWD+E+YTV EV RITRMAAFMAL
+Sbjct  367   KPQFAKGTDFVVVRELVGGIYFGKRKED---DGDGVAWDSEQYTVPEVQRITRMAAFMAL  537
+
+Query  186   QHNPPLPIWSLDKANVLASSRLWRKTVDKVISEEFPALSVQHQLIDSAAMILIQNPTKLN  245
+             QH PPLPIWSLDKANVLASSRLWRKTV++ I  EFP L VQHQLIDSAAMIL++NPT LN
+Sbjct  538   QHEPPLPIWSLDKANVLASSRLWRKTVEETIKNEFPTLKVQHQLIDSAAMILVKNPTHLN  717
+
+Query  246   GIIITSNMFGDIISDEASVIpgslgllpsaslaslpDTNTAFGLYEPCHGSAPDLPANKV  305
+             GIIITSNMFGDIISDEASVIPGSLGLLPSASLASLPD NTAFGLYEPCHGSAPDLP NKV
+Sbjct  718   GIIITSNMFGDIISDEASVIPGSLGLLPSASLASLPDKNTAFGLYEPCHGSAPDLPKNKV  897
+
+Query  306   NPIATILSAASMLRLSLDCVKeaealeeaVKQVLDSGIRTADLRGTSSTTEVGDAIAETV  365
+             NPIATILSAA ML+LSL+  +E +A+E+AVK+VLD+GIRT DL G++STTEVGDA+AE V
+Sbjct  898   NPIATILSAAMMLKLSLNLPEEGKAIEDAVKKVLDAGIRTGDLGGSNSTTEVGDAVAEEV  1077
+
+Query  366   TKIL  369
+              KIL
+Sbjct  1078  KKIL  1089
+
+
+>NM_001179442.1 Saccharomyces cerevisiae S288C homoisocitrate 
+dehydrogenase (LYS12), partial mRNA
+Length=1116
+
+ Score = 108 bits (271),  Expect = 4e-27, Method: Compositional matrix adjust.
+ Identities = 111/370 (30%), Positives = 184/370 (50%), Gaps = 36/370 (10%)
+ Frame = +1
+
+Query  4     KTKTITVLPGDHVGTEIVNEAIKVLKAIEAATPYQKIQFDFKHHLIGGAAIDATGVPLPD  63
+             K+ TI ++PGD +G E++    +VL+ + +      + F+F     G      TG  LPD
+Sbjct  64    KSLTIGLIPGDGIGKEVIPAGKQVLENLNSK---HGLSFNFIDLYAGFQTFQETGKALPD  234
+
+Query  64    DALESAK-SSDAVLLGAVGGPKWGT-GTVRPEQGLLKIRKELNLYANIRPCNFASDSLLE  121
+             + ++  K      L GAV  P     G   P   ++ +R+E+ L+AN+RP          
+Sbjct  235   ETVKVLKEQCQGALFGAVQSPTTKVEGYSSP---IVALRREMGLFANVRP----------  375
+
+Query  122   LSPLKAEVVKGTNLIIVRELVGGIYFG-ERQEQEESEDKKTAWDTEKYTVDEVTRITRMA  180
+             +  ++ E  K  +++IVRE    +Y   E+   +++   + A  T++ +     RI  +A
+Sbjct  376   VKSVEGEKGKPIDMVIVRENTEDLYIKIEKTYIDKATGTRVADATKRISEIATRRIATIA  555
+
+Query  181   ---AFMALQHNPPLPIWSLDKANVLASSR-LWRKTVDKVI---SEEFPALSVQHQLIDSA  233
+                A   LQ      +    K+NVL+ S  L+R+   +V     +++  +    Q++DS 
+Sbjct  556   LDIALKRLQTRGQATLTVTHKSNVLSQSDGLFREICKEVYESNKDKYGQIKYNEQIVDSM  735
+
+Query  234   AMILIQNPTKLNGIIITSNMFGDIISDEASVIpgslgllpsaslaslpDTNTAFGLYEPC  293
+                L + P   + +I+  N++GDI+SD A+ + GSLG++PSA      +      + EPC
+Sbjct  736   VYRLFREPQCFD-VIVAPNLYGDILSDGAAALVGSLGVVPSA------NVGPEIVIGEPC  894
+
+Query  294   HGSAPDLPANKV-NPIATILSAASMLRLSLDCVKeaealeeaVKQVLDSG-IRTADLRGT  351
+             HGSAPD+    + NPIATI S A ML   L   + A+ + +AV   L  G I+T DL G 
+Sbjct  895   HGSAPDIAGKGIANPIATIRSTALMLEF-LGHNEAAQDIYKAVDANLREGSIKTPDLGGK  1071
+
+Query  352   SSTTEVGDAI  361
+             +ST +V D +
+Sbjct  1072  ASTQQVVDDV  1101
+
+
+>NM_001183555.1 Saccharomyces cerevisiae S288C isocitrate dehydrogenase 
+(NAD(+)) IDH2 (IDH2), partial mRNA
+Length=1110
+
+ Score = 79.0 bits (193),  Expect = 8e-17, Method: Compositional matrix adjust.
+ Identities = 95/360 (26%), Positives = 160/360 (44%), Gaps = 37/360 (10%)
+ Frame = +1
+
+Query  7     TITVLPGDHVGTEIVNEAIKVLKAIEAATPYQKIQFDFKHHLIGGAAIDATGVPLPDDAL  66
+             T++ + GD +G EI     K+  A  A  P +    D     + G         +PD A+
+Sbjct  112   TVSFIEGDGIGPEISKSVKKIFSA--ANVPIEWESCDVSPIFVNGLTT------IPDPAV  267
+
+Query  67    ESAKSSDAVLLGAVGGPKWGTGTVRPEQGL-LKIRKELNLYANIRPCNFASDSLLELSPL  125
+             +S   +   L G +  P  G G     + L L +RK   L+AN+RP          +   
+Sbjct  268   QSITKNLVALKGPLATP-IGKG----HRSLNLTLRKTFGLFANVRPAK-------SIEGF  411
+
+Query  126   KAEVVKGTNLIIVRELVGGIYFGERQEQEESEDKKTAWDTEKYTVDEVTRITRMAAFMAL  185
+             K    +  +L+++RE   G Y G     E           +  T D   R+ R A   A 
+Sbjct  412   KT-TYENVDLVLIRENTEGEYSG----IEHIVCPGVVQSIKLITRDASERVIRYAFEYAR  576
+
+Query  186   QHNPPLPIWSLDKANVLASSRLWRKTVDKVISEEFPALSVQHQLIDSAAMILIQNPTKL-  244
+                 P  I  + K+ +   +      V K +S+E+P L+++ +LID++ + ++ NP+   
+Sbjct  577   AIGRPRVIV-VHKSTIQRLADGLFVNVAKELSKEYPDLTLETELIDNSVLKVVTNPSAYT  753
+
+Query  245   NGIIITSNMFGDIISDEASVIpgslgllpsaslaslpDTNTAFGLYEPCHGSAPDLPA-N  303
+             + + +  N++GDI+SD  S +        S  L    +      ++E  HGSAPD+   +
+Sbjct  754   DAVSVCPNLYGDILSDLNSGL-----SAGSLGLTPSANIGHKISIFEAVHGSAPDIAGQD  918
+
+Query  304   KVNPIATILSAASMLRLSLDCVKeaealeeaVKQVLDSGI--RTADLRGTSSTTEVGDAI  361
+             K NP A +LS+  ML   +     A+ ++ AV   + SG   RT DL GT++T+   +A+
+Sbjct  919   KANPTALLLSSVMMLN-HMGLTNHADQIQNAVLSTIASGPENRTGDLAGTATTSSFTEAV  1095
+
+
+>NM_001182876.1 Saccharomyces cerevisiae S288C isocitrate dehydrogenase 
+(NAD(+)) IDH1 (IDH1), partial mRNA
+Length=1083
+
+ Score = 67.4 bits (163),  Expect = 6e-13, Method: Compositional matrix adjust.
+ Identities = 93/365 (25%), Positives = 162/365 (44%), Gaps = 51/365 (14%)
+ Frame = +1
+
+Query  7     TITVLPGDHVGTEIVNEAIKVLKAIEAATPYQKIQFDFKHHLIGGAAIDATGVPLPDDAL  66
+             T+T++PGD VG EI +    + +A      ++ I      H  G             +A+
+Sbjct  88    TVTLIPGDGVGKEITDSVRTIFEAENIPIDWETINIKQTDHKEG-----------VYEAV  234
+
+Query  67    ESAKSSDAVLLGAVGGPKWGTGTVRPEQGLLKI--RKELNLYANIRPCNFASDSLLELSP  124
+             ES K +   L G      W T   +   G L +  RK+L++YAN+    F S     L  
+Sbjct  235   ESLKRNKIGLKGL-----WHTPADQTGHGSLNVALRKQLDIYANV--ALFKS-----LKG  378
+
+Query  125   LKAEVVKGTNLIIVRELVGGIYFGERQEQ----EESEDKKTAWDTEKYTVDEVTRITRMA  180
+             +K   +   +LI++RE   G + G   E      ES    T   TE        RI R A
+Sbjct  379   VKTR-IPDIDLIVIRENTEGEFSGLEHESVPGVVESLKVMTRPKTE--------RIARFA  531
+
+Query  181   AFMALQHNPPLPIWSLDKANVLA-SSRLWRKTVDKVISEEFPALSVQHQLIDSAAMILIQ  239
+                A ++N    + ++ KAN++     L+R  + ++  +E+P + V   ++D+A+M  + 
+Sbjct  532   FDFAKKYNRK-SVTAVHKANIMKLGDGLFRNIITEIGQKEYPDIDVSSIIVDNASMQAVA  708
+
+Query  240   NPTKLNGIIITSNMFGDIISDEASVIpgslgllpsaslaslpDTNTAFGLYEPC--HGSA  297
+              P + + +++T +M+G I+ +  + +      +    L +  +    + ++EP   H   
+Sbjct  709   KPHQFD-VLVTPSMYGTILGNIGAAL------IGGPGLVAGANFGRDYAVFEPGSRHVGL  867
+
+Query  298   PDLPANKVNPIATILSAASMLRLSLDCVKeaealeeaVKQVLDSGIRTA-DLRGTSSTTE  356
+                  N  NP A ILS+  ML   L   + A  + +AV + +  G  T  D+ G+SSTT+
+Sbjct  868   DIKGQNVANPTAMILSSTLMLN-HLGLNEYATRISKAVHETIAEGKHTTRDIGGSSSTTD  1044
+
+Query  357   VGDAI  361
+               + I
+Sbjct  1045  FTNEI  1059
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.132    0.373    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 676625442
+
+
+  Database: 1_subject_sequences\s_cerevisiae\GCF_000146045.2\rna.fna
+    Posted date:  Nov 28, 2025  9:03 PM
+  Number of letters in database: 8,873,817
+  Number of sequences in database:  6,138
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 13
+Window for multiple hits: 40

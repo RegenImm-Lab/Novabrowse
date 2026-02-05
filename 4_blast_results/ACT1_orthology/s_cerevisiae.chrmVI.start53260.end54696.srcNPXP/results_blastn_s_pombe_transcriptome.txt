@@ -1,4 +1,4 @@
-BLASTN 2.17.0+
+BLASTN 2.15.0+
 
 
 Reference: Zheng Zhang, Scott Schwartz, Lukas Wagner, and Webb
