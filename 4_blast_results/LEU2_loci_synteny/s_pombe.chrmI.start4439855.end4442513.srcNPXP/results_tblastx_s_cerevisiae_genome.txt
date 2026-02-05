@@ -1,0 +1,540 @@
+TBLASTX 2.15.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: 1_subject_sequences\s_cerevisiae\GCF_000146045.2\GCF_000146045.2_R64
+_genomic.fna
+           17 sequences; 12,157,105 total letters
+
+
+
+Query= 2543296|2543296|chromosome I|leu2_custom|1|4439855|4442513|2659|758|>NP_594576.1 3-isopropylmalate dehydratase Leu2 [Schizosaccharomyces pombe] [CUSTOM]
+
+Length=2659
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value  N
+
+NC_001139.9 Saccharomyces cerevisiae S288C chromosome VII, comple...  619     0.0    5
+NC_001144.5 Saccharomyces cerevisiae S288C chromosome XII, comple...  50.6    4e-17  5
+NC_001136.10 Saccharomyces cerevisiae S288C chromosome IV, comple...  50.6    3e-13  3
+
+
+>NC_001139.9 Saccharomyces cerevisiae S288C chromosome VII, complete 
+sequence
+Length=1090940
+
+ Score = 619 bits (1345),  Expect(5) = 0.0
+ Identities = 263/361 (73%), Positives = 308/361 (85%), Gaps = 0/361 (0%)
+ Frame = +2/-1
+
+Query  263     PKTLYDKVWDSHVVDLQEDGTCLLYIDRHLIHEVTSPQAFEGLRTAGRKVRHPELALATV  442
+               P+TLYDKV+D+HVV   E+G+ LLYIDRHL+HEVTSPQAFEGL  AGRKVR  +  LATV
+Sbjct  478628  PRTLYDKVFDAHVVHQDENGSFLLYIDRHLVHEVTSPQAFEGLENAGRKVRRVDCTLATV  478449
+
+Query  443     DHNIPTDPRKDMKDIASFIHQPDSRTQVLALENNIKEFGLTYYGMNDRRQGIVHVIGPEQ  622
+               DHNIPT+ RK+ K + +FI Q DSR QV  LENN+K+FG+ Y+GM+D RQGIVH IGPE+
+Sbjct  478448  DHNIPTESRKNFKSLDTFIKQTDSRLQVKTLENNVKQFGVPYFGMSDARQGIVHTIGPEE  478269
+
+Query  623     GFTLPGTTLVCGDSHTSTHGAFGALAFGIGTSEVEHVLATQTILQRKSKNMRIRVNGKLP  802
+               GFTLPGTT+VCGDSHTSTHGAFG+LAFGIGTSEVEHVLATQTI+Q KSKNMRI VNGKL 
+Sbjct  478268  GFTLPGTTVVCGDSHTSTHGAFGSLAFGIGTSEVEHVLATQTIIQAKSKNMRITVNGKLS  478089
+
+Query  803     EGIASKDLILHiigvigtaggtgsviEFCGEAIEGLSMEARMSMCNMSIEAGARAGMIAP  982
+                GI SKDLIL+IIG+IGTAGGTG VIEF GEAIE LSMEARMSMCNM+IEAGARAGMI P
+Sbjct  478088  PGITSKDLILYIIGLIGTAGGTGCVIEFAGEAIEALSMEARMSMCNMAIEAGARAGMIKP  477909
+
+Query  983     DATTFEYVKNRPLAPKGDDWEQAVAYWKTLRSDENAKYDIEVEINAADVLPTVTWGTSPQ  1162
+               D TTF+Y K RPLAPKG +WE+AVAYWKTL++DE AK+D E+ I A DV+PT+TWGTSPQ
+Sbjct  477908  DETTFQYTKGRPLAPKGAEWEKAVAYWKTLKTDEGAKFDHEINIEAVDVIPTITWGTSPQ  477729
+
+Query  1163    DVIPINGNIPDPAHVKDNVRAASIQRSLEYMGLKPNTSIVSYPIDKVFIGSCTNSRIEDL  1342
+               D +PI G++PDP +V D ++ + ++R+L YMGL+PNT + S  +DKVFIGSCTN RIEDL
+Sbjct  477728  DALPITGSVPDPKNVTDPIKKSGMERALAYMGLEPNTPLKSIKVDKVFIGSCTNGRIEDL  477549
+
+Query  1343    R  1345
+               R
+Sbjct  477548  R  477546
+
+
+ Score = 185 bits (399),  Expect(5) = 0.0
+ Identities = 75/93 (81%), Positives = 82/93 (88%), Gaps = 0/93 (0%)
+ Frame = +2/-1
+
+Query  1397    AMIVPGSGLVKKMAEAEGLDQIFIEAGFDWREAGCSMCLGMNPDQLKPYERCASTSNRNF  1576
+               AM+VPGSGLVKK AEAEGLD+IF EAGF+WREAGCS+CLGMNPD L  YERCASTSNRNF
+Sbjct  477494  AMVVPGSGLVKKQAEAEGLDKIFQEAGFEWREAGCSICLGMNPDILDAYERCASTSNRNF  477315
+
+Query  1577    EGRQGAKGRTHLVSPAMAAAAAIKGHLCNVREF  1675
+               EGRQGA  RTHL+SPAMAAAA I GH  ++REF
+Sbjct  477314  EGRQGALSRTHLMSPAMAAAAGIAGHFVDIREF  477216
+
+
+ Score = 102 bits (217),  Expect(5) = 0.0
+ Identities = 38/50 (76%), Positives = 44/50 (88%), Gaps = 0/50 (0%)
+ Frame = +2/-1
+
+Query  2057    VLVAHDNFGCGSSREHAPWALNDFGIRVIIAPSFADIFFNNCFKNGMLPI  2206
+               ++V  DNFGCGSSREHAPWAL DFGI+ IIAPS+ DIF+NN FKNG+LPI
+Sbjct  476801  LVVTGDNFGCGSSREHAPWALKDFGIKSIIAPSYGDIFYNNSFKNGLLPI  476652
+
+
+ Score = 76.2 bits (160),  Expect(5) = 0.0
+ Identities = 33/48 (69%), Positives = 37/48 (77%), Gaps = 0/48 (0%)
+ Frame = +2/-1
+
+Query  1859    FTVVEGIAAPLPMANVDTDKIIPKQFLKTIKRTGLGQFAFYEIRYDAD  2002
+               F  +EGI+APL  ANVDTD IIPKQFLKTIKRTGL +  FYE R+  D
+Sbjct  477011  FLTLEGISAPLDKANVDTDAIIPKQFLKTIKRTGLKKGLFYEWRFRKD  476868
+
+
+ Score = 73.9 bits (155),  Expect(5) = 0.0
+ Identities = 27/42 (64%), Positives = 34/42 (81%), Gaps = 0/42 (0%)
+ Frame = +2/-1
+
+Query  2318    FDVEPFRKHCLVNGLDDIGLTLQKETMIDAFEAAREENFPWM  2443
+               F++EPFRKHCLVNGLDDIG+TLQKE  I  +EA R E + ++
+Sbjct  476528  FEIEPFRKHCLVNGLDDIGITLQKEEYISRYEALRREKYSFL  476403
+
+
+ Score = 138 bits (297),  Expect(7) = 2e-122
+ Identities = 71/111 (64%), Positives = 81/111 (73%), Gaps = 0/111 (0%)
+ Frame = -2/+1
+
+Query  1212    SLTCAGSGILPLMGITS*GEVPHVTVGKTSAALISTSISYLAFSSERRVFQ*ATACSQSS  1033
+               S+T  GSG  P++G  S*GEVPHV VG TS A +  S S LA SS  +VFQ*ATA S S+
+Sbjct  477679  SVTFFGSGTEPVIGKAS*GEVPHVIVGITSTASMLISWSNLAPSSVFKVFQ*ATAFSHSA  477858
+
+Query  1032    PLGARGRFLTYSKVVASGAIIPARAPASMDMLHMDIRASILKPSIASPQNS  880
+               P GA+G  L Y KVV+SG IIPA APASM MLHMDIRASI + S+ASP NS
+Sbjct  477859  PFGAKGLPLVYWKVVSSGLIIPALAPASMAMLHMDIRASIERASMASPANS  478011
+
+
+ Score = 122 bits (262),  Expect(7) = 2e-122
+ Identities = 57/127 (45%), Positives = 84/127 (66%), Gaps = 0/127 (0%)
+ Frame = -1/+3
+
+Query  1675    KFTNITEMSFNSGSGSHSGTNKMRSTLSTLATFKVTI*G*GTTFIWLELIGIHTQTH*TA  1496
+               +F+NI E++ ++ S  H   + M +   TL TF++++    TTFI ++ I +HT T+*T 
+Sbjct  477216  EFSNIYEVTCDTCSSRHGWGH*MCTRQGTLTTFEISVGSRSTTFIGIQNIRVHT*TY*TT  477395
+
+Query  1495    SFTPIKSSFNEYLVQSFSFGHFFNETRAWNNHSIFYVSSDLTALDNGSSKTQILNTRIGT  1316
+               SF+P K+SF E LVQ+F FG FF++TR+ NNHS F V+S     +   S + I NT IGT
+Sbjct  477396  SFSPFKTSFLENLVQTFCFGLFFDQTRSRNNHS*FDVTSQFLTPNYSCSTS*IFNTAIGT  477575
+
+Query  1315    RANKDFV  1295
+               R+NKDF+
+Sbjct  477576  RSNKDFI  477596
+
+
+ Score = 111 bits (236),  Expect(7) = 2e-122
+ Identities = 67/106 (63%), Positives = 73/106 (69%), Gaps = 0/106 (0%)
+ Frame = -2/+1
+
+Query  825     KSLEAIPSGNLPFTRMRMFLLLRCKMV*VAKTCSTSLVPIpkakapkaPWVEV*ESPQTR  646
+               KSL+ IP  +LP T + MF  L   +V*VAKTCSTS VPIPKA  PKAP VEV*ESPQT 
+Sbjct  478066  KSLDVIPGDSLPLTVILMFFDLAWIIV*VAKTCSTSEVPIPKASEPKAP*VEV*ESPQTT  478245
+
+Query  645     VVPGRVKPCSGPIT*TIP*RLSFIP**VRPNSLMLFSKAKT*VRES  508
+               VVPG+VKP SGP+  TIP   S IP    PN L LFSK  T  RES
+Sbjct  478246  VVPGKVKPSSGPMVWTIPCLASLIPKYGTPNCLTLFSKVLTCKRES  478383
+
+
+ Score = 85.4 bits (180),  Expect(7) = 2e-122
+ Identities = 46/67 (69%), Positives = 48/67 (72%), Gaps = 0/67 (0%)
+ Frame = -2/+1
+
+Query  462     SVGIL*STVARASSG*RTFLPAVRRPSKA*GEVTS*IKCRSIYNKHVPSS*RSTTWLSQT  283
+               SVGIL*STVAR  S   TFLPA  RPSKA GEVTS* KC SIYNK  P S   TT  S+T
+Sbjct  478429  SVGIL*STVARVQSTLLTFLPAFSRPSKACGEVTS*TKCLSIYNKKEPFSS*WTTCASKT  478608
+
+Query  282     LSYKVLG  262
+               LS +VLG
+Sbjct  478609  LS*RVLG  478629
+
+
+ Score = 67.0 bits (140),  Expect(7) = 2e-122
+ Identities = 29/52 (56%), Positives = 38/52 (73%), Gaps = 0/52 (0%)
+ Frame = -2/+1
+
+Query  2205    IGSIPFLKQLLKKMSAKDGAIITRMPKSFNAHGACSRELPQPKLS*ATKTVA  2050
+               IG+ PFLK+LL K+S  +GA++  +PKSF AHGACS E P PKLS  T  ++
+Sbjct  476653  IGNKPFLKELL*KISP*EGAMMDFIPKSFRAHGACSLEEPHPKLSPVTTNIS  476808
+
+
+ Score = 54.2 bits (112),  Expect(7) = 2e-122
+ Identities = 23/41 (56%), Positives = 29/41 (71%), Gaps = 0/41 (0%)
+ Frame = -2/+1
+
+Query  1962    RPVRLMVFKNCLGIILSVSTLAIGKGAAMPSTTVNLGIPAD  1840
+               +PV L+VFKNC GII SVSTLA+  GA +PS   N  +P +
+Sbjct  476908  KPVLLIVFKNCFGIIASVSTLALSNGALIPSKVKNGFMPEE  477030
+
+
+ Score = 49.2 bits (101),  Expect(7) = 2e-122
+ Identities = 21/37 (57%), Positives = 25/37 (68%), Gaps = 0/37 (0%)
+ Frame = -2/+1
+
+Query  2430    FSSLAASKASIIVSFCKVSPMSSKPLTKQCLRKGSTS  2320
+               FS L AS   +  SFC V P+SS+PLT+QC  KGS S
+Sbjct  476416  FSLLKASYLEMYSSFCNVIPISSRPLTRQCFLKGSIS  476526
+
+
+ Score = 135 bits (290),  Expect(4) = 6e-82
+ Identities = 75/189 (40%), Positives = 115/189 (61%), Gaps = 0/189 (0%)
+ Frame = -1/+3
+
+Query  835     MKDQVLRSNTLRQFTVYTNAHVFTLALQNGLSGQDMFDLtstdtksqstkSAVGRGVRIT  656
+               +++Q+ R +T    T+ +N+HVF  +L N LSGQD+F+  ST+TK Q TK  V RG+R+T
+Sbjct  478056  IQNQIFRCDTR**LTINSNSHVFRFSLDNCLSGQDVFNFRSTNTKGQRTKGTVSRGMRVT  478235
+
+Query  655     TNEGRTRESEALFRTNNVNDTLTSVIHTIVGKTKLLNVIFQSQDLSA*VRLMNEGSDILH  476
+               TN   T  SE  F T+ V+DTL+ + HT +   +L N+I  S DL   + L+++      
+Sbjct  478236  TNNSGTW*SETFFGTDGVDDTLSGITHTEIWNAELFNIIL*SFDL*TRISLLDKCV**FE  478415
+
+Query  475     VLTRIGRNIVIDSCKSKFGMTNFSTSSTKALKGLRRSDFVNQVSINIQQTCTILLKVDNV  296
+               +L+    NI+I S  S    ++ S     A + L R DF+NQVS++IQQ  TI + +DN+
+Sbjct  478416  ILS*FSWNIMIYSS*STINSSDLSAGIF*AFESLWRGDFMNQVSVDIQQKGTIFILMDNM  478595
+
+Query  295     AVPNLVVQS  269
+                + NL+V+S
+Sbjct  478596  CIKNLIVKS  478622
+
+
+ Score = 106 bits (227),  Expect(4) = 6e-82
+ Identities = 50/76 (66%), Positives = 53/76 (70%), Gaps = 0/76 (0%)
+ Frame = -2/+1
+
+Query  1620    GLTRCVLPLAPWRPSKLRFEVEAQRSYGLS*SGFIPKHIEQPASRQSNPASMNIWSNPSA  1441
+               G  RCV   AP RPSK   EVEAQRS     SGFIPKHIEQPAS  S PAS  I S PSA
+Sbjct  477271  GDIRCVRDKAP*RPSKFLLEVEAQRS*ASKISGFIPKHIEQPASLHSKPASWKILSKPSA  477450
+
+Query  1440    SAIFLTRPEPGTIIAS  1393
+               SA FLT+P+PGT IA+
+Sbjct  477451  SACFLTKPDPGTTIAN  477498
+
+
+ Score = 85.4 bits (180),  Expect(4) = 6e-82
+ Identities = 40/113 (35%), Positives = 63/113 (56%), Gaps = 0/113 (0%)
+ Frame = -1/+3
+
+Query  1276    RGIRFESHIF*RALNRRSTYVVFNVCGIRDITINGDNVLRRSTPCYSG*NISSIDFNFNI  1097
+               R +RF++HI * + + R  Y V N+  I   T N   +LRRSTPC S  ++ S + +F +
+Sbjct  477615  RCVRFQTHIG*GSFHTRFLYWVCNIFWIWYGTSNW*GILRRSTPCNSWNHVDSFNVDFVV  477794
+
+Query  1096    VLSILIGAEGFPISHGLFPIIALGSKRAVFNIFKSRCIRSNHTGASTSLNGHV  938
+                    +  + FP+ + LFP     S+R+ F + +S  +  NHT + TS +GHV
+Sbjct  477795  KFGTFVCFQSFPVGNSLFPFGTFWSQRSAFGVLESSFVWFNHTCSCTSFDGHV  477953
+
+
+ Score = 32.7 bits (65),  Expect(4) = 6e-82
+ Identities = 14/16 (88%), Positives = 15/16 (94%), Gaps = 0/16 (0%)
+ Frame = -2/+1
+
+Query  1341    KSSIRELVQEPIKTLS  1294
+               KSSIR LVQ+PIKTLS
+Sbjct  477550  KSSIRPLVQDPIKTLS  477597
+
+
+ Score = 62.0 bits (129),  Expect(6) = 5e-25
+ Identities = 31/71 (44%), Positives = 38/71 (54%), Gaps = 0/71 (0%)
+ Frame = +1/-3
+
+Query  574     YE*QTSRYRSRYWS*TGLHSPWYDPRLW*FSHLYPRRFWCFGFWYRY**GRTCLGHSNHF  753
+               YE*  +RYR  + S    H   Y   LW* S+LY R  W  G WY Y *  T LGHSN++
+Sbjct  478317  YE*CQTRYRPHHRSRRRFHFTRYHCCLW*LSYLYSRCLWFAGLWYWYF*S*TRLGHSNNY  478138
+
+Query  754     ATQE*KHAHSC  786
+                +   KH + C
+Sbjct  478137  PS*IEKHENYC  478105
+
+
+ Score = 58.3 bits (121),  Expect(6) = 5e-25
+ Identities = 28/65 (43%), Positives = 34/65 (52%), Gaps = 0/65 (0%)
+ Frame = +1/-3
+
+Query  1399    YDCSRLWSR*KNGRS*RIGPNIH*SWI*LA*SWLFNVFGYESRSTQAI*TLCLNLKS*L*  1578
+               Y CS +W   K  RS R G +   SW *+  SWLFN+F YE      +*TLC   +    
+Sbjct  477492  YGCSGIWFGQKTSRSRRFGQDFPRSWF*MERSWLFNMFRYEP*YFGCL*TLCFYFQQKFR  477313
+
+Query  1579    RSPRC  1593
+               RS RC
+Sbjct  477312  RSSRC  477298
+
+
+ Score = 41.8 bits (85),  Expect(6) = 5e-25
+ Identities = 17/39 (44%), Positives = 23/39 (59%), Gaps = 0/39 (0%)
+ Frame = +1/-3
+
+Query  2074    QLRLW*LS*ACSMGIKRFWHSCNYCTVFC*HFLQ*LLQE  2190
+               Q R+W      +MG KR W+  ++CT   *+FLQ L QE
+Sbjct  476784  QFRMWFFQRTRTMGSKRLWYKIHHCTFLR*YFLQQLFQE  476668
+
+
+ Score = 35.9 bits (72),  Expect(6) = 5e-25
+ Identities = 22/34 (65%), Positives = 25/34 (74%), Gaps = 0/34 (0%)
+ Frame = +1/-3
+
+Query  874     RY*VLR*SY*RFKYGSSYvhv*hvh*GWCSRRYD  975
+               RY*+ R*S+*   YGS+YVHV*H H  WC  RYD
+Sbjct  478017  RY*IRR*SH*SSFYGSTYVHV*HGHRSWCKSRYD  477916
+
+
+ Score = 34.5 bits (69),  Expect(6) = 5e-25
+ Identities = 14/27 (52%), Positives = 17/27 (63%), Gaps = 0/27 (0%)
+ Frame = +1/-3
+
+Query  319     WYMFVVY*STLDSRSHFSSSL*GPSYC  399
+               W++FVVY  TL S SH S+S   P  C
+Sbjct  478572  WFLFVVYRQTLGS*SHLSTSFRRPRKC  478492
+
+
+ Score = 32.7 bits (65),  Expect(6) = 5e-25
+ Identities = 16/37 (43%), Positives = 20/37 (54%), Gaps = 0/37 (0%)
+ Frame = +1/-3
+
+Query  1231    YSTLSRIYGTQT*YLYCVLSHRQSLYWLLYQFSY*GF  1341
+               Y     +YG  T*+       R SLYW+LYQ+ Y* F
+Sbjct  477660  YGKSLSLYGFGT*HTAKEHQSR*SLYWILYQWPY*RF  477550
+
+
+ Score = 63.4 bits (132),  Expect(3) = 3e-19
+ Identities = 32/79 (41%), Positives = 48/79 (61%), Gaps = 0/79 (0%)
+ Frame = -3/+2
+
+Query  776     ACFYSCVAKWFEWPRHVRPH*YRYQKPKHQKRRG*RCENHHKRGSYQGE*SPVQDQ*RER  597
+               +CF   +   FEWPR V+   Y+YQ+P +Q+ R *R E+HHK+  Y  +*+ ++D+   R
+Sbjct  478115  SCFSI*LG*LFEWPRRVQLQKYQYQRPANQRHRE*RYESHHKQQWYLVK*NLLRDRWCGR  478294
+
+Query  596     YLDVCHSYHSR*DQTP*CY  540
+               YL   HSY +   +T * Y
+Sbjct  478295  YLVWHHSYRNMERRTV*HY  478351
+
+
+ Score = 51.9 bits (107),  Expect(3) = 3e-19
+ Identities = 21/48 (44%), Positives = 31/48 (65%), Gaps = 0/48 (0%)
+ Frame = -1/+3
+
+Query  2206    NRKHTILEAVIEENVSKRRCNNYTNAKIV*CPWSMLTRATTTEVVVSN  2063
+               NR   +LE V+ EN++ RRCN+    K+ * PW + +  TT+E+V SN
+Sbjct  476652  NR**AVLERVVVENITVRRCNDGFYTKVF*SPWCVFSGRTTSEIVTSN  476795
+
+
+ Score = 43.7 bits (89),  Expect(3) = 3e-19
+ Identities = 17/28 (61%), Positives = 18/28 (64%), Gaps = 0/28 (0%)
+ Frame = -3/+2
+
+Query  974     SYRREHQPQWTCYTWTYELPYLNLQ*LH  891
+               SY   HQ +W CYTWTY LP   LQ LH
+Sbjct  477917  SYLLLHQLRWPCYTWTYVLP*KELQWLH  478000
+
+
+>NC_001144.5 Saccharomyces cerevisiae S288C chromosome XII, complete 
+sequence
+Length=1078177
+
+ Score = 50.6 bits (104),  Expect(5) = 4e-17
+ Identities = 21/71 (30%), Positives = 38/71 (54%), Gaps = 0/71 (0%)
+ Frame = +2/-1
+
+Query  620     QGFTLPGTTLVCGDSHTSTHGAFGALAFGIGTSEVEHVLATQTILQRKSKNMRIRVNGKL  799
+               + +  PG  ++  DSHT   G  G LA G+G ++   V+A +    +  K + +++ GK+
+Sbjct  737026  ENYAFPGALIIGTDSHTPNAGGLGQLAIGVGGADAVDVMAGRPWELKAPKILGVKLTGKM  736847
+
+Query  800     PEGIASKDLIL  832
+                   + KD+IL
+Sbjct  736846  NGWTSPKDIIL  736814
+
+
+ Score = 29.9 bits (59),  Expect(5) = 4e-17
+ Identities = 11/43 (26%), Positives = 22/43 (51%), Gaps = 0/43 (0%)
+ Frame = +2/-1
+
+Query  881     EFCGEAIEGLSMEARMSMCNMSIEAGARAGMIAPDATTFEYVK  1009
+               E+ G+ ++  S     ++CNM  E GA   +   + +  EY++
+Sbjct  736765  EYFGDGVDTFSATGMGTICNMGAEIGATTSVFPFNKSMIEYLE  736637
+
+
+ Score = 25.4 bits (49),  Expect(5) = 4e-17
+ Identities = 11/37 (30%), Positives = 21/37 (57%), Gaps = 0/37 (0%)
+ Frame = +2/-1
+
+Query  1070    LRSDENAKYDIEVEINAADVLPTVTWGTSPQDVIPIN  1180
+               L +D++A+YD  VEI+   + P +    +P    P++
+Sbjct  736582  LSADKDAEYDEVVEIDLNTLEPYINGPFTPDLATPVS  736472
+
+
+ Score = 25.4 bits (49),  Expect(5) = 4e-17
+ Identities = 9/12 (75%), Positives = 10/12 (83%), Gaps = 0/12 (0%)
+ Frame = +2/-1
+
+Query  1307    IGSCTNSRIEDL  1342
+               IGSCTNS  ED+
+Sbjct  736414  IGSCTNSSYEDM  736379
+
+
+ Score = 24.4 bits (47),  Expect(5) = 4e-17
+ Identities = 11/38 (29%), Positives = 17/38 (45%), Gaps = 0/38 (0%)
+ Frame = +2/-1
+
+Query  1403    IVPGSGLVKKMAEAEGLDQIFIEAGFDWREAGCSMCLG  1516
+               + PGS  ++   E +G  + F E G       C  C+G
+Sbjct  736312  VTPGSEQIRATIERDGQLETFKEFGGIVLANACGPCIG  736199
+
+
+>NC_001136.10 Saccharomyces cerevisiae S288C chromosome IV, complete 
+sequence
+Length=1531933
+
+ Score = 50.6 bits (104),  Expect(3) = 3e-13
+ Identities = 22/53 (42%), Positives = 32/53 (60%), Gaps = 0/53 (0%)
+ Frame = +2/+1
+
+Query  2057    VLVAHDNFGCGSSREHAPWALNDFGIRVIIAPSFADIFFNNCFKNGMLPIPTP  2215
+               ++V+  NFG GSSRE A  AL   GI ++++ SF +IF  N   N +L +  P
+Sbjct  932824  IVVSGFNFGTGSSREQAATALLAKGINLVVSGSFGNIFSRNSINNALLTLEIP  932982
+
+
+ Score = 47.3 bits (97),  Expect(3) = 3e-13
+ Identities = 23/80 (29%), Positives = 39/80 (49%), Gaps = 0/80 (0%)
+ Frame = +2/+1
+
+Query  1403    IVPGSGLVKKMAEAEGLDQIFIEAGFDWREAGCSMCLGMNPDQLKPYERCASTSNRNFEG  1582
+               +   S  ++  A   G  +  ++AG     +GC  C+G+    L+P E   S +NRNF+G
+Sbjct  932251  VAAASSEIEADARKSGAWEKLLKAGCIPLPSGCGPCIGLGAGLLEPGEVGISATNRNFKG  932430
+
+Query  1583    RQGAKGRTHLVSPAMAAAAA  1642
+               R G+K     ++     AA+
+Sbjct  932431  RMGSKDALAYLASPAVVAAS  932490
+
+
+ Score = 40.9 bits (83),  Expect(3) = 3e-13
+ Identities = 18/51 (35%), Positives = 28/51 (55%), Gaps = 0/51 (0%)
+ Frame = +2/+1
+
+Query  590     QGIVHVIGPEQGFTLPGTTLVCGDSHTSTHGAFGALAFGIGTSEVEHVLAT  742
+               +GI H I  E+G+  P    V  DSH++T+G  G+L   I  ++   + AT
+Sbjct  931483  RGIGHQIMIEEGYAFPLNMTVASDSHSNTYGGLGSLGTPIVRTDAAAIWAT  931635
+
+
+
+Lambda      K        H
+   0.318    0.134    0.401 
+
+
+Effective search space used: 3403332240
+
+
+Query= 2543287|2543287|chromosome I|sor1_custom|1|4444383|4446593|2211|313|>NP_594578.1 sororin [Schizosaccharomyces pombe] [CUSTOM]
+
+Length=2211
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value  N
+
+NC_001135.5 Saccharomyces cerevisiae S288C chromosome III, comple...  101     2e-62  4
+
+
+>NC_001135.5 Saccharomyces cerevisiae S288C chromosome III, complete 
+sequence
+Length=316620
+
+ Score = 101 bits (215),  Expect(4) = 2e-62
+ Identities = 46/98 (47%), Positives = 62/98 (63%), Gaps = 0/98 (0%)
+ Frame = -3/+1
+
+Query  1783    HYIIDPHTAVGVETGLRCLEKTKDQDITYICLSTAHPAKFDKAVNLALSSYSDYNFNTQV  1604
+               HYI+DPHTAVGV    R + K  D+ I YI LSTAHPAKF  AVN ALS +S+Y+F   V
+Sbjct  217942  HYILDPHTAVGVCATERLIAKDNDKSIQYISLSTAHPAKFADAVNNALSGFSNYSFEKDV  218121
+
+Query  1603    LPIEFDGLLDEERTCIFSGKPNIDILKQIIEVTLSREK  1490
+               LP E   L   ++   F  + +++++K  IE  L++ K
+Sbjct  218122  LPEELKKLSTLKKKLKFIERADVELVKNAIEEELAKMK  218235
+
+
+ Score = 76.2 bits (160),  Expect(4) = 2e-62
+ Identities = 30/48 (63%), Positives = 39/48 (81%), Gaps = 0/48 (0%)
+ Frame = -3/+1
+
+Query  2209    DILAGYYAKRMGLPTKQLVIATNENDILNRFFKTGRYEKADSTQVSPS  2066
+               DILAGY+AK+MGLP ++L IATNENDIL+RF K+G YE++D    + S
+Sbjct  217537  DILAGYFAKKMGLPIEKLAIATNENDILDRFLKSGLYERSDKVAATLS  217680
+
+
+ Score = 68.4 bits (143),  Expect(4) = 2e-62
+ Identities = 28/58 (48%), Positives = 37/58 (64%), Gaps = 0/58 (0%)
+ Frame = -3/+1
+
+Query  1960    NHTPAEASEILSRWMNEFKRDGTVTVRPEVLEAARRDFVSERVSNDETIDAIKKIYES  1787
+               N    +A EI++ W  E K +G   V   ++E A +DF SERVSN+ET + IKKIYES
+Sbjct  217753  NGDDLKAGEIVNNWFQELKTNGKFQVDKSIIEGASKDFTSERVSNEETSETIKKIYES  217926
+
+
+ Score = 48.7 bits (100),  Expect(4) = 2e-62
+ Identities = 19/22 (86%), Positives = 20/22 (91%), Gaps = 0/22 (0%)
+ Frame = -3/+1
+
+Query  2044    TYSPAMDILVSSNFERYLWYLA  1979
+               T SPAMDIL+SSNFER LWYLA
+Sbjct  217672  TLSPAMDILISSNFERLLWYLA  217737
+
+
+ Score = 44.6 bits (91),  Expect(4) = 2e-18
+ Identities = 24/41 (59%), Positives = 27/41 (66%), Gaps = 0/41 (0%)
+ Frame = +3/-2
+
+Query  2088    SAFS*RPVLKKRFKISFSLVAITSCLVGKPIRLA**PARIS  2210
+               S  S RP  K   K+SFSLVA+ S  +GKPI LA *PA IS
+Sbjct  217658  SDLSYRPDFKNLSKMSFSLVAMASFSIGKPIFLAK*PANIS  217536
+
+
+ Score = 42.3 bits (86),  Expect(4) = 2e-18
+ Identities = 23/48 (48%), Positives = 31/48 (65%), Gaps = 0/48 (0%)
+ Frame = +3/-2
+
+Query  1638    ERARFTALSNLAG*AVERQI*VISWSLVFSKQRRPVSTPTAVCGSMI*  1781
+               + A FTA +NLAG*AV+R++  +  SL F+       TPTAV GS +*
+Sbjct  218087  DNALFTASANLAG*AVDREMYWMDLSLSFAINLSVAQTPTAV*GSKM*  217944
+
+
+ Score = 31.8 bits (63),  Expect(4) = 2e-18
+ Identities = 14/22 (64%), Positives = 17/22 (77%), Gaps = 0/22 (0%)
+ Frame = +3/-2
+
+Query  1983    RYHK*RSKLEETKMSIAGE*VS  2048
+               RYH   SKLEE K+SIAG+ V+
+Sbjct  217733  RYHSSLSKLEEIKISIAGDKVA  217668
+
+
+ Score = 25.4 bits (49),  Expect(4) = 2e-18
+ Identities = 11/51 (22%), Positives = 23/51 (45%), Gaps = 0/51 (0%)
+ Frame = +2/-1
+
+Query  1790    FIDFFNSINGFIITNTFTHEITSSGFQNLGTDSNCSITFEFIHPARQNFRG  1942
+               F+D  +    F I N+F  ++    F +   +   ++  +F+ P   +F G
+Sbjct  217923  FVDLLDCFRCFFIGNSF*CKVL*CAFNDGFVNLELTVGLQFLEPIVDDFTG  217771
+
+
+
+Lambda      K        H
+   0.318    0.134    0.401 
+
+
+Effective search space used: 2799645926
+
+
+  Database: 1_subject_sequences\s_cerevisiae\GCF_000146045.2\GCF_000146045.2_R64
+_genomic.fna
+    Posted date:  Nov 28, 2025  9:03 PM
+  Number of letters in database: 12,157,105
+  Number of sequences in database:  17
+
+
+
+Matrix: BLOSUM62
+Neighboring words threshold: 13
+Window for multiple hits: 40
