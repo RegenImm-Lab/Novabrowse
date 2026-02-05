@@ -735,6 +735,38 @@ Species toggle buttons allow you to show or hide individual subject species colu
 #### Gene Selection
 Click gene names in the Query Species column to add or remove them from the filter text box for quick multi-gene selection. Use the checkbox beside each gene name to control its ribbon visibility - checked genes display their synteny ribbons, while unchecked genes hide their connections. The master checkbox in the header selects/deselects all genes simultaneously.
 
+### Table Layout
+<img src="images/table_layout.svg" alt="Novabrowse table layout legend">
+
+- **Query Species column** (left) — lists the genes used as BLAST queries.
+- **Coverage column** — colored bars showing where HSPs align along the query sequence. Values are shown as percentages and absolute lengths (total aligned length / query transcript length). Bar colors indicate identity percentage per the color legend.
+- **Chrm column** — chromosome visualizations showing relative gene positions, with heights normalized across the table.
+- **Chrm # column** — chromosomal locations. Underscores denote different chromosome arms (e.g., 2_2, 3_1).
+- **Yellow highlighting** — genes within a user-selected coordinate range are marked with a yellow background. The corresponding region also appears in dark yellow on the chromosome visualization.
+
+### Chromosome Filter
+
+The chromosome filter row provides coordinate-based filtering for both query and subject species. Toggle its visibility with the **Chrm filter** button.
+
+**Query Species**
+
+<img src="images/chromosome_filter_query_species.png" alt="Query species chromosome filter">
+
+- **Span** — enter start and end coordinates to define a region of interest.
+- **Highlight** — marks genes within the span with a yellow background and highlights the region on the chromosome visualization. The count shows matched genes vs total (e.g., `0/11`).
+- **Filter** — hides all query genes outside the span from the table.
+
+**Subject Species**
+
+<img src="images/chromosome_filter_subject_species.png" alt="Subject species chromosome filter">
+
+Each subject species has its own independent filter with additional controls:
+
+- **Span** — enter start and end coordinates to define a region on the subject chromosome.
+- **Chromosome dropdown** — select which chromosomes to include. Use "All chromosomes" to select or deselect all at once. Only checked chromosomes are affected by Highlight and Keep.
+- **Highlight** — marks genes on the selected chromosomes within the span. The three counts show: query genes with matches (how many query genes have hits in this region) / unique subject genes (distinct genes matched) / total subject matches (includes duplicates when secondary matches are enabled, as the same subject gene can match multiple query genes).
+- **Keep** — the most restrictive filter. Hides all genes that don't have matches on the selected chromosomes within the span, and removes unselected chromosomes from the visualization.
+
 ## Troubleshooting
 
 ### "HTTP Error 400" from NCBI
