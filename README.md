@@ -401,7 +401,7 @@ Repeat the same process for *S. pombe* [*leu2*](https://www.ncbi.nlm.nih.gov/gen
 
 ### 2. Adding custom sequences to your query
 
-Add a `custom_sequences` array to include your own sequences. You can process multiple query species and multiple transcripts in one run:
+Add a `custom_sequences` array to include your own sequences. Note that `nucleotide_sequence` and `protein_sequence` must each be on a single line without line breaks. You can process multiple query species and multiple transcripts in one run:
 
 ```python
 query_sequences_list = [
