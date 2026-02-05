@@ -767,6 +767,41 @@ Each subject species has its own independent filter with additional controls:
 - **Highlight** — marks genes on the selected chromosomes within the span. The three counts show: query genes with matches (how many query genes have hits in this region) / unique subject genes (distinct genes matched) / total subject matches (includes duplicates when secondary matches are enabled, as the same subject gene can match multiple query genes).
 - **Keep** — the most restrictive filter. Hides all genes that don't have matches on the selected chromosomes within the span, and removes unselected chromosomes from the visualization.
 
+### Interactivity Features
+
+**Table interactions**
+
+- **Row hover highlighting** — hovering over any cell in a row highlights the entire gene's row group (including all rows spanned by that gene) and highlights the corresponding gene rectangle on the chromosome visualization.
+- **Cross-species hover highlighting** — hovering over a subject species cell highlights that match's adjacent data columns across the table, making it easy to see the full data for that ortholog.
+- **Transcript expansion** — click the expand button next to a match to reveal individual transcript isoforms with their score, e-value, mRNA length, identity percentages, coverage visualization, and query length. Click again to collapse.
+
+<!-- TODO: Add example image of transcript expansion -->
+
+**Chromosome visualization interactions**
+
+- **Hover line indicator** — moving the mouse over a chromosome displays a white horizontal line that follows the cursor vertically, indicating the exact genomic position.
+- **Position tooltip** — hovering over the chromosome shows a tooltip with the chromosome name and the calculated genomic coordinate at the cursor position.
+- **Gene rectangle tooltip** — hovering over a gene rectangle shows up to three tooltips: the chromosome position, the species name (for subject species genes), and the query gene name.
+- **Click to copy position** — clicking on a chromosome copies the coordinate at that point to the clipboard. Clicking a gene rectangle copies the gene's start position. The tooltip briefly shows "copied" as confirmation.
+- **Click gene to scroll** — clicking a gene rectangle on the chromosome scrolls the table to that gene's row and briefly flashes it yellow.
+
+<!-- TODO: Add example image of chromosome hover interactions -->
+
+### Ribbon Plot Features
+
+- **Hover highlighting** — hovering over a gene's table row or its chromosome rectangle turns that gene's ribbon black and bold, making it stand out from the others.
+
+Each gene's ribbon can be individually customized. Click the ribbon settings button next to a gene name to open the settings panel.
+
+<!-- TODO: Add example image of ribbon settings panel -->
+
+- **Color** — change the ribbon color using a color picker.
+- **Width** — adjust the ribbon line thickness.
+- **Opacity** — control ribbon transparency from 0 (fully transparent) to 1 (fully opaque). Useful for reducing visual clutter when many ribbons overlap.
+- **Line style** — choose between Solid, Dashed, Dotted, or Dash-Dot patterns to visually distinguish specific ribbons.
+- **On top** — pin a ribbon to always render above other ribbons, ensuring it remains visible even when overlapping with others.
+- **Gene coloring** — colors that gene's rectangles (query and all its subject matches) on the chromosome visualizations with the ribbon's color, making it easy to spot the gene's position across species at a glance.
+
 ## Troubleshooting
 
 ### "HTTP Error 400" from NCBI
