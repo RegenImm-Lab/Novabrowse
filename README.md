@@ -802,23 +802,35 @@ In this example, the *S. cerevisiae* subject species has span set to `1 : 398510
 
 - **Row hover highlighting** — hovering over any cell in a row highlights the entire gene's row group (including all rows spanned by that gene) and highlights the corresponding gene rectangle on the chromosome visualization.
 - **Cross-species hover highlighting** — hovering over a subject species cell highlights that match's adjacent data columns across the table, making it easy to see the full data for that ortholog.
-- **Transcript expansion** — click the expand button next to a match to reveal individual transcript isoforms with their score, e-value, mRNA length, identity percentages, coverage visualization, and query length. Click again to collapse. **IMAGE**
+- **Transcript expansion** — click the expand transcripts button next to a match to reveal individual transcript isoforms with their score, e-value, mRNA length, identity percentages, coverage visualization, and query length. Click again to collapse.
+
+<img src="images/transcripts_button.png" alt="Transcript expansion button showing individual isoforms with scores and coverage" style="margin-left: 40px;">
+
+<blockquote style="margin-left: 40px;">In this example, <em>PWP2</em> shows <b>(1)</b> indicating a single transcript match (the arrow points to the expand transcripts button), while <em>TRAPPC10</em> is expanded showing <b>(3)</b> transcripts. The expanded view reveals individual isoforms (XM_069202936.1, XM_069202937.1, XM_069202939.1) with their coverage percentages and BLAST scores, allowing comparison of match quality across different transcript variants.</blockquote>
+<br>
 
 **Chromosome visualization interactions**
 
 - **Hover line indicator** — moving the mouse over a chromosome displays a white horizontal line that follows the cursor vertically, indicating the exact genomic position.
-- **Position tooltip** — hovering over the chromosome shows a tooltip with the chromosome name and the calculated genomic coordinate at the cursor position.
-- **Gene hover tooltip** — hovering over a gene line shows up to three tooltips: gene position on the chromosome, subject species gene name, and the query species gene name.  **IMAGE**
+- **Position tooltip** — hovering over the chromosome shows a tooltip with the chromosome name and the calculated genomicyeds coordinate at the cursor position.
+- **Gene hover tooltip** — hovering over a gene line shows up multiple tooltips: chromosome name and gene starting coordinate on the chromosome, subject species gene name, and the query species gene name.
+
+<img src="images/chromosome_gene_hover.png" alt="Gene hover tooltip showing chromosome position, subject gene name, and query gene name" style="margin-left: 40px;">
+
+<blockquote style="margin-left: 40px;">In this example, the query gene name <em>SPL1</em> is different from the matching subject gene name <em>GBP2</em>. This kind of name mismatch is common and can be caused by paralogue matches (where the query gene matches a related but distinct gene in the subject species), different naming conventions across species, or independent discovery of the same gene in different organisms.</blockquote><br>
+
 - **Click to copy position** — clicking on a chromosome copies the coordinate at that point to the clipboard. Clicking a gene rectangle copies the gene's start position. The tooltip briefly shows "copied" as confirmation.
 - **Click gene to scroll** — clicking a gene rectangle on the chromosome scrolls the table to that gene's row and briefly flashes it yellow.
 
 ### Ribbon Plot Features
 
-- **Hover highlighting** — hovering over a gene's table row or its chromosome rectangle turns that gene's ribbon black and bold, making it stand out from the others.
+- **Ribbon Hover highlighting** — hovering over a gene's table row or its chromosome line turns that gene's ribbon black and bold, making it stand out from the others.
 
 Each gene's ribbon can be individually customized. Click the ribbon settings button next to a gene name to open the settings panel.
 
-- **Color** — change the ribbon color using a color picker. **IMAGE**
+<img src="images/ribbon_settings.png" alt="Ribbonplot single ribbon settings example image" style="margin-left: 20px;">
+
+- **Color** — change the ribbon color using a color picker.
 - **Width** — adjust the ribbon line thickness.
 - **Opacity** — control ribbon transparency from 0 (fully transparent) to 1 (fully opaque). Useful for reducing visual clutter when many ribbons overlap.
 - **Line style** — choose between Solid, Dashed, Dotted, or Dash-Dot patterns to visually distinguish specific ribbons.
