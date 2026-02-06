@@ -11322,7 +11322,8 @@ th.chrm_column {
   justify-content: center; }
 
 .full_chromosome {
-  display: block; }
+  display: block;
+  overflow: visible; }
   .full_chromosome:not(:first-child) {
     margin-left: 2px; }
 
@@ -15520,7 +15521,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
         // only show species tooltip for non-query species
         if (speciesIndex !== -1) {
             const speciesGeneName = geneElement.getAttribute('data-species-gene-name');
-            tooltips.gene.textContent = `Species: ${speciesGeneName}`;
+            tooltips.gene.textContent = `Subject: ${speciesGeneName}`;
             tooltips.gene.style.display = 'block';
             const geneTooltipWidth = tooltips.gene.offsetWidth;
             tooltips.gene.style.left = (e.clientX - geneTooltipWidth - 10) + 'px';
@@ -15529,7 +15530,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
             tooltips.gene.style.display = 'none';
         }
 
-        tooltips.main.textContent = `Main: ${mainName}`;
+        tooltips.main.textContent = `Query: ${mainName}`;
         tooltips.main.style.display = 'block';
         const mainTooltipWidth = tooltips.main.offsetWidth;
         tooltips.main.style.left = (e.clientX - mainTooltipWidth - 10) + 'px';
@@ -15548,7 +15549,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
 
         // Calculate offset based on species type
         if (speciesIndex === -1) {
-            // Main species - find the offset for this position
+            // Query species - find the offset for this position
             const mainChromosomes = chromosomeLengths["-1"]?.["Target chromosome"];
             if (mainChromosomes && Array.isArray(mainChromosomes)) {
                 let cumLength = 0;
@@ -15565,7 +15566,7 @@ function addGeneEvents(geneElement, chrName, tooltips) {
                 }
             }
         } else {
-            // Matched species - existing logic
+            // Subject species - existing logic
             for (let groupIndex in chromosomeLengths[speciesIndex]) {
                 const group = chromosomeLengths[speciesIndex][groupIndex];
                 if (group && group[chrName]) {

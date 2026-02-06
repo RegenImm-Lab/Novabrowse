@@ -366,8 +366,8 @@ Example of how the tblastn output file should look:
 [Selmecki et al. (2005)](https://doi.org/10.1534/genetics.104.034652) identified the longest syntenic region between *C. albicans* and *S. cerevisiae* on chromosome 7, spanning 11 ORFs from *DCC1* to *PGS1*. In this tutorial, we'll examine this region using *LEU2* as our anchor gene, while demonstrating two features: custom query sequences and searches against genomes.
 
 We'll set up two query species to demonstrate different workflows:
-- **C. albicans** — NCBI-retrieved query genes combined with a custom sequence
-- **S. pombe** — only custom query sequences, no NCBI retrieval
+- ***C. albicans*** — NCBI-retrieved query genes combined with a custom sequence
+- ***S. pombe*** — only custom query sequences, no NCBI retrieval
 
 ### 1. Finding sequence data for custom sequences
 
@@ -764,8 +764,37 @@ Each subject species has its own independent filter with additional controls:
 
 - **Span** — enter start and end coordinates to define a region on the subject chromosome.
 - **Chromosome dropdown** — select which chromosomes to include. Use "All chromosomes" to select or deselect all at once. Only checked chromosomes are affected by Highlight and Keep.
-- **Highlight** — marks genes on the selected chromosomes within the span. The three counts show: query genes with matches (how many query genes have hits in this region) / unique subject genes (distinct genes matched) / total subject matches (includes duplicates when secondary matches are enabled, as the same subject gene can match multiple query genes).
+- **Highlight** — marks genes on the selected chromosomes within the span. The three counts show: query genes with matches (how many query genes have hits in this region) / unique subject genes (distinct genes matched) / total subject matches (includes duplicates, as the same subject gene can match multiple query genes). See [Highlight count example](#highlight-count-example) for further information
 - **Keep** — the most restrictive filter. Hides all genes that don't have matches on the selected chromosomes within the span, and removes unselected chromosomes from the visualization.
+
+#### Highlight count example
+<img src="images/highlight_count.png" alt="Highlight count feature sample image">
+
+In this example, the *S. cerevisiae* subject species has span set to `1 : 398510` with chromosomes II, III, XIII, XIV, and XVI selected (V is unchecked). The button shows `Highlight (2/4) (2/5) (2/6)`:
+
+**First count (2/4) — query genes with matches in region:**
+- Even though we see **5** query genes in *C. albicans* column, only **4** query genes have matches to *S. cerevisiae* (note that *FGR2* has no match)
+- Of those **4**, only **2** (*GBP2* and *MAC1*) have matches that fall within the span 1–398510
+- *GBP2* matches to *GBP2* at position 102,075 on chromosome III (within span)
+- *MAC1* matches to *MAC1* at position 317,165 on chromosome XIII (within span)
+- The other matches (*HRB1* at 622,915, *TAE1* at 734,832, *HAA1* at 573,018) are outside the span
+
+**Second count (2/5) — unique subject genes in region:**
+- **5** unique *S. cerevisiae* genes exist on the selected chromosomes: *HRB1*, *GBP2*, *TAE1*, *HAA1*, and *MAC1* (*PAB1* on chromosome V is excluded because chromosome V is unchecked)
+- Note that *TAE1* is matched by two different query genes (*CAALFM_C700490CA* and *CAALFM_C700500WA*), hence it only counts once toward the unique gene count
+- Of those **5** unique genes, only **2** (*GBP2* and *MAC1*) are located within the span
+
+**Third count (2/6) — total matches in region:**
+- **6** total *C. albicans* genes match the *S. cerevisiae* genes on the selected chromosomes:
+  1. *GBP2* → *HRB1* (XIV)
+  2. *GBP2* → *GBP2* (III)
+  3. *CAALFM_C700490CA* → *TAE1* (II)
+  4. *CAALFM_C700500WA* → *TAE1* (II)
+  5. *MAC1* → *HAA1* (XVI)
+  6. *MAC1* → *MAC1* (XIII)
+
+  (again note that *PAB1* on chromosome V is excluded, because chromosome V is unchecked)
+- Of those **6** matches, only **2** fall within the span (*GBP2* → *GBP2* and *MAC1* → *MAC1*)
 
 ### Interactivity Features
 
@@ -773,19 +802,15 @@ Each subject species has its own independent filter with additional controls:
 
 - **Row hover highlighting** — hovering over any cell in a row highlights the entire gene's row group (including all rows spanned by that gene) and highlights the corresponding gene rectangle on the chromosome visualization.
 - **Cross-species hover highlighting** — hovering over a subject species cell highlights that match's adjacent data columns across the table, making it easy to see the full data for that ortholog.
-- **Transcript expansion** — click the expand button next to a match to reveal individual transcript isoforms with their score, e-value, mRNA length, identity percentages, coverage visualization, and query length. Click again to collapse.
-
-<!-- TODO: Add example image of transcript expansion -->
+- **Transcript expansion** — click the expand button next to a match to reveal individual transcript isoforms with their score, e-value, mRNA length, identity percentages, coverage visualization, and query length. Click again to collapse. **IMAGE**
 
 **Chromosome visualization interactions**
 
 - **Hover line indicator** — moving the mouse over a chromosome displays a white horizontal line that follows the cursor vertically, indicating the exact genomic position.
 - **Position tooltip** — hovering over the chromosome shows a tooltip with the chromosome name and the calculated genomic coordinate at the cursor position.
-- **Gene rectangle tooltip** — hovering over a gene rectangle shows up to three tooltips: the chromosome position, the species name (for subject species genes), and the query gene name.
+- **Gene hover tooltip** — hovering over a gene line shows up to three tooltips: gene position on the chromosome, subject species gene name, and the query species gene name.  **IMAGE**
 - **Click to copy position** — clicking on a chromosome copies the coordinate at that point to the clipboard. Clicking a gene rectangle copies the gene's start position. The tooltip briefly shows "copied" as confirmation.
 - **Click gene to scroll** — clicking a gene rectangle on the chromosome scrolls the table to that gene's row and briefly flashes it yellow.
-
-<!-- TODO: Add example image of chromosome hover interactions -->
 
 ### Ribbon Plot Features
 
@@ -793,9 +818,7 @@ Each subject species has its own independent filter with additional controls:
 
 Each gene's ribbon can be individually customized. Click the ribbon settings button next to a gene name to open the settings panel.
 
-<!-- TODO: Add example image of ribbon settings panel -->
-
-- **Color** — change the ribbon color using a color picker.
+- **Color** — change the ribbon color using a color picker. **IMAGE**
 - **Width** — adjust the ribbon line thickness.
 - **Opacity** — control ribbon transparency from 0 (fully transparent) to 1 (fully opaque). Useful for reducing visual clutter when many ribbons overlap.
 - **Line style** — choose between Solid, Dashed, Dotted, or Dash-Dot patterns to visually distinguish specific ribbons.
