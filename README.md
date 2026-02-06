@@ -12,8 +12,13 @@
 - [Tutorial 2: Using Custom Sequences and Gene Signal Discovery](#tutorial-2-using-custom-sequences-and-gene-signal-discovery)
 - [Documentation](#documentation)
   - [General Features](#general-features)
+  - [Pipeline Overview](#pipeline-overview)
   - [Parameters Reference](#parameters-reference)
   - [Interactive Controls Reference](#interactive-controls-reference)
+    - [Table Layout](#table-layout)
+    - [Chromosome Filter](#chromosome-filter)
+    - [Interactivity Features](#interactivity-features)
+    - [Ribbon Plot Features](#ribbon-plot-features)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
 - [Citation](#citation)
@@ -817,7 +822,7 @@ In this example, the *S. cerevisiae* subject species has span set to `1 : 398510
 
 <img src="images/chromosome_gene_hover.png" alt="Gene hover tooltip showing chromosome position, subject gene name, and query gene name" style="margin-left: 40px;">
 
-<blockquote style="margin-left: 40px;">In this example, the query gene name <em>SPL1</em> is different from the matching subject gene name <em>GBP2</em>. This kind of name mismatch is common and can be caused by paralogue matches (where the query gene matches a related but distinct gene in the subject species), different naming conventions across species, or independent discovery of the same gene in different organisms.</blockquote><br>
+<blockquote style="margin-left: 40px;">In this example, the query gene name <em>SPL1</em> is different from the matching subject gene name <em>GBP2</em>. This kind of name mismatch is common and can be caused by paralogue matches (where the query gene matches a related but distinct gene in the subject species), different naming conventions across species, or independent discovery of the same gene in different organisms.</blockquote>
 
 - **Click to copy position** — clicking on a chromosome copies the coordinate at that point to the clipboard. Clicking a gene rectangle copies the gene's start position. The tooltip briefly shows "copied" as confirmation.
 - **Click gene to scroll** — clicking a gene rectangle on the chromosome scrolls the table to that gene's row and briefly flashes it yellow.
