@@ -6,7 +6,7 @@
 
 - [Core Capabilities](#core-capabilities)
 - [Output Overview](#results-output-overview)
-- [Prerequisites](#prerequisites)
+- [Installation Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Tutorial 1: Detecting Orthologs Across Species](#tutorial-1-detecting-orthologs-across-species)
@@ -43,7 +43,7 @@
 - **Yellow highlighting** — genes within a user-selected coordinate range are marked with a yellow background. The corresponding region also appears in dark yellow on the chromosome visualization.
 - **Ribbon plot** — colored curved lines connecting genes across chromosome columns. Ribbon style (color, opacity, width, dashed/solid) is customizable.
 
-## Prerequisites
+## Installation Prerequisites
 
 ### 1. Python 3.8+
 
