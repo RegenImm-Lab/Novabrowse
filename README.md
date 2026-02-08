@@ -5,6 +5,7 @@
 ## Table of Contents
 
 - [Core Capabilities](#core-capabilities)
+- [Output Preview](#output-preview)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
@@ -15,7 +16,6 @@
   - [Pipeline Overview](#pipeline-overview)
   - [Parameters Reference](#parameters-reference)
   - [Interactive Controls Reference](#interactive-controls-reference)
-    - [Table Layout](#table-layout)
     - [Chromosome Filter](#chromosome-filter)
     - [Interactivity Features](#interactivity-features)
     - [Ribbon Plot Features](#ribbon-plot-features)
@@ -29,6 +29,19 @@
 - **Multi-species synteny analysis** - Compare gene order conservation across multiple species simultaneously with interactive ribbon plots connecting orthologous genes across chromosomes
 - **Gene signal discovery** - Identify unannotated genes in genomic regions through distance-based High-scoring Segment Pair (HSP) clustering, revealing gene units missed by standard annotation pipelines
 - **Coverage visualization** - View alignment coverage as identity-color-coded bars positioned along query sequences, showing both extent and quality of matches
+
+## Output Preview
+
+<img src="images/table_layout.svg" alt="Novabrowse table layout legend">
+<img src="images/table_layout_test.svg" alt="Novabrowse table layout legend">
+
+> In this sample, four query genes are searched against three subject species. *Gene 1* and *Gene 4* each show a single best match in each subject species, representing straightforward one-to-one orthology. *Gene 2* shows red "**none**" where no match was found (**Subject Species 1** and **Subject Species 3**). *Gene 3* shows how multiple hits are displayed: for **Subject Species 1**, *Gene 3A* is the best match (likely ortholog), while *Gene 3B*, *Gene 3C*, and *Gene 9* appear as secondary matches (paralogs or distant homologs). The coverage bars reveal match extent and quality, *Gene 3A* covers ~65% of the query at high identity (mostly green bars), while *Gene 9* covers only ~38% (with low identity, orange and red coverage bars).
+
+- **Query Species column** (left) — lists the genes used as BLAST queries.
+- **Coverage column** — colored bars showing where HSPs align along the query sequence. Values are shown as percentages and absolute lengths (total aligned length / query transcript length). Bar colors indicate identity percentage per the color legend.
+- **Chrm column** — chromosome visualizations showing relative gene positions, with heights normalized across the table.
+- **Chrm # column** — chromosomal locations. Underscores denote different chromosome arms (e.g., 2_2, 3_1).
+- **Yellow highlighting** — genes within a user-selected coordinate range are marked with a yellow background. The corresponding region also appears in dark yellow on the chromosome visualization.
 
 ## Prerequisites
 
@@ -739,15 +752,6 @@ Species toggle buttons allow you to show or hide individual subject species colu
 
 #### Gene Selection
 Click gene names in the Query Species column to add or remove them from the filter text box for quick multi-gene selection. Use the checkbox beside each gene name to control its ribbon visibility - checked genes display their synteny ribbons, while unchecked genes hide their connections. The master checkbox in the header selects/deselects all genes simultaneously.
-
-### Table Layout
-<img src="images/table_layout.svg" alt="Novabrowse table layout legend">
-
-- **Query Species column** (left) — lists the genes used as BLAST queries.
-- **Coverage column** — colored bars showing where HSPs align along the query sequence. Values are shown as percentages and absolute lengths (total aligned length / query transcript length). Bar colors indicate identity percentage per the color legend.
-- **Chrm column** — chromosome visualizations showing relative gene positions, with heights normalized across the table.
-- **Chrm # column** — chromosomal locations. Underscores denote different chromosome arms (e.g., 2_2, 3_1).
-- **Yellow highlighting** — genes within a user-selected coordinate range are marked with a yellow background. The corresponding region also appears in dark yellow on the chromosome visualization.
 
 ### Chromosome Filter
 

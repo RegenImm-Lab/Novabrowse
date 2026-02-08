@@ -5423,7 +5423,7 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
         }
     });
 
-    // Apply color changes immediately (synchronously)
+    // Apply color changes
     colorChanges.forEach(({ rect, color }) => {
         rect.setAttribute('fill', color);
     });
@@ -5431,9 +5431,9 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
     // Defer expensive operations to next frame
     if (isHighlight && (indicatorsToAdd.length > 0 || blueIndicators.length > 0 || elementsToReorder.length > 0 || blueRects.length > 0)) {
         GeneHighlightCache.pendingFrame = requestAnimationFrame(() => {
-            // Reorder non-blue rectangles first (skip hovered to prevent synthetic mouseleave)
+            // Reorder non-blue rectangles
             elementsToReorder.forEach(({ element, parent, isHovered }) => {
-                if (!isHovered && element.parentNode === parent) {
+                if (element.parentNode === parent) {
                     parent.appendChild(element);
                 }
             });
@@ -5447,11 +5447,21 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
                 indicator.style.display = 'block';
             });
 
-            // Reorder blue rectangles so they appear on top (skip hovered to prevent synthetic mouseleave)
+            // Reorder blue rectangles so they appear on top
             blueRects.forEach(({ element, parent, isHovered }) => {
-                element.classList.add('active_rect');
-                if (!isHovered && element.parentNode === parent) {
-                    parent.appendChild(element);
+                element.classList.add("active_rect");
+                if (element.parentNode === parent) {
+                    if (isHovered) {
+                        // Move all later siblings before it so it ends up on top
+                        let sibling = element.nextElementSibling;
+                        while (sibling) {
+                            const next = sibling.nextElementSibling;
+                            parent.insertBefore(sibling, element);
+                            sibling = next;
+                        }
+                    } else {
+                        parent.appendChild(element);
+                    }
                 }
             });
 
@@ -5509,12 +5519,22 @@ function highlightSvgGene(geneName, isHighlight, speciesIndex = -1, queryGeneId 
                 });
             }
 
-            // Ensure any active (blue) rectangles and indicators are on top (skip hovered)
-            const activeRects = document.querySelectorAll('.active_rect');
+            // Ensure any active (blue) rectangles and indicators are on top
+            const activeRects = document.querySelectorAll(".active_rect");
             activeRects.forEach(rect => {
-                const isCurrentlyHovered = blueRects.some(br => br.element === rect && br.isHovered);
-                if (rect.parentNode && !isCurrentlyHovered) {
-                    rect.parentNode.appendChild(rect);
+                if (rect.parentNode) {
+                    const isCurrentlyHovered = blueRects.some(br => br.element === rect && br.isHovered);
+                    if (isCurrentlyHovered) {
+                        // Move later siblings before it (to keep hovered element in place)
+                        let sibling = rect.nextElementSibling;
+                        while (sibling) {
+                            const next = sibling.nextElementSibling;
+                            rect.parentNode.insertBefore(sibling, rect);
+                            sibling = next;
+                        }
+                    } else {
+                        rect.parentNode.appendChild(rect);
+                    }
                 }
             });
 
