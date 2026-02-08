@@ -2049,7 +2049,7 @@
   <line x1="147.1" y1="1" x2="147.1" y2="39.5" fill="none" stroke="#b3b3b3"/>
   <line x1="1" y1="39.5" x2="147.1" y2="39.5" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="1" y1="1" x2="1" y2="39.5" fill="none" stroke="#b3b3b3"/>
-  <text transform="translate(9 60.8)" font-family="Arial-BoldMT, Arial" font-size="15" font-weight="700" isolation="isolate"><tspan x="0" y="0">Gene</tspan></text>
+  <text transform="translate(29 60.8)" font-family="Arial-BoldMT, Arial" font-size="15" font-weight="700" isolation="isolate"><tspan x="0" y="0">Gene</tspan></text>
   <line x1="1" y1="39.5" x2="96.1" y2="39.5" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="96.1" y1="39.5" x2="96.1" y2="70" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="1" y1="70" x2="96.1" y2="70" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
@@ -2060,7 +2060,9 @@
   <line x1="147.1" y1="39.5" x2="147.1" y2="70" fill="none" stroke="#b3b3b3"/>
   <line x1="96.1" y1="70" x2="147.1" y2="70" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="96.1" y1="39.5" x2="96.1" y2="70" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
-  <text transform="translate(9 90)" fill="#0067d5" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">Gene 1</tspan></text>
+  <circle cx="16" cy="84" r="6.5" fill="#ff3d3d" stroke="#ff3d3d" stroke-width="3"/>
+  <circle cx="16" cy="84" r="4.5" fill="none" stroke="#ffffff" stroke-width="1"/>
+  <text transform="translate(29 90)" fill="#0067d5" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">Gene 1</tspan></text>
   <line x1="1" y1="70" x2="96.1" y2="70" fill="none" stroke="#b3b3b3"/>
   <line x1="96.1" y1="70" x2="96.1" y2="99" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="1" y1="99" x2="96.1" y2="99" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
@@ -2159,17 +2161,21 @@
   <line x1="147.1" y1="70" x2="147.1" y2="270" fill="none" stroke="#b3b3b3"/>
   <line x1="96.1" y1="270" x2="147.1" y2="270" fill="none" stroke="#b3b3b3"/>
   <line x1="96.1" y1="70" x2="96.1" y2="270" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
-  <text transform="translate(9 119)" fill="#0067d5" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">Gene 2</tspan></text>
+  <circle cx="16" cy="113" r="6.5" fill="#2fb625" stroke="#2fb625" stroke-width="3"/>
+  <circle cx="16" cy="113" r="4.5" fill="none" stroke="#ffffff" stroke-width="1"/>
+  <text transform="translate(29 119)" fill="#0067d5" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">Gene 2</tspan></text>
   <line x1="1" y1="99" x2="96.1" y2="99" fill="none" stroke="#b3b3b3"/>
   <line x1="96.1" y1="99" x2="96.1" y2="128" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="1" y1="128" x2="96.1" y2="128" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="1" y1="99" x2="1" y2="128" fill="none" stroke="#b3b3b3"/>
-  <text transform="translate(9 148)" fill="#0067d5" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">Gene 3</tspan></text>
+  <text transform="translate(29 148)" fill="#0067d5" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">Gene 3</tspan></text>
   <line x1="1" y1="128" x2="96.1" y2="128" fill="none" stroke="#b3b3b3"/>
   <line x1="96.1" y1="128" x2="96.1" y2="241" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="1" y1="241" x2="96.1" y2="241" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="1" y1="128" x2="1" y2="241" fill="none" stroke="#b3b3b3"/>
-  <text transform="translate(9 261)" fill="#0067d5" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">Gene 4</tspan></text>
+  <circle cx="16" cy="255" r="6.5" fill="#0537ff" stroke="#0537ff" stroke-width="3"/>
+  <circle cx="16" cy="255" r="4.5" fill="none" stroke="#ffffff" stroke-width="1"/>
+  <text transform="translate(29 261)" fill="#0067d5" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">Gene 4</tspan></text>
   <line x1="1" y1="241" x2="96.1" y2="241" fill="none" stroke="#b3b3b3"/>
   <line x1="96.1" y1="241" x2="96.1" y2="270" fill="none" stroke="#b3b3b3" stroke-width=".3"/>
   <line x1="1" y1="270" x2="96.1" y2="270" fill="none" stroke="#b3b3b3"/>
@@ -2393,5 +2399,36 @@
     <text transform="translate(300.8 204.5)" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">1652/2678 (59.2%)</tspan></text>
     <text transform="translate(300.8 232.5)" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">849/2237 (38.0%)</tspan></text>
     <text transform="translate(300.8 261)" font-family="ArialMT, Arial" font-size="15" isolation="isolate"><tspan x="0" y="0">1344/2570 (52.3%)</tspan></text>
+  </g>
+  <!-- Ribbon plot: cubic Bezier curves connecting gene rects on chromosome columns -->
+  <!-- Colors from getGeneColor(progress): Gene1=#ff3d3d, Gene2=#2fb625, Gene3=#00c4f5, Gene4=#0537ff -->
+  <!-- Opacity: 0.5 (getDefaultRibbonSettings), Stroke-width: 2 -->
+  <g id="Ribbons" fill="none">
+    <!-- SLC2A10 (Gene 2) — #2fb625 — Query direct to Sp2 -->
+    <path class="ribbon_path vertical-line" d="M 128.1,211.45 v -1.1" stroke="#2fb625" stroke-width="2" opacity="0.8"/>
+    <path class="ribbon_path connector" d="M 128.1,211.45 C 493.45,211.45 493.45,239.7 858.8,239.7" stroke="#2fb625" stroke-width="2" opacity="0.8"/>
+    <path class="ribbon_path vertical-line" d="M 858.8,239.7 v -1" stroke="#2fb625" stroke-width="2" opacity="0.8"/>
+
+    <!-- DDX27 (Gene 4) — #0537ff -->
+    <path class="ribbon_path vertical-line" d="M 128.1,217.45 v -1.1" stroke="#0537ff" stroke-width="2" opacity="0.7"/>
+    <path class="ribbon_path connector" d="M 128.1,217.45 C 324.75,217.45 324.75,117.6 521.4,117.6" stroke="#0537ff" stroke-width="2" opacity="0.7"/>
+    <path class="ribbon_path vertical-line" d="M 521.4,117.6 v -1" stroke="#0537ff" stroke-width="2" opacity="0.7"/>
+    <path class="ribbon_path vertical-line" d="M 533.4,117.6 v -1" stroke="#0537ff" stroke-width="2" opacity="0.7"/>
+    <path class="ribbon_path connector" d="M 533.4,117.6 C 696.1,117.6 696.1,241.0 858.8,241.0" stroke="#0537ff" stroke-width="2" opacity="0.7"/>
+    <path class="ribbon_path vertical-line" d="M 858.8,241.0 v -1" stroke="#0537ff" stroke-width="2" opacity="0.7"/>
+    <path class="ribbon_path vertical-line" d="M 870.8,241.0 v -1" stroke="#0537ff" stroke-width="2" opacity="0.7"/>
+    <path class="ribbon_path connector" d="M 870.8,241.0 C 1045.55,241.0 1045.55,219.55 1220.3,219.55" stroke="#0537ff" stroke-width="2" opacity="0.7"/>
+    <path class="ribbon_path vertical-line" d="M 1220.3,219.55 v -1.1" stroke="#0537ff" stroke-width="2" opacity="0.7"/>
+
+    <!-- SLC13A3 (Gene 1) — #ff3d3d -->
+    <path class="ribbon_path vertical-line" d="M 128.1,211.15 v -1.3" stroke="#ff3d3d" stroke-width="2" opacity="1" stroke-dasharray="5, 5"/>
+    <path class="ribbon_path connector" d="M 128.1,211.15 C 324.75,211.15 324.75,120.4 521.4,120.4" stroke="#ff3d3d" stroke-width="2" opacity="1" stroke-dasharray="5, 5"/>
+    <path class="ribbon_path vertical-line" d="M 521.4,120.4 v -1" stroke="#ff3d3d" stroke-width="2" opacity="1" stroke-dasharray="5, 5"/>
+    <path class="ribbon_path vertical-line" d="M 533.4,120.4 v -1" stroke="#ff3d3d" stroke-width="2" opacity="1" stroke-dasharray="5, 5"/>
+    <path class="ribbon_path connector" d="M 533.4,120.4 C 696.1,120.4 696.1,239.65 858.8,239.65" stroke="#ff3d3d" stroke-width="2" opacity="1" stroke-dasharray="5, 5"/>
+    <path class="ribbon_path vertical-line" d="M 858.8,239.65 v -1.1" stroke="#ff3d3d" stroke-width="2" opacity="1" stroke-dasharray="5, 5"/>
+    <path class="ribbon_path vertical-line" d="M 870.8,239.65 v -1.1" stroke="#ff3d3d" stroke-width="2" opacity="1" stroke-dasharray="5, 5"/>
+    <path class="ribbon_path connector" d="M 870.8,239.65 C 1045.55,239.65 1045.55,163.85 1220.3,163.85" stroke="#ff3d3d" stroke-width="2" opacity="1" stroke-dasharray="5, 5"/>
+    <path class="ribbon_path vertical-line" d="M 1220.3,163.85 v -1.3" stroke="#ff3d3d" stroke-width="2" opacity="1" stroke-dasharray="5, 5"/>
   </g>
 </svg>

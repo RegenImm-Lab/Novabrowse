@@ -5,7 +5,7 @@
 ## Table of Contents
 
 - [Core Capabilities](#core-capabilities)
-- [Output Preview](#output-preview)
+- [Results Table Overview](#results-table-overview)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
@@ -30,18 +30,18 @@
 - **Gene signal discovery** - Identify unannotated genes in genomic regions through distance-based High-scoring Segment Pair (HSP) clustering, revealing gene units missed by standard annotation pipelines
 - **Coverage visualization** - View alignment coverage as identity-color-coded bars positioned along query sequences, showing both extent and quality of matches
 
-## Output Preview
+## Results Table Overviewg
 
 <img src="images/table_layout.svg" alt="Novabrowse table layout legend">
-<img src="images/table_layout_test.svg" alt="Novabrowse table layout legend">
 
-> In this sample, four query genes are searched against three subject species. *Gene 1* and *Gene 4* each show a single best match in each subject species, representing straightforward one-to-one orthology. *Gene 2* shows red "**none**" where no match was found (**Subject Species 1** and **Subject Species 3**). *Gene 3* shows how multiple hits are displayed: for **Subject Species 1**, *Gene 3A* is the best match (likely ortholog), while *Gene 3B*, *Gene 3C*, and *Gene 9* appear as secondary matches (paralogs or distant homologs). The coverage bars reveal match extent and quality, *Gene 3A* covers ~65% of the query at high identity (mostly green bars), while *Gene 9* covers only ~38% (with low identity, orange and red coverage bars).
+> In this sample, four query genes are searched against three subject species. *Gene 1* and *Gene 4* each show a single best match in each subject species, representing straightforward one-to-one orthology. *Gene 2* shows red "**none**" where no match was found (**Subject Species 1** and **Subject Species 3**). *Gene 3* shows how multiple hits are displayed: for **Subject Species 1**, *Gene 3A* is the best match (likely ortholog), while *Gene 3B*, *Gene 3C*, and *Gene 9* appear as secondary matches (paralogs or distant homologs). The coverage bars reveal match extent and quality, *Gene 3A* covers ~65% of the query at high identity (mostly green bars), while *Gene 9* covers only ~38% (with low identity, orange and red coverage bars). **The ribbon plot** connects gene's chromosome position across species with colored ribbons, making syntenic relationships directly visible. Here, *Gene 1* is shown with a custom dashed red ribbon tracing its matches across all three species. *Gene 2* (green) only connects to **Subject Species 2**, since no match was found in the other two species. *Gene 4* (blue) shares synteny with *Gene 1* in **Subject Species 1** and **2**, where both genes sit close together on the same chromosome. However, in **Subject Species 3**, *Gene 1* and *Gene 4*, while remaining on the same chromosome, are positioned considerably farther apart, suggesting an expanded syntenic block
 
 - **Query Species column** (left) — lists the genes used as BLAST queries.
 - **Coverage column** — colored bars showing where HSPs align along the query sequence. Values are shown as percentages and absolute lengths (total aligned length / query transcript length). Bar colors indicate identity percentage per the color legend.
 - **Chrm column** — chromosome visualizations showing relative gene positions, with heights normalized across the table.
 - **Chrm # column** — chromosomal locations. Underscores denote different chromosome arms (e.g., 2_2, 3_1).
 - **Yellow highlighting** — genes within a user-selected coordinate range are marked with a yellow background. The corresponding region also appears in dark yellow on the chromosome visualization.
+- **Ribbon plot** — colored curved lines connecting genes across chromosome columns. Ribbon style (color, opacity, width, dashed/solid) is customizable.
 
 ## Prerequisites
 
