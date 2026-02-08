@@ -5,7 +5,7 @@
 ## Table of Contents
 
 - [Core Capabilities](#core-capabilities)
-- [Results Output Overview](#results-output-overview)
+- [Output Overview](#results-output-overview)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
