@@ -5,7 +5,7 @@
 ## Table of Contents
 
 - [Core Capabilities](#core-capabilities)
-- [Results Table Overview](#results-table-overview)
+- [Results Output Overview](#results-output-overview)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
@@ -30,7 +30,7 @@
 - **Gene signal discovery** - Identify unannotated genes in genomic regions through distance-based High-scoring Segment Pair (HSP) clustering, revealing gene units missed by standard annotation pipelines
 - **Coverage visualization** - View alignment coverage as identity-color-coded bars positioned along query sequences, showing both extent and quality of matches
 
-## Results Table Overviewg
+## Output Overview
 
 <img src="images/table_layout.svg" alt="Novabrowse table layout legend">
 
