@@ -818,6 +818,28 @@ In this example, the *S. cerevisiae* subject species has span set to `1 : 398510
 <blockquote style="margin-left: 40px;">In this example, <em>PWP2</em> shows <b>(1)</b> indicating a single transcript match (the arrow points to the expand transcripts button), while <em>TRAPPC10</em> is expanded showing <b>(3)</b> transcripts. The expanded view reveals individual isoforms (XM_069202936.1, XM_069202937.1, XM_069202939.1) with their coverage percentages and BLAST scores, allowing comparison of match quality across different transcript variants.</blockquote>
 <br>
 
+- **Coverage bar hover tooltip** — hovering over any colored segment in the coverage column displays a tooltip with detailed alignment statistics for that individual HSP (High-scoring Segment Pair).
+
+<img src="images/coverage.png" alt="Coverage tooltip showing position, identity, similarity, score and e-value for an individual HSP" style="margin-left: 40px;">
+
+<blockquote style="margin-left: 40px;">
+
+The tooltip displays:
+- **Position** — the start and end coordinates of the HSP on the query sequence, with the aligned length in parentheses (e.g., `370-501 (132)` means positions 370 to 501, spanning 132 bases). A negative length (e.g., `501-370 (-130)`) indicates a reverse complement alignment where the HSP matches the antisense strand of the query.
+- **Identity** — the number of exact nucleotide/amino acid matches out of the total aligned length, with the percentage (e.g., `14/44 (32%)`).
+- **Similarity** — the number of positive-scoring positions (exact matches + conservative substitutions) out of the total aligned length, with the percentage (e.g., `28/44 (64%)`). For nucleotide BLAST this typically equals identity; for protein BLAST it includes biochemically similar substitutions.
+- **Score** — the BLAST bit score for this HSP. Higher scores indicate stronger alignments.
+- **E-value** — the BLAST expect value, representing the number of alignments with this score expected by chance. Lower values (e.g., `6e-19`) indicate more statistically significant matches.
+
+**Reading the coverage bars:** each colored bar represents a single HSP positioned along the query sequence. Bar color reflects identity percentage: <span style="color: green;">**green**</span> for high identity (~100%), <span style="color: #cccc00;">**yellow**</span> for moderate (~75%), <span style="color: orange;">**orange**</span> for low (~50%), and <span style="color: red;">**red/pink**</span> for poor identity (~0%). The text overlay (e.g., `525/819 (64.1%)`) shows total unique coverage across all HSPs — overlapping regions are counted only once.
+
+**HSP layering:** when multiple HSPs overlap the same query region, Novabrowse renders wider (longer) HSPs behind shorter ones, so all segments remain visible and hoverable. In the image above, two red bars are visible because a shorter HSP falls within the range of a longer one and is layered on top.
+
+**Note:** a **1px white border** is added to the left and right edges of each bar, providing visual separation between adjacent or overlapping segments.
+
+</blockquote>
+<br>
+
 **Chromosome visualization interactions**
 
 - **Hover line indicator** — moving the mouse over a chromosome displays a white horizontal line that follows the cursor vertically, indicating the exact genomic position.
