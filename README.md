@@ -15,10 +15,10 @@
   - [General Features](#general-features)
   - [Pipeline Overview](#pipeline-overview)
   - [Parameters Reference](#parameters-reference)
-  - [Interactive Controls Reference](#interactive-controls-reference)
-    - [Chromosome Filter](#chromosome-filter)
-    - [Interactivity Features](#interactivity-features)
-    - [Ribbon Plot Features](#ribbon-plot-features)
+  - [UI Controls](#ui-controls)
+  - [Chromosome Filter](#chromosome-filter)
+  - [Interactivity Features](#interactivity-features)
+  - [Ribbon Plot Features](#ribbon-plot-features)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
 - [Citation](#citation)
@@ -691,7 +691,7 @@ When retrieving genes from NCBI, Novabrowse assigns display names using this fal
 3. First available synonym
 4. `"Uncharacterized"` if no identifiers available
 
-### Interactive Controls Reference
+### UI Controls
 
 The Novabrowse HTML output includes numerous interactive buttons organized into functional categories. Below is a complete reference for all available controls:
 
