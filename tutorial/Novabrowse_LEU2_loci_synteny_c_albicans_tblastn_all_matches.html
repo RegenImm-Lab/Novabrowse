@@ -12956,6 +12956,20 @@ function applyFilters() {
             } else {
                 shouldShowRow = isDetailedVisible && !hide2ndMatchActive;
             }
+            // Check if any visible species cell has actual content
+            if (shouldShowRow) {
+                const hasVisibleSpeciesContent = Array.from(row.cells).some(cell => {
+                    if (cell.classList.contains('chrm') || cell.classList.contains('chrm_faker')) {
+                        return false;
+                    }
+                    if (cell.classList.contains('hidden_species') || cell.classList.contains('none_cell')) {
+                        return false;
+                    }
+                    const text = cell.textContent.trim();
+                    return text !== '' && text !== 'none';
+                });
+                shouldShowRow = hasVisibleSpeciesContent;
+            }
         } else if (!isMainRow) {
             // For other detail rows, base visibility on detailed view setting
             shouldShowRow = shouldShowRow && isDetailedVisible;
@@ -13261,6 +13275,10 @@ function filterGenes() {
             }
         }
     }
+
+    // Re-calculate chromosome visibility
+    updateChromosomeVisibilityBasedOnVisibleGenes();
+    restoreFilteredChromosomeVisibility();
 
     // Ensure table structure is consistent
     normalizeTableCells();

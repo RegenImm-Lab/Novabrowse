@@ -809,8 +809,20 @@ In this example, the *S. cerevisiae* subject species has span set to `1 : 398510
 
 **Table interactions**
 
-- **Row hover highlighting** — hovering over any cell in a row highlights the entire gene's row group (including all rows spanned by that gene) and highlights the corresponding gene rectangle on the chromosome visualization.
-- **Cross-species hover highlighting** — hovering over a subject species cell highlights that match's adjacent data columns across the table, making it easy to see the full data for that ortholog.
+- **Row hover highlighting** — hovering over any cell in a query gene's row highlights the entire row group (the main row plus all secondary match rows spanned by that gene). On the chromosome visualizations, the query gene and all its matching subject genes are marked with blue triangle indicators pointing to their exact positions. When a query gene has multiple matches in the same subject species (paralogs/secondary hits), all of them are highlighted together.
+
+<img src="images/query_row_highlighting.png" alt="Query row hover highlighting showing blue triangles on all matching genes across species" style="margin-left: 40px;">
+
+<blockquote style="margin-left: 40px;">Here the cursor hovers over <em>Gene 1</em> in the Query Species column. The entire row group (including secondary matches <em>Gene 1A</em>, <em>Gene 1B</em>, <em>Gene 5</em> in <b>Subject Species 1</b> and <em>Gene 1A</em>, <em>Gene 1C</em> in <b>Subject Species 2</b>) is highlighted. Blue triangles appear on every chromosome where a match exists, making it easy to see where the gene maps across all species at once.</blockquote>
+<br>
+
+- **Cross-species hover highlighting** — hovering over a subject species cell highlights that match's adjacent data columns within the species. On the chromosome visualizations, the hovered gene is marked with a blue triangle, along with the original query gene and its matches in every other subject species. Other matches of the same query gene within the hovered species (e.g., paralogs on different chromosomes) are marked with gray triangles, distinguishing them from the actively hovered match.
+
+<img src="images/subject_row_highlighting.png" alt="Subject species hover highlighting showing blue triangle on hovered match and gray triangles on paralogs" style="margin-left: 40px;">
+
+<blockquote style="margin-left: 40px;">Here the cursor hovers over <em>Gene 1B</em> in <b>Subject Species 1</b>. The hovered match gets a blue triangle on chromosome III, while the other matches in the same species (<em>Gene 1A</em> on chromosome II, <em>Gene 5</em> on XIV) receive gray triangles, enabling easy differentiation between the inspected match and the other paralogs in that species. Meanwhile, the query gene (<b>Query Species</b>, <em>Gene 1</em>) and matches in <b>Subject Species 2</b> all get blue triangles.</blockquote>
+<br>
+
 - **Transcript expansion** — click the expand transcripts button next to a match to reveal individual transcript isoforms with their score, e-value, mRNA length, identity percentages, coverage visualization, and query length. Click again to collapse.
 
 <img src="images/transcripts_button.png" alt="Transcript expansion button showing individual isoforms with scores and coverage" style="margin-left: 40px;">
