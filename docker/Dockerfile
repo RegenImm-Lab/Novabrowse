@@ -20,14 +20,13 @@ FROM debian:stable-slim AS base
 
 # Build arguments: UID and GID should match the host user to avoid
 # permission issues.
-ARG UID
-ARG GID
+ARG UID=1000
+ARG GID=1000
 
 ENV HOME="/project"
 
-RUN groupadd --gid "$GID" novabrowse
-RUN useradd --create-home --home-dir "$HOME" \
-	--uid "$UID" --gid "$GID" novabrowse
+# The project directory will be writable by all.
+RUN install -d -o "$UID" -g "$GID" -m 777 "$HOME"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -37,10 +36,13 @@ RUN --mount=type=cache,target=/var/cache/apt,id=apt-cache \
 	apt-get update && \
 	apt-get install -y --no-install-recommends \
 		curl \
+		dos2unix \
+		gosu \
 		python3-biopython \
 		python3-diskcache \
 		python3-libsass \
-		python3-venv
+		python3-venv \
+		python3-yaml
 
 # Drop root privileges.
 USER "$UID:$GID"
@@ -86,10 +88,12 @@ RUN --mount=type=cache,id=pixi-cache,uid="$UID",gid="$GID",target="$HOME/.cache/
 	pixi config set default-channels '["conda-forge", "bioconda"]' && \
 	pixi global install blast
 
-# Copy entrypoint script from the host, and the converted notebook
-# script from the "convert" stage.
 COPY --chown="$UID:$GID" docker/docker-entrypoint.sh docker-entrypoint.sh
+RUN dos2unix docker-entrypoint.sh
+
+# Copy the converted notebook script from the "convert" stage.
 COPY --chown="$UID:$GID" docker/ncbi_cache.py ncbi_cache.py
 COPY --chown="$UID:$GID" --from=convert "$HOME/notebook.py" notebook.py
 
+USER root
 CMD ["./docker-entrypoint.sh"]
