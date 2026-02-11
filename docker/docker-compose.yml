@@ -2,30 +2,31 @@ name: novabrowse
 
 services:
 
-  app:
-    cap_drop:
-      - ALL
-
+  novabrowse:
+    tty: true
     build:
       context: ..
       dockerfile: docker/Dockerfile
       args:
-        UID: "${UID:-1000}"
-        GID: "${GID:-1000}"
+        NOTEBOOK: novabrowse_1.0.ipynb
 
     volumes:
+      - ncbi_cache:/project/ncbi_cache
+
       - ../1_subject_sequences:/project/1_subject_sequences
       - ../2_subject_blastdb:/project/2_subject_blastdb
       - ../3_query_sequences:/project/3_query_sequences
       - ../4_blast_results:/project/4_blast_results
 
       - ../chromosome_data.json:/project/chromosome_data.json:ro
+      - ../novabrowse_config.yaml:/project/novabrowse_config.yaml:ro
 
       - ./novabrowse_output:/project/novabrowse_output
-      - ncbi_cache:/project/ncbi_cache
 
-    env_file:
-      - novabrowse.env
+    environment:
+      ENTREZ_USE_CACHE: true
+      ENTREZ_CACHE_SIZE_MB: 500
+      ENTREZ_EMAIL_ENV: ""
 
 volumes:
   ncbi_cache:
