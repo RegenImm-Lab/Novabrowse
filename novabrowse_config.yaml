@@ -1,0 +1,149 @@
+---
+
+# Used as HTML page title, output filename, and header in the generated
+# results table.
+title: "ACT1_orthology"
+
+# Configuration settings for query species and BLAST parameters
+query_sequences_list:
+    # Species name (must match ASSEMBLY_MAPPING key).
+  - query_species: "s_cerevisiae"
+
+    # Check 'Source Legend' at the end of the cell or at the NCBI
+    # website.
+    protein_sources: ["NP_", "XP_"]
+
+    # Hide 2nd match genes to increase html rendering speed. Three
+    # options: 'False', 'True', 'Both' (NB! If using the 'Both' option,
+    # two files will be generated).
+    show_only_best_matches: "True"
+
+    retrieved_sequences:
+      # Set to false if you only use custom_sequences option (NB! You
+      # can use both at the same time as well).
+      download_from_NCBI: true
+
+      # Chromosome name (supported are various versions e.g. '2', '2p',
+      # 'II' and also accession identifiers e.g. 'NC_032095.1').
+      chromosome: "VI"
+
+      # NB: NCBI API might reject very large queries, e.g. larger than
+      # 8-10 MB, so if downstream you get "HTTP Error 400" from NCBI,
+      # try reducing the area covered amount here.
+      # NOTE2: Must be bigger than start_position.
+      start_position: 53260
+      end_position: 54696
+
+      # NB: NCBI API might reject very large queries, e.g. larger than
+      # 8-10 MB, so if downstream you get "HTTP Error 400" from NCBI,
+      # try reducing the gene amount here.
+      genes_upstream: 5
+
+      # NB: NCBI API might reject very large queries, e.g. larger than
+      # 8-10 MB, so if downstream you get "HTTP Error 400" from NCBI,
+      # try reducing the gene amount here.
+      genes_downstream: 5
+
+    # Optional: Add custom sequences to include in analysis alongside
+    # NCBI-retrieved sequences
+    custom_sequences: []
+
+    example_custom_sequences: # unused, for example only
+        # Unique name for this sequence - appears in FASTA headers and
+        # HTML output.
+      - name: "NAME_placeholder"
+
+        # NB: Will be used in the link generation e.g
+        # https://www.ncbi.nlm.nih.gov/gene/[id]
+        id: "1"
+
+        # FASTA header - appears in BLAST output but does not affect
+        # final HTML results.
+        description: ">Description placeholder"
+
+        # Has to be on single line (no line breaks).
+        nucleotide_sequence: "AGTTTCCCACAAGC"
+
+        # Has to be on single line (no line breaks).
+        protein_sequence: "MPNPRPGKPSAPSLA"
+
+        chromosome: "1"
+        strand: "1"
+        start_position: "100000"
+        end_position: "200000"
+
+      - name: "Next sequence's name" # etc.
+
+# This variable defines the maximum distance (in base pairs) between
+# BLAST matches in genomic searches to be considered as a single gene
+# match.  If two or more matches are within this distance, they will be
+# merged into one entry with a combined coverage, using the earliest
+# start and latest end positions.  For example, if set to 1000000,
+# matches within 1Mb of each other will be treated as one gene.  A
+# good practice here is to use largest annotated intron length of the
+# species.
+consider_one_gene: 1050
+
+blast_settings:
+  # Pick one: tblastn (protein based), blastn (transcript based),
+  # tblastx (transcript based) or multiple (multiple result files will
+  # be generated).
+  blast_type: ["tblastn", "blastn"]
+
+  # Base BLAST command-line options. '-outfmt 0' is required for HTML
+  # parsing. '-num_threads' sets CPU cores (automatically reduced if
+  # fewer available).
+  blast_options: "-outfmt 0 -num_threads 48"
+
+subject_species:
+  s_cerevisiae:
+    # Set to False to skip this species in analysis.
+    enabled: false
+
+    # BLAST parameter - filter out matches with E-value higher than this
+    # threshold.
+    maximum_evalue: 1e-10
+
+    # BLAST parameter - filter out matches with score lower than this
+    # threshold.
+    minimum_score: 0
+
+    # Extra BLAST parameters for this species
+    # (e.g., '-word_size 3 -gapopen 11').
+    additional_blast_parameters: ""
+
+    # Database type(s) to search - can use one or both: ['genome'],
+    # ['transcriptome'], or ['genome', 'transcriptome'].
+    type: ["transcriptome"]
+
+  s_pombe:
+    enabled: true
+    maximum_evalue: 1e-10
+    minimum_score: 0
+    additional_blast_parameters: ""
+    type: ["transcriptome"]
+
+  c_albicans:
+    enabled: true
+    maximum_evalue: 1e-10
+    minimum_score: 0
+    additional_blast_parameters: ""
+    type: ["transcriptome"]
+
+# Map species names to NCBI organism names for Entrez queries.
+species_to_orgn:
+  s_cerevisiae: "Saccharomyces cerevisiae[ORGN]"
+  s_pombe: "Schizosaccharomyces pombe[ORGN]"
+  c_albicans: "Candida albicans[ORGN]"
+
+# NCBI Protein Source Legend:
+# NP_ : RefSeq (curated) proteins.
+# XP_ : Predicted model proteins.
+# XM_ : denotes predicted mRNA sequences (computational models,
+#       typically derived from genomic DNA and not experimentally
+#       validated).
+# XR_ : RefSeq (Reference Sequence) for non-coding RNA.
+# YP_ : RefSeq (provisional) proteins.
+# WP_ : Non-redundant RefSeq proteins.
+# CAA_: EMBL (European Molecular Biology Laboratory) entries.
+# BAD_: DDBJ (DNA Data Bank of Japan) entries.
