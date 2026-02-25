@@ -363,7 +363,7 @@ species_to_orgn = {
 
 ### 5. Run all notebook cells sequentially
 
-### 6. Find results in the project root folder as HTML files
+### 6. Find results in the `output/` folder as HTML files
 
 > **Tip:** You can compare your results with the reference files in the `tutorial/` folder to see the expected output:
 > - `Novabrowse_ACT1_orthology_s_cerevisiae_tblastn_best_matches.html`
@@ -529,7 +529,7 @@ blast_settings = {
 ```
 
 ### 5. Run all notebook cells sequentially
-### 6. Find results in the project root folder as HTML files
+### 6. Find results in the `output/` folder as HTML files
 
 > **Tip:** Compare your results with the reference files in the `tutorial/` folder:
 > - `Novabrowse_LEU2_loci_synteny_c_albicans_tblastn_best_matches.html`

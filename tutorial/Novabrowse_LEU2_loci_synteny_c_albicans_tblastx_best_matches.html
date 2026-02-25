@@ -24918,15 +24918,12 @@ function addCellContent(cellGroup, cell, x, y, width, height, contentGroup = nul
             }
 
             // Handle text for other input types
-            if (inputType === "text" || inputType === "password" || inputType === "email" ||
+            if (inputType === "text" || inputType === "email" ||
                 inputType === "number" || inputType === "search" || inputType === "tel" ||
                 inputType === "url" || inputType === "button" || inputType === "submit" || 
                 inputType === "reset") {
 
                 let displayValue = element.value || element.textContent || inputType;
-                if (inputType === "password") {
-                    displayValue = "ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢".repeat(displayValue.length);
-                }
 
                 if (displayValue) {
                     // Apply text alignment from parent styles
