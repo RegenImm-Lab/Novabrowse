@@ -177,7 +177,7 @@
     <text transform="translate(331 359.1)" fill="#003942" font-family="Arial-BoldMT, Arial" font-size="20" font-weight="700"><tspan x="0" y="0">Match thresholds</tspan></text>
     <rect x="457.6" y="369" width="37.5" height="19.7" fill="#fff" stroke="#003942" stroke-linejoin="round" stroke-width="1.5"/>
     <text transform="translate(462.9 384.4)" fill="#003942" font-family="Arial-BoldMT, Arial" font-size="16" font-weight="700"><tspan x="0" y="0">100</tspan></text>
-    <text transform="translate(335.1 384.4)" fill="#003942" font-family="Arial-BoldMT, Arial" font-size="16" font-weight="700"><tspan x="0" y="0">min BITSCORE</tspan></text>
+    <text transform="translate(330.6 384.4)" fill="#003942" font-family="Arial-BoldMT, Arial" font-size="16" font-weight="700"><tspan x="0" y="0">min BIT SCORE</tspan></text>
     <rect x="457.6" y="395.4" width="37.5" height="19.7" fill="#fff" stroke="#003942" stroke-linejoin="round" stroke-width="1.5"/>
     <text transform="translate(461.2 410.9)" fill="#003942" font-family="Arial-BoldMT, Arial" font-size="16" font-weight="700"><tspan x="0" y="0">0.01</tspan></text>
     <text transform="translate(345.1 410.9)" fill="#003942" font-family="Arial-BoldMT, Arial" font-size="16" font-weight="700"><tspan x="0" y="0">max E-</tspan><tspan x="52.5" y="0" letter-spacing="0em">V</tspan><tspan x="62" y="0">ALUE</tspan></text>

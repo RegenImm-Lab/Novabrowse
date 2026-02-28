@@ -576,7 +576,7 @@ blast_settings = {
 ## Pipeline Overview
 <img src="images/pipeline.svg" alt="Novabrowse pipeline overview schematic">
 
-1. **Query and subject species selection** — The user selects a genomic region of interest in the **query species** by specifying chromosome coordinates and optional flanking genes. Query sequences can come from NCBI, be provided manually as custom sequences, or both. For each **subject species**, the user chooses the database type (transcriptome and/or genome), BLAST algorithm (BLASTn, tBLASTn, and/or tBLASTx), and filtering thresholds (minimum bitscore and maximum E-value).
+1. **Query and subject species selection** — The user selects a genomic region of interest in the **query species** by specifying chromosome coordinates and optional flanking genes. Query sequences can come from NCBI, be provided manually as custom sequences, or both. For each **subject species**, the user chooses the database type (transcriptome and/or genome), BLAST algorithm (BLASTn, tBLASTn, and/or tBLASTx), and filtering thresholds (minimum bit score and maximum E-value).
 
 2. **Automated query sequence retrieval** — The pipeline retrieves transcript and peptide sequences from NCBI for all **query species** genes in the target region, including upstream and downstream flanking genes. Any custom sequences are also incorporated at this stage. The results are saved as FASTA files (`transcripts.fasta` and `proteins.fasta`).
 
