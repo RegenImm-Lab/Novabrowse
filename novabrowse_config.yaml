@@ -97,7 +97,7 @@ blast_settings:
 
 subject_species:
   s_cerevisiae:
-    # Set to False to skip this species in analysis.
+    # Set to false to skip this species in analysis.
     enabled: false
 
     # BLAST parameter - filter out matches with E-value higher than this
