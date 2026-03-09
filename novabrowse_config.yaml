@@ -136,6 +136,22 @@ species_to_orgn:
   s_pombe: "Schizosaccharomyces pombe[ORGN]"
   c_albicans: "Candida albicans[ORGN]"
 
+# Maps species names to assembly accessions and FASTA file information
+# for local BLAST databases.
+ASSEMBLY_MAPPING:
+  s_cerevisiae:
+    assembly_acc: "GCF_000146045.2"
+    fasta_file: "rna.fna"
+    fasta_file_type: "nucl"
+  s_pombe:
+    assembly_acc: "GCF_000002945.2"
+    fasta_file: "rna.fna"
+    fasta_file_type: "nucl"
+  c_albicans:
+    assembly_acc: "GCF_000182965.3"
+    fasta_file: "rna.fna"
+    fasta_file_type: "nucl"
+
 # NCBI Protein Source Legend:
 # NP_ : RefSeq (curated) proteins.
 # XP_ : Predicted model proteins.
