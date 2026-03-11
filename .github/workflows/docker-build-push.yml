@@ -4,13 +4,15 @@ on:
   push:
     paths:
       # Activates when changes are made to any files in the "docker"
-      # directory.
+      # or ".github/workflows" directory.
       - 'docker/**'
+      - '.github/workflows/**'
     branches: [ main, apptainerify ]
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build-and-push:
