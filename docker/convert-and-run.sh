@@ -23,11 +23,12 @@ then
 	exit 1
 fi
 
-tmpfile=$(mktemp)
-if [ -f docker/ncbi_cache.py ]; then
-	monkey_patch=docker/ncbi_cache.py
+monkey_patch=docker/ncbi_cache.py
+if [ -f "$monkey_patch" ]; then
+	tmpfile=$(mktemp)
+
+	cat "$monkey_patch" "$TMPDIR/$scriptname" >"$tmpfile" &&
+	mv -f "$tmpfile" "$TMPDIR/$scriptname"
 fi
-cat "${monkey_patch-/dev/null}" "$TMPDIR/$scriptname" >"$tmpfile" &&
-mv -f "$tmpfile" "$TMPDIR/$scriptname"
 
 exec python3 "$TMPDIR/$scriptname"
