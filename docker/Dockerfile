@@ -7,46 +7,37 @@ FROM debian:stable-slim
 ARG UID=1000
 ARG GID=1000
 
-ENV HOME="/app"
-
-RUN groupadd -g "$GID" novabrowse
-RUN useradd -m -u "$UID" -g "$GID" -d "$HOME" novabrowse
-RUN chmod a+rx "$HOME"
-
-ARG DEBIAN_FRONTEND=noninteractive
-
 # Install required system packages.
 RUN --mount=type=cache,target=/var/cache/apt,id=apt-cache \
     --mount=type=cache,target=/var/lib/apt/lists,id=apt-lists-cache \
 	apt-get update && \
-	apt-get install -y --no-install-recommends \
+	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 		curl \
 		doas \
 		dos2unix \
 		python3-biopython \
 		python3-diskcache \
 		python3-ipython \
+		python3-jupyterlab-pygments \
 		python3-libsass \
-		python3-venv \
+		python3-nbconvert \
 		python3-yaml
+
+# Set up our non-root user.
+ENV HOME="/app"
+
+RUN groupadd -g "$GID" novabrowse && \
+    useradd -m -u "$UID" -g "$GID" -d "$HOME" novabrowse && \
+    chmod a+rx "$HOME"
 
 # Allow the user "novabrowse" to use "doas" without a password, which is
 # necessary for some operations in the entrypoint script.
-RUN echo 'permit nopass novabrowse' >/etc/doas.conf
-RUN chmod 440 /etc/doas.conf
+RUN echo 'permit nopass novabrowse' >/etc/doas.conf && chmod 440 /etc/doas.conf
 
 # Drop root privileges.
 USER "$UID:$GID"
 
 WORKDIR "$HOME"
-
-RUN python3 -m venv --system-site-packages .venv
-ENV PATH="$HOME/.venv/bin:$PATH"
-
-RUN --mount=type=cache,id=pip-cache,uid="$UID",gid="$GID",target="$HOME/.cache/pip" \
-	pip install \
-		jupyterlab_pygments \
-		nbconvert
 
 # Pixi isn't available via system packages, so install it manually.
 RUN curl -fsSL https://pixi.sh/install.sh | sh -s

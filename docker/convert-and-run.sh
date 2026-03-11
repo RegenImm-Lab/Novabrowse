@@ -17,7 +17,7 @@ if ! mkdir -p "$TMPDIR/ncbi_cache"; then
 	exit 1
 fi
 
-if ! jupyter-nbconvert --to script "$notebook" --output-dir="$TMPDIR"
+if ! python3 -m nbconvert --to script "$notebook" --output-dir="$TMPDIR"
 then
 	printf 'Error: could not convert notebook "%s" to Python script.\n' "$notebook" >&2
 	exit 1
