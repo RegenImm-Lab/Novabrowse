@@ -1,5 +1,8 @@
 ---
 
+# Entrez email is required by NCBI to identify the user making requests.
+entrez_email: ""
+
 # Used as HTML page title, output filename, and header in the generated
 # results table.
 title: "ACT1_orthology"
