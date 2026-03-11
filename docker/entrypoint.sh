@@ -2,15 +2,25 @@
 
 cd /data || exit
 
-# Pick up the UID and GID of the host user from the current directory
-# (/data) and create a user with the same UID and GID inside the
-# container. This allows the container to read and write files in the
-# mounted volume without permission issues.
-HOST_UID=$(stat -c '%u' .)
-HOST_GID=$(stat -c '%g' .)
+# With Docker, we need to set up a separate application user ("appuser")
+# with the same UID and GID as the host user.  We don't need to do this
+# with Apptainer, because it will automatically map the host user to the
+# same UID and GID inside the container.
+host_uid=$(stat -c '%u' .)
+host_gid=$(stat -c '%g' .)
 
-doas groupadd -o -g "$HOST_GID" appuser
-doas useradd -o -u "$HOST_UID" -g "$HOST_GID" appuser
+if [ "$host_uid" != "$(id -u)" ] || [ "$host_gid" != "$(id -g)" ]
+then
+        # If the host UID or GID are different from the current user,
+        # we need to create a new user with the same UID and GID as the
+        # host user.
+
+	doas groupadd -o -g "$host_gid" appuser
+	doas useradd -o -u "$host_uid" -g "$host_gid" appuser
+
+	switch_users=true
+
+fi
 
 case $1 in
 	*.ipynb)
@@ -18,11 +28,15 @@ case $1 in
                 # convert-and-run script as the appuser. This script
                 # will convert the notebook to a Python script and then
                 # execute it.
-		doas -u appuser "$HOME/convert-and-run.sh" "$@"
+		if "${switch_users-false}"; then
+			doas -u appuser /app/convert-and-run.sh "$@"
+		else
+			/app/convert-and-run.sh "$@"
+		fi
 		;;
 	*)
                 # If the first argument is not a Jupyter notebook, just
-                # execute it as the appuser. This allows the container
-                # to run any command, not just Jupyter notebooks.
+                # execute it. This allows the container to run any
+                # command, not just Jupyter notebooks.
 		exec "$@"
 esac
