@@ -54,4 +54,4 @@ COPY --chown="$UID:$GID" --chmod=755 entrypoint.sh entrypoint.sh
 COPY --chown="$UID:$GID" --chmod=755 convert-and-run.sh convert-and-run.sh
 RUN dos2unix entrypoint.sh convert-and-run.sh
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
