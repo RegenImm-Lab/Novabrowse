@@ -17,16 +17,17 @@ if ! mkdir -p "$TMPDIR/ncbi_cache"; then
 	exit 1
 fi
 
-if !  jupyter-nbconvert --to script "$notebook" --output-dir="$TMPDIR"
+if ! jupyter-nbconvert --to script "$notebook" --output-dir="$TMPDIR"
 then
 	printf 'Error: could not convert notebook "%s" to Python script.\n' "$notebook" >&2
 	exit 1
 fi
 
+tmpfile=$(mktemp)
 if [ -f docker/ncbi_cache.py ]; then
 	monkey_patch=docker/ncbi_cache.py
 fi
-cat "${monkey_patch-/dev/null}" "$TMPDIR/$scriptname" >"$TMPDIR/notebook.py" &&
-mv -f "$TMPDIR/notebook.py" "$TMPDIR/$scriptname"
+cat "${monkey_patch-/dev/null}" "$TMPDIR/$scriptname" >"$tmpfile" &&
+mv -f "$tmpfile" "$TMPDIR/$scriptname"
 
 exec python3 "$TMPDIR/$scriptname"

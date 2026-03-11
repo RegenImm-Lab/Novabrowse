@@ -2,10 +2,12 @@
 
 cd /data || exit
 
-# With Docker, we need to set up a separate application user ("appuser")
-# with the same UID and GID as the host user.  We don't need to do this
-# with Apptainer, because it will automatically map the host user to the
-# same UID and GID inside the container.
+# With Docker, we may need to set up a separate application user
+# ("appuser") with the same UID and GID as the host user.  We don't need
+# to do this with Apptainer, because it will automatically map the host
+# user to the same UID and GID inside the container.  We use the UID and
+# GID of the current directory (which is bind-mounted from the host) to
+# determine the host UID and GID.
 host_uid=$(stat -c '%u' .)
 host_gid=$(stat -c '%g' .)
 
@@ -38,5 +40,9 @@ case $1 in
                 # If the first argument is not a Jupyter notebook, just
                 # execute it. This allows the container to run any
                 # command, not just Jupyter notebooks.
-		exec "$@"
+		if "${switch_users-false}"; then
+			exec doas -u appuser "$@"
+		else
+			exec "$@"
+		fi
 esac
