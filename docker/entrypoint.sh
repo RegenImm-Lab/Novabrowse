@@ -11,11 +11,10 @@ cd /data || exit
 host_uid=$(stat -c '%u' .)
 host_gid=$(stat -c '%g' .)
 
-if [ "$host_uid" != "$(id -u)" ] || [ "$host_gid" != "$(id -g)" ]
-then
-        # If the host UID or GID are different from the current user,
-        # we need to create a new user with the same UID and GID as the
-        # host user.
+if [ "$host_uid" != "$(id -u)" ]; then
+	# If the host UID is different from the current user, we need to
+	# create a new user with the same UID and GID as the host user.
+	# Note: A difference in only GID is considered acceptable.
 
 	doas groupadd -o -g "$host_gid" appuser
 	doas useradd -o -u "$host_uid" -g "$host_gid" appuser
@@ -26,10 +25,10 @@ fi
 
 case $1 in
 	*.ipynb)
-                # If the first argument is a Jupyter notebook, run the
-                # convert-and-run script as the appuser. This script
-                # will convert the notebook to a Python script and then
-                # execute it.
+		# If the first argument is a Jupyter notebook, run the
+		# convert-and-run script as the appuser. This script
+		# will convert the notebook to a Python script and then
+		# execute it.
 		if "${switch_users-false}"; then
 			doas -u appuser /app/convert-and-run.sh "$@"
 		else
@@ -37,9 +36,9 @@ case $1 in
 		fi
 		;;
 	*)
-                # If the first argument is not a Jupyter notebook, just
-                # execute it. This allows the container to run any
-                # command, not just Jupyter notebooks.
+		# If the first argument is not a Jupyter notebook, just
+		# execute it. This allows the container to run any
+		# command, not just Jupyter notebooks.
 		if "${switch_users-false}"; then
 			exec doas -u appuser "$@"
 		else
