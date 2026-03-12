@@ -4,10 +4,9 @@ on:
   push:
     paths:
       # Activates when changes are made to any files in the "docker"
-      # or ".github/workflows" directory.
+      # directory, on the "main" branch.
       - 'docker/**'
-      - '.github/workflows/**'
-    branches: [ main, apptainerify ]
+    branches: [ main ]
 
 env:
   REGISTRY: ghcr.io

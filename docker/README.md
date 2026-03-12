@@ -64,7 +64,7 @@ To run the Docker container, you would use the following command from
 the Git repository's top-level directory:
 
 ``` shell
-docker run -t -v "$PWD:/data" novabrowse:latest {notebook_filename}
+docker run -t -v "$PWD:/data" novabrowse {notebook_filename}
 ```
 
 ... where `{notebook_filename}` is the name of the notebook you want to
@@ -85,7 +85,7 @@ apptainer pull novabrowse.sif ghcr.io/regenimm-lab/novabrowse:latest
 Then, run the Apptainer container:
 
 ``` shell
-apptainer run --bind "$PWD:/data" novabrowse.sif {notebook_filename}
+apptainer run -e --bind "$PWD:/data" novabrowse.sif {notebook_filename}
 ```
 
 ## A note about caching
