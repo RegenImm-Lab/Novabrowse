@@ -79,7 +79,7 @@ it.
 First, convert the Docker image to an SIF file:
 
 ``` shell
-apptainer pull novabrowse.sif ghcr.io/regenimm-lab/novabrowse:latest
+apptainer pull novabrowse.sif docker://ghcr.io/regenimm-lab/novabrowse:latest
 ```
 
 Then, run the Apptainer container:
