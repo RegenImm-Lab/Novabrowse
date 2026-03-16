@@ -1,5 +1,8 @@
 ---
 
+# Entrez email is required by NCBI to identify the user making requests.
+entrez_email: ""
+
 # Used as HTML page title, output filename, and header in the generated
 # results table.
 title: "ACT1_orthology"
@@ -97,7 +100,7 @@ blast_settings:
 
 subject_species:
   s_cerevisiae:
-    # Set to False to skip this species in analysis.
+    # Set to false to skip this species in analysis.
     enabled: false
 
     # BLAST parameter - filter out matches with E-value higher than this
@@ -135,6 +138,22 @@ species_to_orgn:
   s_cerevisiae: "Saccharomyces cerevisiae[ORGN]"
   s_pombe: "Schizosaccharomyces pombe[ORGN]"
   c_albicans: "Candida albicans[ORGN]"
+
+# Maps species names to assembly accessions and FASTA file information
+# for local BLAST databases.
+ASSEMBLY_MAPPING:
+  s_cerevisiae:
+    assembly_acc: "GCF_000146045.2"
+    fasta_file: "rna.fna"
+    fasta_file_type: "nucl"
+  s_pombe:
+    assembly_acc: "GCF_000002945.2"
+    fasta_file: "rna.fna"
+    fasta_file_type: "nucl"
+  c_albicans:
+    assembly_acc: "GCF_000182965.3"
+    fasta_file: "rna.fna"
+    fasta_file_type: "nucl"
 
 # NCBI Protein Source Legend:
 # NP_ : RefSeq (curated) proteins.
