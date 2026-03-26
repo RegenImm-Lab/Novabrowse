@@ -23,6 +23,8 @@ if [ "$host_uid" != "$(id -u)" ]; then
 
 fi
 
+export NOVABROWSE_CONFIG="${NOVABROWSE_CONFIG:-./novabrowse_config.yaml}"
+
 case $1 in
 	*.ipynb)
 		# If the first argument is a Jupyter notebook, run the
@@ -30,7 +32,9 @@ case $1 in
 		# will convert the notebook to a Python script and then
 		# execute it.
 		if "${switch_users-false}"; then
-			doas -u appuser /app/convert-and-run.sh "$@"
+			doas -u appuser \
+				env NOVABROWSE_CONFIG="$NOVABROWSE_CONFIG" \
+				/app/convert-and-run.sh "$@"
 		else
 			/app/convert-and-run.sh "$@"
 		fi
