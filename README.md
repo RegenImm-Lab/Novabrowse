@@ -6,9 +6,10 @@
 
 - [Core Capabilities](#core-capabilities)
 - [Basic Output Overview](#basic-output-overview)
-- [Installation Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
+- [Getting Started](#getting-started)
+- [Installation Prerequisites (Jupyter Notebook)](#installation-prerequisites-jupyter-notebook)
+- [Installation (Jupyter Notebook)](#installation-jupyter-notebook)
+- [Quick Start (Jupyter Notebook, Docker, Apptainer)](#quick-start-jupyter-notebook-docker-apptainer)
 - [Tutorial 1: Detecting Orthologs Across Species](#tutorial-1-detecting-orthologs-across-species)
 - [Tutorial 2: Using Custom Sequences and Gene Signal Discovery](#tutorial-2-using-custom-sequences-and-gene-signal-discovery)
 - [Documentation](#documentation)
@@ -43,7 +44,21 @@
 - **Yellow highlighting** — genes within a user-selected coordinate range are marked with a yellow background. The corresponding region also appears in dark yellow on the chromosome visualization.
 - **Ribbon plot** — colored curved lines connecting genes across chromosome columns. Ribbon style (color, opacity, width, dashed/solid) is customizable.
 
-## Installation Prerequisites
+## Getting Started
+
+Novabrowse can be run in three ways: using a Jupyter Notebook or from the command line using Docker or Apptainer containers. The containerized methods include all dependencies and support running on HPC (High-Performance Computing) clusters.
+
+| Method | Setup guide |
+|--------|-------------|
+| **Jupyter Notebook** | [Installation Prerequisites](#installation-prerequisites) (below) |
+| **Docker** | [Docker Setup](docker/README.md) (in `docker/` folder) |
+| **Apptainer** | [Apptainer Setup](docker/README.md#running-the-docker-container-with-apptainer) (in `docker/` folder) |
+
+
+
+
+
+## Installation Prerequisites (Jupyter Notebook)
 
 ### 1. Python 3.8+
 
@@ -75,7 +90,7 @@ Novabrowse uses the [NCBI Entrez API](https://www.ncbi.nlm.nih.gov/books/NBK2550
 - The email associated with your NCBI account will also be used to identify your Entrez API requests
 
 
-## Installation
+## Installation (Jupyter Notebook)
 
 1. **Download the repository**
 
@@ -97,7 +112,7 @@ Novabrowse uses the [NCBI Entrez API](https://www.ncbi.nlm.nih.gov/books/NBK2550
 
    > **Windows note:** If `pip` doesn't work, try `py -m pip install -r requirements.txt` instead.
 
-## Quick Start
+## Quick Start (Jupyter Notebook, Docker, Apptainer)
 
 In Novabrowse:
 - **Query species** - the species whose genes you want to search for (your genes of interest)
@@ -187,6 +202,8 @@ This file is used for mapping genes onto chromosomes.
 **Important:** Both query and subject species must be included. If NCBI doesn't have chromosome information for a species, you'll need to add it manually to `chromosome_data.json`.
 
 ### 4. Configure Novabrowse
+
+> **Using Docker or Apptainer?** The steps below show configuration by editing notebook cells directly. If you're using Docker or Apptainer, set the same parameters in `novabrowse_config.yaml` instead — see [Docker Setup](docker/README.md#setup). The tutorials still apply for understanding what each parameter does.
 
 #### Open the main notebook
 

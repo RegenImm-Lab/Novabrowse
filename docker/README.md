@@ -16,7 +16,12 @@ different environments.
   running), if you want to build and/or run the container locally.
 - Apptainer installed on your machine, if you want to run the pre-built
   Docker image using Apptainer instead of Docker.
-- This repository cloned from GitHub.
+- This repository cloned from GitHub:
+  - **Option A: Clone with Git**
+    ```bash
+    git clone https://github.com/RegenImm-Lab/Novabrowse.git
+    ```
+  - **Option B: [Download ZIP](https://github.com/RegenImm-Lab/Novabrowse/archive/refs/heads/main.zip)** and extract it
 
 ## Setup
 
@@ -64,7 +69,7 @@ To run the Docker container, you would use the following command from
 the Git repository's top-level directory:
 
 ``` shell
-docker run -t -v "$PWD:/data" novabrowse {notebook_filename}
+docker run -t -v "$(pwd):/data" novabrowse {notebook_filename}
 ```
 
 ... where `{notebook_filename}` is the name of the notebook you want to
@@ -85,7 +90,7 @@ apptainer pull novabrowse.sif docker://ghcr.io/regenimm-lab/novabrowse:latest
 Then, run the Apptainer container:
 
 ``` shell
-apptainer run -e --bind "$PWD:/data" novabrowse.sif {notebook_filename}
+apptainer run -e --bind "$(pwd):/data" novabrowse.sif {notebook_filename}
 ```
 
 ## A note about caching
