@@ -31,4 +31,9 @@ if [ -f "$monkey_patch" ]; then
 	mv -f "$tmpfile" "$TMPDIR/$scriptname"
 fi
 
+# If ENTREZ_EMAIL_ENV is _empty_, unset it.
+if [ -z "${ENTREZ_EMAIL_ENV-}" ]; then
+	unset -v ENTREZ_EMAIL_ENV
+fi
+
 exec python3 "$TMPDIR/$scriptname"
