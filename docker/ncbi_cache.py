@@ -1,251 +1,332 @@
-#!/usr/bin/env python
-# coding: utf-8
-"""
-NCBI Cache Module using diskcache
-Provides transparent caching for NCBI Entrez requests
-"""
-
-import hashlib
-from io import StringIO, BytesIO
-from functools import wraps
-from typing import Callable, Optional
 import diskcache
+import io
+import json
+import logging
+from functools import wraps
+from Bio import Entrez
+import os
+from xml.etree import ElementTree as ET
 
-# Global cache instance
-_cache: Optional[diskcache.Cache] = None
+# Configure logging with more detail
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
 
+# Cache setup
+CACHE_DIR = "tmp/ncbi_cache"
+CACHE_SIZE_MB = int(os.getenv("ENTREZ_CACHE_SIZE_MB", "500"))
+USE_CACHE = os.getenv("ENTREZ_USE_CACHE", "1").lower() in ("1", "true", "yes")
 
-def init_cache(
-    cache_dir: str = "ncbi_cache", size_limit_mb: int = 500, enabled: bool = True
-) -> diskcache.Cache:
-    """
-    Initialize the global cache instance.
-
-    Args:
-        cache_dir: Directory to store cache files
-        size_limit_mb: Maximum size of the cache in megabytes
-        enabled: Whether caching is enabled
-    """
-    global _cache
-    if enabled:
-        _cache = diskcache.Cache(
-            cache_dir,
-            size_limit=size_limit_mb * 1024 * 1024,
-            eviction_policy="least-recently-used",
-        )
-    else:
-        _cache = None
-    return _cache
+cache = diskcache.Cache(CACHE_DIR, size_limit=CACHE_SIZE_MB * 1024 * 1024)
 
 
-def get_cache() -> Optional[diskcache.Cache]:
-    """Get the global cache instance, creating it if necessary."""
-    global _cache
-    if _cache is None:
-        init_cache()
-    return _cache
+def generate_cache_key(func_name, args, kwargs):
+    """Generate a unique cache key from function name and arguments."""
+    key_parts = [func_name]
+    key_parts.extend(str(arg) for arg in args)
+    key_parts.extend(f"{k}={v}" for k, v in sorted(kwargs.items()))
+    return "|".join(key_parts)
 
 
-def make_cache_key(func_name: str, args: tuple, kwargs: dict) -> str:
-    """
-    Generate a unique cache key for the request.
-    Includes relevant Entrez global settings for uniqueness.
-    """
-    from Bio import Entrez
+def detect_format(response_content, kwargs):
+    """Detect the response format based on content and parameters."""
+    if not response_content:
+        return None
 
-    cache_parts = [func_name]
-
-    # Include relevant global Entrez settings that might affect results
-    global_settings = {
-        "email": getattr(Entrez, "email", None),
-        "api_key": getattr(Entrez, "api_key", None),
-        "tool": getattr(Entrez, "tool", None),
-    }
-    cache_parts.append(str(sorted(global_settings.items())))
-
-    # Add positional arguments
-    for arg in args:
-        if hasattr(arg, "__dict__"):
-            cache_parts.append(str(sorted(arg.__dict__.items())))
-        else:
-            cache_parts.append(str(arg))
-
-    # Add keyword arguments (sorted for consistency)
-    cache_parts.append(str(sorted(kwargs.items())))
-
-    # Generate hash
-    cache_string = "|".join(cache_parts)
-
-    return hashlib.md5(cache_string.encode()).hexdigest()
-
-
-def detect_format(data: bytes, kwargs: dict) -> str:
-    """
-    Detect the format of the response data.
-
-    Returns:
-        Format string: 'fasta', 'text', or 'xml'
-    """
-    # Check rettype/retmode in kwargs
-    rettype = kwargs.get("rettype", "").lower()
-    retmode = kwargs.get("retmode", "").lower()
-
-    if rettype == "fasta":
+    # Check if FASTA format was requested
+    if kwargs.get("rettype") == "fasta" or kwargs.get("retmode") == "text":
         return "fasta"
-    elif retmode == "xml":
-        return "xml"
-    elif retmode == "text":
-        return "text"
 
-    # Try to detect from content
+    # Check for JSON
     try:
-        sample = data[:1000] if isinstance(data, bytes) else data[:1000].encode()
-        sample_str = sample.decode("utf-8", errors="ignore").strip()
-
-        if sample_str.startswith(">"):
-            return "fasta"
-        elif sample_str.startswith("<?xml") or sample_str.startswith("<"):
-            return "xml"
-    except:
+        json.loads(
+            response_content.decode("utf-8")
+            if isinstance(response_content, bytes)
+            else response_content
+        )
+        return "json"
+    except (ValueError, TypeError):
         pass
 
-    return "xml"  # Default
+    # Default to XML
+    return "xml"
 
 
-def cache_ncbi_request(func: Callable) -> Callable:
-    """
-    Decorator to cache NCBI Entrez requests.
+def is_error_response(response_content):
+    """Check if response contains an error message from NCBI."""
+    if not response_content:
+        return True
 
-    This decorator intercepts calls to Entrez functions and:
-    1. Checks if the result is cached
-    2. Returns cached result if available
-    3. Otherwise makes the actual request and caches it
-    """
+    # Convert to string for pattern matching
+    if isinstance(response_content, bytes):
+        text_content = response_content.decode("utf-8", errors="ignore")
+    else:
+        text_content = response_content
+
+    error_patterns = [
+        "Search Backend failed",
+        "Error fetching",
+        "Service temporarily unavailable",
+        "Rate limit exceeded",
+        "Invalid parameter",
+        "Internal Server Error",
+    ]
+
+    # Test lowercase version of text content for case-insensitive matching.
+    return any(pattern.lower() in text_content.lower() for pattern in error_patterns)
+
+def is_empty_response(response_content, response_format, func_name, kwargs):
+    """Check if response is empty based on format and function."""
+    if not response_content:
+        logger.debug(f"Empty response content for {func_name}")
+        return True
+
+    if response_format == "json":
+        try:
+            data = json.loads(
+                response_content.decode("utf-8")
+                if isinstance(response_content, bytes)
+                else response_content
+            )
+            logger.debug(
+                f"JSON response for {func_name}: {json.dumps(data, indent=2)[:500]}"
+            )
+
+            if func_name == "esummary":
+                uids = data.get("result", {}).get("uids", [])
+                logger.debug(f"esummary JSON response uids: {uids[:10]} (total {len(uids)})")
+                return len(uids) == 0
+
+            elif func_name == "esearch":
+                idlist = data.get("esearchresult", {}).get("idlist", [])
+                logger.debug(f"esearch JSON response idlist: {idlist[:10]} (total {len(idlist)})")
+                return len(idlist) == 0
+
+            elif func_name == "efetch":
+                # For gene info JSON, check if there's any meaningful data
+                if not data or (isinstance(data, dict) and not data):
+                    logger.debug("Empty efetch JSON response")
+                    return True
+                # Check for specific empty indicators in gene info JSON
+                if isinstance(data, dict):
+                    if "error" in data or "ERROR" in data:
+                        return True
+                    # Check if the response contains any actual gene data
+                    if not any(
+                        key in data for key in ["Entrezgene", "gene", "document"]
+                    ):
+                        logger.debug("efetch JSON response contains no gene data")
+                        return True
+
+        except (ValueError, TypeError) as e:
+            logger.debug(f"JSON parsing error for {func_name}: {str(e)}")
+            pass
+
+    elif response_format == "xml":
+        # Convert to string for XML checking
+        text_content = (
+            response_content.decode("utf-8")
+            if isinstance(response_content, bytes)
+            else response_content
+        )
+        logger.debug(
+            f"XML response for {func_name} (first 500 chars): {text_content[:500]}"
+        )
+
+        try:
+            root = ET.fromstring(text_content)
+
+            if func_name == "esummary":
+                doc_sums = root.findall(".//DocSum")
+                ids = [
+                    doc.find("Id").text
+                    for doc in doc_sums
+                    if doc.find("Id") is not None
+                ]
+                logger.debug(f"esummary XML response IDs: {ids[:10]} (total {len(ids)})")
+                return len(ids) == 0
+
+            elif func_name == "esearch":
+                id_list = root.find(".//IdList")
+                if id_list is not None:
+                    ids = [id_elem.text for id_elem in id_list.findall("Id")]
+                    logger.debug(f"esearch XML response IDs: {ids[:10]} (total {len(ids)})")
+                    return len(ids) == 0
+                return True
+
+            elif func_name == "efetch":
+                # Check for empty efetch XML responses (gene info)
+                if root.tag.endswith("ERROR"):
+                    logger.debug("efetch XML response is an error")
+                    return True
+
+                # Check for Entrezgene-Set structure
+                if root.tag.endswith("Entrezgene-Set"):
+                    gene_elements = root.findall(".//Entrezgene")
+                    if not gene_elements:
+                        logger.debug(
+                            "efetch XML response contains no Entrezgene elements"
+                        )
+                        return True
+
+                    # Check if the gene elements contain actual data
+                    for gene in gene_elements:
+                        # Check for basic gene info elements
+                        gene_id = gene.find(".//Gene-track_geneid")
+                        status = gene.find(".//Gene-track_status")
+
+                        if gene_id is None or status is None:
+                            continue
+
+                        # If we found a gene with ID and status, it's not empty
+                        if gene_id.text and status.text:
+                            logger.debug(
+                                f"Found valid gene data for ID: {gene_id.text}"
+                            )
+                            return False
+
+                    logger.debug("efetch XML response contains only empty gene records")
+                    return True
+
+                # Fallback for other XML structures
+                if not list(root):
+                    logger.debug("efetch XML response contains no child elements")
+                    return True
+
+        except ET.ParseError as e:
+            logger.debug(f"XML parsing error for {func_name}: {str(e)}")
+            return True
+
+    elif response_format == "fasta":
+        # FASTA is empty if it's just whitespace
+        text_content = (
+            response_content.decode("utf-8")
+            if isinstance(response_content, bytes)
+            else response_content
+        )
+        logger.debug(f"FASTA response content (first 200 chars): {text_content[:200]}")
+        if not text_content.strip():
+            logger.debug("Empty FASTA response detected")
+            return True
+
+    return False
+
+
+def cache_ncbi_request(func):
+    """Decorator to cache NCBI Entrez requests."""
 
     @wraps(func)
     def wrapper(*args, **kwargs):
-        cache = get_cache()
-
-        # If cache is disabled, just call the function
-        if cache is None:
+        if not USE_CACHE:
             return func(*args, **kwargs)
 
-        # Generate cache key
-        func_name = func.__name__
-        cache_key = make_cache_key(func_name, args, kwargs)
+        cache_key = generate_cache_key(func.__name__, args, kwargs)
+        logger.debug(f"Cache key for {func.__name__}: {cache_key}")
 
-        # Try to get from cache
-        cached_entry = cache.get(cache_key)
+        if cache_key in cache:
+            logger.info(f"Cache hit for {func.__name__}")
+            cached_data = cache[cache_key]
+            response_format = detect_format(cached_data, kwargs)
+            logger.debug(f"Returning cached {response_format} response")
 
-        if cached_entry is not None:
-            # Cache hit - return appropriate IO object
-            data = cached_entry["data"]
-            format_type = cached_entry["format"]
+            # Return appropriate file-like object based on format
+            if response_format == "fasta":
+                text_data = (
+                    cached_data.decode("utf-8")
+                    if isinstance(cached_data, bytes)
+                    else cached_data
+                )
+                return io.StringIO(text_data)
+            else:
+                byte_data = (
+                    cached_data
+                    if isinstance(cached_data, bytes)
+                    else cached_data.encode("utf-8")
+                )
+                return io.BytesIO(byte_data)
 
-            # Log cache hit
-            description = _make_description(func_name, kwargs)
-            print(f"Using cached data for {description}")
+        try:
+            logger.debug(
+                f"Making new {func.__name__} request with args: {args}, kwargs: {kwargs}"
+            )
+            response = func(*args, **kwargs)
+            response_content = response.read()
+            response_format = detect_format(response_content, kwargs)
+            logger.debug(f"Received {response_format} response")
 
-            if format_type in ("fasta", "text"):
-                return StringIO(
-                    data.decode("utf-8") if isinstance(data, bytes) else data
+            # Ensure consistent byte storage in cache
+            if isinstance(response_content, str):
+                cache_data = response_content.encode("utf-8")
+            else:
+                cache_data = response_content
+
+            if is_error_response(cache_data):
+                logger.warning(
+                    f"Error response detected for {func.__name__}, not caching"
+                )
+                if response_format == "fasta":
+                    return io.StringIO(
+                        response_content
+                        if isinstance(response_content, str)
+                        else response_content.decode("utf-8")
+                    )
+                else:
+                    return io.BytesIO(
+                        response_content
+                        if isinstance(response_content, bytes)
+                        else response_content.encode("utf-8")
+                    )
+
+            if is_empty_response(cache_data, response_format, func.__name__, kwargs):
+                logger.warning(
+                    f"Empty response detected for {func.__name__}, not caching"
+                )
+                if response_format == "fasta":
+                    return io.StringIO(
+                        response_content
+                        if isinstance(response_content, str)
+                        else response_content.decode("utf-8")
+                    )
+                else:
+                    return io.BytesIO(
+                        response_content
+                        if isinstance(response_content, bytes)
+                        else response_content.encode("utf-8")
+                    )
+
+            # Cache successful response
+            cache.set(cache_key, cache_data)
+            logger.info(
+                f"Cached response for {func.__name__} (format: {response_format})"
+            )
+
+            # Return appropriate file-like object
+            if response_format == "fasta":
+                return io.StringIO(
+                    response_content
+                    if isinstance(response_content, str)
+                    else response_content.decode("utf-8")
                 )
             else:
-                return BytesIO(
-                    data if isinstance(data, bytes) else data.encode("utf-8")
+                return io.BytesIO(
+                    response_content
+                    if isinstance(response_content, bytes)
+                    else response_content.encode("utf-8")
                 )
 
-        # Cache miss - make actual request
-        response = func(*args, **kwargs)
-
-        # Read and store the response
-        if hasattr(response, "read"):
-            response_data = response.read()
-            if isinstance(response_data, str):
-                response_data = response_data.encode("utf-8")
-        else:
-            response_data = str(response).encode("utf-8")
-
-        # Detect format and store in cache
-        data_format = detect_format(response_data, kwargs)
-        cache[cache_key] = {"data": response_data, "format": data_format}
-
-        # Return appropriate IO object
-        if data_format in ("fasta", "text"):
-            return StringIO(response_data.decode("utf-8"))
-        else:
-            return BytesIO(response_data)
+        except Exception as e:
+            logger.error(f"Error in {func.__name__}: {str(e)}", exc_info=True)
+            raise
 
     return wrapper
 
 
-def _make_description(func_name: str, kwargs: dict) -> str:
-    """Create a human-readable description of the request."""
-    description = f"{func_name}"
-
-    if "db" in kwargs:
-        description += f" from {kwargs['db']}"
-
-    if "term" in kwargs:
-        term = kwargs["term"]
-        term_preview = term[:100] + "..." if len(term) > 100 else term
-        description += f": {term_preview}"
-    elif "id" in kwargs:
-        id_str = str(kwargs["id"])
-        if len(id_str) > 50:
-            id_str = id_str[:47] + "..."
-        description += f": {id_str}"
-
-    return description
-
-
-def apply_cache_to_entrez():
-    """
-    Monkey-patch the Bio.Entrez module to use cached versions.
-    Call this once at the beginning of your script.
-    """
-    from Bio import Entrez
-
-    # Store original functions
-    if not hasattr(Entrez, "_original_esearch"):
-        Entrez._original_esearch = Entrez.esearch
-        Entrez._original_efetch = Entrez.efetch
-
-    # Apply decorator to the functions
-    Entrez.esearch = cache_ncbi_request(Entrez._original_esearch)
-    Entrez.efetch = cache_ncbi_request(Entrez._original_efetch)
-
-    print("NCBI request caching enabled")
-
-
-def disable_cache_for_entrez():
-    """Restore original Entrez functions without caching."""
-    from Bio import Entrez
-
-    if hasattr(Entrez, "_original_esearch"):
-        Entrez.esearch = Entrez._original_esearch
-        Entrez.efetch = Entrez._original_efetch
-        print("NCBI request caching disabled")
-
-
-def clear_cache():
-    """Clear all cached data."""
-    cache = get_cache()
-    if cache is not None:
-        cache.clear()
-        print("Cache cleared")
-
-import os
-
-use_cache = os.getenv("ENTREZ_USE_CACHE", "true").lower() != "false"
-
-if use_cache:
-    # Size limit is in megabytes, default to 500 MB.
-    size_limit_mb = int(os.getenv("ENTREZ_CACHE_SIZE_MB", "500"))
-
-    init_cache(
-        cache_dir="tmp/ncbi_cache", size_limit_mb=size_limit_mb, enabled=True
-    )
-
-    # This applies caching to ALL Entrez calls (esearch and efetch)
-    apply_cache_to_entrez()
+# Monkey patch Entrez functions
+if USE_CACHE:
+    Entrez.esearch = cache_ncbi_request(Entrez.esearch)
+    Entrez.efetch = cache_ncbi_request(Entrez.efetch)
+    Entrez.esummary = cache_ncbi_request(Entrez.esummary)
+    logger.info("NCBI Entrez caching enabled")
+else:
+    logger.info("NCBI Entrez caching disabled")
