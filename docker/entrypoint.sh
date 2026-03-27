@@ -34,6 +34,7 @@ case $1 in
 		if "${switch_users-false}"; then
 			doas -u appuser \
 				env NOVABROWSE_CONFIG="$NOVABROWSE_CONFIG" \
+				ENTREZ_EMAIL_ENV="${ENTREZ_EMAIL_ENV-}" \
 				/app/convert-and-run.sh "$@"
 		else
 			/app/convert-and-run.sh "$@"
