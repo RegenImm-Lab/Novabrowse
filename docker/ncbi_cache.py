@@ -10,6 +10,7 @@ from io import StringIO, BytesIO
 from functools import wraps
 from typing import Callable, Optional
 import diskcache
+import xml.etree.ElementTree as ET
 
 # Global cache instance
 _cache: Optional[diskcache.Cache] = None
@@ -112,6 +113,49 @@ def detect_format(data: bytes, kwargs: dict) -> str:
     return "xml"  # Default
 
 
+def is_empty_response(data: bytes, func_name: str) -> bool:
+    """
+    Check if the response is empty or contains no results.
+
+    Args:
+        data: The response data
+        func_name: Name of the function that generated the response
+
+    Returns:
+        True if the response is empty, False otherwise
+    """
+    if not data or len(data) == 0:
+        return True
+
+    try:
+        # Try to parse as XML for esearch/efetch responses
+        if func_name in ["esearch", "efetch"]:
+            try:
+                root = ET.fromstring(data)
+                # Check for empty results in esearch
+                if func_name == "esearch":
+                    count = root.find(".//Count")
+                    if count is not None and count.text == "0":
+                        return True
+                # Check for empty results in efetch
+                elif func_name == "efetch":
+                    # Check for empty result sets
+                    if len(root) == 0:
+                        return True
+            except ET.ParseError:
+                pass
+
+        # Check for empty text responses
+        text_data = data.decode("utf-8", errors="ignore").strip()
+        if not text_data:
+            return True
+
+    except Exception:
+        pass
+
+    return False
+
+
 def cache_ncbi_request(func: Callable) -> Callable:
     """
     Decorator to cache NCBI Entrez requests.
@@ -119,7 +163,7 @@ def cache_ncbi_request(func: Callable) -> Callable:
     This decorator intercepts calls to Entrez functions and:
     1. Checks if the result is cached
     2. Returns cached result if available
-    3. Otherwise makes the actual request and caches it
+    3. Otherwise makes the actual request and caches it (only if not empty/error)
     """
 
     @wraps(func)
@@ -156,25 +200,42 @@ def cache_ncbi_request(func: Callable) -> Callable:
                 )
 
         # Cache miss - make actual request
-        response = func(*args, **kwargs)
+        try:
+            response = func(*args, **kwargs)
 
-        # Read and store the response
-        if hasattr(response, "read"):
-            response_data = response.read()
-            if isinstance(response_data, str):
-                response_data = response_data.encode("utf-8")
-        else:
-            response_data = str(response).encode("utf-8")
+            # Read and store the response
+            if hasattr(response, "read"):
+                response_data = response.read()
+                if isinstance(response_data, str):
+                    response_data = response_data.encode("utf-8")
+            else:
+                response_data = str(response).encode("utf-8")
 
-        # Detect format and store in cache
-        data_format = detect_format(response_data, kwargs)
-        cache[cache_key] = {"data": response_data, "format": data_format}
+            # Check if response is empty or error
+            if is_empty_response(response_data, func_name):
+                print(
+                    f"Empty response for {_make_description(func_name, kwargs)} - not caching"
+                )
+                # Return the empty response but don't cache it
+                if func_name in ("esearch", "efetch"):
+                    return BytesIO(response_data)
+                else:
+                    return StringIO(response_data.decode("utf-8"))
 
-        # Return appropriate IO object
-        if data_format in ("fasta", "text"):
-            return StringIO(response_data.decode("utf-8"))
-        else:
-            return BytesIO(response_data)
+            # Detect format and store in cache
+            data_format = detect_format(response_data, kwargs)
+            cache[cache_key] = {"data": response_data, "format": data_format}
+
+            # Return appropriate IO object
+            if data_format in ("fasta", "text"):
+                return StringIO(response_data.decode("utf-8"))
+            else:
+                return BytesIO(response_data)
+
+        except Exception as e:
+            print(f"Error in {func_name}: {str(e)} - not caching")
+            # Re-raise the exception
+            raise
 
     return wrapper
 
@@ -235,6 +296,7 @@ def clear_cache():
         cache.clear()
         print("Cache cleared")
 
+
 import os
 
 use_cache = os.getenv("ENTREZ_USE_CACHE", "true").lower() != "false"
@@ -243,9 +305,7 @@ if use_cache:
     # Size limit is in megabytes, default to 500 MB.
     size_limit_mb = int(os.getenv("ENTREZ_CACHE_SIZE_MB", "500"))
 
-    init_cache(
-        cache_dir="tmp/ncbi_cache", size_limit_mb=size_limit_mb, enabled=True
-    )
+    init_cache(cache_dir="tmp/ncbi_cache", size_limit_mb=size_limit_mb, enabled=True)
 
     # This applies caching to ALL Entrez calls (esearch and efetch)
     apply_cache_to_entrez()
