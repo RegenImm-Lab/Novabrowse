@@ -1028,17 +1028,74 @@ Each species contains an `assembly_id` and a `chromosomes` list. Each chromosome
 
 ## Troubleshooting
 
-### "HTTP Error 400" from NCBI
-- Reduce the genomic region size or number of upstream/downstream genes
-- NCBI API has limits on query size (~8-10 MB)
+### NCBI API errors
 
-### "makeblastdb not found"
+**"Search Backend failed" when running `get_chromosome_info.ipynb` or `novabrowse_1.0.ipynb`**
+- This is an NCBI server-side issue, not a problem with your code
+- Wait and try again later -- these errors usually resolve within a few hours
+- You can check if NCBI is down at [isitdownrightnow.com/ncbi.nlm.nih.gov.html](https://www.isitdownrightnow.com/ncbi.nlm.nih.gov.html) or follow [@NCBI on X](https://twitter.com/ncbi) for service updates
+
+**"HTTP Error 400" from NCBI**
+- NCBI API has limits on query size (~8-10 MB)
+- Reduce the genomic region size (`start_position`/`end_position`) or number of `genes_upstream`/`genes_downstream`
+
+**"Entrez email is not set"**
+- Set the `ENTREZ_EMAIL_ENV` environment variable or define `entrez_email` in the notebook/YAML config
+- See [Set up NCBI email](#3-set-up-ncbi-email) for instructions
+
+**"Failed after N attempts" (retry exhaustion)**
+- NCBI API calls failed repeatedly due to network issues or server overload
+- Check your internet connection and try again later
+
+### Chromosome data errors
+
+**`KeyError: '<species_name>'` in `generate_main_comparison`**
+- The species is missing from `chromosome_data.json`
+- Run `get_chromosome_info.ipynb` again -- if NCBI was down during the previous run, some species may have been skipped
+- Both query and subject species must have entries in `chromosome_data.json`
+- If NCBI does not have chromosome data for your species, add it manually (see [Chromosome Data Format](#chromosome-data-format))
+
+**"No chromosome information found for [species]"**
+- NCBI returned no RefSeq chromosome sequences for that assembly accession
+- Verify the assembly accession is correct in `ASSEMBLY_MAPPING`
+- If NCBI's servers were down, try again later
+- For species without RefSeq chromosome records, add the data manually (see [Chromosome Data Format](#chromosome-data-format))
+
+**"Could not find chromosome [name] in [species]"**
+- The chromosome name in your query does not match any entry in `chromosome_data.json`
+- Check the chromosome naming format -- NCBI may use `6`, `VI`, `6p`/`6q`, or accession identifiers like `NC_001138.5` depending on the species
+
+### BLAST errors
+
+**"makeblastdb not found"**
 - Ensure BLAST+ is installed and in your PATH
 - Try running `makeblastdb -version` to verify
 
-### No genes found
-- Check that the chromosome format matches NCBI naming
+**"Query file not found" or "BLAST completed but output file not created"**
+- Check that the FASTA files in `1_subject_sequences/` match the filenames in your configuration
+- Transcriptome files must be named exactly `rna.fna`; genome files must contain `_genomic` in the filename
+
+**"No GCF directory found for [species]"**
+- The BLAST database directory for that species is missing from `2_subject_blastdb/`
+- Run `make_blastdb.ipynb` first to create the databases
+
+**"Unsupported BLAST type"**
+- `blast_type` must be one of: `tblastn`, `blastn`, `tblastx`
+
+### Configuration errors
+
+**"Invalid species. Must be one of: [list]"**
+- The species name in your query does not match any key in the `subject_species` configuration
+- Species names must match exactly between `ASSEMBLY_MAPPING`, `subject_species`, and `species_to_orgn`
+
+**No genes found in the specified region**
+- Check that the chromosome format matches NCBI naming for your species
 - Verify genomic coordinates are correct for your assembly version
+- Try expanding the region or increasing `genes_upstream`/`genes_downstream`
+
+**YAML configuration file not found (Docker/Apptainer)**
+- Make sure `novabrowse_config.yaml` exists in the repository's top-level directory
+- If using a custom config file, pass it with `-e NOVABROWSE_CONFIG=./your_config.yaml`
 
 ## FAQ
 
