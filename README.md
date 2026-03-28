@@ -1033,7 +1033,7 @@ Each species contains an `assembly_id` and a `chromosomes` list. Each chromosome
 **"Search Backend failed" when running `get_chromosome_info.ipynb` or `novabrowse_1.0.ipynb`**
 - This is an NCBI server-side issue, not a problem with your code
 - Wait and try again later -- these errors usually resolve within a few hours
-- You can check if NCBI is down at [isitdownrightnow.com/ncbi.nlm.nih.gov.html](https://www.isitdownrightnow.com/ncbi.nlm.nih.gov.html) or follow [@NCBI on X](https://twitter.com/ncbi) for service updates
+- You can check if the NCBI API is working by opening [this link](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=GCF_000146045.2[Assembly]&retmax=1) in your browser -- if the API is down, the response will contain `<ERROR>Search Backend failed</ERROR>` instead of search results
 
 **"HTTP Error 400" from NCBI**
 - NCBI API has limits on query size (~8-10 MB)
