@@ -140,20 +140,30 @@ species_to_orgn:
   c_albicans: "Candida albicans[ORGN]"
 
 # Maps species names to assembly accessions and FASTA file information
-# for local BLAST databases.
+# for local BLAST databases. Each species can have multiple databases
+# (e.g., both a genome and a transcriptome database).
 ASSEMBLY_MAPPING:
   s_cerevisiae:
     assembly_acc: "GCF_000146045.2"
-    fasta_file: "rna.fna"
-    fasta_file_type: "nucl"
+    databases:
+      - fasta_file: "rna.fna"
+        fasta_file_type: "nucl"
+        type: "transcriptome"
+      - fasta_file: "GCF_000146045.2_R64_genomic.fna"
+        fasta_file_type: "nucl"
+        type: "genome"
   s_pombe:
     assembly_acc: "GCF_000002945.2"
-    fasta_file: "rna.fna"
-    fasta_file_type: "nucl"
+    databases:
+      - fasta_file: "rna.fna"
+        fasta_file_type: "nucl"
+        type: "transcriptome"
   c_albicans:
     assembly_acc: "GCF_000182965.3"
-    fasta_file: "rna.fna"
-    fasta_file_type: "nucl"
+    databases:
+      - fasta_file: "rna.fna"
+        fasta_file_type: "nucl"
+        type: "transcriptome"
 
 # NCBI Protein Source Legend:
 # NP_ : RefSeq (curated) proteins.

@@ -1,20 +1,21 @@
-# <img src="images/novabrowse_logo.svg" alt="Novabrowse Logo" width="400">
+g# <img src="images/novabrowse_logo.svg" alt="Novabrowse Logo" width="400">
 
 **An interactive BLAST results interpretation tool for multi-species high-resolution synteny analysis, chromosomal rearrangement investigation, orthologs identification and gene signal discovery.**
 
 ## Table of Contents
 
-- [Core Capabilities](#core-capabilities)
-- [Basic Output Overview](#basic-output-overview)
+- [How Novabrowse Works](#how-novabrowse-works)
+- [Why Choose Novabrowse](#why-choose-novabrowse)
 - [Getting Started](#getting-started)
 - [Installation Prerequisites (Jupyter Notebook)](#installation-prerequisites-jupyter-notebook)
 - [Installation (Jupyter Notebook)](#installation-jupyter-notebook)
-- [Quick Start (Jupyter Notebook, Docker, Apptainer)](#quick-start-jupyter-notebook-docker-apptainer)
+- [Quick Start (Jupyter Notebook)](#quick-start-jupyter-notebook)
 - [Tutorial 1: Detecting Orthologs Across Species](#tutorial-1-detecting-orthologs-across-species)
 - [Tutorial 2: Using Custom Sequences and Gene Signal Discovery](#tutorial-2-using-custom-sequences-and-gene-signal-discovery)
 - [Documentation](#documentation)
   - [General Features](#general-features)
   - [Pipeline Overview](#pipeline-overview)
+  - [Basic Output Overview](#basic-output-overview)
   - [Parameters Reference](#parameters-reference)
   - [UI Controls](#ui-controls)
   - [Chromosome Filter](#chromosome-filter)
@@ -25,37 +26,43 @@
 - [Citation](#citation)
 - [Contributing](#contributing)
 
-## Core Capabilities
 
-- **Multi-species synteny analysis** - Compare gene order conservation across multiple species simultaneously with interactive ribbon plots connecting orthologous genes across chromosomes
-- **Gene signal discovery** - Identify unannotated genes in genomic regions through distance-based High-scoring Segment Pair (HSP) clustering, revealing gene units missed by standard annotation pipelines
-- **Coverage visualization** - View alignment coverage as identity-color-coded bars positioned along query sequences, showing both extent and quality of matches
+## How Novabrowse Works
+1\. You define a genomic region of interest, Novabrowse retrieves the gene sequences and runs BLAST searches against chosen subject species:
 
-## Basic Output Overview
+<img src="images/pipeline.svg" alt="Novabrowse pipeline overview schematic">
+
+2\. The results are combined into an interactive HTML table with synteny ribbons and chromosome maps:
 
 <img src="images/table_layout.svg" alt="Novabrowse table layout legend">
 
-> In this sample, four query genes are searched against three subject species. *Gene 1* and *Gene 4* each show a single best match in each subject species, representing straightforward one-to-one orthology. *Gene 2* shows red "**none**" where no match was found (**Subject Species 1** and **Subject Species 3**). *Gene 3* shows how multiple hits are displayed: for **Subject Species 1**, *Gene 3A* is the best match (likely ortholog), while *Gene 3B*, *Gene 3C*, and *Gene 9* appear as secondary matches (paralogs or distant homologs). The coverage bars reveal match extent and quality, *Gene 3A* covers ~65% of the query at high identity (mostly green bars), while *Gene 9* covers only ~38% (with low identity, orange and red coverage bars). **The ribbon plot** connects gene's chromosome position across species with colored ribbons, making syntenic relationships directly visible. Here, *Gene 1* is shown with a custom dashed red ribbon tracing its matches across all three species. *Gene 2* (green) only connects to **Subject Species 2**, since no match was found in the other two species. *Gene 4* (blue) shares synteny with *Gene 1* in **Subject Species 1** and **2**, where both genes sit close together on the same chromosome. However, in **Subject Species 3**, *Gene 1* and *Gene 4*, while remaining on the same chromosome, are positioned considerably farther apart, suggesting an expanded syntenic block
+> For a more detailed breakdown, see [Pipeline Overview](#pipeline-overview) and [Basic Output Overview](#basic-output-overview).
 
-- **Query Species column** (left) — lists the genes used as BLAST queries.
-- **Coverage column** — colored bars showing where HSPs align along the query sequence. Values are shown as percentages and absolute lengths (total aligned length / query transcript length). Bar colors indicate identity percentage per the color legend.
-- **Chrm column** — chromosome visualizations showing relative gene positions, with heights normalized across the table.
-- **Chrm # column** — chromosomal locations. Underscores denote different chromosome arms (e.g., 2_2, 3_1).
-- **Yellow highlighting** — genes within a user-selected coordinate range are marked with a yellow background. The corresponding region also appears in dark yellow on the chromosome visualization.
-- **Ribbon plot** — colored curved lines connecting genes across chromosome columns. Ribbon style (color, opacity, width, dashed/solid) is customizable.
+## Why Choose Novabrowse
+
+Novabrowse ships with several novel core capabilities along with features not found together in any other comparative genomics tool:
+<img src="images/feature_comparison.svg" alt="Feature comparison of Novabrowse with other BLAST tools" width="100%">
+
+- **Coordinate-based genomic region search** - Define a chromosomal region by coordinates and automatically retrieve gene sequences from that region for use as search queries
+- **Distance-based HSP clustering of putative gene units** - Identify unannotated genes in genomic regions through distance-based High-scoring Segment Pair (HSP) clustering, revealing gene units missed by standard annotation pipelines
+- **Multi-species gene synteny visualization** - Compare gene order conservation across multiple species simultaneously with interactive ribbon plots connecting orthologous genes across chromosomes
+- **Chromosomal visualization & mapping** - Display hit locations on chromosome ideograms, providing genomic context for alignment results
+- **Coverage visualization** - View alignment coverage as identity-color-coded bars positioned along query sequences, showing both extent and quality of matches
+- **Integrated BLAST search** - Natively executes BLAST searches within the pipeline, no need to run BLAST separately and import results
+- **Custom BLAST database support** - Use your own BLAST databases built from any FASTA sequences, not limited to pre-built databases
+- **Isoform-aware hit consolidation** - Consolidates multiple transcript isoform hits into single gene entries, preventing duplicate results from the same locus
 
 ## Getting Started
 
 Novabrowse can be run in three ways: using a Jupyter Notebook or from the command line using Docker or Apptainer containers. The containerized methods include all dependencies and support running on HPC (High-Performance Computing) clusters.
 
+After the initial setup (preparing subject species files, creating BLAST databases, and generating chromosome data), running analyses themselves is quick and straightforward.
+
 | Method | Setup guide |
 |--------|-------------|
-| **Jupyter Notebook** | [Installation Prerequisites](#installation-prerequisites) (below) |
+| **Jupyter Notebook** | [Installation Prerequisites](#installation-prerequisites-jupyter-notebook) (below) |
 | **Docker** | [Docker Setup](docker/README.md) (in `docker/` folder) |
-| **Apptainer** | [Apptainer Setup](docker/README.md#running-the-docker-container-with-apptainer) (in `docker/` folder) |
-
-
-
+| **Apptainer** | [Apptainer Setup](docker/README.md#apptainer) (in `docker/` folder) |
 
 
 ## Installation Prerequisites (Jupyter Notebook)
@@ -112,7 +119,7 @@ Novabrowse uses the [NCBI Entrez API](https://www.ncbi.nlm.nih.gov/books/NBK2550
 
    > **Windows note:** If `pip` doesn't work, try `py -m pip install -r requirements.txt` instead.
 
-## Quick Start (Jupyter Notebook, Docker, Apptainer)
+## Quick Start (Jupyter Notebook)
 
 In Novabrowse:
 - **Query species** - the species whose genes you want to search for (your genes of interest)
@@ -122,24 +129,8 @@ In Novabrowse:
 
 Novabrowse supports both transcriptome and genome analysis. For each subject species, you'll need:
 
-- **GTF annotation file** (Gene Transfer Format) - contains gene coordinates, names, and transcript information. The GTF must follow NCBI formatting conventions, but doesn't have to be downloaded from NCBI.
-- **FASTA sequence file** - either transcriptome (`rna.fna`) or genome (`genomic.fna`) depending on your analysis needs.
-
-For this tutorial, we'll use three fungal species from NCBI:
-
-| Species | NCBI Link |
-|---------|-----------|
-| *Saccharomyces cerevisiae* | [Open](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/4932/) |
-| *Schizosaccharomyces pombe* | [Open](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/4896/) |
-| *Candida albicans* | [Open](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/5476/) |
-
-These files (GTF annotations and transcripts for all three species, plus the genome for *S. cerevisiae*) are already included in `1_subject_sequences/`. Below we explain how they were downloaded, which you can follow to add your own species or update the existing files.
-
-**How to download subject species sequences from NCBI:**
-
-- The image below shows *S. cerevisiae* as an example. When downloading assemblies from NCBI, you can choose the source (RefSeq or GenBank) based on your specific research needs.
-
-<img src="images/how_to_download.png" alt="How to download from NCBI" style="margin-left: 20px;">
+- **GTF annotation file** (Gene Transfer Format) - contains gene coordinates, names, and transcript information. The GTF must follow NCBI formatting conventions, but can come from any source (e.g., NCBI, Ensembl, or your own custom annotations).
+- **FASTA sequence file** - either transcriptome (`rna.fna`) or genome (`genomic.fna`) depending on your analysis needs. These can also be custom assemblies as long as they match the GTF.
 
 Place the downloaded files in:
 ```
@@ -151,13 +142,7 @@ Place the downloaded files in:
 
 > **Note:** The transcriptome file **must** be named exactly `rna.fna`. Genome files **must** contain `_genomic` in the filename (e.g., `GCF_000146045.2_R64_genomic.fna`).
 
-Example for *S. cerevisiae*:
-```
-1_subject_sequences/s_cerevisiae/GCF_000146045.2/
-├── genomic.gtf
-├── rna.fna
-└── GCF_000146045.2_R64_genomic.fna
-```
+For instructions on how to download these files from NCBI, see [How to download subject species sequences from NCBI](../README.md#subject-species-used-in-this-tutorial) in Tutorial 1.
 
 ### 2. Create subject species BLAST databases
 
@@ -170,51 +155,34 @@ run_makeblastdb(
 )
 ```
 
-Example for *S. cerevisiae*:
+For example, if you placed *S. cerevisiae* files in step 1 like this:
+```
+1_subject_sequences/s_cerevisiae/GCF_000146045.2/
+├── genomic.gtf
+├── rna.fna
+└── GCF_000146045.2_R64_genomic.fna
+```
+
+The corresponding `make_blastdb` calls would be:
 ```python
+# Transcriptome database
 run_makeblastdb(
     "1_subject_sequences\\s_cerevisiae\\GCF_000146045.2\\rna.fna",
     "nucl",
     "2_subject_blastdb\\s_cerevisiae_GCF_000146045.2"
 )
+
+# Genome database
+run_makeblastdb(
+    "1_subject_sequences\\s_cerevisiae\\GCF_000146045.2\\GCF_000146045.2_R64_genomic.fna",
+    "nucl",
+    "2_subject_blastdb\\s_cerevisiae_GCF_000146045.2_genome"
+)
 ```
 
-### 3. Generate chromosome data file
+### 3. Set up NCBI email
 
-Open `get_chromosome_info.ipynb` and add your species to `ASSEMBLY_MAPPING`:
-   ```python
-   ASSEMBLY_MAPPING = {
-       '<custom_name>': '<assembly>',
-   }
-   ```
-
-   Example for *S. cerevisiae*:
-   ```python
-   ASSEMBLY_MAPPING = {
-       's_cerevisiae': 'GCF_000146045.2',
-   }
-   ```
-
-Then run the notebook. It will query NCBI for chromosome accessions and lengths for each species and save the results to `chromosome_data.json`.
-
-This file is used for mapping genes onto chromosomes.
-
-**Important:** Both query and subject species must be included. If NCBI doesn't have chromosome information for a species, you'll need to add it manually to `chromosome_data.json`.
-
-### 4. Configure Novabrowse
-
-> **Using Docker or Apptainer?** The steps below show configuration by editing notebook cells directly. If you're using Docker or Apptainer, set the same parameters in `novabrowse_config.yaml` instead — see [Docker Setup](docker/README.md#setup). The tutorials still apply for understanding what each parameter does.
-
-#### Open the main notebook
-
-Open `novabrowse_1.0.ipynb`. This is the main notebook that:
-1. Downloads query species sequences for your specified genomic region
-2. Runs BLAST searches against your subject species
-3. Generates interactive HTML result files
-
-#### Set up NCBI Entrez email for query sequence retrieval
-
-By default the pipeline reads your email from the `ENTREZ_EMAIL_ENV` environment variable. Choose one of these methods:
+The NCBI Entrez API requires an email address to identify requests. If you don't have an NCBI account yet, create one at [ncbi.nlm.nih.gov/account](https://www.ncbi.nlm.nih.gov/account/).
 
 **Option A: Set system environment variable (Recommended)**
 
@@ -238,15 +206,94 @@ source ~/.bashrc
 
 > **Note:** After setting the environment variable, restart your terminal/IDE for changes to take effect.
 
-**Option B: Set directly in notebook**
+---
 
-Alternatively, in the second code cell of the main Novabrowse notebook, replace the environment variable line with your email:
+**Option B: Set directly in the notebooks**
+
+In both `get_chromosome_info.ipynb` and `novabrowse_1.0.ipynb`, change `entrez_email = None` to your email:
 ```python
-Entrez.email = "your.email@example.com"  # Replace with your email
+entrez_email = "your.email@example.com"
 ```
 
-> **Warning:** If you use Option B and plan to share your code publicly, remember to remove your email before committing.
+> **Note:** If both the environment variable and the notebook value are set, the environment variable takes priority.
 
+### 4. Generate chromosome data file
+
+Open `get_chromosome_info.ipynb` and add your species to `ASSEMBLY_MAPPING`.
+```python
+ASSEMBLY_MAPPING = {
+    '<custom_name>': '<assembly>',
+}
+```
+
+Example for *S. cerevisiae*:
+```python
+ASSEMBLY_MAPPING = {
+    's_cerevisiae': 'GCF_000146045.2',
+}
+```
+
+Then run the notebook. It will query NCBI for chromosome accessions and lengths for each species and save the results to `chromosome_data.json`.
+
+This file is used for mapping genes onto chromosomes.
+
+**Important:** `chromosome_data.json` must contain entries for all species used in the analysis (both query and subject). If NCBI doesn't have chromosome information for a species, you'll need to add it manually (see [Chromosome Data Format](#chromosome-data-format) for the expected structure).
+
+### 5. Configure and run Novabrowse
+
+Open `novabrowse_1.0.ipynb`. This is the main notebook that:
+1. Downloads query species sequences for your specified genomic region
+2. Runs BLAST searches against your subject species
+3. Generates interactive HTML result files
+
+Edit the first cell to configure your analysis. In this example, we set up a search for orthologs of the *ACT1* gene in *S. cerevisiae*, searching against *S. pombe* (transcriptome) and *S. cerevisiae* itself (transcriptome and genome):
+
+```python
+title = "ACT1_orthology"                    # Prefix for output files
+
+query_sequences_list = [
+    {
+        'query_species': 's_cerevisiae',     # Must match ASSEMBLY_MAPPING key
+        'protein_sources': ('NP_', 'XP_'),   # Protein accession prefixes to include
+        'show_only_best_matches': 'True',    # 'True', 'False', or 'Both'
+        'retrieved_sequences': {
+            'download_from_NCBI': True,      # Fetch sequences from NCBI
+            'chromosome': 'VI',              # E.g. '2', '2p', 'VI', or 'NC_001138.5'
+            'start_position': 53260,         # Region start coordinate
+            'end_position': 54696,           # Region end coordinate
+            'genes_upstream': 5,             # Include 5 genes before the region
+            'genes_downstream': 5,           # Include 5 genes after the region
+        },
+    },
+]
+
+# Max distance (bp) between genomic BLAST HSPs to merge into one gene unit
+consider_one_gene = 1050
+
+blast_settings = {
+    'blast_type': ['tblastn', 'blastn'],     # Search algorithm(s)
+    'blast_options': '-outfmt 0 -num_threads 48'  # BLAST command-line options
+}
+
+subject_species = {
+    's_pombe': {
+        'enabled': True,                     # Include in search
+        'maximum_evalue': 1e-10,             # E-value threshold
+        'minimum_score': 0,                  # Minimum bit score (0 = no minimum)
+        'additional_blast_parameters': '',   # Extra BLAST parameters for this species
+        'type': ['transcriptome']            # Transcriptome only
+    },
+    's_cerevisiae': {
+        'enabled': False,                    # Skip (query species)
+        'maximum_evalue': 1e-10,
+        'minimum_score': 0,
+        'additional_blast_parameters': '',
+        'type': ['transcriptome', 'genome']  # Both transcriptome and genome
+    },
+}
+```
+
+For detailed explanations of each parameter and how to set up different types of analyses, see [Tutorial 1](#tutorial-1-detecting-orthologs-across-species) and [Tutorial 2](#tutorial-2-using-custom-sequences-and-gene-signal-discovery), which walk through the full process from downloading subject species files to rendering the final output. A complete [Parameters Reference](#parameters-reference) is also available below.
 
 ## Tutorial 1: Detecting Orthologs Across Species
 
@@ -256,8 +303,34 @@ This tutorial demonstrates how to identify orthologous genes across multiple spe
 - How to define a genomic region of interest in the query species
 - Configure BLAST searches against multiple subject species
 
+### Subject species used in this tutorial
+
+We'll use three fungal species from NCBI:
+
+| Species | NCBI Link |
+|---------|-----------|
+| *Saccharomyces cerevisiae* | [Open](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/4932/) |
+| *Schizosaccharomyces pombe* | [Open](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/4896/) |
+| *Candida albicans* | [Open](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/5476/) |
+
+These files (GTF annotations and transcripts for all three species, plus the genome for *S. cerevisiae*) are already included in `1_subject_sequences/`. Below we explain how they were downloaded, which you can follow to add your own species or update the existing files.
+
+**How to download subject species sequences from NCBI:**
+
+The image below shows *S. cerevisiae* as an example. When downloading assemblies from NCBI, you can choose the source (RefSeq or GenBank) based on your specific research needs.
+
+<img src="images/how_to_download.png" alt="How to download from NCBI" style="margin-left: 20px;">
+
+Example directory structure for *S. cerevisiae*:
+```
+1_subject_sequences/s_cerevisiae/GCF_000146045.2/
+├── genomic.gtf
+├── rna.fna
+└── GCF_000146045.2_R64_genomic.fna
+```
+
 ### 1. Setting up a query
-**In this example scenario:** We'll examine the *ACT1* locus (encoding actin) in *S. cerevisiae* and find its orthologus loci in *S. pombe* and *C. albicans*.
+**In this example scenario:** We'll examine the *ACT1* locus (encoding actin) in *S. cerevisiae* and find its orthologous loci in *S. pombe* and *C. albicans*.
 
 To analyze a genomic region, first identify the chromosome and coordinates of your region of interest.
 
@@ -269,14 +342,14 @@ To find coordinates for the *ACT1* gene locus in *S. cerevisiae*:
 2. Find the genomic location: `Chromosome: VI; NC_001138.5 (53260..54696, complement)`
 
 
-Configure the first cell:
+Configure the first cell of `novabrowse_1.0.ipynb` (when running via Docker or Apptainer, these same parameters are set in `novabrowse_config.yaml` instead):
 ```python
 title = "ACT1_orthology" # Prefix for output files from this run
 
 query_sequences_list = [
     {
         'query_species': 's_cerevisiae',           # Species name (must match ASSEMBLY_MAPPING key)
-        'protein_sources': ('NP_','XP_'),          # See note Protein Source Filtering
+        'protein_sources': ('NP_','XP_'),          # See Protein Source Prefixes
         'show_only_best_matches': 'True',          # Allowed values: 'True', 'False', 'Both'
         'retrieved_sequences': {
             'download_from_NCBI': True,            # Fetch sequences from NCBI
@@ -378,7 +451,9 @@ species_to_orgn = {
 ```
 
 
-### 5. Run all notebook cells sequentially
+### 5. Run the notebook
+
+Run all notebook cells sequentially.
 
 ### 6. Find results in the `output/` folder as HTML files
 
@@ -517,7 +592,7 @@ When searching against genomes, BLAST returns separate HSPs for each exon. The `
 consider_one_gene = 1050  # Longest known intron in S. cerevisiae (~1kb)
 ```
 
-This enables **gene signal discovery** - finding potential unannotated genes. Note that intron sizes differ between species, good practice is to set this value similar to than the largest known intron in your species to ensure all exons from the same gene are grouped correctly.
+This enables **gene signal discovery** - finding potential unannotated genes. Note that intron sizes differ between species, good practice is to set this value similar to the largest known intron in your species to ensure all exons from the same gene are grouped correctly.
 
 Enable genome searches by setting `type` to include `'genome'`:
 
@@ -545,7 +620,10 @@ blast_settings = {
 }
 ```
 
-### 5. Run all notebook cells sequentially
+### 5. Run the notebook
+
+Run all notebook cells sequentially.
+
 ### 6. Find results in the `output/` folder as HTML files
 
 > **Tip:** Compare your results with the reference files in the `tutorial/` folder:
@@ -591,6 +669,7 @@ blast_settings = {
 - **Drag-and-drop organization** - Reorder subject species columns to facilitate comparative analysis
 
 ## Pipeline Overview
+
 <img src="images/pipeline.svg" alt="Novabrowse pipeline overview schematic">
 
 1. **Query and subject species selection** — The user selects a genomic region of interest in the **query species** by specifying chromosome coordinates and optional flanking genes. Query sequences can come from NCBI, be provided manually as custom sequences, or both. For each **subject species**, the user chooses the database type (transcriptome and/or genome), BLAST algorithm (BLASTn, tBLASTn, and/or tBLASTx), and filtering thresholds (minimum bit score and maximum E-value).
@@ -603,6 +682,18 @@ blast_settings = {
 
 4. **Data integration and table generation** — The pipeline combines query gene metadata (names, coordinates, lengths, among others) with the filtered BLAST results, maps each query gene to its ranked **subject species** matches, and compiles everything into an interactive HTML table.
 
+## Basic Output Overview
+
+<img src="images/table_layout.svg" alt="Novabrowse table layout legend">
+
+> In this sample, four query genes are searched against three subject species. *Gene 1* and *Gene 4* each show a single best match in each subject species, representing straightforward one-to-one orthology. *Gene 2* shows red "**none**" where no match was found (**Subject Species 1** and **Subject Species 3**). *Gene 3* shows how multiple hits are displayed: for **Subject Species 1**, *Gene 3A* is the best match (likely ortholog), while *Gene 3B*, *Gene 3C*, and *Gene 9* appear as secondary matches (paralogs or distant homologs). The coverage bars reveal match extent and quality, *Gene 3A* covers ~65% of the query at high identity (mostly green bars), while *Gene 9* covers only ~38% (with low identity, orange and red coverage bars). **The ribbon plot** connects gene's chromosome position across species with colored ribbons, making syntenic relationships directly visible. Here, *Gene 1* is shown with a custom dashed red ribbon tracing its matches across all three species. *Gene 2* (green) only connects to **Subject Species 2**, since no match was found in the other two species. *Gene 4* (blue) shares synteny with *Gene 1* in **Subject Species 1** and **2**, where both genes sit close together on the same chromosome. However, in **Subject Species 3**, *Gene 1* and *Gene 4*, while remaining on the same chromosome, are positioned considerably farther apart, suggesting an expanded syntenic block
+
+- **Query Species column** (left) — lists the genes used as BLAST queries.
+- **Coverage column** — colored bars showing where HSPs align along the query sequence. Values are shown as percentages and absolute lengths (total aligned length / query transcript length). Bar colors indicate identity percentage per the color legend.
+- **Chrm column** — chromosome visualizations showing relative gene positions, with heights normalized across the table.
+- **Chrm # column** — chromosomal locations. Underscores denote different chromosome arms (e.g., 2_2, 3_1).
+- **Yellow highlighting** — genes within a user-selected coordinate range are marked with a yellow background. The corresponding region also appears in dark yellow on the chromosome visualization.
+- **Ribbon plot** — colored curved lines connecting genes across chromosome columns. Ribbon style (color, opacity, width, dashed/solid) is customizable.
 
 ## Parameters Reference
 
@@ -655,7 +746,7 @@ For genome searches (not transcriptomes), Novabrowse clusters nearby BLAST HSPs 
 consider_one_gene = 1050  # Maximum distance (bp) between HSPs to merge into one gene
 ```
 
-HSPs within this distance are merged into a single entry with combined coverage. When BLASTing a transcript against a genome, HSPs correspond to exons and gaps between them are introns. Set this value similar to than the largest intron in your species to ensure all exons from the same gene are grouped correctly.
+HSPs within this distance are merged into a single entry with combined coverage. When BLASTing a transcript against a genome, HSPs correspond to exons and gaps between them are introns. Set this value similar to the largest intron in your species to ensure all exons from the same gene are grouped correctly.
 
 #### BLAST Settings (`blast_settings`)
 
@@ -872,7 +963,7 @@ The tooltip displays:
 **Chromosome visualization interactions**
 
 - **Hover line indicator** — moving the mouse over a chromosome displays a white horizontal line that follows the cursor vertically, indicating the exact genomic position.
-- **Position tooltip** — hovering over the chromosome shows a tooltip with the chromosome name and the calculated genomicyeds coordinate at the cursor position.
+- **Position tooltip** — hovering over the chromosome shows a tooltip with the chromosome name and the calculated genomic coordinate at the cursor position.
 - **Gene hover tooltip** — hovering over a gene line shows up multiple tooltips: chromosome name and gene starting coordinate on the chromosome, subject species gene name, and the query species gene name.
 
 <img src="images/chromosome_gene_hover.png" alt="Gene hover tooltip showing chromosome position, subject gene name, and query gene name" style="margin-left: 40px;">
@@ -897,6 +988,40 @@ Each gene's ribbon can be individually customized. Click the ribbon settings but
 - **On top** — pin a ribbon to always render above other ribbons, ensuring it remains visible even when overlapping with others.
 - **Gene coloring** — colors that gene's rectangles (query and all its subject matches) on the chromosome visualizations with the ribbon's color, making it easy to spot the gene's position across species at a glance.
 
+### Chromosome Data Format
+
+The `chromosome_data.json` file stores chromosome accessions and lengths for each species. The notebook `get_chromosome_info.ipynb` generates this file automatically, but if NCBI doesn't have data for a species, you can add it manually using this structure:
+
+```json
+{
+    "s_cerevisiae": {
+        "assembly_id": "GCF_000146045.2",
+        "chromosomes": [
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001133.9",
+                        "length": 230218,
+                        "name": "I"
+                    }
+                ]
+            },
+            {
+                "parts": [
+                    {
+                        "accession": "NC_001134.8",
+                        "length": 813184,
+                        "name": "II"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+Each species contains an `assembly_id` and a `chromosomes` list. Each chromosome entry has a `parts` array with the chromosome `accession`, `length` (in base pairs), and `name` (as displayed in the output).
+
 ## Troubleshooting
 
 ### "HTTP Error 400" from NCBI
@@ -919,7 +1044,9 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 If you use Novabrowse in your research, please cite:
 ```
-[Citation information to be added]
+Rikk L., Ghaffarinia A., Leigh N. (2026)
+Novabrowse: A Tool for High-Resolution Synteny Analysis, Ortholog Detection and Gene Signal Discovery
+[Preprint link coming soon]
 ```
 
 ## Contributing
