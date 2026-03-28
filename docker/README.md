@@ -18,6 +18,7 @@ Run Novabrowse synteny analysis in a Docker or Apptainer container. All dependen
   - [7. Configure analysis parameters](#7-configure-analysis-parameters)
   - [8. Running the analysis](#8-running-the-analysis)
   - [9. Find results](#9-find-results-in-the-output-folder-as-html-files)
+- [Using custom YAML config files](#using-custom-yaml-config-files)
 - [Caching](#caching)
 - [Environment variables reference](#environment-variables-reference)
 
@@ -273,6 +274,24 @@ apptainer run -e --bind "$(pwd):/data" novabrowse.sif {notebook_filename}
 
 ### 9. Find results in the `output/` folder as HTML files
 
+## Using custom YAML config files
+
+By default, Novabrowse reads `novabrowse_config.yaml` from the repository's top-level directory. You can point to a different YAML file using the `NOVABROWSE_CONFIG` environment variable. This is useful for keeping a separate config file for each analysis, so you have a record of the exact parameters used in each run.
+
+**Docker:**
+``` shell
+-e NOVABROWSE_CONFIG={path_to_yaml}
+```
+
+> Example: `docker run -t -v "$(pwd):/data" -e NOVABROWSE_CONFIG=./custom_analysis.yaml novabrowse novabrowse_1.0.ipynb`
+
+**Apptainer:**
+``` shell
+--env NOVABROWSE_CONFIG={path_to_yaml}
+```
+
+> Example: `apptainer run -e --bind "$(pwd):/data" --env NOVABROWSE_CONFIG=./custom_analysis.yaml novabrowse.sif novabrowse_1.0.ipynb`
+
 ## Caching
 
 To speed up repeated runs, downloaded NCBI data is cached in the `tmp/ncbi_cache/` directory so that subsequent runs do not need to re-download the same data. A single run of the default `novabrowse_1.0.ipynb` notebook uses about 75 MB of cache space.
@@ -303,7 +322,7 @@ Environment variables are passed with the `-e` flag. Docker does not remember pr
 | Variable | Default | Description | Example |
 |----------|---------|-------------|---------|
 | `ENTREZ_EMAIL_ENV` | *(none)* | Email for NCBI API requests. Required if not set in YAML. | `-e ENTREZ_EMAIL_ENV="you@email.com"` |
-| `NOVABROWSE_CONFIG` | `./novabrowse_config.yaml` | Path to YAML config file | `-e NOVABROWSE_CONFIG=./my_config.yaml` |
+| `NOVABROWSE_CONFIG` | `./novabrowse_config.yaml` | Using different YAML config file | `-e NOVABROWSE_CONFIG=./my_config.yaml` |
 | `ENTREZ_CACHE_SIZE_MB` | `500` | Maximum NCBI cache size in MB | `-e ENTREZ_CACHE_SIZE_MB=1000` |
 | `ENTREZ_USE_CACHE` | `true` | Set to `false` to disable NCBI data caching | `-e ENTREZ_USE_CACHE=false` |
 

@@ -92,6 +92,7 @@ conda install -c bioconda blast
 **Option B: Manual Installation**
 1. Download from [NCBI FTP](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
 2. Install and add to system PATH
+3. On Linux, if you get a missing library error, install the OpenMP runtime: `sudo apt install libgomp1` (Debian/Ubuntu) or `sudo yum install libgomp` (RHEL/CentOS)
 
 ### 4. NCBI Account
 
@@ -152,9 +153,9 @@ For instructions on how to download these files from NCBI, see [How to download 
 Open `make_blastdb.ipynb` and edit the second cell to add your species, then run the notebook.
 ```python
 run_makeblastdb(
-    "1_subject_sequences\\<custom_name>\\<assembly>\\rna.fna",
+    "1_subject_sequences/<custom_name>/<assembly>/rna.fna",
     "nucl",
-    "2_subject_blastdb\\<custom_name>_<assembly>"
+    "2_subject_blastdb/<custom_name>_<assembly>"
 )
 ```
 
@@ -170,16 +171,16 @@ The corresponding `make_blastdb` calls would be:
 ```python
 # Transcriptome database
 run_makeblastdb(
-    "1_subject_sequences\\s_cerevisiae\\GCF_000146045.2\\rna.fna",
+    "1_subject_sequences/s_cerevisiae/GCF_000146045.2/rna.fna",
     "nucl",
-    "2_subject_blastdb\\s_cerevisiae_GCF_000146045.2"
+    "2_subject_blastdb/s_cerevisiae_GCF_000146045.2"
 )
 
 # Genome database
 run_makeblastdb(
-    "1_subject_sequences\\s_cerevisiae\\GCF_000146045.2\\GCF_000146045.2_R64_genomic.fna",
+    "1_subject_sequences/s_cerevisiae/GCF_000146045.2/GCF_000146045.2_R64_genomic.fna",
     "nucl",
-    "2_subject_blastdb\\s_cerevisiae_GCF_000146045.2_genome"
+    "2_subject_blastdb/s_cerevisiae_GCF_000146045.2_genome"
 )
 ```
 
