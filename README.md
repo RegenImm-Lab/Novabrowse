@@ -1,6 +1,8 @@
 <img src="images/novabrowse_logo.svg" alt="Novabrowse Logo" width="400">
 
-**An interactive BLAST results interpretation tool for multi-species high-resolution synteny analysis, chromosomal rearrangement investigation, orthologs identification and gene signal discovery.**
+**Novabrowse is an interactive BLAST results interpretation tool and sequence alignment viewer for multi-species synteny analysis, ortholog finder, and chromosome mapping.**
+
+Find gene position on chromosome, generate synteny plots across multiple species, interpret BLAST alignments with coverage and identity visualizations, and discover unannotated genes through genomic signal analysis.
 
 ## Table of Contents
 
@@ -22,6 +24,7 @@
   - [Interactivity Features](#interactivity-features)
   - [Ribbon Plot Features](#ribbon-plot-features)
 - [Troubleshooting](#troubleshooting)
+- [FAQ](#faq)
 - [License](#license)
 - [Citation](#citation)
 - [Contributing](#contributing)
@@ -30,18 +33,18 @@
 ## How Novabrowse Works
 1\. You define a genomic region of interest, Novabrowse retrieves the gene sequences and runs BLAST searches against chosen subject species:
 
-<img src="images/pipeline.svg" alt="Novabrowse pipeline overview schematic">
+<img src="images/pipeline.svg" alt="Novabrowse synteny analysis pipeline showing BLAST search, ortholog identification, and chromosome mapping workflow">
 
 2\. The results are combined into an interactive HTML table with synteny ribbons and chromosome maps:
 
-<img src="images/table_layout.svg" alt="Novabrowse table layout legend">
+<img src="images/table_layout.svg" alt="Novabrowse BLAST results table with synteny plot, chromosome map, and sequence alignment coverage visualization">
 
 > For a more detailed breakdown, see [Pipeline Overview](#pipeline-overview) and [Basic Output Overview](#basic-output-overview).
 
 ## Why Choose Novabrowse
 
-Novabrowse ships with several novel core capabilities along with features not found together in any other comparative genomics tool:
-<img src="images/feature_comparison.svg" alt="Feature comparison of Novabrowse with other BLAST tools" width="100%">
+Novabrowse is free and open source ([MIT License](#license)) and ships with several novel core capabilities along with features not found together in any other comparative genomics tool:
+<img src="images/feature_comparison.svg" alt="Feature comparison of Novabrowse with other BLAST alignment tools and comparative genomics tools" width="100%">
 
 - **Coordinate-based genomic region search** - Define a chromosomal region by coordinates and automatically retrieve gene sequences from that region for use as search queries
 - **Distance-based HSP clustering of putative gene units** - Identify unannotated genes in genomic regions through distance-based High-scoring Segment Pair (HSP) clustering, revealing gene units missed by standard annotation pipelines
@@ -142,7 +145,7 @@ Place the downloaded files in:
 
 > **Note:** The transcriptome file **must** be named exactly `rna.fna`. Genome files **must** contain `_genomic` in the filename (e.g., `GCF_000146045.2_R64_genomic.fna`).
 
-For instructions on how to download these files from NCBI, see [How to download subject species sequences from NCBI](../README.md#subject-species-used-in-this-tutorial) in Tutorial 1.
+For instructions on how to download these files from NCBI, see [How to download subject species sequences from NCBI](#subject-species-used-in-this-tutorial) in Tutorial 1.
 
 ### 2. Create subject species BLAST databases
 
@@ -541,7 +544,7 @@ query_sequences_list = [
             },
         ]
     },
-    # For S. pombe so we use only custom sequences to demonstrate multiple entries
+    # For S. pombe, we use only custom sequences to demonstrate multiple entries
     {
         'query_species': 's_pombe',
         'protein_sources': ('NP_','XP_'),
@@ -670,7 +673,7 @@ Run all notebook cells sequentially.
 
 ## Pipeline Overview
 
-<img src="images/pipeline.svg" alt="Novabrowse pipeline overview schematic">
+<img src="images/pipeline.svg" alt="Novabrowse synteny analysis pipeline showing BLAST search, ortholog identification, and chromosome mapping workflow">
 
 1. **Query and subject species selection** — The user selects a genomic region of interest in the **query species** by specifying chromosome coordinates and optional flanking genes. Query sequences can come from NCBI, be provided manually as custom sequences, or both. For each **subject species**, the user chooses the database type (transcriptome and/or genome), BLAST algorithm (BLASTn, tBLASTn, and/or tBLASTx), and filtering thresholds (minimum bit score and maximum E-value).
 
@@ -684,7 +687,7 @@ Run all notebook cells sequentially.
 
 ## Basic Output Overview
 
-<img src="images/table_layout.svg" alt="Novabrowse table layout legend">
+<img src="images/table_layout.svg" alt="Novabrowse BLAST results table with synteny plot, chromosome map, and sequence alignment coverage visualization">
 
 > In this sample, four query genes are searched against three subject species. *Gene 1* and *Gene 4* each show a single best match in each subject species, representing straightforward one-to-one orthology. *Gene 2* shows red "**none**" where no match was found (**Subject Species 1** and **Subject Species 3**). *Gene 3* shows how multiple hits are displayed: for **Subject Species 1**, *Gene 3A* is the best match (likely ortholog), while *Gene 3B*, *Gene 3C*, and *Gene 9* appear as secondary matches (paralogs or distant homologs). The coverage bars reveal match extent and quality, *Gene 3A* covers ~65% of the query at high identity (mostly green bars), while *Gene 9* covers only ~38% (with low identity, orange and red coverage bars). **The ribbon plot** connects gene's chromosome position across species with colored ribbons, making syntenic relationships directly visible. Here, *Gene 1* is shown with a custom dashed red ribbon tracing its matches across all three species. *Gene 2* (green) only connects to **Subject Species 2**, since no match was found in the other two species. *Gene 4* (blue) shares synteny with *Gene 1* in **Subject Species 1** and **2**, where both genes sit close together on the same chromosome. However, in **Subject Species 3**, *Gene 1* and *Gene 4*, while remaining on the same chromosome, are positioned considerably farther apart, suggesting an expanded syntenic block
 
@@ -867,7 +870,7 @@ The chromosome filter row provides coordinate-based filtering for both query and
 
 **Query Species**
 
-<img src="images/chromosome_filter_query_species.png" alt="Query species chromosome filter">
+<img src="images/chromosome_filter_query_species.png" alt="Chromosome filter for query species gene position on chromosome visualization">
 
 - **Span** — enter start and end coordinates to define a region of interest.
 - **Highlight** — marks genes within the span with a yellow background and highlights the region on the chromosome visualization. The count shows matched genes vs total (e.g., `0/11`).
@@ -875,7 +878,7 @@ The chromosome filter row provides coordinate-based filtering for both query and
 
 **Subject Species**
 
-<img src="images/chromosome_filter_subject_species.png" alt="Subject species chromosome filter">
+<img src="images/chromosome_filter_subject_species.png" alt="Chromosome filter for subject species BLAST results on chromosome map">
 
 Each subject species has its own independent filter with additional controls:
 
@@ -940,7 +943,7 @@ In this example, the *S. cerevisiae* subject species has span set to `1 : 398510
 
 - **Coverage bar hover tooltip** — hovering over any colored segment in the coverage column displays a tooltip with detailed alignment statistics for that individual HSP (High-scoring Segment Pair).
 
-<img src="images/coverage.png" alt="Coverage tooltip showing position, identity, similarity, score and e-value for an individual HSP" style="margin-left: 40px;">
+<img src="images/coverage.png" alt="BLAST alignment coverage tooltip showing position, identity, similarity, score and e-value for an individual HSP" style="margin-left: 40px;">
 
 <blockquote style="margin-left: 40px;">
 
@@ -966,7 +969,7 @@ The tooltip displays:
 - **Position tooltip** — hovering over the chromosome shows a tooltip with the chromosome name and the calculated genomic coordinate at the cursor position.
 - **Gene hover tooltip** — hovering over a gene line shows up multiple tooltips: chromosome name and gene starting coordinate on the chromosome, subject species gene name, and the query species gene name.
 
-<img src="images/chromosome_gene_hover.png" alt="Gene hover tooltip showing chromosome position, subject gene name, and query gene name" style="margin-left: 40px;">
+<img src="images/chromosome_gene_hover.png" alt="Gene position on chromosome tooltip showing chromosome location, subject gene name, and query gene name" style="margin-left: 40px;">
 
 <blockquote style="margin-left: 40px;">In this example, the query gene name <em>SPL1</em> is different from the matching subject gene name <em>GBP2</em>. This kind of name mismatch is common and can be caused by paralogue matches (where the query gene matches a related but distinct gene in the subject species), different naming conventions across species, or independent discovery of the same gene in different organisms.</blockquote>
 
@@ -979,7 +982,7 @@ The tooltip displays:
 
 Each gene's ribbon can be individually customized. Click the ribbon settings button next to a gene name to open the settings panel.
 
-<img src="images/ribbon_settings.png" alt="Ribbonplot single ribbon settings example image" style="margin-left: 20px;">
+<img src="images/ribbon_settings.png" alt="Gene synteny ribbon plot settings for customizing multi-species synteny visualization" style="margin-left: 20px;">
 
 - **Color** — change the ribbon color using a color picker.
 - **Width** — adjust the ribbon line thickness.
@@ -1036,9 +1039,32 @@ Each species contains an `assembly_id` and a `chromosomes` list. Each chromosome
 - Check that the chromosome format matches NCBI naming
 - Verify genomic coordinates are correct for your assembly version
 
+## FAQ
+
+### What is a synteny plot?
+A synteny plot visualizes conserved gene order between species. Novabrowse generates interactive synteny plots as ribbon diagrams connecting orthologous genes across chromosome columns, letting you compare gene arrangements across multiple species simultaneously.
+
+### How to interpret BLAST results?
+Novabrowse parses raw BLAST output and presents it as an interactive HTML table with color-coded coverage bars showing alignment identity, chromosome maps showing hit locations, and synteny ribbons connecting matches across species. This replaces manual inspection of plain-text BLAST output.
+
+### How do I find gene position on chromosome?
+Novabrowse displays gene position on chromosome ideograms in the results table. Define a genomic region by coordinates, and Novabrowse retrieves all genes in that region and maps both query and subject gene hits onto their respective chromosomes.
+
+### Is Novabrowse a sequence alignment viewer?
+Yes. Novabrowse is a sequence alignment viewer that displays BLAST alignments as color-coded coverage bars positioned along query sequences, where colors indicate identity percentage. It also consolidates multiple transcript isoform hits into single gene entries.
+
+### Is Novabrowse a blast graphical viewer?
+Yes. Novabrowse works as a blast graphical viewer, displaying alignments as visual coverage bars with identity coloring, gene-level hit summaries, and chromosome context. It supports BLASTn, tBLASTn, and tBLASTx output.
+
+### Is Novabrowse a comparative genomics tool?
+Yes. Novabrowse is a comparative genomics tool that combines BLAST searching, multi-species synteny visualization, chromosome mapping, and coverage analysis in a single pipeline. See the [feature comparison table](#why-choose-novabrowse) for a detailed breakdown.
+
+### Can Novabrowse be used as an ortholog finder?
+Yes. Novabrowse functions as an ortholog finder by running BLAST searches against multiple subject species and ranking matches by score and E-value. The synteny ribbon plot helps distinguish true orthologs from paralogs by showing whether gene order is conserved.
+
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+Novabrowse is released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Citation
 

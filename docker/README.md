@@ -1,13 +1,6 @@
-# Novabrowse in Docker
+# Novabrowse with Docker and Apptainer
 
-This directory contains the necessary files to build a Docker container
-that is able to run the Novabrowse Jupyter notebooks
-(`make_blastdb.ipynb`, `get_chromosome_info.ipynb`, and
-`novabrowse_1.0.ipynb`)
-
-The benefit of using Docker is that it encapsulates all dependencies,
-making it easier to set up and run the notebook consistently across
-different environments.
+Run Novabrowse synteny analysis in a Docker or Apptainer container. All dependencies are included, making it easy to set up and run consistently across different environments, including HPC clusters.
 
 ## Table of Contents
 
