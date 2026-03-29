@@ -193,7 +193,9 @@ docker run -t -v "$(pwd):/data" -e ENTREZ_EMAIL_ENV novabrowse novabrowse_1.0.ip
 
 **Option C: Set explicitly in the run command**
 
-Set `-e ENTREZ_EMAIL_ENV="you@email.com"` when running the container.
+``` shell
+docker run -t -v "$(pwd):/data" -e ENTREZ_EMAIL_ENV="you@email.com" novabrowse novabrowse_1.0.ipynb
+```
 
 > **Note:** If both the environment variable and the YAML config (`novabrowse_config.yaml`) are set, the environment variable takes priority.
 
