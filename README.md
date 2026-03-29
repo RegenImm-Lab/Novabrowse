@@ -11,7 +11,8 @@ Find gene position on chromosome, generate synteny plots across multiple species
 - [Getting Started](#getting-started)
 - [Installation Prerequisites (Jupyter Notebook)](#installation-prerequisites-jupyter-notebook)
 - [Installation (Jupyter Notebook)](#installation-jupyter-notebook)
-- [Quick Start (Jupyter Notebook)](#quick-start-jupyter-notebook)
+- [Try It Quickly (Jupyter Notebook)](#try-it-quickly-jupyter-notebook)
+- [Setup (Jupyter Notebook)](#setup-jupyter-notebook)
 - [Tutorial 1: Detecting Orthologs Across Species](#tutorial-1-detecting-orthologs-across-species)
 - [Tutorial 2: Using Custom Sequences and Gene Signal Discovery](#tutorial-2-using-custom-sequences-and-gene-signal-discovery)
 - [Documentation](#documentation)
@@ -123,7 +124,20 @@ Novabrowse uses the [NCBI Entrez API](https://www.ncbi.nlm.nih.gov/books/NBK2550
 
    > **Windows note:** If `pip` doesn't work, try `py -m pip install -r requirements.txt` instead.
 
-## Quick Start (Jupyter Notebook)
+## Try It Quickly (Jupyter Notebook)
+
+The repository comes pre-configured with three example species (*S. cerevisiae*, *S. pombe*, *C. albicans*) with BLAST databases and chromosome data included. To run the example analysis:
+
+1. Open `novabrowse_1.0.ipynb` and find `entrez_email = None` under the "General Setup" section (cell 2)
+2. Replace `None` with your [NCBI account](https://www.ncbi.nlm.nih.gov/account/) email:
+   ```python
+   entrez_email = "you@email.com"
+   ```
+3. Run the notebook. Results will be in the `output/` folder as HTML files
+
+To learn how to add your own species and configure analyses, see [Setup](#setup-jupyter-notebook) below.
+
+## Setup (Jupyter Notebook)
 
 In Novabrowse:
 - **Query species** - the species whose genes you want to search for (your genes of interest)
