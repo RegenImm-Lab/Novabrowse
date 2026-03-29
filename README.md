@@ -85,7 +85,7 @@ Novabrowse pipeline runs in a Jupyter Notebook, so you need a compatible program
 
 BLAST+ must be installed and available in your system PATH.
 
-**Option A: Conda**
+**Option A: Conda (macOS / Linux / Windows)**
 ```bash
 conda install -c bioconda blast
 ```
@@ -122,7 +122,7 @@ Novabrowse uses the [NCBI Entrez API](https://www.ncbi.nlm.nih.gov/books/NBK2550
 
    Open a terminal in the project folder and run:
 
-   *macOS/Linux:*
+   *macOS / Linux:*
    ```bash
    python3 -m pip install -r requirements.txt
    ```
