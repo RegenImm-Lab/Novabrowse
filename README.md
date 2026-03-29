@@ -90,7 +90,12 @@ BLAST+ must be installed and available in your system PATH.
 conda install -c bioconda blast
 ```
 
-**Option B: Manual Installation**
+**Option B: Homebrew (macOS)**
+```bash
+brew install blast
+```
+
+**Option C: Manual Installation**
 1. Download from [NCBI FTP](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
 2. Install and add to system PATH
 3. On Linux, if you get a missing library error, install the OpenMP runtime: `sudo apt install libgomp1` (Debian/Ubuntu) or `sudo yum install libgomp` (RHEL/CentOS)
@@ -216,7 +221,13 @@ setx ENTREZ_EMAIL_ENV "your.email@example.com"
 [System.Environment]::SetEnvironmentVariable("ENTREZ_EMAIL_ENV", "your.email@example.com", "User")
 ```
 
-*macOS/Linux:*
+*macOS:*
+```bash
+echo 'export ENTREZ_EMAIL_ENV="your.email@example.com"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+*Linux:*
 ```bash
 echo 'export ENTREZ_EMAIL_ENV="your.email@example.com"' >> ~/.bashrc
 source ~/.bashrc

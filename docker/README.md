@@ -79,9 +79,16 @@ apptainer build novabrowse.sif docker-daemon://novabrowse:latest
 ## Try It Quickly
 
 The repository comes pre-configured with three example species (*S. cerevisiae*, *S. pombe*, *C. albicans*) with BLAST databases and chromosome data included. To run the example analysis, set `entrez_email: "you@email.com"` in `novabrowse_config.yaml` using your [NCBI account](https://www.ncbi.nlm.nih.gov/account/) email and run:
+**Docker:**
 ```shell
 docker run -t -v "$(pwd):/data" novabrowse novabrowse_1.0.ipynb
 ```
+
+**Apptainer:**
+```shell
+apptainer run -e --bind "$(pwd):/data" novabrowse.sif novabrowse_1.0.ipynb
+```
+
 Results will be in the `output/` folder as HTML files.
 
 To learn how to add your own species and configure analyses, follow the [Setup](#setup) guide below.
