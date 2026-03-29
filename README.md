@@ -121,13 +121,16 @@ Novabrowse uses the [NCBI Entrez API](https://www.ncbi.nlm.nih.gov/books/NBK2550
 2. **Install Python dependencies**
 
    Open a terminal in the project folder and run:
+
+   *macOS/Linux:*
    ```bash
-   pip install -r requirements.txt
+   python3 -m pip install -r requirements.txt
    ```
 
-   This installs Biopython and certifi (for SSL certificate handling).
-
-   > **Windows note:** If `pip` doesn't work, try `py -m pip install -r requirements.txt` instead.
+   *Windows:*
+   ```bash
+   py -m pip install -r requirements.txt
+   ```
 
 ## Try It Quickly (Jupyter Notebook)
 
