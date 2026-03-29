@@ -1046,8 +1046,8 @@ Each species contains an `assembly_id` and a `chromosomes` list. Each chromosome
 
 **"Search Backend failed" when running `get_chromosome_info.ipynb` or `novabrowse_1.0.ipynb`**
 - This is an NCBI server-side issue, not a problem with your code
-- Wait and try again later -- these errors usually resolve within a few hours
-- You can check if the NCBI API is working by opening [this link](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=GCF_000146045.2[Assembly]&retmax=1) in your browser -- if the API is down, the response will contain `<ERROR>Search Backend failed</ERROR>` instead of search results
+- Wait and try again later. These errors usually resolve within a few hours
+- You can check if the NCBI API is working by opening [this link](https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=GCF_000146045.2[Assembly]&retmax=1) in your browser. If the API is down, the response will contain `<ERROR>Search Backend failed</ERROR>` instead of search results
 
 **"HTTP Error 400" from NCBI**
 - NCBI API has limits on query size (~8-10 MB)
@@ -1065,7 +1065,7 @@ Each species contains an `assembly_id` and a `chromosomes` list. Each chromosome
 
 **`KeyError: '<species_name>'` in `generate_main_comparison`**
 - The species is missing from `chromosome_data.json`
-- Run `get_chromosome_info.ipynb` again -- if NCBI was down during the previous run, some species may have been skipped
+- Run `get_chromosome_info.ipynb` again. If NCBI was down during the previous run, some species may have been skipped
 - Both query and subject species must have entries in `chromosome_data.json`
 - If NCBI does not have chromosome data for your species, add it manually (see [Chromosome Data Format](#chromosome-data-format))
 
@@ -1077,7 +1077,7 @@ Each species contains an `assembly_id` and a `chromosomes` list. Each chromosome
 
 **"Could not find chromosome [name] in [species]"**
 - The chromosome name in your query does not match any entry in `chromosome_data.json`
-- Check the chromosome naming format -- NCBI may use `6`, `VI`, `6p`/`6q`, or accession identifiers like `NC_001138.5` depending on the species
+- Check the chromosome naming format. NCBI may use `6`, `VI`, `6p`/`6q`, or accession identifiers like `NC_001138.5` depending on the species
 
 ### BLAST errors
 
