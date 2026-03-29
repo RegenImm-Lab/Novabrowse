@@ -58,9 +58,10 @@ docker build -t novabrowse -f docker/Dockerfile docker/
 docker pull ghcr.io/regenimm-lab/novabrowse:latest
 ```
 
-Please have a look at the GitHub Container Registry page for this
-repository for the latest available image tags:
-https://github.com/RegenImm-Lab/Novabrowse/pkgs/container/novabrowse
+If you used the pull option, we recommend tagging the image as `novabrowse` for easier use in run commands:
+``` shell
+docker tag ghcr.io/regenimm-lab/novabrowse:latest novabrowse
+```
 
 ### Apptainer
 
