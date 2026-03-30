@@ -65,7 +65,7 @@ docker tag ghcr.io/regenimm-lab/novabrowse:latest novabrowse
 
 ### Apptainer
 
-Pull the pre-built image directly from the registry and convert it to an Apptainer SIF file:
+From the repository's top-level directory, pull the pre-built image and convert it to an Apptainer SIF file:
 
 ``` shell
 apptainer pull novabrowse.sif docker://ghcr.io/regenimm-lab/novabrowse:latest
