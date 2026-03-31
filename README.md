@@ -1156,9 +1156,7 @@ Novabrowse is released under the MIT License. See [LICENSE](LICENSE) for details
 
 If you use Novabrowse in your research, please cite:
 ```
-Rikk L., Ghaffarinia A., Leigh N. (2026)
-Novabrowse: A Tool for High-Resolution Synteny Analysis, Ortholog Detection and Gene Signal Discovery
-[Preprint link coming soon]
+Rikk, L., Ghaffarinia, A., & Leigh, N. D. (2026). Novabrowse: A tool for high-resolution synteny analysis, ortholog detection, and gene signal discovery [Preprint]. bioRxiv. https://doi.org/10.64898/2026.03.27.714371
 ```
 
 ## Contributing
